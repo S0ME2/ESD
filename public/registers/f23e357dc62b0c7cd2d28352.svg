@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370" viewBox="0 0 370 214" role="img" aria-label="control, 8 bits; control, 8 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">control</text>
+<text x="16" y="50" class="lbl">0x00: commands follow</text>
+<text x="16" y="65" class="mono lbl">= 0x00</text>
+<text x="194.6" y="20" text-anchor="start" class="mono lbl">7</text>
+<text x="352.6" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="193.6" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="213.6" y="28" width="20.0" height="26"/>
+<text x="223.6" y="20" text-anchor="middle" class="mono lbl">6</text>
+<rect class="reg" x="233.6" y="28" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M333.6 28 V32 M333.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M313.6 28 V32 M313.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M293.6 28 V32 M293.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M273.6 28 V32 M273.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M253.6 28 V32 M253.6 50 V54"/>
+<text x="234.6" y="20" text-anchor="start" class="mono lbl">5</text>
+<text x="343.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="323.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="303.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="283.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="263.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="243.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="223.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="203.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M223.6 54 L223.6 76"/>
+<text x="203.6" y="67" text-anchor="middle" class="mono halo lbl">Co</text>
+<text x="223.6" y="83" text-anchor="middle" class="mono halo">D/C#</text>
+<text x="16" y="137" class="mono">control</text>
+<text x="16" y="152" class="lbl">0x40: pixel data follows</text>
+<text x="16" y="167" class="mono lbl">= 0x40</text>
+<text x="194.6" y="122" text-anchor="start" class="mono lbl">7</text>
+<text x="352.6" y="122" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="193.6" y="130" width="20.0" height="26"/>
+<rect class="hifill" x="213.6" y="130" width="20.0" height="26"/>
+<text x="223.6" y="122" text-anchor="middle" class="mono lbl">6</text>
+<rect class="reg" x="233.6" y="130" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M333.6 130 V134 M333.6 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M313.6 130 V134 M313.6 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M293.6 130 V134 M293.6 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M273.6 130 V134 M273.6 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M253.6 130 V134 M253.6 152 V156"/>
+<text x="234.6" y="122" text-anchor="start" class="mono lbl">5</text>
+<text x="343.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="323.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="303.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="283.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="263.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="243.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="223.6" y="143" text-anchor="middle" class="mono">1</text>
+<text x="203.6" y="143" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M223.6 156 L223.6 178"/>
+<text x="203.6" y="169" text-anchor="middle" class="mono halo lbl">Co</text>
+<text x="223.6" y="185" text-anchor="middle" class="mono halo">D/C#</text>
+</svg>

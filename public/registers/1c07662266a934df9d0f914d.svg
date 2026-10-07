@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="971" viewBox="0 0 971 230" role="img" aria-label="DMA1_Channel2-&gt;CCR, 32 bits; DMA1-&gt;ISR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">DMA1_Channel2-&gt;CCR</text>
+<text x="16" y="50" class="lbl">dma_copy(): 32-bit, both increment, mem2mem</text>
+<text x="16" y="65" class="mono lbl">= 0x00004AC1</text>
+<text x="316.2" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="28" width="340.0" height="26"/>
+<rect class="hifill" x="655.2" y="28" width="20.0" height="26"/>
+<text x="665.2" y="20" text-anchor="middle" class="mono lbl">14</text>
+<rect class="reg" x="675.2" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M695.2 28 V32 M695.2 50 V54"/>
+<rect class="hifill" x="715.2" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M735.2 28 V32 M735.2 50 V54"/>
+<text x="716.2" y="20" text-anchor="start" class="mono lbl">11</text>
+<text x="754.2" y="20" text-anchor="end" class="mono lbl">10</text>
+<rect class="hifill" x="755.2" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M775.2 28 V32 M775.2 50 V54"/>
+<text x="794.2" y="20" text-anchor="end" class="mono lbl">8</text>
+<rect class="hifill" x="795.2" y="28" width="20.0" height="26"/>
+<text x="805.2" y="20" text-anchor="middle" class="mono lbl">7</text>
+<rect class="hifill" x="815.2" y="28" width="20.0" height="26"/>
+<text x="825.2" y="20" text-anchor="middle" class="mono lbl">6</text>
+<rect class="reg" x="835.2" y="28" width="20.0" height="26"/>
+<rect class="reg" x="855.2" y="28" width="20.0" height="26"/>
+<rect class="reg" x="875.2" y="28" width="20.0" height="26"/>
+<rect class="reg" x="895.2" y="28" width="20.0" height="26"/>
+<rect class="reg" x="915.2" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="935.2" y="28" width="20.0" height="26"/>
+<text x="945.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="925.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="905.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="885.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="865.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="845.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="825.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="805.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="785.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="765.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="745.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="725.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="705.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="685.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="665.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="645.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="625.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="605.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="585.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="565.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="545.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="525.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="505.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="485.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="465.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M695.2 54 L695.2 76"/>
+<path class="dash" d="M775.2 54 L775.2 76"/>
+<path class="dash" d="M825.2 54 L825.2 76"/>
+<path class="dash" d="M865.2 54 L865.2 76"/>
+<path class="dash" d="M905.2 54 L905.2 76"/>
+<path class="dash" d="M945.2 54 L945.2 76"/>
+<text x="665.2" y="67" text-anchor="middle" class="mono halo">MEM2MEM</text>
+<text x="695.2" y="83" text-anchor="middle" class="mono halo lbl">PL</text>
+<text x="735.2" y="67" text-anchor="middle" class="mono halo">MSIZE</text>
+<text x="775.2" y="83" text-anchor="middle" class="mono halo">PSIZE</text>
+<text x="805.2" y="67" text-anchor="middle" class="mono halo">MINC</text>
+<text x="825.2" y="83" text-anchor="middle" class="mono halo">PINC</text>
+<text x="845.2" y="67" text-anchor="middle" class="mono halo lbl">CIRC</text>
+<text x="865.2" y="83" text-anchor="middle" class="mono halo lbl">DIR</text>
+<text x="885.2" y="67" text-anchor="middle" class="mono halo lbl">TEIE</text>
+<text x="905.2" y="83" text-anchor="middle" class="mono halo lbl">HTIE</text>
+<text x="925.2" y="67" text-anchor="middle" class="mono halo lbl">TCIE</text>
+<text x="945.2" y="83" text-anchor="middle" class="mono halo">EN</text>
+<text x="16" y="137" class="mono">DMA1-&gt;ISR</text>
+<text x="16" y="152" class="lbl">done or failed?</text>
+<text x="316.2" y="122" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="122" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="130" width="400.0" height="26"/>
+<text x="515.2" y="143" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="715.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="735.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="755.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="775.2" y="130" width="20.0" height="26"/>
+<rect class="hifill" x="795.2" y="130" width="20.0" height="26"/>
+<text x="805.2" y="122" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="815.2" y="130" width="20.0" height="26"/>
+<rect class="hifill" x="835.2" y="130" width="20.0" height="26"/>
+<text x="845.2" y="122" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="855.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="875.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="895.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="915.2" y="130" width="20.0" height="26"/>
+<rect class="reg" x="935.2" y="130" width="20.0" height="26"/>
+<path class="dash" d="M745.2 156 L745.2 178"/>
+<path class="dash" d="M765.2 156 L765.2 194"/>
+<path class="dash" d="M805.2 156 L805.2 178"/>
+<path class="dash" d="M845.2 156 L845.2 194"/>
+<path class="dash" d="M885.2 156 L885.2 178"/>
+<path class="dash" d="M925.2 156 L925.2 194"/>
+<text x="725.2" y="169" text-anchor="middle" class="mono halo lbl">TEIF3</text>
+<text x="745.2" y="185" text-anchor="middle" class="mono halo lbl">HTIF3</text>
+<text x="765.2" y="201" text-anchor="middle" class="mono halo lbl">TCIF3</text>
+<text x="785.2" y="169" text-anchor="middle" class="mono halo lbl">GIF3</text>
+<text x="805.2" y="185" text-anchor="middle" class="mono halo">TEIF2</text>
+<text x="825.2" y="169" text-anchor="middle" class="mono halo lbl">HTIF2</text>
+<text x="845.2" y="201" text-anchor="middle" class="mono halo">TCIF2</text>
+<text x="865.2" y="169" text-anchor="middle" class="mono halo lbl">GIF2</text>
+<text x="885.2" y="185" text-anchor="middle" class="mono halo lbl">TEIF1</text>
+<text x="905.2" y="169" text-anchor="middle" class="mono halo lbl">HTIF1</text>
+<text x="925.2" y="201" text-anchor="middle" class="mono halo lbl">TCIF1</text>
+<text x="945.2" y="169" text-anchor="middle" class="mono halo lbl">GIF1</text>
+</svg>

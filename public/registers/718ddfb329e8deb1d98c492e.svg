@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 800" role="img" aria-label="ADC1 and ADC1_COMMON, to scale.  Shaded = a field this lesson writes or reads.; CR, 32 bits; ISR, 32 bits; CFGR1, 32 bits; CFGR2, 32 bits; SMPR, 32 bits; CHSELR, 32 bits; DR, 32 bits; CCR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="415" y="16" text-anchor="middle" class="lbl">ADC1 and ADC1_COMMON, to scale.  Shaded = a field this lesson writes or reads.</text>
+<text x="16" y="59" class="mono">CR</text>
+<text x="16" y="74" class="lbl">control</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="734.4" y="52" width="20.0" height="26"/>
+<rect class="dash" x="254.4" y="52" width="460.0" height="26"/>
+<text x="484.4" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="194.4" y="52" width="40.0" height="26"/>
+<rect class="hifill" x="174.4" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="234.4" y="52" width="20.0" height="26"/>
+<text x="244.4" y="44" text-anchor="middle" class="mono lbl">28</text>
+<rect class="reg" x="714.4" y="52" width="20.0" height="26"/>
+<text x="724.4" y="44" text-anchor="middle" class="mono lbl">4</text>
+<rect class="hifill" x="754.4" y="52" width="20.0" height="26"/>
+<text x="764.4" y="44" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="774.4" y="52" width="20.0" height="26"/>
+<text x="784.4" y="44" text-anchor="middle" class="mono lbl">1</text>
+<rect class="hifill" x="794.4" y="52" width="20.0" height="26"/>
+<path class="dash" d="M184.4 78 L194.2 84"/>
+<path class="dash" d="M244.4 78 L244.4 100"/>
+<path class="dash" d="M764.4 78 L764.4 100"/>
+<path class="dash" d="M804.4 78 L804.4 116"/>
+<text x="194.2" y="91" text-anchor="middle" class="mono halo">ADCAL</text>
+<text x="244.4" y="107" text-anchor="middle" class="mono halo">ADVREGEN</text>
+<text x="724.4" y="91" text-anchor="middle" class="mono halo lbl">ADSTP</text>
+<text x="764.4" y="107" text-anchor="middle" class="mono halo">ADSTART</text>
+<text x="784.4" y="91" text-anchor="middle" class="mono halo lbl">ADDIS</text>
+<text x="804.4" y="123" text-anchor="middle" class="mono halo">ADEN</text>
+<text x="16" y="177" class="mono">ISR</text>
+<text x="16" y="192" class="lbl">flags</text>
+<text x="175.4" y="162" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="162" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="674.4" y="170" width="40.0" height="26"/>
+<rect class="dash" x="594.4" y="170" width="20.0" height="26"/>
+<rect class="dash" x="554.4" y="170" width="20.0" height="26"/>
+<rect class="dash" x="174.4" y="170" width="360.0" height="26"/>
+<text x="354.4" y="183" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="534.4" y="170" width="20.0" height="26"/>
+<text x="544.4" y="162" text-anchor="middle" class="mono lbl">13</text>
+<rect class="reg" x="574.4" y="170" width="20.0" height="26"/>
+<rect class="reg" x="614.4" y="170" width="20.0" height="26"/>
+<rect class="reg" x="634.4" y="170" width="20.0" height="26"/>
+<rect class="reg" x="654.4" y="170" width="20.0" height="26"/>
+<rect class="reg" x="714.4" y="170" width="20.0" height="26"/>
+<rect class="reg" x="734.4" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="754.4" y="170" width="20.0" height="26"/>
+<text x="764.4" y="162" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="774.4" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="794.4" y="170" width="20.0" height="26"/>
+<path class="dash" d="M584.4 196 L584.4 218"/>
+<path class="dash" d="M644.4 196 L644.4 218"/>
+<path class="dash" d="M744.4 196 L744.4 218"/>
+<path class="dash" d="M784.4 196 L784.4 218"/>
+<text x="544.4" y="209" text-anchor="middle" class="mono halo">CCRDY</text>
+<text x="584.4" y="225" text-anchor="middle" class="mono halo lbl">EOCAL</text>
+<text x="624.4" y="209" text-anchor="middle" class="mono halo lbl">AWD3</text>
+<text x="644.4" y="225" text-anchor="middle" class="mono halo lbl">AWD2</text>
+<text x="664.4" y="209" text-anchor="middle" class="mono halo lbl">AWD1</text>
+<text x="724.4" y="209" text-anchor="middle" class="mono halo lbl">OVR</text>
+<text x="744.4" y="225" text-anchor="middle" class="mono halo lbl">EOS</text>
+<text x="764.4" y="209" text-anchor="middle" class="mono halo">EOC</text>
+<text x="784.4" y="225" text-anchor="middle" class="mono halo lbl">EOSMP</text>
+<text x="804.4" y="209" text-anchor="middle" class="mono halo">ADRDY</text>
+<text x="16" y="279" class="mono">CFGR1</text>
+<text x="16" y="294" class="lbl">config: all zero here</text>
+<text x="175.4" y="264" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="264" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="614.4" y="272" width="20.0" height="26"/>
+<rect class="dash" x="394.4" y="272" width="80.0" height="26"/>
+<text x="434.4" y="285" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="294.4" y="272" width="40.0" height="26"/>
+<rect class="dash" x="174.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="194.4" y="272" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.4 272 V276 M274.4 294 V298"/>
+<path class="reg" stroke-width="0.6" d="M254.4 272 V276 M254.4 294 V298"/>
+<path class="reg" stroke-width="0.6" d="M234.4 272 V276 M234.4 294 V298"/>
+<path class="reg" stroke-width="0.6" d="M214.4 272 V276 M214.4 294 V298"/>
+<text x="244.4" y="285" text-anchor="middle" class="mono">AWD1CH</text>
+<rect class="reg" x="334.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="354.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="374.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="474.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="494.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="514.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="534.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="554.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="574.4" y="272" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.4 272 V276 M594.4 294 V298"/>
+<rect class="reg" x="634.4" y="272" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.4 272 V276 M674.4 294 V298"/>
+<path class="reg" stroke-width="0.6" d="M654.4 272 V276 M654.4 294 V298"/>
+<text x="664.4" y="285" text-anchor="middle" class="mono">EXTSEL</text>
+<rect class="reg" x="694.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="714.4" y="272" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M734.4 272 V276 M734.4 294 V298"/>
+<text x="734.4" y="285" text-anchor="middle" class="mono">RES</text>
+<rect class="reg" x="754.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="774.4" y="272" width="20.0" height="26"/>
+<rect class="reg" x="794.4" y="272" width="20.0" height="26"/>
+<path class="dash" d="M364.4 298 L364.4 320"/>
+<path class="dash" d="M384.4 298 L384.4 336"/>
+<path class="dash" d="M504.4 298 L504.4 320"/>
+<path class="dash" d="M524.4 298 L524.4 336"/>
+<path class="dash" d="M564.4 298 L564.4 320"/>
+<path class="dash" d="M784.4 298 L784.4 320"/>
+<path class="dash" d="M804.4 298 L804.4 336"/>
+<text x="344.4" y="311" text-anchor="middle" class="mono halo lbl">AWD1EN</text>
+<text x="364.4" y="327" text-anchor="middle" class="mono halo lbl">AWD1SGL</text>
+<text x="384.4" y="343" text-anchor="middle" class="mono halo lbl">CHSELRMOD</text>
+<text x="484.4" y="311" text-anchor="middle" class="mono halo lbl">DISCEN</text>
+<text x="504.4" y="327" text-anchor="middle" class="mono halo lbl">AUTOFF</text>
+<text x="524.4" y="343" text-anchor="middle" class="mono halo lbl">WAIT</text>
+<text x="544.4" y="311" text-anchor="middle" class="mono halo lbl">CONT</text>
+<text x="564.4" y="327" text-anchor="middle" class="mono halo lbl">OVRMOD</text>
+<text x="594.4" y="311" text-anchor="middle" class="mono halo lbl">EXTEN</text>
+<text x="704.4" y="311" text-anchor="middle" class="mono halo lbl">ALIGN</text>
+<text x="764.4" y="311" text-anchor="middle" class="mono halo lbl">SCANDIR</text>
+<text x="784.4" y="327" text-anchor="middle" class="mono halo lbl">DMACFG</text>
+<text x="804.4" y="343" text-anchor="middle" class="mono halo lbl">DMAEN</text>
+<text x="16" y="397" class="mono">CFGR2</text>
+<text x="16" y="412" class="lbl">ADC clock</text>
+<text x="175.4" y="382" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="382" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="774.4" y="390" width="20.0" height="26"/>
+<rect class="dash" x="234.4" y="390" width="380.0" height="26"/>
+<text x="424.4" y="403" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="174.4" y="390" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.4 390 V394 M194.4 412 V416"/>
+<text x="213.4" y="382" text-anchor="end" class="mono lbl">30</text>
+<rect class="reg" x="214.4" y="390" width="20.0" height="26"/>
+<text x="224.4" y="382" text-anchor="middle" class="mono lbl">29</text>
+<rect class="reg" x="614.4" y="390" width="20.0" height="26"/>
+<text x="624.4" y="382" text-anchor="middle" class="mono lbl">9</text>
+<rect class="reg" x="634.4" y="390" width="80.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M694.4 390 V394 M694.4 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M674.4 390 V394 M674.4 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M654.4 390 V394 M654.4 412 V416"/>
+<text x="635.4" y="382" text-anchor="start" class="mono lbl">8</text>
+<text x="713.4" y="382" text-anchor="end" class="mono lbl">5</text>
+<text x="674.4" y="403" text-anchor="middle" class="mono">OVSS</text>
+<rect class="reg" x="714.4" y="390" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.4 390 V394 M754.4 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M734.4 390 V394 M734.4 412 V416"/>
+<text x="773.4" y="382" text-anchor="end" class="mono lbl">2</text>
+<text x="744.4" y="403" text-anchor="middle" class="mono">OVSR</text>
+<rect class="reg" x="794.4" y="390" width="20.0" height="26"/>
+<path class="dash" d="M194.4 416 L198.1 422"/>
+<path class="dash" d="M224.4 416 L224.4 438"/>
+<text x="198.1" y="429" text-anchor="middle" class="mono halo">CKMODE</text>
+<text x="224.4" y="445" text-anchor="middle" class="mono halo lbl">LFTRIG</text>
+<text x="624.4" y="429" text-anchor="middle" class="mono halo lbl">TOVS</text>
+<text x="804.4" y="429" text-anchor="middle" class="mono halo lbl">OVSE</text>
+<text x="16" y="499" class="mono">SMPR</text>
+<text x="16" y="514" class="lbl">sampling time</text>
+<text x="175.4" y="484" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="484" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="734.4" y="492" width="20.0" height="26"/>
+<rect class="dash" x="654.4" y="492" width="20.0" height="26"/>
+<rect class="dash" x="174.4" y="492" width="100.0" height="26"/>
+<text x="224.4" y="505" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="274.4" y="492" width="380.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.4 492 V496 M634.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M614.4 492 V496 M614.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M594.4 492 V496 M594.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M574.4 492 V496 M574.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M554.4 492 V496 M554.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M534.4 492 V496 M534.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M514.4 492 V496 M514.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M494.4 492 V496 M494.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M474.4 492 V496 M474.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M454.4 492 V496 M454.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M434.4 492 V496 M434.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M414.4 492 V496 M414.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M394.4 492 V496 M394.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M374.4 492 V496 M374.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M354.4 492 V496 M354.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M334.4 492 V496 M334.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M314.4 492 V496 M314.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M294.4 492 V496 M294.4 514 V518"/>
+<text x="275.4" y="484" text-anchor="start" class="mono lbl">26</text>
+<text x="653.4" y="484" text-anchor="end" class="mono lbl">8</text>
+<text x="464.4" y="505" text-anchor="middle" class="mono">SMPSEL</text>
+<rect class="reg" x="674.4" y="492" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.4 492 V496 M714.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M694.4 492 V496 M694.4 514 V518"/>
+<text x="675.4" y="484" text-anchor="start" class="mono lbl">6</text>
+<text x="733.4" y="484" text-anchor="end" class="mono lbl">4</text>
+<text x="704.4" y="505" text-anchor="middle" class="mono">SMP2</text>
+<rect class="hifill" x="754.4" y="492" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 492 V496 M794.4 514 V518"/>
+<path class="reg" stroke-width="0.6" d="M774.4 492 V496 M774.4 514 V518"/>
+<text x="755.4" y="484" text-anchor="start" class="mono lbl">2</text>
+<text x="784.4" y="505" text-anchor="middle" class="mono">SMP1</text>
+<text x="16" y="568" class="mono">CHSELR</text>
+<text x="16" y="583" class="lbl">one bit per channel</text>
+<text x="175.4" y="553" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="553" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="561" width="180.0" height="26"/>
+<text x="264.4" y="574" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="794.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="774.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="754.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="734.4" y="561" width="20.0" height="26"/>
+<rect class="hifill" x="714.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="694.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="674.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="654.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="634.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="614.4" y="561" width="20.0" height="26"/>
+<rect class="hifill" x="594.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="574.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="554.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="534.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="514.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="494.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="474.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="454.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="434.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="414.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="394.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="374.4" y="561" width="20.0" height="26"/>
+<rect class="reg" x="354.4" y="561" width="20.0" height="26"/>
+<text x="724.4" y="600" text-anchor="middle" class="mono halo">4</text>
+<text x="604.4" y="600" text-anchor="middle" class="mono halo">10</text>
+<text x="16" y="654" class="mono">DR</text>
+<text x="16" y="669" class="lbl">result</text>
+<text x="175.4" y="639" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="639" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="647" width="320.0" height="26"/>
+<text x="334.4" y="660" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="494.4" y="647" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 647 V651 M794.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M774.4 647 V651 M774.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M754.4 647 V651 M754.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M734.4 647 V651 M734.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M714.4 647 V651 M714.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M694.4 647 V651 M694.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M674.4 647 V651 M674.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M654.4 647 V651 M654.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M634.4 647 V651 M634.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M614.4 647 V651 M614.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M594.4 647 V651 M594.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M574.4 647 V651 M574.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M554.4 647 V651 M554.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M534.4 647 V651 M534.4 669 V673"/>
+<path class="reg" stroke-width="0.6" d="M514.4 647 V651 M514.4 669 V673"/>
+<text x="495.4" y="639" text-anchor="start" class="mono lbl">15</text>
+<text x="654.4" y="660" text-anchor="middle" class="mono">DATA</text>
+<text x="16" y="723" class="mono">CCR</text>
+<text x="16" y="738" class="lbl">ADC1_COMMON</text>
+<text x="175.4" y="708" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="708" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="454.4" y="716" width="360.0" height="26"/>
+<text x="634.4" y="729" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="314.4" y="716" width="20.0" height="26"/>
+<rect class="dash" x="174.4" y="716" width="120.0" height="26"/>
+<text x="234.4" y="729" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="294.4" y="716" width="20.0" height="26"/>
+<text x="304.4" y="708" text-anchor="middle" class="mono lbl">25</text>
+<rect class="reg" x="334.4" y="716" width="20.0" height="26"/>
+<text x="344.4" y="708" text-anchor="middle" class="mono lbl">23</text>
+<rect class="hifill" x="354.4" y="716" width="20.0" height="26"/>
+<text x="364.4" y="708" text-anchor="middle" class="mono lbl">22</text>
+<rect class="reg" x="374.4" y="716" width="80.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.4 716 V720 M434.4 738 V742"/>
+<path class="reg" stroke-width="0.6" d="M414.4 716 V720 M414.4 738 V742"/>
+<path class="reg" stroke-width="0.6" d="M394.4 716 V720 M394.4 738 V742"/>
+<text x="375.4" y="708" text-anchor="start" class="mono lbl">21</text>
+<text x="453.4" y="708" text-anchor="end" class="mono lbl">18</text>
+<text x="414.4" y="729" text-anchor="middle" class="mono">PRESC</text>
+<path class="dash" d="M364.4 742 L364.4 764"/>
+<text x="304.4" y="755" text-anchor="middle" class="mono halo lbl">LFMEN</text>
+<text x="344.4" y="755" text-anchor="middle" class="mono halo lbl">TSEN</text>
+<text x="364.4" y="771" text-anchor="middle" class="mono halo">VREFEN</text>
+</svg>

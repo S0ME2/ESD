@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="799" viewBox="0 0 799 182" role="img" aria-label="vector [1], 32 bits; Reset_Handler, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">vector [1]</text>
+<text x="16" y="50" class="mono lbl">= 0x08000275</text>
+<text x="143.7" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="781.7" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="142.7" y="28" width="620.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M742.7 28 V32 M742.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M722.7 28 V32 M722.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M702.7 28 V32 M702.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M682.7 28 V32 M682.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M662.7 28 V32 M662.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M642.7 28 V32 M642.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M622.7 28 V32 M622.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M602.7 28 V32 M602.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M582.7 28 V32 M582.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M562.7 28 V32 M562.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M542.7 28 V32 M542.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M522.7 28 V32 M522.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M502.7 28 V32 M502.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M482.7 28 V32 M482.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M462.7 28 V32 M462.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M442.7 28 V32 M442.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M422.7 28 V32 M422.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M402.7 28 V32 M402.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M382.7 28 V32 M382.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M362.7 28 V32 M362.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M342.7 28 V32 M342.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M322.7 28 V32 M322.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M302.7 28 V32 M302.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M282.7 28 V32 M282.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M262.7 28 V32 M262.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M242.7 28 V32 M242.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M222.7 28 V32 M222.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M202.7 28 V32 M202.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M182.7 28 V32 M182.7 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M162.7 28 V32 M162.7 50 V54"/>
+<text x="761.7" y="20" text-anchor="end" class="mono lbl">1</text>
+<rect class="hifill" x="762.7" y="28" width="20.0" height="26"/>
+<text x="772.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="752.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="732.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="712.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="692.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="672.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="652.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="632.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="612.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="592.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="572.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="552.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="532.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="512.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="492.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="472.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="452.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="432.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="412.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="392.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="372.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="352.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="332.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="312.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="292.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="272.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="252.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="232.7" y="41" text-anchor="middle" class="mono">1</text>
+<text x="212.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="192.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="172.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="152.7" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="452.7" y="67" text-anchor="middle" class="mono halo lbl">address</text>
+<text x="772.7" y="67" text-anchor="middle" class="mono halo">T</text>
+<text x="16" y="121" class="mono">Reset_Handler</text>
+<text x="16" y="136" class="mono lbl">= 0x08000274</text>
+<text x="143.7" y="106" text-anchor="start" class="mono lbl">31</text>
+<text x="781.7" y="106" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="142.7" y="114" width="620.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M742.7 114 V118 M742.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M722.7 114 V118 M722.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M702.7 114 V118 M702.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M682.7 114 V118 M682.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M662.7 114 V118 M662.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M642.7 114 V118 M642.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M622.7 114 V118 M622.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M602.7 114 V118 M602.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M582.7 114 V118 M582.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M562.7 114 V118 M562.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M542.7 114 V118 M542.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M522.7 114 V118 M522.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M502.7 114 V118 M502.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M482.7 114 V118 M482.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M462.7 114 V118 M462.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M442.7 114 V118 M442.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M422.7 114 V118 M422.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M402.7 114 V118 M402.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M382.7 114 V118 M382.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M362.7 114 V118 M362.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M342.7 114 V118 M342.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M322.7 114 V118 M322.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M302.7 114 V118 M302.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M282.7 114 V118 M282.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M262.7 114 V118 M262.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M242.7 114 V118 M242.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M222.7 114 V118 M222.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M202.7 114 V118 M202.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M182.7 114 V118 M182.7 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M162.7 114 V118 M162.7 136 V140"/>
+<text x="761.7" y="106" text-anchor="end" class="mono lbl">1</text>
+<rect class="reg" x="762.7" y="114" width="20.0" height="26"/>
+<text x="772.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="752.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="732.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="712.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="692.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="672.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="652.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="632.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="612.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="592.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="572.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="552.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="532.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="512.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="492.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="472.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="452.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="432.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="412.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="392.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="372.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="352.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="332.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="312.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="292.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="272.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="252.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="232.7" y="127" text-anchor="middle" class="mono">1</text>
+<text x="212.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="192.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="172.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="152.7" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="452.7" y="153" text-anchor="middle" class="mono halo lbl">address</text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="799" viewBox="0 0 799 120" role="img" aria-label="f7ff then ffcf: the offset is S:I1:I2:imm10:imm11:0 = −98, from 800028e back to 800022c; bl SystemInit, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="399" y="16" text-anchor="middle" class="lbl">f7ff then ffcf: the offset is S:I1:I2:imm10:imm11:0 = −98, from 800028e back to 800022c</text>
+<text x="16" y="59" class="mono">bl SystemInit</text>
+<text x="16" y="74" class="mono lbl">= 0xF7FFFFCF</text>
+<text x="143.7" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="781.7" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="142.7" y="52" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M222.7 52 V56 M222.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M202.7 52 V56 M202.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M182.7 52 V56 M182.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M162.7 52 V56 M162.7 74 V78"/>
+<text x="241.7" y="44" text-anchor="end" class="mono lbl">27</text>
+<rect class="reg" x="242.7" y="52" width="20.0" height="26"/>
+<text x="252.7" y="44" text-anchor="middle" class="mono lbl">26</text>
+<rect class="hifill" x="262.7" y="52" width="200.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M442.7 52 V56 M442.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M422.7 52 V56 M422.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M402.7 52 V56 M402.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M382.7 52 V56 M382.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M362.7 52 V56 M362.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M342.7 52 V56 M342.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M322.7 52 V56 M322.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M302.7 52 V56 M302.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M282.7 52 V56 M282.7 74 V78"/>
+<text x="263.7" y="44" text-anchor="start" class="mono lbl">25</text>
+<text x="461.7" y="44" text-anchor="end" class="mono lbl">16</text>
+<rect class="reg" x="462.7" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M482.7 52 V56 M482.7 74 V78"/>
+<text x="501.7" y="44" text-anchor="end" class="mono lbl">14</text>
+<rect class="reg" x="502.7" y="52" width="20.0" height="26"/>
+<text x="512.7" y="44" text-anchor="middle" class="mono lbl">13</text>
+<rect class="reg" x="522.7" y="52" width="20.0" height="26"/>
+<text x="532.7" y="44" text-anchor="middle" class="mono lbl">12</text>
+<rect class="reg" x="542.7" y="52" width="20.0" height="26"/>
+<text x="552.7" y="44" text-anchor="middle" class="mono lbl">11</text>
+<rect class="hifill" x="562.7" y="52" width="220.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M762.7 52 V56 M762.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M742.7 52 V56 M742.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M722.7 52 V56 M722.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M702.7 52 V56 M702.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M682.7 52 V56 M682.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M662.7 52 V56 M662.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M642.7 52 V56 M642.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M622.7 52 V56 M622.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M602.7 52 V56 M602.7 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M582.7 52 V56 M582.7 74 V78"/>
+<text x="563.7" y="44" text-anchor="start" class="mono lbl">10</text>
+<text x="772.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="752.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="732.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="712.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="692.7" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="672.7" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="652.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="632.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="612.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="592.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="572.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="552.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="532.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="512.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="492.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="472.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="452.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="432.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="412.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="392.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="372.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="352.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="332.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="312.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="292.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="272.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="252.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="232.7" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="212.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="192.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="172.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="152.7" y="65" text-anchor="middle" class="mono">1</text>
+<text x="192.7" y="91" text-anchor="middle" class="mono halo lbl">op</text>
+<text x="252.7" y="91" text-anchor="middle" class="mono halo lbl">S</text>
+<text x="362.7" y="91" text-anchor="middle" class="mono halo">imm10</text>
+<text x="512.7" y="91" text-anchor="middle" class="mono halo lbl">J1</text>
+<text x="552.7" y="91" text-anchor="middle" class="mono halo lbl">J2</text>
+<text x="672.7" y="91" text-anchor="middle" class="mono halo">imm11</text>
+</svg>

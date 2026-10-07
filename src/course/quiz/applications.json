@@ -1,0 +1,4322 @@
+[
+  {
+    "id": "note-13-0-0",
+    "lesson": 13,
+    "topic": "note-13-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C.",
+      "PB9 and PB8 suffice without a shared ground."
+    ],
+    "correct": 1,
+    "explanations": [
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C.",
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection."
+    ]
+  },
+  {
+    "id": "note-13-0-1",
+    "lesson": 13,
+    "topic": "note-13-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob commands collective throttle directly.",
+      "The knob changes the complementary-filter alpha.",
+      "The knob scales the rate loop's proportional gain Kp."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Pilot throttle and rate proportional gain are different inputs in this lesson.",
+      "Here the knob scales rate Kp; filter weighting is a separate controller setting.",
+      "A arms; B injects a gust; SEL selects SIM/MPU; knob adjusts rate Kp."
+    ]
+  },
+  {
+    "id": "note-13-1-0",
+    "lesson": 13,
+    "topic": "note-13-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups.",
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup.",
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10."
+    ]
+  },
+  {
+    "id": "note-13-1-1",
+    "lesson": 13,
+    "topic": "note-13-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR selects routing; MODER must also activate alternate mode.",
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR only controls clock frequency."
+    ],
+    "correct": 0,
+    "explanations": [
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function.",
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider."
+    ]
+  },
+  {
+    "id": "note-13-2-0",
+    "lesson": 13,
+    "topic": "note-13-2",
+    "topicTitle": "How Do We Fly a Drone Without a Drone?",
+    "question": "Why can one controller serve a PC test and an aircraft?",
+    "options": [
+      "The PC and MCU execute identical peripheral register writes.",
+      "The controller uses sensor/actuator contracts instead of platform-specific drivers.",
+      "The physical aircraft must reproduce the simulated noise exactly."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A PC has no STM32 peripheral registers; the portable controller uses an interface supplied by different drivers.",
+      "It depends only on sensor and actuator contracts, so replacing the plant or drivers does not change its control calculations.",
+      "Noise realism affects validation, but portability comes from input/output contracts rather than identical disturbances."
+    ]
+  },
+  {
+    "id": "note-13-3-0",
+    "lesson": 13,
+    "topic": "note-13-3",
+    "topicTitle": "The Contract",
+    "question": "Why is imu_ok insufficient to detect a frozen driver?",
+    "options": [
+      "imu_ok changes automatically whenever a sample is repeated.",
+      "Healthy repeated samples always mean the aircraft is stationary.",
+      "A frozen driver can repeat a healthy sample without advancing seq."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The health flag alone carries no freshness guarantee; the sequence counter must be checked.",
+      "A frozen driver can repeat its last sample while the aircraft moves; advancing sequence numbers distinguish fresh samples.",
+      "The driver can repeatedly return its last healthy sample. A sequence count that stops advancing reveals the freeze."
+    ]
+  },
+  {
+    "id": "note-13-4-0",
+    "lesson": 13,
+    "topic": "note-13-4",
+    "topicTitle": "Frames and Signs",
+    "question": "Which motors increase for positive roll, and why is az negative at rest?",
+    "options": [
+      "M0 and M3 increase; upward supporting force gives negative az.",
+      "M1 and M2 increase; az is negative because gravity points upward.",
+      "M0 and M3 increase; az should be positive on a level gimbal."
+    ],
+    "correct": 0,
+    "explanations": [
+      "M0 and M3 increase. Their lift raises the left side. The accelerometer measures supporting force upward, opposite the positive downward z axis.",
+      "Those motors lift the right side and create the opposite roll; gravity is downward, while supporting specific force is upward.",
+      "The motor selection is right, but the downward-positive z convention gives an upward support reading of −9.81 m/s²."
+    ]
+  },
+  {
+    "id": "note-13-5-0",
+    "lesson": 13,
+    "topic": "note-13-5",
+    "topicTitle": "The Plant — a Quadcopter on a Gimbal",
+    "question": "Why integrate a quaternion instead of only Euler angles?",
+    "options": [
+      "Euler angles cannot describe any small roll or pitch.",
+      "Quaternions avoid the singularities of Euler-angle representations.",
+      "Quaternions eliminate gyro bias."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Euler angles work near level; their problem is singularity at particular orientations, not ordinary small angles.",
+      "Quaternion attitude remains defined through an upside-down orientation; Euler angle representations have singularities.",
+      "They change attitude representation; they do not correct sensor errors."
+    ]
+  },
+  {
+    "id": "note-13-6-0",
+    "lesson": 13,
+    "topic": "note-13-6",
+    "topicTitle": "Four Thrusts, Three Torques",
+    "question": "A ±u roll pattern gives 339u rad/s² before motor lag. What acceleration corresponds to u=0.1?",
+    "options": [
+      "About 340 rad/s² at u=0.1.",
+      "About 34 rad/s², reached with motor lag rather than immediately.",
+      "About 3.4 rad/s², reached immediately."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That is roughly the full u=1 scale; multiply the 339 rad/s² coefficient by 0.1.",
+      "0.085×16×0.1/0.004≈34 rad/s². The motor lag delays achieving that acceleration.",
+      "The differential includes four motors, and the given calculation gives about 34 rad/s²; motor lag prevents an immediate response."
+    ]
+  },
+  {
+    "id": "note-13-7-0",
+    "lesson": 13,
+    "topic": "note-13-7",
+    "topicTitle": "The Simulated IMU — Built to Be Annoying",
+    "question": "Why is gimbal accelerometer tilt easier than free-flight tilt?",
+    "options": [
+      "The gimbal removes accelerometer noise entirely.",
+      "The gimbal suppresses centre-of-mass acceleration that can mimic tilt.",
+      "A flying accelerometer measures only gravity at every acceleration."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The simulated sensor still contains noise and motor vibration; the gimbal chiefly removes centre-of-mass translation.",
+      "The gimbal suppresses centre-of-mass acceleration. A flying accelerating aircraft measures other specific forces along with gravity, which can mimic tilt.",
+      "An accelerometer measures specific force; manoeuvre acceleration can resemble a change in tilt."
+    ]
+  },
+  {
+    "id": "note-13-8-0",
+    "lesson": 13,
+    "topic": "note-13-8",
+    "topicTitle": "Tilt From Gravity — Right on Average, Noisy Every Sample",
+    "question": "Why can a non-drifting accelerometer still make a poor instantaneous attitude display?",
+    "options": [
+      "Individual force readings contain vibration despite a useful long-term average.",
+      "No drift guarantees that every sample is accurate.",
+      "The accelerometer measures angular rate rather than tilt-related force."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Vibration and other acceleration alter each reading. Its average reference is useful, while individual tilt estimates can jump by degrees.",
+      "Long-term drift and instantaneous vibration are different errors.",
+      "The gyro measures angular rate; the accelerometer supplies a force-based gravity clue that can be noisy."
+    ]
+  },
+  {
+    "id": "note-13-9-0",
+    "lesson": 13,
+    "topic": "note-13-9",
+    "topicTitle": "Tilt From the Gyro — Smooth, and Wrong by Tomorrow",
+    "question": "How much error does 0.8°/s constant gyro bias add in one minute?",
+    "options": [
+      "0.0133°, from dividing 0.8 by 60.",
+      "0.8° total, because the bias is constant.",
+      "48°, because 0.8°/s × 60 s accumulates during integration."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Integration multiplies rate by duration rather than dividing by it.",
+      "A constant rate error accumulates with time; 0.8°/s × 60 s is 48°.",
+      "0.8×60=48°. Bias produces an unbounded ramp when there is no absolute reference correction."
+    ]
+  },
+  {
+    "id": "note-13-10-0",
+    "lesson": 13,
+    "topic": "note-13-10",
+    "topicTitle": "The Complementary Filter",
+    "question": "For a complementary filter, τ=αdt/(1−α). Find τ for α=0.98 at 250 Hz.",
+    "options": [
+      "0.98 s.",
+      "0.00392 s.",
+      "0.196 s, using dt = 0.004 s in alpha×dt/(1−alpha)."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Alpha is a dimensionless weight, not a time constant; include dt and the correction weight.",
+      "This multiplies alpha by dt but omits division by 1−alpha; tau is 0.196 s.",
+      "dt=1/250=0.004 s, so τ=0.98×0.004/0.02=0.196 s."
+    ]
+  },
+  {
+    "id": "note-13-11-0",
+    "lesson": 13,
+    "topic": "note-13-11",
+    "topicTitle": "What a Gyro Bias Costs, Predicted",
+    "question": "Predict the steady error from a 0.8°/s bias and τ=0.196 s.",
+    "options": [
+      "About 0.157°, a bounded bias×tau offset.",
+      "48°, as in an uncorrected gyro after a minute.",
+      "0°, because accelerometer correction removes all bias."
+    ],
+    "correct": 0,
+    "explanations": [
+      "About 0.157°, a bounded offset rather than the gyro-only ramp.",
+      "The complementary correction bounds steady error to bias times tau; the minute-long ramp applies to gyro-only integration.",
+      "At equilibrium a small offset is needed to balance continued bias injection; it is about 0.157°."
+    ]
+  },
+  {
+    "id": "note-13-12-0",
+    "lesson": 13,
+    "topic": "note-13-12",
+    "topicTitle": "Alpha, Measured",
+    "question": "Which α minimises measured error, and why does the smoothest row not win?",
+    "options": [
+      "Alpha=1, because its jitter is lowest.",
+      "Alpha=0, because gravity-based tilt cannot drift.",
+      "Alpha=0.98; alpha=1 has little jitter but large accumulated bias."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Tiny changes between samples can coexist with large accumulated bias and real aircraft tilt.",
+      "It avoids accumulated gyro drift but passes substantial vibration, giving larger measured RMS error.",
+      "0.98 gives 0.20° RMS. α=1 has tiny jitter but unbounded gyro bias, producing 14.54° RMS and 26.2° true tilt."
+    ]
+  },
+  {
+    "id": "note-13-13-0",
+    "lesson": 13,
+    "topic": "note-13-13",
+    "topicTitle": "Two Loops, One Inside the Other",
+    "question": "The angle loop has gain 9 and a ±200°/s rate limit. What rate does a 30° error request before and after the limit?",
+    "options": [
+      "270°/s requested, then limited to 200°/s.",
+      "30°/s before the clamp and 200°/s afterward.",
+      "270°/s before and after the clamp."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Gain 9 requests 270°/s; the rate setpoint saturates at 200°/s.",
+      "The gain multiplies the angle error; a clamp limits an excessive request and does not raise a small request to its maximum.",
+      "The 9× proportional request is 270°/s, but the ±200°/s rate bound clips it."
+    ]
+  },
+  {
+    "id": "note-13-14-0",
+    "lesson": 13,
+    "topic": "note-13-14",
+    "topicTitle": "The Rate PID, Line by Line",
+    "question": "Why place D on the measured rate?",
+    "options": [
+      "It makes the integral term unnecessary.",
+      "It supplies damping without a derivative kick from a setpoint step.",
+      "It makes a setpoint jump create a larger braking impulse."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Derivative damping does not provide the integral correction for persistent imbalance.",
+      "A stick step changes the setpoint discontinuously, so differentiating error creates a kick. Body rate changes through inertia and provides a smoother damping signal.",
+      "Differentiating measurement avoids the error derivative's artificial impulse when only the setpoint jumps."
+    ]
+  },
+  {
+    "id": "note-13-15-0",
+    "lesson": 13,
+    "topic": "note-13-15",
+    "topicTitle": "Anti-Windup",
+    "question": "Why must motor saturation inhibit I even when the axis output is not clipped?",
+    "options": [
+      "An unclipped axis output guarantees every motor is in range.",
+      "Integral should grow faster while motors saturate.",
+      "The mixer can saturate physical motors despite an unclipped axis output."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Axes and throttle combine in the mixer; their sum can clip a motor even when individual axis outputs are legal.",
+      "This stores an impossible request and produces windup after saturation ends.",
+      "The mixer can exhaust physical motor authority independently of an axis clamp. Additional integral then stores correction the motors cannot produce."
+    ]
+  },
+  {
+    "id": "note-13-16-0",
+    "lesson": 13,
+    "topic": "note-13-16",
+    "topicTitle": "The X Mixer",
+    "question": "What happens if the roll correction signs are reversed?",
+    "options": [
+      "Only the displayed roll sign changes.",
+      "Positive feedback grows the error; this model trips after 0.36 s.",
+      "The response becomes slower but still corrects tilt."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The mixer changes real applied motor commands, so the plant's motion changes.",
+      "A disturbance receives torque in the same direction instead of opposing it. Error grows rapidly; the measured model trips in 0.36 s.",
+      "Reversing feedback torque amplifies the disturbance instead of merely reducing bandwidth."
+    ]
+  },
+  {
+    "id": "note-13-17-0",
+    "lesson": 13,
+    "topic": "note-13-17",
+    "topicTitle": "Saturation — Asking for More Than Exists",
+    "question": "Why are a rate clamp and a motor clamp both needed?",
+    "options": [
+      "The rate clamp alone ensures all motor commands are in 0–1.",
+      "The motor clamp alone keeps demanded rate below 200°/s.",
+      "Rate bounds manoeuvre demand; motor limits constrain combined actuator commands."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Throttle and multiple axis corrections combine afterward and may exceed a motor's range.",
+      "Clipping an actuator does not restrict the setpoint that the angle loop requests.",
+      "The rate clamp bounds manoeuvre demand; the motor clamp enforces hardware range after axes are combined. Neither guarantees the other."
+    ]
+  },
+  {
+    "id": "note-13-18-0",
+    "lesson": 13,
+    "topic": "note-13-18",
+    "topicTitle": "When Not to Fly",
+    "question": "How long must the sample sequence remain frozen before disarming?",
+    "options": [
+      "0.5 s.",
+      "5 ms.",
+      "20 ms: five control steps of 4 ms each."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The 0.5 s threshold is startup settling; stale samples trip after 20 ms.",
+      "There are five control steps, each lasting 4 ms; the timeout is 20 ms.",
+      "Five control steps at 4 ms each, hence 20 ms. A frozen reading cannot safely support continued control."
+    ]
+  },
+  {
+    "id": "note-13-19-0",
+    "lesson": 13,
+    "topic": "note-13-19",
+    "topicTitle": "The Failsafes, Measured",
+    "question": "Why does !(x<limit) reject NaN while x>limit does not?",
+    "options": [
+      "Negation turns NaN itself into zero.",
+      "NaN is always greater than any finite limit.",
+      "NaN makes ordered comparisons false; negating required validity rejects it."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The negation operates on the comparison's false Boolean result; it does not change the sample value.",
+      "Ordered comparisons with NaN are false, so x>limit does not reject it.",
+      "Every ordered comparison with NaN is false. Negating a required valid-range comparison makes invalid/unordered values fail validation."
+    ]
+  },
+  {
+    "id": "note-13-20-0",
+    "lesson": 13,
+    "topic": "note-13-20",
+    "topicTitle": "Too Little, Too Much — the Knob",
+    "question": "Why can reducing gain make this cascade oscillate rather than merely respond slowly?",
+    "options": [
+      "The outer angle gain becomes zero whenever rate Kp is reduced.",
+      "Low gain removes motor lag completely.",
+      "A slow inner loop overlaps the outer loop's correction time scale."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The angle loop still requests corrections; it can overdrive a sluggish inner loop.",
+      "Motor and sensor lag remain, while the slower inner loop can overlap the outer loop's time scale.",
+      "The outer angle loop keeps demanding corrections before the sluggish inner rate loop delivers them. Their time scales overlap and accumulated commands overshoot."
+    ]
+  },
+  {
+    "id": "note-13-21-0",
+    "lesson": 13,
+    "topic": "note-13-21",
+    "topicTitle": "Five Tasks on One Core",
+    "question": "Why is an aligned field store insufficient for publishing sensors_t?",
+    "options": [
+      "Each aligned field makes the entire 52-byte record atomic.",
+      "Declaring all fields volatile guarantees a coherent snapshot.",
+      "A protected whole-record copy is needed for a coherent 52-byte sample."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Atomicity of one word does not extend to a multi-field structure.",
+      "Volatile affects accesses, but does not stop a writer changing other fields during a read.",
+      "Atomic fields do not make a 52-byte group atomic. A reader can combine fields from different updates unless the whole copy is protected."
+    ]
+  },
+  {
+    "id": "note-13-22-0",
+    "lesson": 13,
+    "topic": "note-13-22",
+    "topicTitle": "Counting Cycles With SysTick",
+    "question": "A down-counter reloads every 48000 cycles. Find elapsed cycles when VAL goes from 1000 to 47000 across one wrap.",
+    "options": [
+      "2000 ms.",
+      "46000 cycles, by taking the absolute difference.",
+      "2000 cycles, or about 41.7 µs at 48 MHz."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The elapsed amount is 2000 cycles, which is about 41.7 µs at 48 MHz.",
+      "The down-counter crossed its 48000-cycle wrap; include the wrap rather than taking an absolute difference.",
+      "1000+48000−47000=2000 cycles, about 41.7 µs at 48 MHz."
+    ]
+  },
+  {
+    "id": "note-13-23-0",
+    "lesson": 13,
+    "topic": "note-13-23",
+    "topicTitle": "The Budget — the Plant Costs More Than the Pilot",
+    "question": "Calculate controller-only CPU share from 25938 cycles at 250 Hz on 48 MHz.",
+    "options": [
+      "48.8%, attributed entirely to the controller.",
+      "54%, because 25938 cycles take 0.54 ms.",
+      "About 13.5%; the larger combined share includes simulated physics."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The combined percentage also includes the 500 Hz simulated plant and sensors.",
+      "A 0.54 ms execution repeated 250 times per second uses about 135 ms/s, or 13.5%.",
+      "25938×250/48000000≈13.5%. The combined 48.8% also includes 500 Hz plant and sensor work."
+    ]
+  },
+  {
+    "id": "note-13-24-0",
+    "lesson": 13,
+    "topic": "note-13-24",
+    "topicTitle": "The Artificial Horizon",
+    "question": "How far does the horizon shift for 12° nose-up pitch?",
+    "options": [
+      "Up 12 pixels while the aircraft symbol moves down.",
+      "Down 120 pixels.",
+      "The horizon shifts down 12 pixels; the aircraft symbol stays fixed."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The mapping shifts the horizon down for nose-up pitch and keeps the aircraft symbol fixed.",
+      "The mapping is one pixel per degree, not ten pixels per degree.",
+      "Down 12 pixels under the one-pixel-per-degree mapping; the aircraft symbol remains fixed."
+    ]
+  },
+  {
+    "id": "note-13-25-0",
+    "lesson": 13,
+    "topic": "note-13-25",
+    "topicTitle": "The Real Sensor — MPU Mode",
+    "question": "Convert gyro raw 1310 to angular rate and explain the shared-bus hazard.",
+    "options": [
+      "10 rad/s; OLED transfers occur outside the shared bus.",
+      "1310°/s; sharing I²C cannot affect sampling deadlines.",
+      "10°/s; a 25 ms shared-bus transfer can block several sensor deadlines."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The scale is degrees per second, and OLED and MPU share I²C in this design.",
+      "Divide raw counts by 131, and a 25 ms bus hold can delay several 4 ms samples.",
+      "1310/131=10°/s. A 25 ms display transfer blocks several 4 ms sensor deadlines, so estimation timing becomes irregular."
+    ]
+  },
+  {
+    "id": "note-13-26-0",
+    "lesson": 13,
+    "topic": "note-13-26",
+    "topicTitle": "Telemetry for the Host",
+    "question": "What does an ATT roll value of −123 mean?",
+    "options": [
+      "−12.3°, because the ATT roll field uses tenths of a degree.",
+      "−123°, because telemetry uses whole degrees.",
+      "−1.23°, because all attitude fields use hundredths."
+    ],
+    "correct": 0,
+    "explanations": [
+      "−12.3°. Integer scaling avoids float printing while retaining 0.1° resolution.",
+      "The transmitted roll has tenths-of-a-degree scaling; divide by ten.",
+      "This ATT field uses 0.1° units rather than 0.01° units."
+    ]
+  },
+  {
+    "id": "note-13-27-0",
+    "lesson": 13,
+    "topic": "note-13-27",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Which evidence supports control behaviour and which supports target timing?",
+    "options": [
+      "SITL supports model behaviour; cycle estimates do not prove target timing.",
+      "PC SITL proves the real board's I²C timing.",
+      "A cycle estimate proves Wokwi wiring is correct."
+    ],
+    "correct": 0,
+    "explanations": [
+      "PC SITL checks support model behaviour. The M0+ timing model supplies cycle estimates; neither proves Wokwi wiring or actual silicon timing.",
+      "A host model checks controller behaviour but cannot establish actual target peripheral timing.",
+      "Instruction estimates say nothing about whether simulated or physical wires connect to the proper pins."
+    ]
+  },
+  {
+    "id": "note-13-28-0",
+    "lesson": 13,
+    "topic": "note-13-28",
+    "topicTitle": "What Carries Forward",
+    "question": "What must be preserved when adding position control around this controller?",
+    "options": [
+      "Remove attitude limits so the position loop has full authority.",
+      "Let position control run faster than the unstable attitude loop.",
+      "Keep a faster stable attitude loop, contracts, command limits and safety."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Outer navigation still requires bounded demands and safety checks.",
+      "The inner attitude loop needs to respond faster and remain stable before slower position demands are added.",
+      "A faster stable inner attitude loop, clear sensor/actuator contracts, bounded commands and safety checks before normal control."
+    ]
+  },
+  {
+    "id": "note-14-0-0",
+    "lesson": 14,
+    "topic": "note-14-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C.",
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 and PB8 suffice without a shared ground."
+    ],
+    "correct": 0,
+    "explanations": [
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C.",
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection."
+    ]
+  },
+  {
+    "id": "note-14-0-1",
+    "lesson": 14,
+    "topic": "note-14-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob sets wind; A starts, B requests RTL and SEL selects HOLD.",
+      "B starts the mission and A lands immediately.",
+      "The knob adjusts rate Kp as in the attitude lesson."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A starts a mission; B requests return-to-launch; SEL selects HOLD; knob sets wind.",
+      "A starts a mission; B requests return-to-launch, and SEL chooses HOLD.",
+      "In this mission lesson the knob sets wind; controls have lesson-specific meanings."
+    ]
+  },
+  {
+    "id": "note-14-1-0",
+    "lesson": 14,
+    "topic": "note-14-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups.",
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup.",
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10."
+    ]
+  },
+  {
+    "id": "note-14-1-1",
+    "lesson": 14,
+    "topic": "note-14-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR only controls clock frequency.",
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR selects routing; MODER must also activate alternate mode."
+    ],
+    "correct": 2,
+    "explanations": [
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider.",
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function."
+    ]
+  },
+  {
+    "id": "note-14-2-0",
+    "lesson": 14,
+    "topic": "note-14-2",
+    "topicTitle": "Two Tiers, as in Real Drones",
+    "question": "If the ground link dies, where must battery safety still execute?",
+    "options": [
+      "Onboard in the 50 Hz flight computer, independently of ground messages.",
+      "Only in the display task, whenever the screen refreshes.",
+      "On the ground PC, after it detects link loss."
+    ],
+    "correct": 0,
+    "explanations": [
+      "In the onboard 50 Hz flight computer. It cannot depend on a human or a message arriving in time.",
+      "Battery safety belongs in the onboard flight computer's 50 Hz decision loop, independent of display timing.",
+      "The lost link cannot carry a timely safety command; battery protection must continue onboard."
+    ]
+  },
+  {
+    "id": "note-14-3-0",
+    "lesson": 14,
+    "topic": "note-14-3",
+    "topicTitle": "The Whole Machine",
+    "question": "Why must the flight computer not read true position from world.c?",
+    "options": [
+      "Truth is merely a higher-resolution GPS reading.",
+      "Reading truth affects rendering only, even when used by flight control.",
+      "Simulator truth bypasses the sensor uncertainty being evaluated."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Simulator truth bypasses sensor noise and delay rather than measuring the same uncertain quantity.",
+      "A flight computer using true position changes its estimation and control behaviour, invalidating sensor-based trials.",
+      "It would bypass its actual sensors and make estimation/control tests unrealistically easy; real aircraft do not have simulator truth."
+    ]
+  },
+  {
+    "id": "note-14-4-0",
+    "lesson": 14,
+    "topic": "note-14-4",
+    "topicTitle": "Why We May Pretend the Attitude Loop Is Instant",
+    "question": "At 400 ms attitude lag, why is the abstraction weaker?",
+    "options": [
+      "The inner response is only about 1.2× faster than the velocity loop.",
+      "A longer attitude lag increases inner-loop bandwidth.",
+      "Attitude lag changes only screen animation."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Inner bandwidth is only 2.5 rad/s, about 1.2× the velocity loop, and true hold RMS rises to 1.50 m. Comparable time scales interact strongly.",
+      "More lag makes the inner response slower; at 400 ms the loops have weak bandwidth separation.",
+      "It changes the plant's response to commands and raises actual position-hold error."
+    ]
+  },
+  {
+    "id": "note-14-5-0",
+    "lesson": 14,
+    "topic": "note-14-5",
+    "topicTitle": "The Model — a Thrust Vector, Tilted",
+    "question": "Wind acceleration has coefficient 0.35 s⁻¹. What horizontal acceleration balances 8 m/s steady wind at zero ground velocity?",
+    "options": [
+      "2.8 m/s², from 0.35×8, even at zero horizontal velocity.",
+      "0 m/s², because the target velocity is zero.",
+      "8/0.35≈22.9 m/s²."
+    ],
+    "correct": 0,
+    "explanations": [
+      "0.35×8=2.8 m/s². That requires permanent tilt even when horizontal velocity is zero.",
+      "Wind still pushes a stationary aircraft, so balancing acceleration is needed even at zero velocity.",
+      "The model's wind coefficient multiplies wind speed; 0.35×8 gives 2.8 m/s²."
+    ]
+  },
+  {
+    "id": "note-14-6-0",
+    "lesson": 14,
+    "topic": "note-14-6",
+    "topicTitle": "Wind You Can Repeat",
+    "question": "Why reuse the same noise seed when comparing controllers?",
+    "options": [
+      "A common disturbance sequence makes the controller comparison controlled.",
+      "A different seed guarantees the comparison is unbiased.",
+      "The seed changes controller gains directly."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Both then face the same storm. Performance differences can be attributed to the changed controller instead of a different random disturbance.",
+      "Different disturbances can conceal or exaggerate controller differences; reuse a seed for a controlled comparison.",
+      "The seed specifies the random disturbance sequence, not the control law's gains."
+    ]
+  },
+  {
+    "id": "note-14-7-0",
+    "lesson": 14,
+    "topic": "note-14-7",
+    "topicTitle": "A Battery That Knows How Hard You Fly",
+    "question": "Battery drain is proportional to thrust load^1.5. How does doubling load change the drain?",
+    "options": [
+      "About 2.83 times the drain, from 2^1.5.",
+      "Drain doubles, because thrust and power are proportional.",
+      "Drain quadruples, because the exponent is 2."
+    ],
+    "correct": 0,
+    "explanations": [
+      "2^1.5≈2.83 times, so thrust increases have a larger than linear power cost.",
+      "This model raises thrust load to the 1.5 power, so doubling costs about 2.83×.",
+      "The stated exponent is 1.5 rather than 2."
+    ]
+  },
+  {
+    "id": "note-14-8-0",
+    "lesson": 14,
+    "topic": "note-14-8",
+    "topicTitle": "Sensors That Lie a Little",
+    "question": "Why cannot simply averaging GPS fixes remove all position error?",
+    "options": [
+      "Averaging removes common wander as quickly as independent noise.",
+      "GPS fixes have no uncertainty once their checksum passes.",
+      "Common correlated wander does not average away like independent jitter."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Correlated wander is shared across fixes and does not cancel like independent jitter.",
+      "A valid transmission can still contain a noisy or biased position measurement.",
+      "Their slow common wander is correlated. Averaging suppresses independent jitter but preserves an error shared by many fixes."
+    ]
+  },
+  {
+    "id": "note-14-9-0",
+    "lesson": 14,
+    "topic": "note-14-9",
+    "topicTitle": "Estimation — Predict, Then Correct",
+    "question": "Compute accelerometer-only position drift after 10 s with 0.03 m/s² bias.",
+    "options": [
+      "3 m, from bias times duration squared.",
+      "0.3 m, from bias times duration.",
+      "1.5 m, from 0.5×0.03×10²."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The constant-acceleration displacement includes a factor of one half.",
+      "Acceleration bias must be integrated twice into position, giving 0.5×0.03×10²=1.5 m.",
+      "0.5×0.03×10²=1.5 m. A GPS correction is needed to bound it."
+    ]
+  },
+  {
+    "id": "note-14-10-0",
+    "lesson": 14,
+    "topic": "note-14-10",
+    "topicTitle": "The 200 ms Problem",
+    "question": "At 4 m/s, how far apart are present position and a 200 ms-old fix even with perfect sensors?",
+    "options": [
+      "0 m, because perfect sensors have no measurement noise.",
+      "0.8 m, from 4 m/s × 0.2 s.",
+      "20 m, from dividing speed by delay."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A perfect but delayed fix still describes an earlier position; at 4 m/s the displacement is 0.8 m.",
+      "4×0.2=0.8 m. Residuals must compare measurements and estimates at the same time.",
+      "Travel during delay is speed times time, not speed divided by time."
+    ]
+  },
+  {
+    "id": "note-14-11-0",
+    "lesson": 14,
+    "topic": "note-14-11",
+    "topicTitle": "Altitude — a Complementary Filter",
+    "question": "The altitude filter has damping coefficient 2ζω=2.8 and natural frequency ω=2 rad/s. Find damping ratio ζ.",
+    "options": [
+      "1.4, from dividing 2.8 by omega.",
+      "0.7, because 2×zeta×2 = 2.8.",
+      "2.8, because the coefficient is the damping ratio itself."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The coefficient is 2×zeta×omega, so divide by 4 when omega is 2.",
+      "2ζω=2.8 gives ζ=2.8/4=0.7.",
+      "The coefficient also contains twice the natural frequency."
+    ]
+  },
+  {
+    "id": "note-14-12-0",
+    "lesson": 14,
+    "topic": "note-14-12",
+    "topicTitle": "Cascaded Control",
+    "question": "In the level-altitude model, horizontal acceleration is g tan(tilt). What maximum follows from a 25° cap and g=9.81 m/s²?",
+    "options": [
+      "25 m/s², from treating degrees as acceleration.",
+      "4.15 m/s², using g×sin(25°) for the stated level-altitude model.",
+      "About 4.57 m/s², from 9.81×tan(25°)."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Tilt must enter g×tan(tilt); angular degrees are not acceleration units.",
+      "The model holds vertical support, giving a horizontal/vertical ratio tan(25°), about 4.57 m/s².",
+      "g tan 25°≈9.81×0.466=4.57 m/s²."
+    ]
+  },
+  {
+    "id": "note-14-13-0",
+    "lesson": 14,
+    "topic": "note-14-13",
+    "topicTitle": "From Acceleration to Tilt",
+    "question": "Why must world acceleration be rotated by yaw before selecting roll and pitch?",
+    "options": [
+      "World east always maps to body roll, regardless of heading.",
+      "Yaw rotation is needed only when GPS is invalid.",
+      "World directions map to different body axes as yaw changes."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Body axes rotate with yaw, so a fixed world direction changes its body-axis components.",
+      "Coordinate conversion is required whenever desired world acceleration must become body tilt.",
+      "The same east/north acceleration points along different body axes as heading changes. The rotation preserves the intended world trajectory."
+    ]
+  },
+  {
+    "id": "note-14-14-0",
+    "lesson": 14,
+    "topic": "note-14-14",
+    "topicTitle": "The Integral Term Is a Wind Gauge",
+    "question": "Why does position P plus velocity P settle downwind without I?",
+    "options": [
+      "P needs steady error to oppose wind; I can retain correction at zero error.",
+      "P control can store a constant correction after error becomes zero.",
+      "Wind changes only sensor noise, not the required acceleration."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Nonzero error is required to generate the 2.8 m/s² wind-balancing acceleration. I can retain that correction while steady error shrinks.",
+      "A proportional term becomes zero at zero error; an integral term can retain wind-balancing correction.",
+      "This plant has a physical wind disturbance that requires sustained correction."
+    ]
+  },
+  {
+    "id": "note-14-15-0",
+    "lesson": 14,
+    "topic": "note-14-15",
+    "topicTitle": "You Cannot Hold Better Than You Can See",
+    "question": "Can doubling control gain directly eliminate the 0.67 m blind error?",
+    "options": [
+      "Yes; twice the gain halves every position error, including sensor bias.",
+      "No; an unseen estimation error needs better sensing or estimation.",
+      "Yes; actuator saturation automatically calibrates GPS."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Control cannot see the true error hidden by an inaccurate estimate.",
+      "No. That error is in the position estimate, so the controller lacks the information required to correct it; better sensing/estimation is needed.",
+      "Command clipping does not supply independent information about actual position."
+    ]
+  },
+  {
+    "id": "note-14-16-0",
+    "lesson": 14,
+    "topic": "note-14-16",
+    "topicTitle": "Flight Modes — One State Machine",
+    "question": "Why initialise a setpoint in every mode entry?",
+    "options": [
+      "Only output motor arrays need initialization on a mode change.",
+      "A setpoint persists safely across every mode.",
+      "A new mode must not inherit an obsolete motion target."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The new mode also needs a deliberately chosen target state.",
+      "A prior mission target may be unsuitable for HOLD or landing and cause an unexpected move.",
+      "Otherwise a new mode may inherit an obsolete target from the old one and move unexpectedly."
+    ]
+  },
+  {
+    "id": "note-14-17-0",
+    "lesson": 14,
+    "topic": "note-14-17",
+    "topicTitle": "Following a Line, Not Chasing a Point",
+    "question": "Why does separate cross-track limiting improve line keeping?",
+    "options": [
+      "Cross-track limits change GPS accuracy directly.",
+      "Forward cruise should always consume the complete vector limit.",
+      "It reserves sideways correction authority alongside forward cruise demand."
+    ],
+    "correct": 2,
+    "explanations": [
+      "They reserve control authority; they do not improve position measurements.",
+      "That can leave no sideways authority to correct cross-track error.",
+      "Forward cruise demand cannot consume the full vector budget; the sideways error retains its own correction authority."
+    ]
+  },
+  {
+    "id": "note-14-18-0",
+    "lesson": 14,
+    "topic": "note-14-18",
+    "topicTitle": "Waypoints, and What \"Reached\" Means",
+    "question": "Why can a waypoint accepted at 1 m still be missed by 1.7 m in truth?",
+    "options": [
+      "A 1 m acceptance radius guarantees a 1 m physical bound.",
+      "The waypoint check directly measures true distance.",
+      "The acceptance radius applies to the estimate, with truth error added."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Estimator error can add to the accepted estimated separation.",
+      "Acceptance uses estimated position, which can differ from truth.",
+      "Acceptance checks the estimate. If its error points away from the waypoint, the true separation can include both acceptance radius and estimation error."
+    ]
+  },
+  {
+    "id": "note-14-19-0",
+    "lesson": 14,
+    "topic": "note-14-19",
+    "topicTitle": "Failsafes Outrank Every Command",
+    "question": "If battery is critical while outside the fence, which mode wins?",
+    "options": [
+      "LAND in place; critical battery outranks fence-driven RTL.",
+      "RTL, because a fence violation always outranks battery.",
+      "Continue the mission until the next waypoint."
+    ],
+    "correct": 0,
+    "explanations": [
+      "LAND in place. Critical battery is checked first and returns; attempting the longer RTL trip could exhaust the battery.",
+      "Critical battery is checked first and selects LAND; return travel could exhaust remaining energy.",
+      "Mission progress is lower priority than critical-battery protection."
+    ]
+  },
+  {
+    "id": "note-14-20-0",
+    "lesson": 14,
+    "topic": "note-14-20",
+    "topicTitle": "Checked Before It Flies",
+    "question": "Arming requires battery above BAT_LOW+5 percentage points. If BAT_LOW=25%, what is the threshold?",
+    "options": [
+      "Above 30%, five percentage points above BAT_LOW.",
+      "Above 25%, exactly the low-battery threshold.",
+      "At least 5%, because the margin is five points."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Battery must exceed 30%, giving a 5-point margin above the low-battery return threshold.",
+      "Arming requires an additional five percentage points, so battery must exceed 30%.",
+      "The margin is added to the 25% threshold rather than replacing it."
+    ]
+  },
+  {
+    "id": "note-14-21-0",
+    "lesson": 14,
+    "topic": "note-14-21",
+    "topicTitle": "MAVLink-lite",
+    "question": "Encode a local waypoint 12.3 m east, −4.5 m north, 8 m high.",
+    "options": [
+      "1230, −450, 800, in centimetres.",
+      "12, −4, 8, rounded to whole metres.",
+      "123, −45, 80 decimetres, plus the waypoint index."
+    ],
+    "correct": 2,
+    "explanations": [
+      "WP coordinates use decimetres, so multiply metres by ten rather than one hundred.",
+      "Rounding to metres loses the protocol's decimetre scale and does not encode the requested waypoint.",
+      "WP numeric coordinates are 123,−45,80 decimetres, together with its waypoint index."
+    ]
+  },
+  {
+    "id": "note-14-22-0",
+    "lesson": 14,
+    "topic": "note-14-22",
+    "topicTitle": "A Parser That Trusts Nothing",
+    "question": "Why reject 12 abc even if its frame checksum is valid?",
+    "options": [
+      "A checksum validates transmission integrity, not numeric syntax.",
+      "Parsing the initial 12 is enough because trailing bytes cannot affect safety.",
+      "A valid checksum makes trailing text numerically valid."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A checksum proves the received text was not damaged, not that it is a valid number. Strict parsing must consume the entire numeric field.",
+      "Strict parsing must consume the whole field; accepting malformed coordinates hides input errors.",
+      "Checksums detect transmission damage; they do not validate the grammar of a numeric field."
+    ]
+  },
+  {
+    "id": "note-14-23-0",
+    "lesson": 14,
+    "topic": "note-14-23",
+    "topicTitle": "`mission.py` — Plan, Send, Score",
+    "question": "Why does scoring use TRU instead of POS?",
+    "options": [
+      "TRU scores actual movement rather than potentially biased estimated POS.",
+      "TRU is the requested waypoint list.",
+      "POS is always identical to simulator truth."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Performance means actual travel. POS could look perfect while GPS bias leaves the physical aircraft away from the route.",
+      "TRU describes actual simulated motion, enabling independent scoring.",
+      "GPS and estimation errors can make POS look good while the aircraft misses the route."
+    ]
+  },
+  {
+    "id": "note-14-24-0",
+    "lesson": 14,
+    "topic": "note-14-24",
+    "topicTitle": "Five Tasks, Three Locks",
+    "question": "How does copying state before OLED work reduce blocking?",
+    "options": [
+      "Keep the state lock through drawing and flush to prevent any updates.",
+      "A private snapshot releases shared state before the long display work.",
+      "Copying state makes the I²C transfer itself shorter."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That blocks control for long display work; a private snapshot preserves consistency without holding the lock.",
+      "The long hardware transfer uses a private snapshot, so control can update shared state while drawing/flush proceeds.",
+      "It shortens shared-state lock duration; the display transfer still takes the same bus time."
+    ]
+  },
+  {
+    "id": "note-14-25-0",
+    "lesson": 14,
+    "topic": "note-14-25",
+    "topicTitle": "The Ground Station on the OLED",
+    "question": "The map scale is 1.6 m per pixel. What separation corresponds to five pixels?",
+    "options": [
+      "5 m, because a display pixel equals one metre.",
+      "8 m, at 1.6 metres per pixel.",
+      "3.125 m, by dividing pixels by 1.6."
+    ],
+    "correct": 1,
+    "explanations": [
+      "This map uses a coarser 1.6 m-per-pixel mapping.",
+      "5×1.6=8 m. This display scale is much coarser than numerical waypoint acceptance.",
+      "The scale is 1.6 m per pixel, so five pixels represent 8 m."
+    ]
+  },
+  {
+    "id": "note-14-26-0",
+    "lesson": 14,
+    "topic": "note-14-26",
+    "topicTitle": "What It Costs — Flash and RAM",
+    "question": "Why can several inline math functions inflate flash across files?",
+    "options": [
+      "Separate translation units can emit duplicate inline implementations.",
+      "Inline always ensures one shared copy in flash.",
+      "Floating-point arithmetic requires copying every source file at runtime."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Each translation unit can receive its own implementation copy. One shared out-of-line implementation removes duplicates.",
+      "Separate translation units may each emit their own implementation.",
+      "The issue is generated code duplication at build time, not runtime source copying."
+    ]
+  },
+  {
+    "id": "note-14-27-0",
+    "lesson": 14,
+    "topic": "note-14-27",
+    "topicTitle": "What a Step Costs on the Chip",
+    "question": "Why read the tick count again after VAL?",
+    "options": [
+      "The second read converts milliseconds into microseconds automatically.",
+      "A tick between reads can make whole and fractional time inconsistent.",
+      "VAL and tick count cannot change between C statements."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It validates timestamp coherence rather than changing units.",
+      "A tick interrupt between reads could combine milliseconds from one interval with the fractional counter from another. Retry makes the timestamp coherent.",
+      "An interrupt or counter wrap can occur between reads; the second tick read detects an inconsistent pair."
+    ]
+  },
+  {
+    "id": "note-14-28-0",
+    "lesson": 14,
+    "topic": "note-14-28",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Is the 61.0 s windy mission a measured target flight time?",
+    "options": [
+      "Yes; SITL runs the exact physical aircraft.",
+      "No; it is measured PC model behaviour, not observed target flight.",
+      "Yes; a PC timer establishes the MCU's peripheral deadlines."
+    ],
+    "correct": 1,
+    "explanations": [
+      "SITL executes a software plant; its flight time is model behaviour, not measured target flight.",
+      "No. It is a PC SITL flight of the model and controller; target timing and peripheral behaviour were not observed.",
+      "Host elapsed time does not measure MCU timing or bus behaviour."
+    ]
+  },
+  {
+    "id": "note-14-29-0",
+    "lesson": 14,
+    "topic": "note-14-29",
+    "topicTitle": "What Carries Forward",
+    "question": "What general lesson links position hold and mobile robot navigation?",
+    "options": [
+      "A correct planner removes the need for estimation and safety.",
+      "Both depend on estimated state, bounded authority and independent safety.",
+      "Only the desired path matters; true movement need not be evaluated."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A plan still depends on uncertain state and bounded physical authority.",
+      "Control depends on estimated state and finite actuator authority; errors and safety must be evaluated separately from what the controller believes.",
+      "Independent truth or measurements are required to distinguish belief from achieved motion."
+    ]
+  },
+  {
+    "id": "note-15-0-0",
+    "lesson": 15,
+    "topic": "note-15-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C.",
+      "PB9 and PB8 suffice without a shared ground."
+    ],
+    "correct": 1,
+    "explanations": [
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C.",
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection."
+    ]
+  },
+  {
+    "id": "note-15-0-1",
+    "lesson": 15,
+    "topic": "note-15-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob scales derivative gain.",
+      "The knob sets speed; A starts/stops, B changes track and SEL changes mode.",
+      "A changes track and B starts/stops."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The knob sets speed in this lesson; PID gains are separate settings.",
+      "A starts/stops; B changes track; SEL switches manual/automatic; knob sets speed.",
+      "A starts or stops; B changes the track, and SEL switches manual/automatic operation."
+    ]
+  },
+  {
+    "id": "note-15-1-0",
+    "lesson": 15,
+    "topic": "note-15-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups.",
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup.",
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10."
+    ]
+  },
+  {
+    "id": "note-15-1-1",
+    "lesson": 15,
+    "topic": "note-15-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR selects routing; MODER must also activate alternate mode.",
+      "AFR only controls clock frequency."
+    ],
+    "correct": 1,
+    "explanations": [
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function.",
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider."
+    ]
+  },
+  {
+    "id": "note-15-2-0",
+    "lesson": 15,
+    "topic": "note-15-2",
+    "topicTitle": "The Race",
+    "question": "Why frame auto lap results with a checksum?",
+    "options": [
+      "A checksum lets the leaderboard validate captured machine output.",
+      "A checksum guarantees every reported lap time is physically accurate.",
+      "A checksum proves the controller followed the line correctly."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The leaderboard can validate captured machine output rather than rely on manually typed times.",
+      "It detects damaged output but does not establish truth, timing or judge correctness.",
+      "It validates captured text integrity; race correctness is evaluated separately."
+    ]
+  },
+  {
+    "id": "note-15-3-0",
+    "lesson": 15,
+    "topic": "note-15-3",
+    "topicTitle": "Software-In-The-Loop",
+    "question": "Which module changes when the simulated robot becomes real?",
+    "options": [
+      "Replace simulated plant and sensor/actuator drivers; preserve control.c.",
+      "Only the OLED driver changes; simulation still supplies real sensor readings.",
+      "Rewrite control.c to read simulated true pose directly."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Replace the plant/sensor and actuator drivers behind sensors_t/actuators_t; preserve control.c's algorithm.",
+      "Real sensor and actuator drivers must replace the software plant interface.",
+      "The portable controller should continue using its sensor contract; truth is unavailable on a real robot."
+    ]
+  },
+  {
+    "id": "note-15-4-0",
+    "lesson": 15,
+    "topic": "note-15-4",
+    "topicTitle": "The Contract — `control.h`",
+    "question": "Sensor 3 is central; sensor positions are (i−3)×13 mm, positive left. Where is sensor 5?",
+    "options": [
+      "26 mm left of centre, from (5−3)×13.",
+      "65 mm left of centre.",
+      "26 mm right of centre."
+    ],
+    "correct": 0,
+    "explanations": [
+      "(5−3)×13=26 mm left of centre.",
+      "Subtract centre index 3 before multiplying by the 13 mm pitch.",
+      "The given convention makes positive indices beyond centre point left."
+    ]
+  },
+  {
+    "id": "note-15-5-0",
+    "lesson": 15,
+    "topic": "note-15-5",
+    "topicTitle": "Five Tasks, Five Rates",
+    "question": "Why must a polled display flush appear in CPU budgeting?",
+    "options": [
+      "I²C waiting costs no CPU because the peripheral shifts bits.",
+      "Polled I²C occupies CPU, even though higher-priority tasks can preempt.",
+      "The flush can never be preempted, so all tasks stop for its entire duration."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A polled flush occupies the processor while it checks transfer progress.",
+      "The processor remains occupied driving/waiting on I²C rather than doing other background work, even though high-priority tasks may preempt it.",
+      "Higher-priority work can preempt it; budgeting still counts the polling CPU work."
+    ]
+  },
+  {
+    "id": "note-15-6-0",
+    "lesson": 15,
+    "topic": "note-15-6",
+    "topicTitle": "Model 1 — Differential Drive",
+    "question": "With a 100 mm wheelbase, calculate forward speed v and yaw rate ω for wl=800 and wr=1200 mm/s.",
+    "options": [
+      "v=1000 mm/s and omega=−4 rad/s, a right turn.",
+      "v=400 mm/s and omega=10 rad/s.",
+      "v=1000 mm/s; omega=4 rad/s counterclockwise."
+    ],
+    "correct": 2,
+    "explanations": [
+      "With the stated wheel convention, faster right wheel gives +4 rad/s counterclockwise.",
+      "Forward speed is the average of wheel speeds, while turn rate is their difference divided by axle width.",
+      "v=1000 mm/s and ω=400/100=4 rad/s counterclockwise, a left turn."
+    ]
+  },
+  {
+    "id": "note-15-7-0",
+    "lesson": 15,
+    "topic": "note-15-7",
+    "topicTitle": "Model 2 — Motors Have Mass",
+    "question": "Why can the model take longer than 40 ms to reach 63% of a large requested speed?",
+    "options": [
+      "A large request can hit the 8000 mm/s² acceleration limit.",
+      "The motor's time constant is always exactly its time to full speed.",
+      "The 8000 mm/s² limit makes acceleration instantaneous below full speed."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The nominal first-order response can demand acceleration above 8000 mm/s²; the slew limit then slows the initial rise.",
+      "A first-order time constant refers to roughly 63%, and the acceleration limit can further slow a large step.",
+      "It is a finite slew limit, so a large request may remain acceleration-limited."
+    ]
+  },
+  {
+    "id": "note-15-8-0",
+    "lesson": 15,
+    "topic": "note-15-8",
+    "topicTitle": "Model 3 — The Friction Circle",
+    "question": "The tyres permit lateral acceleration 6867 mm/s². Using v≤√(aR), find the ideal speed cap for a 120 mm hairpin.",
+    "options": [
+      "About 908 mm/s, from sqrt(6867×120).",
+      "120 mm/s, because the radius is the speed cap.",
+      "6867×120≈824040 mm/s."
+    ],
+    "correct": 0,
+    "explanations": [
+      "√(6867×120)≈908 mm/s. Exceeding it requires more lateral acceleration than the tyres can supply.",
+      "Radius is a distance; speed follows sqrt(acceleration×radius), about 908 mm/s.",
+      "The lateral-acceleration relation requires a square root; the product has speed-squared units."
+    ]
+  },
+  {
+    "id": "note-15-9-0",
+    "lesson": 15,
+    "topic": "note-15-9",
+    "topicTitle": "Encoders Count Wheels, Not Ground",
+    "question": "Do encoders prove the robot travelled a measured distance during slip?",
+    "options": [
+      "Yes, as long as both wheels report the same count.",
+      "No; encoders measure rotation, which can differ from travel under slip.",
+      "Yes; encoder counts always equal actual ground travel."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Both wheels can slip equally; agreement does not establish traction.",
+      "No. They prove the wheels rotated; ground travel can differ when traction is lost.",
+      "Encoders sense wheel rotation, which diverges from translation during slip."
+    ]
+  },
+  {
+    "id": "note-15-10-0",
+    "lesson": 15,
+    "topic": "note-15-10",
+    "topicTitle": "Model 4 — The Sensor Bar",
+    "question": "Reflectance is 100+800×coverage+ambient+noise. What does half tape coverage give with zero ambient and noise?",
+    "options": [
+      "900, because any tape contact counts as full coverage.",
+      "500, from 100+800×0.5.",
+      "400, because half of 800 is the whole reading."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The model scales the tape contribution by coverage; half coverage gives 100+400=500.",
+      "100+800×0.5=500, intermediate between white and full tape.",
+      "Include the 100 baseline in addition to the 400 tape contribution."
+    ]
+  },
+  {
+    "id": "note-15-11-0",
+    "lesson": 15,
+    "topic": "note-15-11",
+    "topicTitle": "Finding the Tape Cheaply",
+    "question": "Why do sensor synthesis and judging use different candidate searches?",
+    "options": [
+      "Sensors should ignore cross branches that the judge does not follow.",
+      "Both should select any nearest branch as lap progress.",
+      "Sensors see every nearby branch; judging must maintain route continuity."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Physical sensors see nearby tape even on a branch unrelated to current judged progress.",
+      "At a crossing, the judge needs route continuity or progress can jump to another branch.",
+      "Sensors must see all nearby tape including a cross branch; the judge must follow the robot's current route branch to avoid fictitious progress jumps."
+    ]
+  },
+  {
+    "id": "note-15-12-0",
+    "lesson": 15,
+    "topic": "note-15-12",
+    "topicTitle": "Tracks Are Turtle Programs",
+    "question": "Why approximate arcs to 1 mm rather than use far denser geometry?",
+    "options": [
+      "More geometry always improves control in proportion to memory use.",
+      "One millimetre is already finer than useful sensor resolution.",
+      "One millimetre accuracy means the controller knows true position to one millimetre."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Below meaningful sensor resolution, extra segments add work without a useful accuracy gain.",
+      "This is already below meaningful sensor resolution. More segments consume memory and exact-distance work without useful control accuracy.",
+      "Geometry approximation accuracy is not sensor or pose-estimation accuracy."
+    ]
+  },
+  {
+    "id": "note-15-13-0",
+    "lesson": 15,
+    "topic": "note-15-13",
+    "topicTitle": "Four Tracks, One Number Each",
+    "question": "Why can a 1350 mm/s speed setting finish hairpins despite a 908 mm/s limit?",
+    "options": [
+      "1350 mm/s is a straight-line demand; the controller slows in hairpins.",
+      "1350 mm/s is guaranteed as actual speed at every point.",
+      "The tyres' ideal 908 mm/s limit does not apply in simulation."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The setting is straight-line demand. A successful controller reduces actual speed inside the tight corner.",
+      "The knob is a demand setting, not a promise of achieved corner speed.",
+      "The traction model still limits turns; a successful controller slows in a hairpin."
+    ]
+  },
+  {
+    "id": "note-15-14-0",
+    "lesson": 15,
+    "topic": "note-15-14",
+    "topicTitle": "The Judge",
+    "question": "Why place lap judging in world.c rather than control.c?",
+    "options": [
+      "The controller should declare completion when its own estimate reaches the finish.",
+      "world.c should also choose the steering command to ensure a good score.",
+      "Judging needs independent true pose rather than controller belief."
+    ],
+    "correct": 2,
+    "explanations": [
+      "That would allow estimate error to bias scoring; the world judge uses independent truth.",
+      "Judging and control must remain separate or the trial no longer evaluates the controller.",
+      "It needs true pose and independent evaluation. Allowing the controller to judge its own uncertain position would compromise scoring."
+    ]
+  },
+  {
+    "id": "note-15-15-0",
+    "lesson": 15,
+    "topic": "note-15-15",
+    "topicTitle": "Control Step 1 — Where Is the Line?",
+    "question": "Calculate the estimate for weights 350 at +13 mm and 600 at 0 mm.",
+    "options": [
+      "About 4.79 mm left, from 4550/950.",
+      "6.5 mm left, by averaging the two positions equally.",
+      "13 mm left, because only the noncentral sensor has a position."
+    ],
+    "correct": 0,
+    "explanations": [
+      "(350×13+600×0)/(350+600)=4.79 mm left.",
+      "The centroid is weighted, not an unweighted average: 4550/950≈4.79 mm.",
+      "Both sensor weights contribute to the denominator; the centre weight pulls the average toward zero."
+    ]
+  },
+  {
+    "id": "note-15-16-0",
+    "lesson": 15,
+    "topic": "note-15-16",
+    "topicTitle": "Control Step 2 — PID",
+    "question": "Why does increasing speed make P-only control less stable?",
+    "options": [
+      "Fixed lookahead offers less reaction time while motor lag stays fixed.",
+      "Increasing speed automatically increases the P controller's damping.",
+      "The fixed 70 mm lookahead represents more time at higher speed."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The fixed 70 mm lookahead corresponds to less time, while motor lag stays fixed. Derivative action restores needed anticipatory damping.",
+      "Proportional steering lacks derivative damping; greater speed can expose delay.",
+      "Time to cover a fixed distance decreases as speed rises while motor lag stays fixed."
+    ]
+  },
+  {
+    "id": "note-15-17-0",
+    "lesson": 15,
+    "topic": "note-15-17",
+    "topicTitle": "Steps 3 and 4 — Speed, and a Lost Line",
+    "question": "A centred line vanishes for 100 ms. What recovery is appropriate?",
+    "options": [
+      "Spin immediately because every lost sample proves an edge.",
+      "Continue straight forever whenever the last error was zero.",
+      "Continue straight within the bounded 400 ms gap allowance."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A centred disappearance within the 400 ms allowance may be a gap; immediate spinning loses the route.",
+      "The straight-through allowance is bounded; a longer loss needs recovery logic.",
+      "Continue straight within the 400 ms gap allowance, rather than immediately spinning away from a likely gap."
+    ]
+  },
+  {
+    "id": "note-15-18-0",
+    "lesson": 15,
+    "topic": "note-15-18",
+    "topicTitle": "Measured — Default Gains, Every Track",
+    "question": "Why is first lap about 80 ms slower than later laps?",
+    "options": [
+      "The first lap starts from rest and includes acceleration lag.",
+      "The judge deliberately adds an 80 ms penalty to the first lap.",
+      "Only the first lap includes sensor noise."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It begins from rest and pays motor acceleration lag; subsequent laps begin at racing speed.",
+      "The observed difference comes from acceleration lag rather than a scoring penalty.",
+      "The model includes noise on later laps too; the first lap starts from rest."
+    ]
+  },
+  {
+    "id": "note-15-19-0",
+    "lesson": 15,
+    "topic": "note-15-19",
+    "topicTitle": "Measured — P vs PD vs PID",
+    "question": "Which term is most valuable at 1400 mm/s, based on the table?",
+    "options": [
+      "P alone, because D cannot improve a noisy controller.",
+      "I, because integrating any error always gives the largest improvement.",
+      "D gives the major measured improvement; I has a smaller tradeoff."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The given comparison shows D dramatically improving lap time and tracking despite its noise sensitivity.",
+      "In these measurements derivative action provides the major improvement; I has a small time benefit with worse peak error.",
+      "D: adding kd=1 cuts best lap from 12.56 to 3.80 s and greatly reduces tracking error; I gives only a small time gain with worse peak error."
+    ]
+  },
+  {
+    "id": "note-15-20-0",
+    "lesson": 15,
+    "topic": "note-15-20",
+    "topicTitle": "Measured — How Fast Can It Go?",
+    "question": "Why must speed claims state the sweep protocol?",
+    "options": [
+      "Only the maximum knob value needs reporting.",
+      "A successful setting guarantees every future noise seed and track.",
+      "The result depends on increments, trial laps and noise seed."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Trial increments, seeds and lap counts determine what was actually tested.",
+      "Finite trials establish results only under the documented sweep conditions.",
+      "A fastest successful setting depends on tested increments, lap count and noise seed; it is not an unconditional physical guarantee."
+    ]
+  },
+  {
+    "id": "note-15-21-0",
+    "lesson": 15,
+    "topic": "note-15-21",
+    "topicTitle": "Measured — Noise and the D Term",
+    "question": "Why does strong derivative filtering worsen tracking even while reducing motor chatter?",
+    "options": [
+      "Filtering changes the motor's physical lag to zero.",
+      "Excess filtering delays the useful derivative correction.",
+      "Filtering can only remove noise, never change response timing."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It changes the signal sent to the motors; their physical dynamics remain.",
+      "A low-pass adds delay to the derivative lead that compensates motor lag. Excess smoothing removes timely corrective action.",
+      "A low-pass introduces delay and can remove useful derivative lead."
+    ]
+  },
+  {
+    "id": "note-15-22-0",
+    "lesson": 15,
+    "topic": "note-15-22",
+    "topicTitle": "Measured — Broken Sensors, Bright Rooms",
+    "question": "What threshold change fixes an ambient offset of +400 in these measurements?",
+    "options": [
+      "Lower thr to 100 to compensate for brighter white readings.",
+      "Raise thr from 300 to 650 so white at 500 adds no line weight.",
+      "Keep thr=300 because constant offsets cancel in any centroid."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That would assign even more positive weight to white floor; the threshold needs to rise.",
+      "Raise thr from 300 to 650 so white-floor reading 500 no longer contributes positive centroid weight.",
+      "Clipped threshold weights can include the whole white background; the offset does not simply cancel."
+    ]
+  },
+  {
+    "id": "note-15-23-0",
+    "lesson": 15,
+    "topic": "note-15-23",
+    "topicTitle": "The OLED — Only What Moves",
+    "question": "Why does XOR simplify moving an object over a static track?",
+    "options": [
+      "XOR permanently deletes pixels on the first draw.",
+      "Drawing the same XOR mask twice restores the static background.",
+      "XOR requires storing the previous full framebuffer."
+    ],
+    "correct": 1,
+    "explanations": [
+      "XOR toggles pixels; applying the same mask again restores their prior values.",
+      "Drawing the same mask twice cancels it, restoring the original background without storing a full second framebuffer.",
+      "The repeated mask cancels itself, avoiding that second full buffer for a static background."
+    ]
+  },
+  {
+    "id": "note-15-24-0",
+    "lesson": 15,
+    "topic": "note-15-24",
+    "topicTitle": "Sharing Without Tearing",
+    "question": "Why use run_id instead of calling control_reset from the world task?",
+    "options": [
+      "The controller consumes a reset request at its own safe boundary.",
+      "run_id makes every controller variable atomic.",
+      "World should reset control immediately whenever convenient."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Control owns its state. The request is consumed at a safe control boundary, eliminating concurrent mutation during calculation.",
+      "It is a boundary-consumed request, not a replacement for protecting arbitrary shared mutation.",
+      "Concurrent reset can alter controller state halfway through a calculation."
+    ]
+  },
+  {
+    "id": "note-15-25-0",
+    "lesson": 15,
+    "topic": "note-15-25",
+    "topicTitle": "Measuring on the Chip",
+    "question": "Convert a 240000-cycle budget to time at 48 MHz.",
+    "options": [
+      "0.5 ms.",
+      "5 s.",
+      "5 ms, from 240000/48000000 seconds."
+    ],
+    "correct": 2,
+    "explanations": [
+      "240000 cycles at 48 MHz take 5 ms; this answer loses a factor of ten.",
+      "Divide by 48 million cycles per second, yielding 0.005 s.",
+      "240000/48000000=0.005 s=5 ms."
+    ]
+  },
+  {
+    "id": "note-15-26-0",
+    "lesson": 15,
+    "topic": "note-15-26",
+    "topicTitle": "Telemetry and the Leaderboard",
+    "question": "Why keep truth and estimate together in LINE?",
+    "options": [
+      "Transmit only truth because estimate error cannot affect control.",
+      "Their difference reveals estimation error separately from actual tracking.",
+      "Transmit only the estimate because truth is always identical."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Control acts on the estimate; comparing both helps explain achieved tracking.",
+      "Their difference diagnoses sensing/estimation independently of the actual tracking error.",
+      "Truth and estimate differ under noise and bias, and that difference diagnoses sensing errors."
+    ]
+  },
+  {
+    "id": "note-15-27-0",
+    "lesson": 15,
+    "topic": "note-15-27",
+    "topicTitle": "What Each Choice Costs",
+    "question": "Which optimisation targets display bus traffic without changing control?",
+    "options": [
+      "Increase controller Kp to reduce transmitted OLED bytes.",
+      "XOR moving graphics plus dirty-page updates reduce display bytes.",
+      "Refresh all pages more often to make each frame cheaper."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Control gains do not directly reduce display bus traffic.",
+      "XOR moving graphics with dirty-page updates; host byte counts indicate about 55% less I²C data.",
+      "More full flushes increase traffic; dirty-page updates avoid unchanged bytes."
+    ]
+  },
+  {
+    "id": "note-15-28-0",
+    "lesson": 15,
+    "topic": "note-15-28",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Does a passing host race prove target lap times match?",
+    "options": [
+      "No; missed target world deadlines can slow simulated time.",
+      "Yes; an OLED frame rate proves physics deadlines.",
+      "Yes; host and target execute simulation at identical wall-clock speed."
+    ],
+    "correct": 0,
+    "explanations": [
+      "No. Target physics deadlines must also hold. If the world misses its 5 ms schedule, simulated time slows relative to wall time.",
+      "Display refresh rate does not establish the higher-priority world task's response.",
+      "The target must meet the world's 5 ms schedule or simulated time runs slowly."
+    ]
+  },
+  {
+    "id": "note-15-29-0",
+    "lesson": 15,
+    "topic": "note-15-29",
+    "topicTitle": "What Carries Forward",
+    "question": "Which lesson structure remains useful after hardware replaces the world?",
+    "options": [
+      "Keep explicit contracts, deterministic tests and truth-versus-estimate telemetry.",
+      "Keep direct reads of world truth in the real controller.",
+      "Replace deterministic input contracts with wall-clock reads inside control."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Fixed sensor/actuator contracts, deterministic controller tests and telemetry that separates estimates from independently measured behaviour.",
+      "Truth belongs to independent evaluation; real control needs sensor inputs.",
+      "Explicit time and inputs preserve reproducibility and portable testing."
+    ]
+  },
+  {
+    "id": "note-16-0-0",
+    "lesson": 16,
+    "topic": "note-16-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB9 and PB8 suffice without a shared ground.",
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection.",
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C."
+    ]
+  },
+  {
+    "id": "note-16-0-1",
+    "lesson": 16,
+    "topic": "note-16-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "SEL removes real obstacles from the robot's map.",
+      "The knob sets map cell size.",
+      "The knob sets speed; SEL reveals true walls and PA5 shows arrival."
+    ],
+    "correct": 2,
+    "explanations": [
+      "SEL reveals true walls for viewing; it does not change physical walls or sensor knowledge.",
+      "It sets speed; grid dimensions are navigation configuration.",
+      "A starts/restarts; B changes level; SEL reveals true walls; knob sets speed; PA5 indicates arrival."
+    ]
+  },
+  {
+    "id": "note-16-1-0",
+    "lesson": 16,
+    "topic": "note-16-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient.",
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10.",
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup."
+    ]
+  },
+  {
+    "id": "note-16-1-1",
+    "lesson": 16,
+    "topic": "note-16-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR only controls clock frequency.",
+      "AFR selects routing; MODER must also activate alternate mode."
+    ],
+    "correct": 2,
+    "explanations": [
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider.",
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function."
+    ]
+  },
+  {
+    "id": "note-16-2-0",
+    "lesson": 16,
+    "topic": "note-16-2",
+    "topicTitle": "The Problem in One Picture",
+    "question": "Why can localisation error produce a navigation failure even if A* is correct?",
+    "options": [
+      "A valid route guarantees that the occupancy grid is accurate.",
+      "Incorrect pose inserts walls in wrong cells, so A* solves the wrong map.",
+      "A* corrects wall locations automatically even with a wrong pose."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Search correctness and map correctness are independent.",
+      "Walls are inserted at the wrong world cells. A* then correctly solves an incorrect map.",
+      "The planner searches the map it receives; wrong localisation can place sensed walls in wrong cells."
+    ]
+  },
+  {
+    "id": "note-16-3-0",
+    "lesson": 16,
+    "topic": "note-16-3",
+    "topicTitle": "Software in the Loop — Two Halves, One Contract",
+    "question": "Why use integer milliradians/s at the boundary?",
+    "options": [
+      "Integer rates make gyro bias disappear.",
+      "Milliradians and radians have the same numeric scale.",
+      "It makes realistic driver units explicit while allowing internal conversion."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Integer encoding affects representation, not the sensor's physical offset.",
+      "A milliradian is one thousandth of a radian; an explicit boundary scale prevents unit mistakes.",
+      "It matches realistic driver data and expresses scale explicitly, while internal estimation may convert to radians/float."
+    ]
+  },
+  {
+    "id": "note-16-4-0",
+    "lesson": 16,
+    "topic": "note-16-4",
+    "topicTitle": "The Arena — 32 × 14 Cells, Because 12 KB",
+    "question": "Why does halving grid cell width quadruple memory?",
+    "options": [
+      "Memory stays constant because each cell becomes smaller physically.",
+      "Both grid dimensions double, producing four times the cell count.",
+      "Memory doubles because only cell width changes."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Per-cell storage stays similar while the number of cells quadruples.",
+      "Both horizontal and vertical cell counts double, multiplying per-cell arrays by four.",
+      "The two-dimensional grid doubles along both axes, giving four times as many cells."
+    ]
+  },
+  {
+    "id": "note-16-5-0",
+    "lesson": 16,
+    "topic": "note-16-5",
+    "topicTitle": "The World Is a Little Wrong, on Purpose",
+    "question": "Compute heading drift from 4 mrad/s bias over 60 s.",
+    "options": [
+      "0.24 rad, or about 13.75°, from 0.004×60.",
+      "0.24°, because milliradians are degrees.",
+      "240 rad, because 4×60 needs no unit conversion."
+    ],
+    "correct": 0,
+    "explanations": [
+      "0.004×60=0.24 rad≈13.75°, large enough to smear a corridor map.",
+      "4 mrad/s is 0.004 rad/s; after 60 s, 0.24 rad is about 13.75°.",
+      "Convert milliradians to radians before expressing the result in radians."
+    ]
+  },
+  {
+    "id": "note-16-6-0",
+    "lesson": 16,
+    "topic": "note-16-6",
+    "topicTitle": "The Layered Robot",
+    "question": "Which layer must win when a plan requests motion but current beams show insufficient stopping room?",
+    "options": [
+      "The global plan always wins because A* is optimal.",
+      "The display task must approve the plan before braking.",
+      "Reactive protection must override a plan when stopping room is insufficient."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Optimality on a map does not override fresh evidence of immediate collision risk.",
+      "Reactive protection must act independently of display updates.",
+      "Reactive protection. The plan may be based on stale or incorrect map information."
+    ]
+  },
+  {
+    "id": "note-16-7-0",
+    "lesson": 16,
+    "topic": "note-16-7",
+    "topicTitle": "Layer 1 — Dead Reckoning",
+    "question": "Calculate wheel-heading error from 15 mm differential error over a 60 mm axle.",
+    "options": [
+      "0.25 rad, about 14.3°, from 15/60.",
+      "4 rad, from axle width divided by differential error.",
+      "0.25°, using differential distance divided by axle width."
+    ],
+    "correct": 0,
+    "explanations": [
+      "15/60=0.25 rad≈14.3°. Even a small wheel mismatch becomes a large angular error.",
+      "Heading change uses wheel differential over axle width, not its reciprocal.",
+      "The ratio yields radians; 0.25 rad is about 14.3°."
+    ]
+  },
+  {
+    "id": "note-16-8-0",
+    "lesson": 16,
+    "topic": "note-16-8",
+    "topicTitle": "Two Seconds of Standing Still",
+    "question": "Why must the robot stay still during startup gyro averaging?",
+    "options": [
+      "Motion would be included in the bias estimate and subtracted later.",
+      "Movement gives a better estimate because it averages all headings.",
+      "Startup averaging removes only random noise, so motion cannot change bias calibration."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The mean must represent sensor offset alone. Real rotation included in the average would be subtracted from later measurements.",
+      "Averaging moving gyro samples mixes real rotation into the estimated bias.",
+      "The mean is used as offset; actual angular motion shifts that mean."
+    ]
+  },
+  {
+    "id": "note-16-9-0",
+    "lesson": 16,
+    "topic": "note-16-9",
+    "topicTitle": "Layer 2 — An Occupancy Grid in Integers",
+    "question": "Occupancy evidence starts at 0; a hit adds 3, a free pass subtracts 1. Occupied is ≥2 and free ≤−1. What happens after one hit and three free passes?",
+    "options": [
+      "Three clear passes make the cell confidently free at −3.",
+      "One hit makes 255; three free passes still leave the cell lethal.",
+      "The score goes 0→3 occupied→0 unknown."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Start at zero, add three, then subtract three: the result is zero, or unknown.",
+      "This occupancy score adds +3 for a hit and −1 per clear pass; it returns to zero.",
+      "Hit gives 3, occupied. Three−1 passes return it to 0, unknown; further clearing establishes free space."
+    ]
+  },
+  {
+    "id": "note-16-10-0",
+    "lesson": 16,
+    "topic": "note-16-10",
+    "topicTitle": "Optimism — Unknown Is Assumed Free",
+    "question": "Why not treat every unknown cell as lethal?",
+    "options": [
+      "Treating all unknown as lethal guarantees useful exploration without further changes.",
+      "Unknown means a wall was observed with certainty.",
+      "It prevents startup exploration into unobserved space."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It blocks movement into unobserved space at startup, preventing the robot from gathering a map.",
+      "Unknown is missing evidence, not occupied evidence.",
+      "At startup almost all cells are unknown, so the robot would be unable to move far enough to observe and build a map."
+    ]
+  },
+  {
+    "id": "note-16-11-0",
+    "lesson": 16,
+    "topic": "note-16-11",
+    "topicTitle": "Layer 3 — A* in Four Lines",
+    "question": "For straight cost 10 and diagonal cost 14, octile h=10 max(dx,dy)+4 min(dx,dy). Find h for dx=7, dy=3.",
+    "options": [
+      "82, from 10×7+4×3.",
+      "100, using Manhattan 10×(7+3).",
+      "70, ignoring vertical displacement."
+    ],
+    "correct": 0,
+    "explanations": [
+      "10×7+4×3=82, representing three diagonal steps plus four straight steps.",
+      "The octile model allows diagonals costing 14: three diagonals and four straight steps cost 82.",
+      "The remaining three rows require three diagonal contributions above the seven-axis baseline."
+    ]
+  },
+  {
+    "id": "note-16-12-0",
+    "lesson": 16,
+    "topic": "note-16-12",
+    "topicTitle": "The Costmap — Where Walls Become Numbers",
+    "question": "Is an inflated cost of 12 an impassable obstacle?",
+    "options": [
+      "No; 12 is a traversable penalty, while 255 is lethal.",
+      "No; cost 12 makes the route cheaper than a free cell.",
+      "Yes; any positive cost means a blocked cell."
+    ],
+    "correct": 0,
+    "explanations": [
+      "No. Only 255 is lethal. 12 discourages proximity while still allowing a narrow corridor to be used.",
+      "Inflation penalizes proximity, so it discourages rather than rewards that cell.",
+      "Costs below 255 are traversable penalties; only 255 is lethal."
+    ]
+  },
+  {
+    "id": "note-16-13-0",
+    "lesson": 16,
+    "topic": "note-16-13",
+    "topicTitle": "A* in 2112 Bytes",
+    "question": "Why did lazy deletion break the first planner?",
+    "options": [
+      "Lazy deletion made all valid heuristics negative.",
+      "Duplicate open entries exhausted bounded heap storage.",
+      "Heap exhaustion proves there is no reachable route."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The failure was duplicate entries exhausting bounded heap storage, not heuristic sign.",
+      "Duplicate open entries exhausted its heap before completing reachable search. A full heap was mistaken for no route.",
+      "An implementation resource failure cannot be treated as a graph reachability result."
+    ]
+  },
+  {
+    "id": "note-16-14-0",
+    "lesson": 16,
+    "topic": "note-16-14",
+    "topicTitle": "How Big Does the Open List Get?",
+    "question": "What should a planner do when its fixed heap fills?",
+    "options": [
+      "Increase heap indices beyond the fixed array until a route appears.",
+      "Report an explicit overflow/error and preserve safe behaviour.",
+      "Discard the lowest-priority candidate silently and report no path if search ends."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That writes out of bounds; bounded planners must report overflow safely.",
+      "Return an explicit overflow/error and preserve safety; it must not silently discard candidates and claim no path.",
+      "Discarding candidates breaks completeness and conceals a resource error."
+    ]
+  },
+  {
+    "id": "note-16-15-0",
+    "lesson": 16,
+    "topic": "note-16-15",
+    "topicTitle": "What A* Costs on a Cortex-M0+",
+    "question": "Why not use Renode's 11.2 ms as an exact silicon upper bound?",
+    "options": [
+      "The simplified instruction-tick model omits real multi-cycle costs.",
+      "Any simulator measurement is automatically a worst-case bound.",
+      "One simulated instruction tick equals every real instruction's cycle cost."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Renode's one-instruction-per-tick model omits multi-cycle loads/branches; real execution may take longer.",
+      "A model and finite workload cannot establish a silicon upper bound without accounting for omitted costs.",
+      "Loads and branches may take multiple cycles; the simplified model is not exact silicon timing."
+    ]
+  },
+  {
+    "id": "note-16-16-0",
+    "lesson": 16,
+    "topic": "note-16-16",
+    "topicTitle": "The Timing Budget",
+    "question": "What fraction of a 40 ms period is a 16 ms response?",
+    "options": [
+      "60%, because 24 ms remain.",
+      "4%, by dividing 16 by 400.",
+      "40% of the period, leaving 24 ms in that measured model workload."
+    ],
+    "correct": 2,
+    "explanations": [
+      "60% is the remaining fraction; the response consumes 40%.",
+      "The period is 40 ms; 16/40 is 40%.",
+      "16/40=40%. That measured Renode peak leaves 24 ms before the deadline under that workload/model."
+    ]
+  },
+  {
+    "id": "note-16-17-0",
+    "lesson": 16,
+    "topic": "note-16-17",
+    "topicTitle": "When to Replan",
+    "question": "Why must corner checks be repeated after mapping a new wall?",
+    "options": [
+      "A new adjacent wall can invalidate a previously legal diagonal.",
+      "A diagonal is valid forever if its endpoints remain free.",
+      "Corner checks affect drawing only."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A formerly legal diagonal can become blocked even if neither endpoint path cell changed to wall.",
+      "A new wall in an adjacent corner cell can invalidate diagonal clearance.",
+      "They determine whether a route can physically cross between nearby obstacles."
+    ]
+  },
+  {
+    "id": "note-16-18-0",
+    "lesson": 16,
+    "topic": "note-16-18",
+    "topicTitle": "Layer 4 — Pure Pursuit",
+    "question": "Pure pursuit uses curvature=2 sin(α)/L and ω=v×curvature. Find ω for α=30°, L=220 mm and v=250 mm/s.",
+    "options": [
+      "About 1.14 rad/s, using 2×sin(30°)×250/220.",
+      "250 rad/s, by multiplying speed by sin(alpha).",
+      "0.57 rad/s, omitting the factor of two."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Curvature=2×0.5/220=1/220 mm⁻¹; ω=250/220≈1.14 rad/s.",
+      "Include the lookahead distance and factor of two so the result has angular-rate units.",
+      "Pure-pursuit curvature is 2×sin(alpha)/L, giving omega≈1.14 rad/s."
+    ]
+  },
+  {
+    "id": "note-16-19-0",
+    "lesson": 16,
+    "topic": "note-16-19",
+    "topicTitle": "Layer 5 — The Reactive Brake",
+    "question": "Stopping threshold is 25 mm+v²/(2×1500 mm/s²). Find it at v=300 mm/s.",
+    "options": [
+      "30 mm, from v²/(2a) alone.",
+      "325 mm, from base margin plus speed.",
+      "55 mm, including the 25 mm base margin."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Include the 25 mm base margin, giving 55 mm.",
+      "Speed is not a distance; stopping distance uses speed squared divided by twice deceleration.",
+      "25+300²/(2×1500)=25+30=55 mm."
+    ]
+  },
+  {
+    "id": "note-16-20-0",
+    "lesson": 16,
+    "topic": "note-16-20",
+    "topicTitle": "When the Layers Disagree",
+    "question": "Why give vetoes an expiry instead of making the cell permanently wall?",
+    "options": [
+      "Every temporary veto proves a permanent physical wall.",
+      "The blockage may be temporary, so expiry permits later reconsideration.",
+      "Expiry makes a currently dangerous route immediately safe."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Vetoes can reflect transient blockage or pose error, so expiry allows reconsideration.",
+      "The blockage may be temporary or an estimation effect. Expiry allows revisiting it after conditions or knowledge improve.",
+      "The veto remains active until expiry; later observations and braking must still protect execution."
+    ]
+  },
+  {
+    "id": "note-16-21-0",
+    "lesson": 16,
+    "topic": "note-16-21",
+    "topicTitle": "Five Levels, Measured",
+    "question": "Does driven/optimal below 1 prove A* was suboptimal?",
+    "options": [
+      "Yes; any ratio below one disproves planner optimality.",
+      "Yes; physical distance and grid distance are always the same.",
+      "No; continuous pursuit and early stopping differ from grid-centre distance."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Continuous pursuit and early goal acceptance use a different distance definition from grid-centre optimal paths.",
+      "A follower can cut zigzags and stop short of the centre; the metrics differ.",
+      "No. The comparison uses grid paths and goal-centre distance, whereas continuous pursuit can cut zigzags and stop 120 mm short."
+    ]
+  },
+  {
+    "id": "note-16-22-0",
+    "lesson": 16,
+    "topic": "note-16-22",
+    "topicTitle": "The Python Tier — `host/planner.py`",
+    "question": "Why matching heuristic alone does not guarantee identical C/Python paths?",
+    "options": [
+      "Neighbour order and tie-breaking also decide equal-cost paths.",
+      "The heuristic alone uniquely determines all equal-cost paths.",
+      "Python paths must be shorter because integers are more accurate there."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Equal-cost choices depend on neighbour order and tie-breaking; both must also match for cell-for-cell identity.",
+      "Neighbour order and tie-breaking can choose different equally good paths.",
+      "Matching costs and heuristic can give equal route cost while ordering changes the cell sequence."
+    ]
+  },
+  {
+    "id": "note-16-23-0",
+    "lesson": 16,
+    "topic": "note-16-23",
+    "topicTitle": "The Planner's Stopwatch",
+    "question": "How can a timestamp span a wrap safely?",
+    "options": [
+      "Reset the clock at every wrap and subtract normally.",
+      "Signed subtraction works for arbitrary durations spanning many wraps.",
+      "Use unsigned modular subtraction for intervals shorter than one wrap."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Resets discard elapsed history; modular subtraction preserves one-wrap elapsed duration.",
+      "Wrap-safe comparison needs an unsigned modular subtraction and a duration shorter than the wrap interval.",
+      "Subtract two uint32 timestamps modulo 2³², provided the measured duration is shorter than the wrap interval."
+    ]
+  },
+  {
+    "id": "note-16-24-0",
+    "lesson": 16,
+    "topic": "note-16-24",
+    "topicTitle": "Fitting in 32 KB and 12 KB",
+    "question": "Why did replacing strtok save so much flash?",
+    "options": [
+      "strtok always consumes exactly the same flash on every C library.",
+      "A bounded splitter avoids this newlib parser's large dependency chain.",
+      "A smaller splitter improves gyro measurement accuracy."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The observed savings depend on this newlib dependency chain, not a universal fixed size.",
+      "The particular newlib strtok dependency chain pulled malloc/assert and printing support; a small bounded splitter avoided that runtime machinery.",
+      "It reduces pulled-in runtime code; sensor accuracy is a separate concern."
+    ]
+  },
+  {
+    "id": "note-16-25-0",
+    "lesson": 16,
+    "topic": "note-16-25",
+    "topicTitle": "The OLED — Belief, Truth, and the Plan",
+    "question": "Which display feature reveals localisation drift?",
+    "options": [
+      "The planned path alone reveals true localisation error.",
+      "The gap between the true-pose disc and estimated-pose ring.",
+      "The estimated ring is the simulator's true pose."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A path is based on belief; the simulator compares the true filled disc with the estimated ring.",
+      "The separation between true-pose filled disc and estimated-pose ring, available because this is a simulator.",
+      "The filled disc shows truth; their separation exposes localisation drift."
+    ]
+  },
+  {
+    "id": "note-16-26-0",
+    "lesson": 16,
+    "topic": "note-16-26",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "What workload was absent from Renode timing tests?",
+    "options": [
+      "OLED flushing and knob speed changes were absent from timing trials.",
+      "Renode measured every I²C and ADC path used in Wokwi.",
+      "Only the route heuristic was omitted."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Actual OLED flushing and knob-driven speed changes; absent I²C/ADC support means those observations cannot establish complete Wokwi behaviour.",
+      "Those peripherals were unsupported for these timing trials, so complete behaviour was not established.",
+      "The stated absent workloads were OLED flushing and knob-driven speed changes due to peripheral limits."
+    ]
+  },
+  {
+    "id": "note-16-27-0",
+    "lesson": 16,
+    "topic": "note-16-27",
+    "topicTitle": "What Carries Forward",
+    "question": "What is a frontier in occupancy-grid exploration?",
+    "options": [
+      "A known free cell bordering unknown space.",
+      "Any unknown cell surrounded entirely by occupied walls.",
+      "Any occupied cell on the map boundary."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A known free cell bordering unknown cells; reaching it exposes new space to sensors and supports further mapping.",
+      "That does not provide a known traversable observation boundary.",
+      "A frontier is known free space next to unknown space, suitable for gaining new observations."
+    ]
+  },
+  {
+    "id": "note-17-0-0",
+    "lesson": 17,
+    "topic": "note-17-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB9 and PB8 suffice without a shared ground.",
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection.",
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C."
+    ]
+  },
+  {
+    "id": "note-17-0-1",
+    "lesson": 17,
+    "topic": "note-17-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob sets driving speed and the stick sets payload.",
+      "B selects the next controller and SEL applies a push.",
+      "The knob sets payload; the vertical stick sets driving speed."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The vertical stick commands driving speed; the knob sets simulated payload.",
+      "B applies a push; SEL advances the controller choice.",
+      "A stands up; B applies a push; SEL advances controller; knob sets payload; vertical stick sets driving speed."
+    ]
+  },
+  {
+    "id": "note-17-1-0",
+    "lesson": 17,
+    "topic": "note-17-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient.",
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups."
+    ],
+    "correct": 2,
+    "explanations": [
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10.",
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup."
+    ]
+  },
+  {
+    "id": "note-17-1-1",
+    "lesson": 17,
+    "topic": "note-17-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR only controls clock frequency.",
+      "AFR selects routing; MODER must also activate alternate mode."
+    ],
+    "correct": 2,
+    "explanations": [
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider.",
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function."
+    ]
+  },
+  {
+    "id": "note-17-2-0",
+    "lesson": 17,
+    "topic": "note-17-2",
+    "topicTitle": "A Robot Inside the Chip",
+    "question": "Why does running the world on the MCU complicate its CPU budget?",
+    "options": [
+      "The external mechanics consume MCU cycles in the same way as software physics.",
+      "Simulated physics shares the no-FPU MCU with control and display.",
+      "Floating-point physics is free because this core has an FPU."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Real motion happens outside the CPU; the software plant adds computation that must share the processor.",
+      "Physics calculations share the same no-FPU processor with control and display; real external mechanics would consume no MCU computation.",
+      "This MCU has no floating-point unit; software floating-point costs CPU time."
+    ]
+  },
+  {
+    "id": "note-17-3-0",
+    "lesson": 17,
+    "topic": "note-17-3",
+    "topicTitle": "The Contract — `control.h`",
+    "question": "What does the encoder angle measure here?",
+    "options": [
+      "Body tilt directly, with no wheel-rotation contribution.",
+      "Wheel rotation relative to the body, requiring tilt correction.",
+      "Wheel angle relative to the ground, independent of body tilt."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It is a wheel encoder; the estimator combines wheel rotation and body tilt for ground travel.",
+      "Wheel rotation relative to the robot body, so body tilt must be added to recover wheel angle over the ground.",
+      "The encoder is attached to the body, so it measures wheel rotation relative to that body."
+    ]
+  },
+  {
+    "id": "note-17-4-0",
+    "lesson": 17,
+    "topic": "note-17-4",
+    "topicTitle": "The Model — a Pendulum on Wheels",
+    "question": "Why must a balancing robot move forward to arrest a forward lean?",
+    "options": [
+      "Keep the wheels still until gravity reverses the lean.",
+      "Move backward so the base gets farther behind the falling body.",
+      "Forward wheel acceleration moves support to produce restoring dynamics."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The upright plant is unstable; gravity increases the disturbance without corrective wheel motion.",
+      "For this plant forward wheel acceleration moves support under a forward lean and creates restoring dynamics.",
+      "Wheel acceleration changes the support motion and body acceleration through the coupling, producing a restoring tilt acceleration."
+    ]
+  },
+  {
+    "id": "note-17-5-0",
+    "lesson": 17,
+    "topic": "note-17-5",
+    "topicTitle": "The Numbers — `params.h`, One Source of Truth",
+    "question": "Why should lqr.py read params.h rather than duplicate physical constants?",
+    "options": [
+      "One parameter source reduces plant/controller model mismatch.",
+      "Duplicated constants are safer because design should ignore plant updates.",
+      "params.h supplies random noise samples to the LQR solver."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A changed mass or motor parameter then updates design from the same source, reducing plant/controller mismatch.",
+      "Stale constants create model mismatch; reading params.h keeps the design tied to the implemented plant.",
+      "It supplies physical parameters, not a sensor-noise sequence."
+    ]
+  },
+  {
+    "id": "note-17-6-0",
+    "lesson": 17,
+    "topic": "note-17-6",
+    "topicTitle": "The Motor Fights Back",
+    "question": "Estimate motor back-EMF kω at 1 m/s with radius r=0.035 m and k=0.20 V/(rad/s), ignoring body rotation.",
+    "options": [
+      "28.6 V, using angular speed as voltage.",
+      "0.20 V, because k is the whole back-EMF.",
+      "About 5.71 V back-EMF, leaving about 1.69 V for winding current."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The back-EMF constant converts angular speed to voltage; winding headroom is about 1.69 V.",
+      "Multiply k by angular speed; 1/0.035≈28.6 rad/s gives about 5.71 V.",
+      "ω≈28.6 rad/s, so kω≈5.71 V, leaving 7.4−5.71≈1.69 V for winding current."
+    ]
+  },
+  {
+    "id": "note-17-7-0",
+    "lesson": 17,
+    "topic": "note-17-7",
+    "topicTitle": "1 kHz, With No FPU — Semi-Implicit Euler",
+    "question": "Which update order avoids the ordinary Euler energy-growth problem?",
+    "options": [
+      "Update positions using old velocities, then update velocities.",
+      "Update velocity from acceleration, then position from the new velocity.",
+      "Update every position twice without updating velocity."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That ordinary explicit Euler order can introduce energy growth; the described method uses new velocities for positions.",
+      "Accelerations update velocities first, then those new velocities update position and tilt.",
+      "The method must first apply acceleration to velocity, then advance position consistently."
+    ]
+  },
+  {
+    "id": "note-17-8-0",
+    "lesson": 17,
+    "topic": "note-17-8",
+    "topicTitle": "Linearised — What `lqr.py` Sees",
+    "question": "What does a positive open-loop pole+7.04 s⁻¹ mean?",
+    "options": [
+      "Disturbances decay by e every 142 ms.",
+      "Upright oscillates forever with no amplitude growth.",
+      "Small disturbances grow by e every approximately 142 ms."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A positive pole grows exponentially; a negative pole would decay.",
+      "A positive real pole indicates divergence, not a purely imaginary undamped oscillation.",
+      "A small uncontrolled disturbance multiplies by e every 142 ms, so upright is unstable."
+    ]
+  },
+  {
+    "id": "note-17-9-0",
+    "lesson": 17,
+    "topic": "note-17-9",
+    "topicTitle": "Sensors That Lie",
+    "question": "Why may an accelerating robot appear tilted opposite its actual lean?",
+    "options": [
+      "The gyro automatically flips the accelerometer's coordinate axes.",
+      "Accelerometers observe gravity alone even during wheel acceleration.",
+      "Inertial acceleration shifts apparent gravity by roughly a/g."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The error comes from force composition, not automatic axis reversal.",
+      "Specific force also includes inertial acceleration, shifting the apparent gravity direction.",
+      "The accelerometer contains inertial acceleration as well as gravity, shifting the apparent gravity direction by abouta/g."
+    ]
+  },
+  {
+    "id": "note-17-10-0",
+    "lesson": 17,
+    "topic": "note-17-10",
+    "topicTitle": "The Complementary Filter",
+    "question": "For τ=αdt/(1−α), find the complementary-filter time constant at 200 Hz with α=0.98.",
+    "options": [
+      "0.196 s, because alpha alone fixes tau.",
+      "0.245 s, using dt=0.005 s and alpha=0.98.",
+      "0.0098 s, multiplying dt by alpha twice."
+    ],
+    "correct": 1,
+    "explanations": [
+      "At 200 Hz dt is 0.005 s rather than 0.004 s, giving tau=0.245 s.",
+      "0.005×0.98/0.02=0.245 s.",
+      "The required relation divides alpha×dt by 1−alpha."
+    ]
+  },
+  {
+    "id": "note-17-11-0",
+    "lesson": 17,
+    "topic": "note-17-11",
+    "topicTitle": "Where Am I? Encoder + Tilt",
+    "question": "Why add tilt to encoder angle?",
+    "options": [
+      "It converts body-relative wheel rotation into the ground frame.",
+      "The encoder casing stays fixed relative to the ground as the body leans.",
+      "Tilt is added merely to make the display more dramatic."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The encoder housing rotates with the body. Adding body rotation converts relative wheel angle into ground-frame wheel rotation.",
+      "The casing rotates with the body, so its relative measurement needs the body-angle correction.",
+      "It converts body-relative wheel angle to ground-frame rotation, affecting travel estimation."
+    ]
+  },
+  {
+    "id": "note-17-12-0",
+    "lesson": 17,
+    "topic": "note-17-12",
+    "topicTitle": "Three Controllers",
+    "question": "Why must trip handling precede mode-specific control?",
+    "options": [
+      "Only the LQR mode needs safety checks.",
+      "All controller modes must obey the same trip-to-zero protection.",
+      "Run normal control first, then let mode changes clear any trip."
+    ],
+    "correct": 1,
+    "explanations": [
+      "All modes must enforce the same trip-to-zero behaviour.",
+      "Every controller then has the same enforced zero-output response; changing modes cannot bypass safety.",
+      "That can permit an unsafe output or bypass a latched protection."
+    ]
+  },
+  {
+    "id": "note-17-13-0",
+    "lesson": 17,
+    "topic": "note-17-13",
+    "topicTitle": "PID on Tilt — It Stands. Then It Leaves.",
+    "question": "Why does keeping estimated tilt near zero fail to keep the robot in one place?",
+    "options": [
+      "Zero estimated angle guarantees zero velocity and position error.",
+      "Adding more angle P gain necessarily restores the original position.",
+      "Tilt-only feedback does not regulate position or velocity."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Tilt is only one state; the robot can translate while remaining approximately upright.",
+      "Angle-only feedback has no direct position target and cannot guarantee position restoration.",
+      "Position and speed are not directly regulated, and sensor offset/back-EMF create sustained motion that tilt feedback alone cannot restore."
+    ]
+  },
+  {
+    "id": "note-17-14-0",
+    "lesson": 17,
+    "topic": "note-17-14",
+    "topicTitle": "The Eigenvalues Agree",
+    "question": "Does |z|≤1 for the closed-loop poles by itself prove acceptable position holding?",
+    "options": [
+      "Yes; a pole exactly at one returns position to its target quickly.",
+      "Yes; bounded linear poles exclude actuator saturation for any disturbance.",
+      "No; a pole at 1 and slow responses can fail position holding."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A pole at one can leave position unconstrained rather than decaying.",
+      "The pole result does not cover finite actuator limits or acceptable settling behaviour.",
+      "No. A pole at 1 leaves position unconstrained; a very slow stable swing can also produce unacceptable drift and saturation."
+    ]
+  },
+  {
+    "id": "note-17-15-0",
+    "lesson": 17,
+    "topic": "note-17-15",
+    "topicTitle": "Cascaded PID — Lean to Move",
+    "question": "Why can a lean clamp cause failure in a PD cascade?",
+    "options": [
+      "A lean clamp increases the available acceleration without limit.",
+      "Limited lean restricts acceleration while position error can keep building.",
+      "Clamping lean guarantees the target can never outrun the robot."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It bounds the acceleration request, so an advancing target can accumulate position error.",
+      "It limits attainable acceleration while the target keeps moving, so position error builds and demands a large correction when authority becomes available.",
+      "The target may keep moving faster than permitted acceleration can follow."
+    ]
+  },
+  {
+    "id": "note-17-16-0",
+    "lesson": 17,
+    "topic": "note-17-16",
+    "topicTitle": "The Cascade Is State Feedback in Disguise",
+    "question": "Cascade position gain is inner KP times outer KPX. What results from KP=25 and KPX=0.2?",
+    "options": [
+      "125 V/m, by dividing 25 by 0.2.",
+      "0.2 V/m, because the inner gain never affects position response.",
+      "5 V/m, from 25×0.2."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The expanded cascade multiplies the two gains: 25×0.2=5 V/m.",
+      "The outer request passes through the inner gain, so both contribute.",
+      "25×0.2=5 V/m in the expanded feedback law."
+    ]
+  },
+  {
+    "id": "note-17-17-0",
+    "lesson": 17,
+    "topic": "note-17-17",
+    "topicTitle": "LQR — Say What You Want, Get the Gains",
+    "question": "What happens to K if every Q entry and R are doubled?",
+    "options": [
+      "K halves because R becomes twice as large.",
+      "K doubles because every penalty doubles.",
+      "K stays unchanged because the relative weights stay unchanged."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Q also doubles, preserving the relative state/control tradeoff.",
+      "Scaling the whole objective leaves its optimizer unchanged; only relative weights matter.",
+      "K is unchanged because only relative weighting affects the optimum."
+    ]
+  },
+  {
+    "id": "note-17-18-0",
+    "lesson": 17,
+    "topic": "note-17-18",
+    "topicTitle": "The Riccati Equation, by Iteration",
+    "question": "Why discretise before solving this LQR?",
+    "options": [
+      "A continuous solution always exactly matches any sampling period.",
+      "Discretisation removes all sensor noise.",
+      "The design must account for voltage held between 5 ms samples."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Holding voltage for 5 ms changes the implemented dynamics; discrete design accounts for that hold.",
+      "It models sampled dynamics; it does not change the physical sensor errors.",
+      "The real controller holds voltage between 5 ms samples. A discrete design accounts for that sampled actuation rather than assuming continuous updates."
+    ]
+  },
+  {
+    "id": "note-17-19-0",
+    "lesson": 17,
+    "topic": "note-17-19",
+    "topicTitle": "The Numbers — and the Proof It Stabilises",
+    "question": "Why can nonlinear noisy SITL settling differ from the 2.10 s linear result?",
+    "options": [
+      "Any difference proves the controller is mathematically unstable.",
+      "The linear calculation already includes every motor saturation and sensor effect.",
+      "Noise, nonlinearities, saturation and estimation are outside the local result."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A stable local model can still settle differently under nonlinearities, limits and noise.",
+      "It is a local model with assumptions; nonlinear noisy SITL exercises omitted behaviour.",
+      "The stability calculation omits nonlinear/saturated dynamics and estimator/noise effects; simulation tests validate behaviour beyond the local linear approximation."
+    ]
+  },
+  {
+    "id": "note-17-20-0",
+    "lesson": 17,
+    "topic": "note-17-20",
+    "topicTitle": "Tuning Q and R — Measured",
+    "question": "Why may larger position weight reduce disturbance robustness?",
+    "options": [
+      "Aggressive position recovery can consume upright-recovery motor margin.",
+      "A higher position weight always improves every type of recovery.",
+      "Position weight changes battery voltage physically."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The controller spends more authority returning home, leaving less motor margin for upright recovery after a push.",
+      "Aggressive position correction can consume voltage needed to recover upright attitude.",
+      "It changes how the controller uses available authority, not the supply voltage itself."
+    ]
+  },
+  {
+    "id": "note-17-21-0",
+    "lesson": 17,
+    "topic": "note-17-21",
+    "topicTitle": "The Firmware — Five Tasks, One Owner Each",
+    "question": "Why is a request safer than another task directly resetting the world?",
+    "options": [
+      "Direct reset is safe because each individual word write is aligned.",
+      "A reset request is handled simultaneously by every task.",
+      "The state owner resets only at its defined update boundary."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A multi-field physics state can still be partly reset during its update.",
+      "One owner consumes the request at its defined update boundary.",
+      "The owner handles it at a defined boundary, so no partially reset state is used inside an ongoing physics update."
+    ]
+  },
+  {
+    "id": "note-17-22-0",
+    "lesson": 17,
+    "topic": "note-17-22",
+    "topicTitle": "Timing It — TIM14 as a Stopwatch",
+    "question": "Why write EGR.UG after PSC?",
+    "options": [
+      "EGR.UG doubles the timer clock frequency.",
+      "Writing PSC immediately changes the active divider.",
+      "EGR.UG loads the buffered prescaler before the first interval."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It generates an update event to load buffered values rather than changing the clock source.",
+      "PSC is buffered; EGR.UG transfers it before the first interval.",
+      "PSC is buffered. An update event transfers the new divider before the first timed interval instead of waiting for overflow."
+    ]
+  },
+  {
+    "id": "note-17-23-0",
+    "lesson": 17,
+    "topic": "note-17-23",
+    "topicTitle": "The CPU Budget — Estimated, Not Yet Measured",
+    "question": "What CPU share would a 300µs world step consume at 1 kHz?",
+    "options": [
+      "300%, by treating 300 µs as 3 ms.",
+      "30% of one core, before control and display work.",
+      "3%, because 300 µs is small."
+    ],
+    "correct": 1,
+    "explanations": [
+      "300 µs equals 0.3 ms, giving 30% at 1 kHz.",
+      "0.0003×1000=0.30, or 30% of one core, before other tasks.",
+      "300 µs repeated 1000 times occupies 300 ms each second, or 30%."
+    ]
+  },
+  {
+    "id": "note-17-24-0",
+    "lesson": 17,
+    "topic": "note-17-24",
+    "topicTitle": "What the OLED Shows",
+    "question": "Why do ground ticks matter when the camera follows the robot?",
+    "options": [
+      "A following camera proves the robot has not moved.",
+      "Ground ticks display only controller gain, not travel.",
+      "They show world-relative travel despite a camera following the robot."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The camera moves with the robot; ground ticks supply a world-relative visual reference.",
+      "They mark ground positions, making translation visible despite camera following.",
+      "They expose actual travel even if the robot remains near the screen centre."
+    ]
+  },
+  {
+    "id": "note-17-25-0",
+    "lesson": 17,
+    "topic": "note-17-25",
+    "topicTitle": "Telemetry to the PC",
+    "question": "BAL transmits estimated tilt in millidegrees. What does value 1500 represent?",
+    "options": [
+      "15°, because telemetry always uses centidegrees.",
+      "1500°, because telemetry uses degrees.",
+      "1.5°, because BAL tilt uses millidegrees."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The stated tilt scale is 0.001° per unit, not 0.01°.",
+      "BAL tilt uses millidegrees; divide 1500 by 1000.",
+      "1.5°, since tilt is transmitted in millidegrees."
+    ]
+  },
+  {
+    "id": "note-17-26-0",
+    "lesson": 17,
+    "topic": "note-17-26",
+    "topicTitle": "The Contest — Measured on the Host",
+    "question": "Does the table prove LQR is universally superior to cascade?",
+    "options": [
+      "Yes; a mathematically derived controller cannot saturate.",
+      "No; LQR and cascade win different tested criteria and Q changes tradeoffs.",
+      "Yes; one tested LQR weighting must win for all payloads."
+    ],
+    "correct": 1,
+    "explanations": [
+      "LQR output still reaches physical voltage limits and depends on the model.",
+      "No. It wins push tolerance/peak voltage, while this cascade wins settling/payload; changing Q changes those tradeoffs.",
+      "Different Q choices and payloads change tradeoffs; the table shows mixed advantages."
+    ]
+  },
+  {
+    "id": "note-17-27-0",
+    "lesson": 17,
+    "topic": "note-17-27",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Which assumptions could make real robot behaviour diverge from this model?",
+    "options": [
+      "Slip, inductance, backlash and floor variation can alter the real plant.",
+      "A real robot necessarily has the exact motor and floor properties in the software equations.",
+      "Only changing the OLED font can alter physical robot behaviour."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Wheel slip, motor inductance, backlash and floor variation, among others, alter the plant beyond the simulated equations.",
+      "A model omits or approximates effects that require real-world validation.",
+      "Slip, inductance, backlash and floor variation change the physical plant."
+    ]
+  },
+  {
+    "id": "note-17-28-0",
+    "lesson": 17,
+    "topic": "note-17-28",
+    "topicTitle": "What Carries Forward",
+    "question": "What should follow a mathematical stability result before accepting a controller?",
+    "options": [
+      "Accept immediately; local stability covers all disturbances and deadlines.",
+      "Only improve graphics; faults are already covered by the stability matrix.",
+      "Nonlinear/noisy trials, limit/fault checks and target timing evidence."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It proves a limited mathematical property and does not establish nonlinear recovery or execution timing.",
+      "Fault checks and actuator limits need separate behavioural trials.",
+      "Nonlinear/noisy trials, saturation/fault checks and target execution budgets, because local linear stability proves only a limited property."
+    ]
+  },
+  {
+    "id": "note-18-0-0",
+    "lesson": 18,
+    "topic": "note-18-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB9 and PB8 suffice without a shared ground.",
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection.",
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C."
+    ]
+  },
+  {
+    "id": "note-18-0-1",
+    "lesson": 18,
+    "topic": "note-18-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob selects simulation speed; A starts and B changes opponent.",
+      "SEL changes the opponent while B selects driver/cones.",
+      "The knob sets motor voltage directly."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A starts; B changes opponent; SEL selects driver/cones; knob selects simulation speed.",
+      "B changes the opponent; SEL selects driver/cones.",
+      "It selects simulation speed; strategy motor commands use their own interface."
+    ]
+  },
+  {
+    "id": "note-18-1-0",
+    "lesson": 18,
+    "topic": "note-18-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient.",
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups.",
+      "MODER bits 17:16 select analog mode 11 with AF6."
+    ],
+    "correct": 1,
+    "explanations": [
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10.",
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup.",
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration."
+    ]
+  },
+  {
+    "id": "note-18-1-1",
+    "lesson": 18,
+    "topic": "note-18-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR only controls clock frequency.",
+      "AFR selects routing; MODER must also activate alternate mode.",
+      "AFR automatically changes MODER to alternate mode."
+    ],
+    "correct": 1,
+    "explanations": [
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider.",
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function.",
+      "These are separate fields; selecting a route does not activate that route."
+    ]
+  },
+  {
+    "id": "note-18-2-0",
+    "lesson": 18,
+    "topic": "note-18-2",
+    "topicTitle": "What You Are Building",
+    "question": "Why keep world positions unavailable to student.c?",
+    "options": [
+      "Using truth is fair as long as only one strategy uses it.",
+      "Truth bypasses the limited common sensor contract.",
+      "Simulator truth is equivalent to the noisy forward range sensor."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Strategies must have comparable permitted observations; exclusive truth creates an unfair advantage.",
+      "A real robot does not have simulator truth; using it would violate the shared sensor contract and make competition incomparable.",
+      "Truth provides unavailable world knowledge and bypasses the sensor contract."
+    ]
+  },
+  {
+    "id": "note-18-3-0",
+    "lesson": 18,
+    "topic": "note-18-3",
+    "topicTitle": "The Rules — Real Mini-Sumo, Simplified",
+    "question": "Why swap the second round's start positions?",
+    "options": [
+      "It reduces favourable-placement advantage between strategies.",
+      "It eliminates every random sensor error.",
+      "It gives the weaker strategy extra motor power."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It reduces the advantage of a favourable initial placement, so performance reflects strategy rather than one lucky side.",
+      "It reduces position advantage; seeded sensor uncertainty still exists.",
+      "Swapping starts changes placement, not machine capability."
+    ]
+  },
+  {
+    "id": "note-18-4-0",
+    "lesson": 18,
+    "topic": "note-18-4",
+    "topicTitle": "The Contract — `strategy.h`",
+    "question": "How much strategy state is available per robot?",
+    "options": [
+      "16 bytes total.",
+      "64 bytes per robot, zeroed independently at each round start.",
+      "64 bytes shared between both robots and all rounds."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The 16 entries are four-byte words, giving 64 bytes.",
+      "16×4=64 bytes, independently zeroed at every round start.",
+      "Each robot has its own 64-byte state, zeroed independently at round start."
+    ]
+  },
+  {
+    "id": "note-18-5-0",
+    "lesson": 18,
+    "topic": "note-18-5",
+    "topicTitle": "Why the Memory Rule Matters",
+    "question": "Why is a four-byte static timer forbidden?",
+    "options": [
+      "Static storage can be shared across instances and persist across matches.",
+      "Static timers are acceptable if their size is below the 64-byte limit.",
+      "A small static variable is automatically private to each robot."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It is shared by both strategy instances and can survive across matches, so it violates independent per-robot state even though it is small.",
+      "The limit applies to isolated supplied state; static storage also leaks between instances and rounds.",
+      "Both strategy instances call the same code and can share its static variable."
+    ]
+  },
+  {
+    "id": "note-18-6-0",
+    "lesson": 18,
+    "topic": "note-18-6",
+    "topicTitle": "Model — the Differential-Drive Robot",
+    "question": "Yaw torque is (FR−FL)×0.045 m. Find it for FL=−1 N and FR=1 N.",
+    "options": [
+      "0 N·m, because the two force magnitudes are equal.",
+      "0.09 N·m counterclockwise, from (1−(−1))×0.045.",
+      "−0.09 N·m clockwise."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Their opposite directions produce a differential torque: (1−(−1))×0.045=0.09 N·m.",
+      "(1−(−1))×0.045=0.09 N·m, a counterclockwise torque.",
+      "The stated FR−FL convention gives a positive counterclockwise torque."
+    ]
+  },
+  {
+    "id": "note-18-7-0",
+    "lesson": 18,
+    "topic": "note-18-7",
+    "topicTitle": "Model — a Motor Is a Line, a Tyre Is a Ceiling",
+    "question": "Why does launch wheel travel exceed body travel?",
+    "options": [
+      "Encoder travel must equal body travel because wheels touch the floor.",
+      "Motor demand above traction creates wheelspin.",
+      "The referee deliberately adds distance to encoder counts at launch."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Limited traction permits wheel slip, so contact does not guarantee equal travel.",
+      "Requested motor force exceeds traction, so wheels spin faster than the robot moves.",
+      "The excess comes from modeled wheelspin under a force request above traction."
+    ]
+  },
+  {
+    "id": "note-18-8-0",
+    "lesson": 18,
+    "topic": "note-18-8",
+    "topicTitle": "Model — Why Angle Matters",
+    "question": "Why is a nose-facing Turtle difficult to displace?",
+    "options": [
+      "The Turtle has a hidden stronger motor than the student robot.",
+      "Its nose sensor physically prevents contact.",
+      "Equal opposing forces from identical machines can produce a stalemate."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The machines are identical; equal opposed longitudinal force can stall motion.",
+      "Sensing does not create a barrier; equal opposing drive creates the stalemate.",
+      "Identical machines can produce equal opposing longitudinal force, yielding a stalemate rather than net acceleration."
+    ]
+  },
+  {
+    "id": "note-18-9-0",
+    "lesson": 18,
+    "topic": "note-18-9",
+    "topicTitle": "Model — Two Discs Collide",
+    "question": "Why can a glancing impact rotate a robot?",
+    "options": [
+      "Only a head-on central force can create rotation.",
+      "Contact friction affects translation but never yaw.",
+      "Tangential contact friction creates torque and angular momentum."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A tangential impulse at a contact radius can change angular momentum.",
+      "A tangential force acting away from the centre produces torque.",
+      "Surface friction creates a tangential impulse at its radius, producing angular momentum."
+    ]
+  },
+  {
+    "id": "note-18-10-0",
+    "lesson": 18,
+    "topic": "note-18-10",
+    "topicTitle": "Sensors — Distance Cones",
+    "question": "Can one missing distance sample prove no opponent is present?",
+    "options": [
+      "Yes; a missing sample guarantees the opponent has left the ring.",
+      "No; dropout requires tolerance for brief target loss.",
+      "Yes; the sensor has guaranteed continuous visibility."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Range dropout and referee elimination are different evidence.",
+      "No. Random dropout occurs, so state or multiple observations must tolerate brief target loss.",
+      "Random dropout means one missing observation does not establish absence."
+    ]
+  },
+  {
+    "id": "note-18-11-0",
+    "lesson": 18,
+    "topic": "note-18-11",
+    "topicTitle": "Sensors — the Line, and the Speed That Jumps It",
+    "question": "The robot's full speed is 800 mm/s and its strategy period is 20 ms. How far does it move per call?",
+    "options": [
+      "16 mm per 20 ms call at 800 mm/s.",
+      "160 mm, by treating 20 ms as 0.2 s.",
+      "0.8 mm, by using a 1 ms period."
+    ],
+    "correct": 0,
+    "explanations": [
+      "800×0.020=16 mm, enough to traverse much of the 25 mm border in one call.",
+      "20 ms is 0.020 s; multiplying gives 16 mm.",
+      "The control interval is 20 ms, so 800 mm/s gives 16 mm."
+    ]
+  },
+  {
+    "id": "note-18-12-0",
+    "lesson": 18,
+    "topic": "note-18-12",
+    "topicTitle": "Sensors — Encoders Measure the Wheel",
+    "question": "Does positive encoder travel prove the body is moving forward?",
+    "options": [
+      "Yes; encoder sign always equals the body's velocity sign.",
+      "No; wheels can spin forward while the body is pushed backward.",
+      "Yes, if motor command and encoder agree."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Slip can let wheels turn forward while an opponent drives the body backward.",
+      "No. The tyre can slip while an opponent pushes the body backward.",
+      "Both concern wheel actuation; neither independently establishes ground translation under slip."
+    ]
+  },
+  {
+    "id": "note-18-13-0",
+    "lesson": 18,
+    "topic": "note-18-13",
+    "topicTitle": "Sensors — the Bump Switch",
+    "question": "Why latch the bump flag between calls?",
+    "options": [
+      "A short impact can finish between control calls.",
+      "The flag should be cleared immediately when contact ends.",
+      "A bump necessarily lasts longer than 20 ms."
+    ],
+    "correct": 0,
+    "explanations": [
+      "An impact may begin and end between 20 ms samples; latching ensures the strategy still learns it occurred.",
+      "That loses a short event before the next control call; latch until consumed.",
+      "Brief contact can occur entirely between strategy samples."
+    ]
+  },
+  {
+    "id": "note-18-14-0",
+    "lesson": 18,
+    "topic": "note-18-14",
+    "topicTitle": "The Referee — Everyone Senses the Same Instant",
+    "question": "What unfair advantage does sense-think-move before sensing the second robot give?",
+    "options": [
+      "No advantage exists because the same loop handles both robots.",
+      "The second robot sees a newer world after the first has moved.",
+      "The first robot automatically receives larger motor commands."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Sequential movement changes what the second robot sees; both should sense the same instant.",
+      "The second robot observes the first robot's newly applied action instead of the same pre-action instant.",
+      "The bias concerns unequal observation time, not command magnitude."
+    ]
+  },
+  {
+    "id": "note-18-15-0",
+    "lesson": 18,
+    "topic": "note-18-15",
+    "topicTitle": "Two Rates",
+    "question": "Why integrate physics more frequently than the controller runs?",
+    "options": [
+      "It lets the strategy read future opponents' commands.",
+      "Smaller steps resolve contact motion between discrete strategy decisions.",
+      "One physics step per strategy call always reproduces continuous impacts exactly."
+    ],
+    "correct": 1,
+    "explanations": [
+      "More frequent integration refines contact motion; it does not grant future knowledge.",
+      "Contact geometry changes between samples; smaller steps approximate continuous motion while preserving realistic discrete control.",
+      "Coarse steps can miss changing contact geometry between calls."
+    ]
+  },
+  {
+    "id": "note-18-16-0",
+    "lesson": 18,
+    "topic": "note-18-16",
+    "topicTitle": "Determinism — the Property the Tournament Stands On",
+    "question": "Why draw noise when no target is visible?",
+    "options": [
+      "Drawing noise changes the invisible target's physical position.",
+      "Skipping invisible-target noise draws cannot affect later draws.",
+      "Consistent draws keep future noise independent of visibility history."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The draw preserves RNG sequence consistency; it is not a plant movement.",
+      "It advances the stream differently, so later noise depends on past visibility.",
+      "Conditional draws would shift later RNG values according to visibility, changing future sensor noise and undermining controlled comparison."
+    ]
+  },
+  {
+    "id": "note-18-17-0",
+    "lesson": 18,
+    "topic": "note-18-17",
+    "topicTitle": "Map — Three Tasks on Lesson 07's Kernel",
+    "question": "Why draw from a copied snapshot?",
+    "options": [
+      "Reading live fields independently always yields the same instant.",
+      "Snapshots remove all sensor noise.",
+      "One snapshot preserves coherent robot and referee state."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Tasks can update fields between reads; a copied snapshot gives coherent referee/robot state.",
+      "They preserve consistency of a sampled state, not measurement accuracy.",
+      "Live fields may change between reads. One snapshot contains both robots and referee state from a coherent instant."
+    ]
+  },
+  {
+    "id": "note-18-18-0",
+    "lesson": 18,
+    "topic": "note-18-18",
+    "topicTitle": "Measure — Counting Cycles on a Chip With No Cycle Counter",
+    "question": "What timing error follows from ignoring a pending wrapped tick?",
+    "options": [
+      "One second too small.",
+      "One cycle too small.",
+      "One tick: 48000 cycles or 1 ms too small."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The tick period is one millisecond.",
+      "A pending wrapped tick represents 48000 cycles or 1 ms, not one cycle.",
+      "The counter is one tick, 48000 cycles or 1 ms, too small."
+    ]
+  },
+  {
+    "id": "note-18-19-0",
+    "lesson": 18,
+    "topic": "note-18-19",
+    "topicTitle": "The Time Budget — 20 000 Cycles",
+    "question": "Convert 20000 cycles to microseconds at 48 MHz.",
+    "options": [
+      "20 ms, because the strategy period defines its execution time.",
+      "41.7 µs, by dividing cycles by 480.",
+      "About 416.7 µs; the strategy slice is shorter than its 20 ms period."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The cycle budget is about 416.7 µs; the 20 ms period includes time between calls.",
+      "At 48 MHz there are 48 cycles per microsecond, so 20000/48≈416.7 µs.",
+      "20000/48≈416.7 µs per call. This is the strategy slice, not its full 20 ms control period."
+    ]
+  },
+  {
+    "id": "note-18-20-0",
+    "lesson": 18,
+    "topic": "note-18-20",
+    "topicTitle": "The Knob Is the Clock Rate",
+    "question": "Why slow the simulation instead of skipping steps?",
+    "options": [
+      "Skipping physics steps changes only the viewer refresh rate.",
+      "Slowdown necessarily changes the seed and strategy decisions.",
+      "The same step sequence preserves deterministic contact and sensor outcomes."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It changes contacts, sensor observations and therefore match results.",
+      "Running the same simulated step sequence more slowly can preserve deterministic results.",
+      "Skipping changes contact and sensor outcomes. Executing the same sequence more slowly preserves deterministic results."
+    ]
+  },
+  {
+    "id": "note-18-21-0",
+    "lesson": 18,
+    "topic": "note-18-21",
+    "topicTitle": "Flash Is the Scarce Resource",
+    "question": "Why replace sscanf for two numeric fields?",
+    "options": [
+      "sscanf is free because only two fields are used.",
+      "A bounded narrow parser avoids the general parser's flash cost.",
+      "A smaller parser can omit bounds checking because there are only two fields."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Its general library implementation can pull substantial flash despite the small format.",
+      "Its general parser pulls thousands of flash bytes; a bounded small numeric parser covers this limited input contract.",
+      "The bounded parser still needs valid numeric ranges and complete input handling."
+    ]
+  },
+  {
+    "id": "note-18-22-0",
+    "lesson": 18,
+    "topic": "note-18-22",
+    "topicTitle": "The Opponents",
+    "question": "Which opponent exposes the clearest edge-safety exploit?",
+    "options": [
+      "Turtle, because it always ignores the ring edge during every retreat.",
+      "Spinner, because its score is the lowest by definition.",
+      "Bull ignores edge sensing during a target-visible charge."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The stated exploit is Bull's target-visible charge overriding edge sensing.",
+      "The question concerns documented edge behaviour, not an inferred score ranking.",
+      "Bull: its charge ignores edge sensing while a target is visible, so it can be lured toward the line."
+    ]
+  },
+  {
+    "id": "note-18-23-0",
+    "lesson": 18,
+    "topic": "note-18-23",
+    "topicTitle": "The League — Measured on the Host",
+    "question": "Wins earn three points and draws one. How many points does Spinner earn from 390 wins and 21 draws?",
+    "options": [
+      "411 points, adding wins and draws equally.",
+      "1191 points, from 390×3+21.",
+      "1233 points, awarding three points to draws."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Wins earn three points, so 390×3+21=1191.",
+      "390×3+21=1191 points.",
+      "Draws earn one point rather than three."
+    ]
+  },
+  {
+    "id": "note-18-24-0",
+    "lesson": 18,
+    "topic": "note-18-24",
+    "topicTitle": "Head to Head — the Order to Beat Them In",
+    "question": "Why is a 20-match tournament insufficient for a broad win-rate claim?",
+    "options": [
+      "One seed and few matches cover limited starts and variability.",
+      "Repeating the same single match twenty times explores twenty different starts.",
+      "Twenty matches prove performance over every seed and starting pose."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Its one seed may favour particular starts; many seeded matches reveal more variability and failure cases.",
+      "Identical conditions do not broaden coverage; multiple seeds and starts reveal variability.",
+      "A small one-seed tournament samples limited conditions."
+    ]
+  },
+  {
+    "id": "note-18-25-0",
+    "lesson": 18,
+    "topic": "note-18-25",
+    "topicTitle": "Submitting — and Why Cheating Does Not Pay",
+    "question": "What does the build hash identify?",
+    "options": [
+      "Only the list of winning strategy names.",
+      "The exact firmware flash image, separate from the behaviour hash.",
+      "The sensor-noise sequence independently of the firmware."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The build hash identifies exact firmware bytes, not scores or labels.",
+      "The exact firmware flash bytes that produced the result, independently of the match-behaviour hash.",
+      "Match behaviour has a separate hash; build identity concerns the programmed image."
+    ]
+  },
+  {
+    "id": "note-18-26-0",
+    "lesson": 18,
+    "topic": "note-18-26",
+    "topicTitle": "The Host League — Thirty Files, One Program",
+    "question": "Why sort entries after constructor registration?",
+    "options": [
+      "Sorting adjusts each strategy's gains to equal values.",
+      "Constructors always run in alphabetical strategy order.",
+      "Sorting removes constructor/link-order variation from tournament order."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It orders entries for reproducibility; it does not alter strategy behaviour.",
+      "Object and link order can vary; explicit sorting gives stable order.",
+      "Constructor and object link order can vary; sorting stabilises tournament ordering and reproducibility."
+    ]
+  },
+  {
+    "id": "note-18-27-0",
+    "lesson": 18,
+    "topic": "note-18-27",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Which check validates the submission scheme's cross-platform assumption?",
+    "options": [
+      "Matching source names guarantees matching host/chip floating-point outcomes.",
+      "Compare seeded chip and host behaviour hashes alongside build/budget checks.",
+      "Compare host graphics screenshots only."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The same seeded run and behaviour hash directly check the cross-platform assumption.",
+      "Run the chip tournament with the same seed and compare its behaviour hash with the host's, alongside budget/build checks.",
+      "Screenshots do not check deterministic chip tournament behaviour or execution budgets."
+    ]
+  },
+  {
+    "id": "note-18-28-0",
+    "lesson": 18,
+    "topic": "note-18-28",
+    "topicTitle": "What Carries Forward",
+    "question": "Name four deliberate ingredients of repeatable matches.",
+    "options": [
+      "A fixed seed alone, with arbitrary sensing order and persistent state.",
+      "Isolated state, independent seeded RNG, simultaneous sensing and consistent arithmetic.",
+      "Shared static state, one conditional RNG stream, sequential sensing and fused arithmetic."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A seed cannot compensate for shared state, unequal snapshots or differing arithmetic sequences.",
+      "Isolated per-robot state, independent seeded RNG streams, simultaneous sensing and consistent non-fused floating-point arithmetic.",
+      "Each introduces coupling or cross-platform/order dependence opposite to the intended repeatability rules."
+    ]
+  },
+  {
+    "id": "note-19-0-0",
+    "lesson": 19,
+    "topic": "note-19-0",
+    "topicTitle": "Board connections and controls",
+    "question": "Which pins carry OLED data and clock, and what else must its wiring include?",
+    "options": [
+      "PB8 is SDA and PB9 is SCL; use address 0x68.",
+      "PB9 SDA, PB8 SCL, 3V3, common ground and OLED address 0x3C.",
+      "PB9 and PB8 suffice without a shared ground."
+    ],
+    "correct": 1,
+    "explanations": [
+      "This swaps clock and data and uses the MPU6050 address rather than OLED address 0x3C.",
+      "PB9 is SDA and PB8 SCL; connect 3V3 and ground and use the configured I²C bus and device address 0x3C.",
+      "The display also needs power and a common ground; signal pins alone do not complete its electrical connection."
+    ]
+  },
+  {
+    "id": "note-19-0-1",
+    "lesson": 19,
+    "topic": "note-19-0",
+    "topicTitle": "Board connections and controls",
+    "question": "What does the knob control in this lesson?",
+    "options": [
+      "The knob always commands throttle in every final project.",
+      "Application-defined inputs; PA5 blinks while watchdog refresh is allowed.",
+      "PA5 blinks only when the OLED finishes a frame."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The application defines its controls; the template forwards buttons, joystick and knob.",
+      "Buttons, joystick and knob feed the application; PA5 blinks while watchdog refresh is permitted.",
+      "Its template indication follows permitted watchdog refresh rather than display completion."
+    ]
+  },
+  {
+    "id": "note-19-1-0",
+    "lesson": 19,
+    "topic": "note-19-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Which MODER bits select PB8 mode, and what values support I²C?",
+    "options": [
+      "MODER bits 17:16 select analog mode 11 with AF6.",
+      "MODER bits 8:8 select output mode 01; AFR6 is sufficient.",
+      "MODER bits 17:16 = 10, AFR = AF6, with open-drain and pull-ups."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Analog mode disconnects the alternate digital peripheral; I²C needs alternate mode and open-drain/pull-up configuration.",
+      "MODER allocates two bits per pin, so PB8 occupies bits 17:16 and needs alternate mode 10.",
+      "Bits 17:16 hold pin 8 mode. Set 10 for alternate mode and the appropriate AFR field to AF6; I²C also needs its electrical/open-drain and pull-up setup."
+    ]
+  },
+  {
+    "id": "note-19-1-1",
+    "lesson": 19,
+    "topic": "note-19-1",
+    "topicTitle": "GPIO port configuration",
+    "question": "Why is setting only AFR insufficient?",
+    "options": [
+      "AFR selects routing; MODER must also activate alternate mode.",
+      "AFR automatically changes MODER to alternate mode.",
+      "AFR only controls clock frequency."
+    ],
+    "correct": 0,
+    "explanations": [
+      "AFR selects the peripheral routing, but MODER must also enable alternate mode or the pin is not connected to that function.",
+      "These are separate fields; selecting a route does not activate that route.",
+      "AFR chooses which peripheral signal reaches a pin; it is not a peripheral clock divider."
+    ]
+  },
+  {
+    "id": "note-19-2-0",
+    "lesson": 19,
+    "topic": "note-19-2",
+    "topicTitle": "What You Are About to Build",
+    "question": "What must be demonstrable by week 4?",
+    "options": [
+      "Every planned stretch feature, even before the MVP works.",
+      "A running end-to-end Wokwi MVP with host tests passing.",
+      "A complete report with no running integration."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The gate concerns the smallest working system, not optional stretch work.",
+      "An end-to-end MVP running in Wokwi with its host tests passing, rather than isolated unfinished components.",
+      "Week 4 requires the end-to-end MVP running in Wokwi and host checks passing."
+    ]
+  },
+  {
+    "id": "note-19-3-0",
+    "lesson": 19,
+    "topic": "note-19-3",
+    "topicTitle": "What a Good Embedded Project Looks Like",
+    "question": "Why can a small game outscore a half-complete 3 D maze?",
+    "options": [
+      "Complexity alone earns full working-system marks.",
+      "A complete modest project can satisfy the actual evidence criteria.",
+      "A small game's timing and fault handling do not count toward grading."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The rubric awards demonstrated behaviour and engineering evidence, not feature count.",
+      "It can fully satisfy working behaviour, timing, fault, test and explanation criteria; complexity alone earns none of those assurances.",
+      "Those are explicit evidence criteria and can make a modest complete project score well."
+    ]
+  },
+  {
+    "id": "note-19-4-0",
+    "lesson": 19,
+    "topic": "note-19-4",
+    "topicTitle": "Four Tracks",
+    "question": "What common interface principle links game and drone tracks?",
+    "options": [
+      "Both must share identical OLED rendering code to be testable.",
+      "Both cores should read peripheral clocks internally to decide dt.",
+      "Portable core logic accepts explicit inputs/time and produces outputs/state."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The shared principle is a hardware-independent logic interface, not a particular display driver.",
+      "Explicit time and inputs separate portable logic from platform details.",
+      "Hardware-independent logic receives explicit inputs/time and produces outputs/state, enabling replay and host testing."
+    ]
+  },
+  {
+    "id": "note-19-5-0",
+    "lesson": 19,
+    "topic": "note-19-5",
+    "topicTitle": "Track A — Games",
+    "question": "Which measures distinguish a polished game from a merely running one?",
+    "options": [
+      "Average frame rate alone, regardless of worst input delay.",
+      "Only the screenshot's colour palette.",
+      "Frame rate, worst input delay, bus bytes and long-run correctness."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A good average can hide slow reactions or failures; the listed worst-case and robustness measures also matter.",
+      "Polish here includes measured responsiveness, frame/bus cost and robust long-run behaviour.",
+      "Frame rate, worst input latency, bus bytes per frame and long-run random-input correctness."
+    ]
+  },
+  {
+    "id": "note-19-6-0",
+    "lesson": 19,
+    "topic": "note-19-6",
+    "topicTitle": "Track B — Drone",
+    "question": "Why record fault detection and action times separately?",
+    "options": [
+      "Detection time automatically equals actuator action time.",
+      "Only the time of the injected fault matters.",
+      "Detection can be prompt while the later safety action is delayed."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Scheduling and processing after detection can delay the actual response.",
+      "The interval to detection and the interval to action together establish response latency.",
+      "A quick detector can still be followed by a delayed response; both stages determine the actual safety latency."
+    ]
+  },
+  {
+    "id": "note-19-7-0",
+    "lesson": 19,
+    "topic": "note-19-7",
+    "topicTitle": "Track C — Robot",
+    "question": "Why state N and seeds with a robot win-rate claim?",
+    "options": [
+      "Seeds are aesthetic labels with no impact on a trial.",
+      "N=1 establishes general win rate if that one match was won.",
+      "N and seeds state trial breadth and reproducible conditions."
+    ],
+    "correct": 2,
+    "explanations": [
+      "They identify reproducible random conditions; N states how many trials support the rate.",
+      "A single favourable outcome provides too little coverage for a broad claim.",
+      "They define reproducibility and breadth of the trial; one favourable match does not establish general performance."
+    ]
+  },
+  {
+    "id": "note-19-8-0",
+    "lesson": 19,
+    "topic": "note-19-8",
+    "topicTitle": "Track D — Your Own Idea",
+    "question": "What three conditions apply to the original-project option, Track D?",
+    "options": [
+      "Only instructor approval; execution platform and core structure are optional.",
+      "Base-board Wokwi, a host-tested pure-C core and agreed measurable scope.",
+      "Any hardware platform, no host checks, and unrestricted scope."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Agreement is one of three conditions rather than a replacement for the other two.",
+      "Base-board Wokwi execution, a pure-C core tested on host and instructor agreement to measurable proposal scope.",
+      "Track D still needs base-board Wokwi operation, a host-tested pure-C core and agreed measurable scope."
+    ]
+  },
+  {
+    "id": "note-19-9-0",
+    "lesson": 19,
+    "topic": "note-19-9",
+    "topicTitle": "Scope — MVP First",
+    "question": "Is a working physics engine with no usable output an MVP?",
+    "options": [
+      "Yes; an unused physics engine is equivalent to a demonstrated product.",
+      "No; the smallest full user experience must run end-to-end.",
+      "Yes; any independently running component is a complete MVP."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Internal mechanics alone do not let the user exercise the proposed experience.",
+      "No. The smallest full user experience must run end-to-end, even with limited content or rough presentation.",
+      "The MVP is the smallest end-to-end user experience, which needs usable output."
+    ]
+  },
+  {
+    "id": "note-19-10-0",
+    "lesson": 19,
+    "topic": "note-19-10",
+    "topicTitle": "Requirements Are Numbers",
+    "question": "Input, app and display periods are 10, 20 and 50 ms. What is their scheduling-only worst input latency?",
+    "options": [
+      "30 ms, because display cannot add latency.",
+      "50 ms, because display period is the only delay.",
+      "80 ms before display transfer, from 10+20+50."
+    ],
+    "correct": 2,
+    "explanations": [
+      "An app update can wait for the next 50 ms display release too.",
+      "Worst phase waits also include input 10 ms and app 20 ms, totaling 80 ms before transfer.",
+      "10+20+50=80 ms, then add display transfer; it fails a 70 ms maximum without design changes."
+    ]
+  },
+  {
+    "id": "note-19-11-0",
+    "lesson": 19,
+    "topic": "note-19-11",
+    "topicTitle": "The Architecture Template",
+    "question": "Why label each shared-data arrow with its protection?",
+    "options": [
+      "It makes ownership and synchronization visible for review.",
+      "Protection labels automatically implement a mutex in compiled code.",
+      "Arrows need only variable names because ownership cannot affect races."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It exposes ownership and races during design review instead of leaving synchronisation implicit.",
+      "They document a design contract; code must implement the chosen protection.",
+      "Ownership and synchronization determine who may change data and when."
+    ]
+  },
+  {
+    "id": "note-19-12-0",
+    "lesson": 19,
+    "topic": "note-19-12",
+    "topicTitle": "Tasks, Rates, Priorities",
+    "question": "Why intentionally give 100 ms telemetry higher priority than 50 ms display?",
+    "options": [
+      "Shorter period always requires higher priority with no exception.",
+      "Telemetry has higher priority because its I²C transfer is longer than the display's.",
+      "Timely short telemetry outranks a display that tolerates slight lateness."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This design accounts for tolerable screen lateness and timely short telemetry work.",
+      "Telemetry is short UART work; the long polled display flush should not delay it.",
+      "A screen tolerates small lateness, while short telemetry work benefits from regular timestamps and should not be delayed by long display flushes."
+    ]
+  },
+  {
+    "id": "note-19-13-0",
+    "lesson": 19,
+    "topic": "note-19-13",
+    "topicTitle": "Shared Data — the Sticky-Edge Problem",
+    "question": "Why copy the latest button level but accumulate its press edge?",
+    "options": [
+      "Levels show current state; pending edges preserve unconsumed events.",
+      "Replace pending edges with every newest sample.",
+      "Accumulate button levels forever after the first press."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Level describes current state; edge records an event that must remain pending until the slower consumer receives it.",
+      "A brief event can vanish between slower app runs; edges must remain pending until consumed.",
+      "Levels describe current state and must replace old levels; only events need accumulation."
+    ]
+  },
+  {
+    "id": "note-19-14-0",
+    "lesson": 19,
+    "topic": "note-19-14",
+    "topicTitle": "Who Protects What",
+    "question": "Why should shell request profiler reset rather than zero counters itself?",
+    "options": [
+      "Every task should reset every other task's counter for consistency.",
+      "The periodic task remains its counter's sole writer.",
+      "Shell writes zero safely because aligned stores prevent all races."
+    ],
+    "correct": 1,
+    "explanations": [
+      "One writer per counter plus a reset request keeps ownership explicit.",
+      "Each periodic task remains the single writer, avoiding races with in-progress timing updates.",
+      "It can race with the owning task's update even if a single store is untorn."
+    ]
+  },
+  {
+    "id": "note-19-15-0",
+    "lesson": 19,
+    "topic": "note-19-15",
+    "topicTitle": "The Plug-In Interface",
+    "question": "Why must app_draw be read-only?",
+    "options": [
+      "draw may mutate state on target but must be read-only on host.",
+      "Drawing should advance physics so faster displays improve gameplay.",
+      "Logic advances only in app_step, independently of rendering rate."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Different rules would break replay and cross-platform consistency.",
+      "That makes logic depend on refresh rate; state transitions belong to app_step.",
+      "Rendering rate and host/target differences must not advance game logic or change results; state changes belong to app_step."
+    ]
+  },
+  {
+    "id": "note-19-16-0",
+    "lesson": 19,
+    "topic": "note-19-16",
+    "topicTitle": "The Independent Watchdog",
+    "question": "The watchdog clock is nominally 32 kHz; PR=3 divides it by 32 and RLR=999 gives 1000 counts. Find the nominal timeout.",
+    "options": [
+      "32 s, because PR=3 multiplies the watchdog clock by 32.",
+      "Nominally 1 s, subject to the actual independent oscillator frequency.",
+      "999/32000≈31 ms, ignoring the divider."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The prescaler divides the clock, giving 1000 Hz and 1000 reload counts.",
+      "(999+1)/(32000/32)=1 s, subject to actual LSI frequency.",
+      "PR=3 selects divide-by-32 and RLR counts include +1, giving nominal 1 s."
+    ]
+  },
+  {
+    "id": "note-19-17-0",
+    "lesson": 19,
+    "topic": "note-19-17",
+    "topicTitle": "Heartbeats, Not a Single Kick",
+    "question": "Why use independent counters rather than a shared alive bitmap?",
+    "options": [
+      "A shared bitmap OR is atomic across every preemption.",
+      "Single-writer counters avoid shared bitmap read-modify-write races.",
+      "Counters require a shared writer in health to increment every task's heartbeat."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Read-modify-write can overwrite another task's newly set bit.",
+      "Counters have one writer each. A preempted bitmap OR could overwrite another task's newer bit.",
+      "Each task owns its own counter; health observes progress rather than manufacturing it."
+    ]
+  },
+  {
+    "id": "note-19-18-0",
+    "lesson": 19,
+    "topic": "note-19-18",
+    "topicTitle": "Failsafes — Defined Behaviour for Every Fault",
+    "question": "Why can software recover hang display but not spin input?",
+    "options": [
+      "A blocked display necessarily blocks the CPU forever.",
+      "A spinning top-priority task still allows health to run every 250 ms.",
+      "Blocked display lets health run; top-priority spinning input starves it."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A blocked task yields execution, allowing health to detect the missing heartbeat.",
+      "It starves all lower priorities, including the software fallback.",
+      "The blocked display allows health to run. A top-priority spinning input task prevents the fallback code from executing."
+    ]
+  },
+  {
+    "id": "note-19-19-0",
+    "lesson": 19,
+    "topic": "note-19-19",
+    "topicTitle": "The Timing Budget",
+    "question": "A full OLED frame sends 1088 bytes, each taking 22.5 µs. Calculate load when repeated at 20 Hz.",
+    "options": [
+      "100%, because any polled transfer permanently occupies the core.",
+      "4.9%, by dropping a factor of ten in frame rate.",
+      "About 49%: 1088×22.5 µs×20 per second."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Polling occupies CPU during transfer, not necessarily the entire second.",
+      "A 24.5 ms frame repeated 20 times uses 490 ms each second, or 49%.",
+      "1088×22.5 µs×20≈0.490 s per second, or 49%."
+    ]
+  },
+  {
+    "id": "note-19-20-0",
+    "lesson": 19,
+    "topic": "note-19-20",
+    "topicTitle": "The Memory Budget",
+    "question": "Why can a simple telemetry task need hundreds of stack bytes?",
+    "options": [
+      "UART hardware stores printf's call frames in peripheral memory.",
+      "Formatting and UART library calls add substantial call-chain stack.",
+      "Only the task's visible local variables use stack."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Call frames occupy the processor stack even when output eventually reaches a peripheral.",
+      "Its formatting and UART library chain consumes substantial stack before its own local variables.",
+      "Formatting and UART call chains add stack frames below that task."
+    ]
+  },
+  {
+    "id": "note-19-21-0",
+    "lesson": 19,
+    "topic": "note-19-21",
+    "topicTitle": "Measuring on the Target — `stats`",
+    "question": "Which statistic tests whether a task meets its deadline?",
+    "options": [
+      "Maximum stack usage alone below 75%.",
+      "Peak response below the deadline, with no over-period runs.",
+      "Average CPU share alone below 100%."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Stack margin checks memory safety, not wake-to-completion deadline timing.",
+      "Maximum response compared with period, with over count zero; response includes higher-priority interference.",
+      "Low average utilization can coexist with missed individual deadlines; compare peak response and over count."
+    ]
+  },
+  {
+    "id": "note-19-22-0",
+    "lesson": 19,
+    "topic": "note-19-22",
+    "topicTitle": "The Test Plan, Part 1 — Host Tests",
+    "question": "Why evaluate an assertion condition once?",
+    "options": [
+      "A side-effectful condition can change on the second evaluation.",
+      "Assertions must call state-changing logic once for printing and again for checking.",
+      "Evaluating twice always increases confidence even when the call changes state."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A state-changing call such as health_check can behave differently on the second evaluation and produce false failure.",
+      "Store the single evaluated result and use it for both checking and reporting.",
+      "A side effect can change the second result, giving a misleading assertion failure."
+    ]
+  },
+  {
+    "id": "note-19-23-0",
+    "lesson": 19,
+    "topic": "note-19-23",
+    "topicTitle": "The Test Plan, Part 2 — What You Will Watch in Wokwi",
+    "question": "What belongs in a target observation log?",
+    "options": [
+      "Only an unlabelled screenshot with no triggering action.",
+      "Only the expected behaviour, since the demo should match it.",
+      "Action, expectation, observed evidence and relevant simulator limitations."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A reproducible log records action, expectation, observed result and relevant simulator limits.",
+      "Actual observations and evidence are needed to compare claims with results.",
+      "What was done, expected and seen, with screenshots/recordings/logs and any simulator limitation affecting the result."
+    ]
+  },
+  {
+    "id": "note-19-24-0",
+    "lesson": 19,
+    "topic": "note-19-24",
+    "topicTitle": "Milestones",
+    "question": "What action is expected if MVP slips beyond week 4?",
+    "options": [
+      "Report the missed gate and reduce scope.",
+      "Hide the delay until final demonstration.",
+      "Add more stretch features to compensate for the missing core."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Report it during review and cut scope; do not hide the missed gate.",
+      "The missed gate must be disclosed and scope reduced to remain deliverable.",
+      "That increases risk instead of restoring a feasible MVP."
+    ]
+  },
+  {
+    "id": "note-19-25-0",
+    "lesson": 19,
+    "topic": "note-19-25",
+    "topicTitle": "Demo Day",
+    "question": "What must accompany a reproducible live demo?",
+    "options": [
+      "Tagged code, report, measured requirements, sustained stats and a fault demo.",
+      "A video from any older build without a code tag.",
+      "Only a slide claiming all requirements passed."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Tagged code, report PDF, measured requirement results, sustained-run stats and a demonstrated fault response.",
+      "The live result must trace to tagged code and current measured evidence.",
+      "The demo also needs the report, sustained statistics and a demonstrated fault response."
+    ]
+  },
+  {
+    "id": "note-19-26-0",
+    "lesson": 19,
+    "topic": "note-19-26",
+    "topicTitle": "The Rubric (100 points)",
+    "question": "What caps apply to warnings and contradicted report claims?",
+    "options": [
+      "Both categories are automatically zero for one warning.",
+      "Engineering remains capped at 15 and report at 10 regardless of evidence.",
+      "Warnings cap engineering at 8; contradicted claims cap report at 3."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The documented caps are 8 and 3 rather than universal zeros.",
+      "Warnings cap engineering at 8 and contradicted claims cap the report at 3.",
+      "Engineering quality is capped at 8; the report is capped at 3 when the demo contradicts a claim."
+    ]
+  },
+  {
+    "id": "note-19-27-0",
+    "lesson": 19,
+    "topic": "note-19-27",
+    "topicTitle": "AI Tools — Allowed, Disclosed, Understood",
+    "question": "What information must AI disclosure include?",
+    "options": [
+      "Only the model name; understanding generated code is optional.",
+      "Only code edits; AI use need not be identified if the program runs.",
+      "Tool, purpose and author changes, with understanding and verification."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Disclose tool, use and changes, and explain and independently verify the resulting code.",
+      "The policy requires tool and purpose disclosure as well as author changes and understanding.",
+      "The tool, its use and what authors changed; they must also explain and verify resulting code."
+    ]
+  },
+  {
+    "id": "note-19-28-0",
+    "lesson": 19,
+    "topic": "note-19-28",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Does host health success verify the physical IWDG?",
+    "options": [
+      "No; host logic does not execute the silicon watchdog reset.",
+      "Yes; the host executes the hardware watchdog oscillator.",
+      "Yes; matching register names proves that the silicon reset happened."
+    ],
+    "correct": 0,
+    "explanations": [
+      "No. Register setup and silicon watchdog reset require separate evidence from host logic.",
+      "Host health tests check logic, not the silicon's independent oscillator or reset.",
+      "Register consistency is design evidence; actual reset behaviour needs separate execution evidence."
+    ]
+  },
+  {
+    "id": "note-19-29-0",
+    "lesson": 19,
+    "topic": "note-19-29",
+    "topicTitle": "What Carries Forward",
+    "question": "Which part is most portable to a new chip?",
+    "options": [
+      "Pure-C logic with explicit inputs/time is most portable.",
+      "Only a Wokwi wiring diagram.",
+      "Peripheral register addresses and interrupt-vector names."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Pure-C logic with explicit time and inputs; peripheral drivers and scheduling bindings change.",
+      "The diagram binds hardware; the core algorithm can transfer through equivalent driver contracts.",
+      "Those depend on the chip and platform; explicit-input pure-C logic is the portable portion."
+    ]
+  },
+  {
+    "id": "study-13-0",
+    "lesson": 13,
+    "topic": "fundamentals-13",
+    "topicTitle": "Core ideas",
+    "question": "What happens when the mixer correction sign is reversed?",
+    "options": [
+      "It only reverses the OLED's roll label.",
+      "It reduces effective gain but preserves stabilizing feedback.",
+      "It reinforces the tilt, creating positive feedback."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The mixer changes applied torque, so a reversed sign reinforces physical tilt.",
+      "A sign reversal turns negative feedback into positive feedback rather than merely weakening it.",
+      "A correction intended to oppose tilt increases it instead, making positive feedback. Verify coordinate and motor sign conventions before increasing gains."
+    ]
+  },
+  {
+    "id": "study-13-1",
+    "lesson": 13,
+    "topic": "fundamentals-13",
+    "topicTitle": "Core ideas",
+    "question": "Why does a saturated actuator need anti-windup?",
+    "options": [
+      "Integral should keep growing to force the actuator beyond its limit.",
+      "It prevents an impossible accumulated request from causing later overshoot.",
+      "Saturation automatically clears accumulated integral error."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The actuator cannot exceed its range, and stored impossible correction causes overshoot later.",
+      "The integral can keep growing while the requested command is impossible, causing prolonged overshoot after the error changes. Bound or condition integration according to the controller design.",
+      "A clipped command does not erase the accumulator; integration must be bounded or conditional."
+    ]
+  },
+  {
+    "id": "study-13-2",
+    "lesson": 13,
+    "topic": "fundamentals-13",
+    "topicTitle": "Core ideas",
+    "question": "What can the browser’s one-axis model establish?",
+    "options": [
+      "It measures real IMU bus latency.",
+      "It proves a physical three-axis drone safe.",
+      "It illustrates estimator and feedback mechanisms within a limited one-axis model."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The one-axis software model illustrates mechanisms, not the physical bus.",
+      "The browser omits three-axis dynamics, interfaces and execution timing.",
+      "It illustrates estimator and feedback mechanisms. It omits full three-axis dynamics, task timing, and sensor interfaces. A stable browser trace alone does not prove that a physical drone is safe or stable."
+    ]
+  },
+  {
+    "id": "study-14-0",
+    "lesson": 14,
+    "topic": "fundamentals-14",
+    "topicTitle": "Core ideas",
+    "question": "Why does a delayed GPS reading need more than a present-time correction?",
+    "options": [
+      "A delayed reading describes the state at its arrival time.",
+      "It describes an earlier state; the estimator must account for observation age.",
+      "A checksum removes measurement age."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It describes an earlier measurement time, so treating it as current adds lag and inconsistency.",
+      "It describes an earlier state. Applying it as if current can inject lag and inconsistency. The estimator must handle observation age according to its design.",
+      "Transmission integrity does not make an old observation current."
+    ]
+  },
+  {
+    "id": "study-14-1",
+    "lesson": 14,
+    "topic": "fundamentals-14",
+    "topicTitle": "Core ideas",
+    "question": "How should conflicting low-battery and mission commands resolve?",
+    "options": [
+      "The newest command always wins, including a mission request.",
+      "Documented safety priorities make critical-battery protection outrank mission commands.",
+      "A mission must finish before any battery action."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Safety priorities must prevent a mission command overriding critical-battery protection.",
+      "The documented safety priority decides the mode. A mission request must not override critical-battery landing or other higher-priority protection.",
+      "That can exhaust the battery; critical safety conditions take precedence."
+    ]
+  },
+  {
+    "id": "study-14-2",
+    "lesson": 14,
+    "topic": "fundamentals-14",
+    "topicTitle": "Core ideas",
+    "question": "What must be validated before executing uploaded waypoints?",
+    "options": [
+      "Validate protocol structure, ranges, coordinates, storage bounds and timeouts.",
+      "Coordinates need validation only after the aircraft starts following them.",
+      "A checksum alone proves every waypoint safe and well formed."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Count, lengths, sequence/order, ranges, coordinates and checksums as specified by the protocol, plus bounded storage and timeout behavior. Receiving bytes is not permission to fly them.",
+      "Reject malformed or unsafe mission data before execution.",
+      "Counts, sequence, ranges, coordinates and bounded storage also require validation."
+    ]
+  },
+  {
+    "id": "study-15-0",
+    "lesson": 15,
+    "topic": "fundamentals-15",
+    "topicTitle": "Core ideas",
+    "question": "Why is “line lost” not error zero?",
+    "options": [
+      "Lost means insufficient position evidence; centered means a valid zero error.",
+      "The previous numerical zero can always be reused forever.",
+      "The sensor weight is low, so the robot is certainly centered."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Zero is positive evidence of being centered. Lost means the sensor weight is too low to estimate position; a recovery/search rule must handle that state.",
+      "Loss requires a bounded recovery/search rule instead of assuming a current measurement.",
+      "Low weight means insufficient evidence, while centered is a valid position estimate."
+    ]
+  },
+  {
+    "id": "study-15-1",
+    "lesson": 15,
+    "topic": "fundamentals-15",
+    "topicTitle": "Core ideas",
+    "question": "Why can increasing Kd worsen a noisy run?",
+    "options": [
+      "Kd affects only steady-state error, so sample timing is irrelevant.",
+      "A larger derivative gain suppresses every sensor fluctuation.",
+      "Derivative action amplifies fast changes, including noise, and depends on dt."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Derivative depends on error changes over dt; filtering and timing affect it.",
+      "Derivative action amplifies rapid changes and can amplify noise.",
+      "A derivative amplifies rapid sample changes. Filtering and dt affect the computed derivative; tune using the same sampling conditions and inspect noise."
+    ]
+  },
+  {
+    "id": "study-15-2",
+    "lesson": 15,
+    "topic": "fundamentals-15",
+    "topicTitle": "Core ideas",
+    "question": "Why do encoder counts not guarantee ground distance?",
+    "options": [
+      "Both wheels turning equally guarantees accurate ground distance.",
+      "Encoders directly measure the robot's world coordinates.",
+      "Encoders measure wheel rotation; slip can separate it from ground travel."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Both can slip equally; wheel rotation alone does not prove translation.",
+      "They measure wheel rotation, which must be converted through a physical model.",
+      "Encoders measure wheel rotation. Slip means the wheel can rotate without matching translation across the ground. The plant and judging model distinguish those quantities."
+    ]
+  },
+  {
+    "id": "study-16-0",
+    "lesson": 16,
+    "topic": "fundamentals-16",
+    "topicTitle": "Core ideas",
+    "question": "Why inflate obstacles in a costmap?",
+    "options": [
+      "Inflation corrects every localization bias automatically.",
+      "Inflation makes the robot's real body smaller.",
+      "It accounts for the robot's finite body and required obstacle clearance."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It models required clearance rather than fixing the pose estimate.",
+      "It adds map clearance to account for finite body size.",
+      "A point route near a wall can collide with the robot’s finite body. Inflation encodes required clearance around occupied cells."
+    ]
+  },
+  {
+    "id": "study-16-1",
+    "lesson": 16,
+    "topic": "fundamentals-16",
+    "topicTitle": "Core ideas",
+    "question": "Why can reactive braking stop motion even when a path exists?",
+    "options": [
+      "An existing path proves every immediate beam reading safe.",
+      "Fresh local danger can override a path based on stale or incomplete belief.",
+      "Braking is useful only after global replanning completes."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The path can rely on stale or incomplete map belief.",
+      "The path may rely on stale or incomplete belief. A local observation can indicate immediate danger before global replanning finishes.",
+      "Immediate collision evidence must stop motion before slower planning catches up."
+    ]
+  },
+  {
+    "id": "study-16-2",
+    "lesson": 16,
+    "topic": "fundamentals-16",
+    "topicTitle": "Core ideas",
+    "question": "What does unknown assumed free trade off?",
+    "options": [
+      "It enables exploration but risks unseen obstacles, requiring protective sensing/control.",
+      "Unknown-as-free removes the need for sensing and braking.",
+      "Unknown cells are physically guaranteed empty."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It enables exploration but risks planning through unseen obstacles. Sensing, safe speed, braking and replanning must compensate; unknown is not proven free.",
+      "Those safeguards are needed precisely because unseen obstacles may be present.",
+      "Unknown means unobserved, so free assumptions permit exploration at risk."
+    ]
+  },
+  {
+    "id": "study-17-0",
+    "lesson": 17,
+    "topic": "fundamentals-17",
+    "topicTitle": "Core ideas",
+    "question": "What does u=−Kx mean?",
+    "options": [
+      "The minus sign is valid regardless of coordinate and plant conventions.",
+      "A plant-consistent weighted combination of full state errors commands the actuator.",
+      "u uses angle alone and ignores translation."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The sign and desired-state offsets must match the modeled plant.",
+      "The command is a weighted combination of state errors with a sign convention tied to the plant. x normally includes position, velocity, angle and angular rate; desired-state offsets must be accounted for.",
+      "Full state feedback normally combines position, velocity, angle and angular rate."
+    ]
+  },
+  {
+    "id": "study-17-1",
+    "lesson": 17,
+    "topic": "fundamentals-17",
+    "topicTitle": "Core ideas",
+    "question": "Does a stable linearized model prove recovery from any lean?",
+    "options": [
+      "Yes; eigenvalues automatically enforce the robot's mechanical constraints.",
+      "Yes; a stable local model covers all angles and motor limits.",
+      "No; local linear stability does not cover arbitrary lean or saturation."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Mathematical local stability does not impose physical travel or voltage limits.",
+      "Linearization is local, and nonlinearities or saturation can prevent recovery.",
+      "No. Linearization applies near its operating point. Large angles, saturation and physical constraints can put the nonlinear system outside the stabilizable region."
+    ]
+  },
+  {
+    "id": "study-17-2",
+    "lesson": 17,
+    "topic": "fundamentals-17",
+    "topicTitle": "Core ideas",
+    "question": "Why compare controller variants under the same disturbance?",
+    "options": [
+      "Use different payloads so every controller sees its best case.",
+      "Common repeatable conditions isolate the control-law change.",
+      "A larger push on the preferred controller makes the comparison controlled."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That confounds controller effects with a changed plant.",
+      "Changing payload, initial state, sensors or disturbance changes the experiment. A repeatable common input makes the control-law comparison interpretable.",
+      "Changing disturbances changes the experiment; use common repeatable input."
+    ]
+  },
+  {
+    "id": "study-18-0",
+    "lesson": 18,
+    "topic": "fundamentals-18",
+    "topicTitle": "Core ideas",
+    "question": "Why is using world coordinates in a strategy unfair?",
+    "options": [
+      "Truth is merely another allowed sensor reading.",
+      "Only the viewer's graphics determine whether a strategy is fair.",
+      "True positions bypass the strategy's restricted sensor contract."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The strategy contract limits knowledge to observations, excluding simulator truth.",
+      "The strategy's information access determines fairness even if graphics are unchanged.",
+      "The contract restricts knowledge to sensor observations. True positions bypass sensing uncertainty and opponent visibility, invalidating the comparison."
+    ]
+  },
+  {
+    "id": "study-18-1",
+    "lesson": 18,
+    "topic": "fundamentals-18",
+    "topicTitle": "Core ideas",
+    "question": "Why do both robots sense before either is advanced?",
+    "options": [
+      "Sequential movement is fair because both calls take the same CPU time.",
+      "Sensing first removes every random noise difference.",
+      "Both strategies decide from the same pre-movement world snapshot."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The second strategy still sees a later world snapshot.",
+      "It synchronizes observation time, not individual sensor noise.",
+      "It gives both decisions the same world snapshot. Sequential sense-and-move can make outcomes depend on loop order."
+    ]
+  },
+  {
+    "id": "study-18-2",
+    "lesson": 18,
+    "topic": "fundamentals-18",
+    "topicTitle": "Core ideas",
+    "question": "What evidence distinguishes a better strategy from a lucky round?",
+    "options": [
+      "One win against one fixed starting pose.",
+      "Change physics and scoring for each strategy to maximize its score.",
+      "Repeated seeded trials with varied starts and fixed scoring/physics/timing."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A lucky round cannot support a broad strategy claim.",
+      "Comparable trials keep physics, timing and scoring fixed.",
+      "Repeated seeded trials, varied starting conditions and specified scoring. Keep physics, opponents and timing limits fixed while comparing the strategy change."
+    ]
+  },
+  {
+    "id": "study-19-0",
+    "lesson": 19,
+    "topic": "fundamentals-19",
+    "topicTitle": "Core ideas",
+    "question": "What makes “stops safely” a testable requirement?",
+    "options": [
+      "Specify the fault, response bound, measurement method and trial conditions.",
+      "Only the intended safe state matters; response time cannot affect safety.",
+      "The phrase “stops safely” is measurable without any specified bound."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Specify the fault/input condition, maximum response time or stopping distance, measurement method and trial conditions. For example, a stale sensor sequence must cause zero wheel command within a stated time.",
+      "A delayed stop can be dangerous despite eventually reaching the safe state.",
+      "A test needs triggering conditions, response/distance limits and a measurement method."
+    ]
+  },
+  {
+    "id": "study-19-1",
+    "lesson": 19,
+    "topic": "fundamentals-19",
+    "topicTitle": "Core ideas",
+    "question": "Why should one owner write each actuator?",
+    "options": [
+      "Every task should directly reset actuators whenever it finishes.",
+      "Multiple independent writers always react faster without conflicts.",
+      "One owner resolves explicit requests and priorities without conflicting output writes."
+    ],
+    "correct": 2,
+    "explanations": [
+      "One owner with explicit priority handling preserves coordinated output decisions.",
+      "They can overwrite each other's safety and control commands.",
+      "Concurrent writers can overwrite safety and control decisions. Define one output owner and explicit requests/priorities so recovery cannot be undone by another task."
+    ]
+  },
+  {
+    "id": "study-19-2",
+    "lesson": 19,
+    "topic": "fundamentals-19",
+    "topicTitle": "Core ideas",
+    "question": "What should a submission demonstrate beyond a normal run?",
+    "options": [
+      "A normal-run video alone proves timing and fault recovery.",
+      "Measured timing/memory, target behaviour, repeatable checks and fault recovery.",
+      "Host success establishes every electrical and target timing claim."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Measured timing, memory and injected-fault behaviour need separate evidence.",
+      "Show measured timing and memory, repeatable checks, behavior on the target board, and what happens when a fault is introduced. Define how the system recovers or reaches a safe state, and check required assignment deliverables in the optional references.",
+      "Target board behaviour requires target evidence, alongside repeatable host checks."
+    ]
+  }
+]

@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="493" viewBox="0 0 493 1048" role="img" aria-label="The SSD1306&#x27;s bytes this lesson sends, drawn to scale.  Shaded = what the lesson sets.; control, 8 bits; AE / AF, 8 bits; A6 / A7, 8 bits; A0 / A1, 8 bits; C0 / C8, 8 bits; 40, 8 bits; 8D, then, 8 bits; 20, then, 8 bits; 21, then a, 8 bits; 21, then b, 8 bits; 22, then a, 8 bits; 22, then b, 8 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="246" y="16" text-anchor="middle" class="lbl">The SSD1306&#x27;s bytes this lesson sends, drawn to scale.  Shaded = what the lesson sets.</text>
+<text x="16" y="59" class="mono">control</text>
+<text x="16" y="74" class="lbl">0x40: pixel data follows</text>
+<text x="16" y="89" class="mono lbl">= 0x40</text>
+<text x="316.2" y="44" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="335.2" y="52" width="20.0" height="26"/>
+<text x="345.2" y="44" text-anchor="middle" class="mono lbl">6</text>
+<rect class="reg" x="355.2" y="52" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 52 V56 M455.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M435.2 52 V56 M435.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M415.2 52 V56 M415.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M395.2 52 V56 M395.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M375.2 52 V56 M375.2 74 V78"/>
+<text x="356.2" y="44" text-anchor="start" class="mono lbl">5</text>
+<text x="465.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="65" text-anchor="middle" class="mono">1</text>
+<text x="325.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M345.2 78 L345.2 100"/>
+<text x="325.2" y="91" text-anchor="middle" class="mono halo lbl">Co</text>
+<text x="345.2" y="107" text-anchor="middle" class="mono halo">D/C#</text>
+<text x="16" y="161" class="mono">AE / AF</text>
+<text x="16" y="176" class="lbl">display off / on</text>
+<text x="16" y="191" class="mono lbl">= 0xAF</text>
+<text x="316.2" y="146" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="146" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="154" width="140.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M435.2 154 V158 M435.2 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M415.2 154 V158 M415.2 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M395.2 154 V158 M395.2 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M375.2 154 V158 M375.2 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M355.2 154 V158 M355.2 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M335.2 154 V158 M335.2 176 V180"/>
+<text x="454.2" y="146" text-anchor="end" class="mono lbl">1</text>
+<rect class="hifill" x="455.2" y="154" width="20.0" height="26"/>
+<text x="465.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="445.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="425.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="405.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="385.2" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="345.2" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="167" text-anchor="middle" class="mono">1</text>
+<text x="465.2" y="193" text-anchor="middle" class="mono halo">ON</text>
+<text x="16" y="247" class="mono">A6 / A7</text>
+<text x="16" y="262" class="lbl">normal / inverted</text>
+<text x="16" y="277" class="mono lbl">= 0xA6</text>
+<text x="316.2" y="232" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="232" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="240" width="140.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M435.2 240 V244 M435.2 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M415.2 240 V244 M415.2 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M395.2 240 V244 M395.2 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M375.2 240 V244 M375.2 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M355.2 240 V244 M355.2 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M335.2 240 V244 M335.2 262 V266"/>
+<text x="454.2" y="232" text-anchor="end" class="mono lbl">1</text>
+<rect class="hifill" x="455.2" y="240" width="20.0" height="26"/>
+<text x="465.2" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="253" text-anchor="middle" class="mono">1</text>
+<text x="425.2" y="253" text-anchor="middle" class="mono">1</text>
+<text x="405.2" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="253" text-anchor="middle" class="mono">1</text>
+<text x="345.2" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="253" text-anchor="middle" class="mono">1</text>
+<text x="465.2" y="279" text-anchor="middle" class="mono halo">INVERT</text>
+<text x="16" y="333" class="mono">A0 / A1</text>
+<text x="16" y="348" class="lbl">segment remap</text>
+<text x="16" y="363" class="mono lbl">= 0xA1</text>
+<text x="316.2" y="318" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="318" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="326" width="140.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M435.2 326 V330 M435.2 348 V352"/>
+<path class="reg" stroke-width="0.6" d="M415.2 326 V330 M415.2 348 V352"/>
+<path class="reg" stroke-width="0.6" d="M395.2 326 V330 M395.2 348 V352"/>
+<path class="reg" stroke-width="0.6" d="M375.2 326 V330 M375.2 348 V352"/>
+<path class="reg" stroke-width="0.6" d="M355.2 326 V330 M355.2 348 V352"/>
+<path class="reg" stroke-width="0.6" d="M335.2 326 V330 M335.2 348 V352"/>
+<text x="454.2" y="318" text-anchor="end" class="mono lbl">1</text>
+<rect class="hifill" x="455.2" y="326" width="20.0" height="26"/>
+<text x="465.2" y="339" text-anchor="middle" class="mono">1</text>
+<text x="445.2" y="339" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="339" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="339" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="339" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="339" text-anchor="middle" class="mono">1</text>
+<text x="345.2" y="339" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="339" text-anchor="middle" class="mono">1</text>
+<text x="465.2" y="365" text-anchor="middle" class="mono halo">REMAP</text>
+<text x="16" y="419" class="mono">C0 / C8</text>
+<text x="16" y="434" class="lbl">COM scan direction</text>
+<text x="16" y="449" class="mono lbl">= 0xC8</text>
+<text x="316.2" y="404" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="404" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="412" width="80.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M375.2 412 V416 M375.2 434 V438"/>
+<path class="reg" stroke-width="0.6" d="M355.2 412 V416 M355.2 434 V438"/>
+<path class="reg" stroke-width="0.6" d="M335.2 412 V416 M335.2 434 V438"/>
+<text x="394.2" y="404" text-anchor="end" class="mono lbl">4</text>
+<rect class="hifill" x="395.2" y="412" width="20.0" height="26"/>
+<text x="405.2" y="404" text-anchor="middle" class="mono lbl">3</text>
+<rect class="reg" x="415.2" y="412" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 412 V416 M455.2 434 V438"/>
+<path class="reg" stroke-width="0.6" d="M435.2 412 V416 M435.2 434 V438"/>
+<text x="416.2" y="404" text-anchor="start" class="mono lbl">2</text>
+<text x="465.2" y="425" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="425" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="425" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="425" text-anchor="middle" class="mono">1</text>
+<text x="385.2" y="425" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="425" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="425" text-anchor="middle" class="mono">1</text>
+<text x="325.2" y="425" text-anchor="middle" class="mono">1</text>
+<text x="405.2" y="451" text-anchor="middle" class="mono halo">DOWN</text>
+<text x="16" y="505" class="mono">40</text>
+<text x="16" y="520" class="lbl">display start line</text>
+<text x="16" y="535" class="mono lbl">= 0x40</text>
+<text x="316.2" y="490" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="490" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="315.2" y="498" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M335.2 498 V502 M335.2 520 V524"/>
+<text x="354.2" y="490" text-anchor="end" class="mono lbl">6</text>
+<rect class="hifill" x="355.2" y="498" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 498 V502 M455.2 520 V524"/>
+<path class="reg" stroke-width="0.6" d="M435.2 498 V502 M435.2 520 V524"/>
+<path class="reg" stroke-width="0.6" d="M415.2 498 V502 M415.2 520 V524"/>
+<path class="reg" stroke-width="0.6" d="M395.2 498 V502 M395.2 520 V524"/>
+<path class="reg" stroke-width="0.6" d="M375.2 498 V502 M375.2 520 V524"/>
+<text x="465.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="511" text-anchor="middle" class="mono">1</text>
+<text x="325.2" y="511" text-anchor="middle" class="mono lbl">0</text>
+<text x="415.2" y="537" text-anchor="middle" class="mono halo">LINE</text>
+<text x="16" y="591" class="mono">8D, then</text>
+<text x="16" y="606" class="lbl">charge pump parameter</text>
+<text x="16" y="621" class="mono lbl">= 0x14</text>
+<text x="316.2" y="576" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="576" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="435.2" y="584" width="40.0" height="26"/>
+<rect class="dash" x="395.2" y="584" width="20.0" height="26"/>
+<rect class="dash" x="315.2" y="584" width="60.0" height="26"/>
+<rect class="reg" x="375.2" y="584" width="20.0" height="26"/>
+<text x="385.2" y="576" text-anchor="middle" class="mono lbl">4</text>
+<rect class="hifill" x="415.2" y="584" width="20.0" height="26"/>
+<text x="425.2" y="576" text-anchor="middle" class="mono lbl">2</text>
+<text x="465.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="597" text-anchor="middle" class="mono">1</text>
+<text x="405.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="597" text-anchor="middle" class="mono">1</text>
+<text x="365.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="597" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="623" text-anchor="middle" class="mono halo">ENABLE</text>
+<text x="16" y="677" class="mono">20, then</text>
+<text x="16" y="692" class="lbl">addressing mode: 00 horiz, 01 vert, 10 page</text>
+<text x="16" y="707" class="mono lbl">= 0x00</text>
+<text x="316.2" y="662" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="662" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="670" width="120.0" height="26"/>
+<rect class="hifill" x="435.2" y="670" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 670 V674 M455.2 692 V696"/>
+<text x="436.2" y="662" text-anchor="start" class="mono lbl">1</text>
+<text x="465.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="683" text-anchor="middle" class="mono lbl">0</text>
+<text x="455.2" y="709" text-anchor="middle" class="mono halo">MODE</text>
+<text x="16" y="763" class="mono">21, then a</text>
+<text x="16" y="778" class="lbl">first column</text>
+<text x="16" y="793" class="mono lbl">= 0x00</text>
+<text x="316.2" y="748" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="748" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="756" width="20.0" height="26"/>
+<rect class="hifill" x="335.2" y="756" width="140.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 756 V760 M455.2 778 V782"/>
+<path class="reg" stroke-width="0.6" d="M435.2 756 V760 M435.2 778 V782"/>
+<path class="reg" stroke-width="0.6" d="M415.2 756 V760 M415.2 778 V782"/>
+<path class="reg" stroke-width="0.6" d="M395.2 756 V760 M395.2 778 V782"/>
+<path class="reg" stroke-width="0.6" d="M375.2 756 V760 M375.2 778 V782"/>
+<path class="reg" stroke-width="0.6" d="M355.2 756 V760 M355.2 778 V782"/>
+<text x="336.2" y="748" text-anchor="start" class="mono lbl">6</text>
+<text x="465.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="769" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="795" text-anchor="middle" class="mono halo">START</text>
+<text x="16" y="849" class="mono">21, then b</text>
+<text x="16" y="864" class="lbl">last column</text>
+<text x="16" y="879" class="mono lbl">= 0x7F</text>
+<text x="316.2" y="834" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="834" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="842" width="20.0" height="26"/>
+<rect class="hifill" x="335.2" y="842" width="140.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 842 V846 M455.2 864 V868"/>
+<path class="reg" stroke-width="0.6" d="M435.2 842 V846 M435.2 864 V868"/>
+<path class="reg" stroke-width="0.6" d="M415.2 842 V846 M415.2 864 V868"/>
+<path class="reg" stroke-width="0.6" d="M395.2 842 V846 M395.2 864 V868"/>
+<path class="reg" stroke-width="0.6" d="M375.2 842 V846 M375.2 864 V868"/>
+<path class="reg" stroke-width="0.6" d="M355.2 842 V846 M355.2 864 V868"/>
+<text x="336.2" y="834" text-anchor="start" class="mono lbl">6</text>
+<text x="465.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="445.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="425.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="405.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="385.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="365.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="345.2" y="855" text-anchor="middle" class="mono">1</text>
+<text x="325.2" y="855" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="881" text-anchor="middle" class="mono halo">END</text>
+<text x="16" y="935" class="mono">22, then a</text>
+<text x="16" y="950" class="lbl">first page</text>
+<text x="316.2" y="920" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="920" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="928" width="100.0" height="26"/>
+<text x="365.2" y="941" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="415.2" y="928" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 928 V932 M455.2 950 V954"/>
+<path class="reg" stroke-width="0.6" d="M435.2 928 V932 M435.2 950 V954"/>
+<text x="416.2" y="920" text-anchor="start" class="mono lbl">2</text>
+<text x="445.2" y="941" text-anchor="middle" class="mono">START</text>
+<text x="16" y="1004" class="mono">22, then b</text>
+<text x="16" y="1019" class="lbl">last page</text>
+<text x="316.2" y="989" text-anchor="start" class="mono lbl">7</text>
+<text x="474.2" y="989" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="997" width="100.0" height="26"/>
+<text x="365.2" y="1010" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="415.2" y="997" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M455.2 997 V1001 M455.2 1019 V1023"/>
+<path class="reg" stroke-width="0.6" d="M435.2 997 V1001 M435.2 1019 V1023"/>
+<text x="416.2" y="989" text-anchor="start" class="mono lbl">2</text>
+<text x="445.2" y="1010" text-anchor="middle" class="mono">END</text>
+</svg>

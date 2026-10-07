@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="786" viewBox="0 0 786 214" role="img" aria-label="USART2-&gt;CR1, 32 bits; USART2-&gt;CR1, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">USART2-&gt;CR1</text>
+<text x="16" y="50" class="lbl">idle</text>
+<text x="16" y="65" class="mono lbl">= 0x0000002D</text>
+<text x="131.0" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="130.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="150.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="170.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="190.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="210.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="230.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="250.0" y="28" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M330.0 28 V32 M330.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M310.0 28 V32 M310.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M290.0 28 V32 M290.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M270.0 28 V32 M270.0 50 V54"/>
+<rect class="reg" x="350.0" y="28" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M430.0 28 V32 M430.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M410.0 28 V32 M410.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M390.0 28 V32 M390.0 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M370.0 28 V32 M370.0 50 V54"/>
+<rect class="reg" x="450.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="470.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="490.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="510.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="530.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="550.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="570.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="590.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="610.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="630.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="650.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="670.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="690.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="710.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="730.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="750.0" y="28" width="20.0" height="26"/>
+<text x="760.0" y="41" text-anchor="middle" class="mono">1</text>
+<text x="740.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="720.0" y="41" text-anchor="middle" class="mono">1</text>
+<text x="700.0" y="41" text-anchor="middle" class="mono">1</text>
+<text x="680.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="660.0" y="41" text-anchor="middle" class="mono">1</text>
+<text x="640.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="620.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="600.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="580.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="560.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="540.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="520.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="500.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="480.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="460.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="440.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="420.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="400.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="380.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="360.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="340.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="320.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="300.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="280.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="260.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="240.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="220.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="200.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="180.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="160.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="140.0" y="41" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M660.0 54 L660.0 76"/>
+<text x="620.0" y="67" text-anchor="middle" class="mono halo lbl">TXEIE</text>
+<text x="660.0" y="83" text-anchor="middle" class="mono halo lbl">RXNEIE</text>
+<text x="700.0" y="67" text-anchor="middle" class="mono halo lbl">TE</text>
+<text x="720.0" y="67" text-anchor="middle" class="mono halo lbl">RE</text>
+<text x="760.0" y="67" text-anchor="middle" class="mono halo lbl">UE</text>
+<text x="16" y="137" class="mono">USART2-&gt;CR1</text>
+<text x="16" y="152" class="lbl">sending</text>
+<text x="16" y="167" class="mono lbl">= 0x000000AD</text>
+<text x="131.0" y="122" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="122" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="130.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="150.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="170.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="190.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="210.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="230.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="250.0" y="130" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M330.0 130 V134 M330.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M310.0 130 V134 M310.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M290.0 130 V134 M290.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M270.0 130 V134 M270.0 152 V156"/>
+<rect class="reg" x="350.0" y="130" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M430.0 130 V134 M430.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M410.0 130 V134 M410.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M390.0 130 V134 M390.0 152 V156"/>
+<path class="reg" stroke-width="0.6" d="M370.0 130 V134 M370.0 152 V156"/>
+<rect class="reg" x="450.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="470.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="490.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="510.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="530.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="550.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="570.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="590.0" y="130" width="20.0" height="26"/>
+<rect class="hifill" x="610.0" y="130" width="20.0" height="26"/>
+<text x="620.0" y="122" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="630.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="650.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="670.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="690.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="710.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="730.0" y="130" width="20.0" height="26"/>
+<rect class="reg" x="750.0" y="130" width="20.0" height="26"/>
+<text x="760.0" y="143" text-anchor="middle" class="mono">1</text>
+<text x="740.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="720.0" y="143" text-anchor="middle" class="mono">1</text>
+<text x="700.0" y="143" text-anchor="middle" class="mono">1</text>
+<text x="680.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="660.0" y="143" text-anchor="middle" class="mono">1</text>
+<text x="640.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="620.0" y="143" text-anchor="middle" class="mono">1</text>
+<text x="600.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="580.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="560.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="540.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="520.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="500.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="480.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="460.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="440.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="420.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="400.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="380.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="360.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="340.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="320.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="300.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="280.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="260.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="240.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="220.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="200.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="180.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="160.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<text x="140.0" y="143" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M660.0 156 L660.0 178"/>
+<text x="620.0" y="169" text-anchor="middle" class="mono halo">TXEIE</text>
+<text x="660.0" y="185" text-anchor="middle" class="mono halo lbl">RXNEIE</text>
+<text x="700.0" y="169" text-anchor="middle" class="mono halo lbl">TE</text>
+<text x="720.0" y="169" text-anchor="middle" class="mono halo lbl">RE</text>
+<text x="760.0" y="169" text-anchor="middle" class="mono halo lbl">UE</text>
+</svg>

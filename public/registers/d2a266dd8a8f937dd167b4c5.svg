@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="952" viewBox="0 0 952 509" role="img" aria-label="RCC-&gt;APBENR2, 32 bits; TIM14-&gt;PSC, 16 bits; TIM14-&gt;ARR, 16 bits; TIM14-&gt;CNT, 16 bits; TIM14-&gt;EGR, 16 bits; TIM14-&gt;CR1, 16 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="41" class="mono">RCC-&gt;APBENR2</text>
+<text x="297.0" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="935.0" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="716.0" y="28" width="200.0" height="26"/>
+<text x="816.0" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="656.0" y="28" width="20.0" height="26"/>
+<rect class="dash" x="596.0" y="28" width="20.0" height="26"/>
+<rect class="dash" x="536.0" y="28" width="20.0" height="26"/>
+<rect class="dash" x="296.0" y="28" width="220.0" height="26"/>
+<text x="406.0" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="916.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="696.0" y="28" width="20.0" height="26"/>
+<text x="706.0" y="20" text-anchor="middle" class="mono lbl">11</text>
+<rect class="reg" x="676.0" y="28" width="20.0" height="26"/>
+<text x="686.0" y="20" text-anchor="middle" class="mono lbl">12</text>
+<rect class="reg" x="636.0" y="28" width="20.0" height="26"/>
+<text x="646.0" y="20" text-anchor="middle" class="mono lbl">14</text>
+<rect class="hifill" x="616.0" y="28" width="20.0" height="26"/>
+<text x="626.0" y="20" text-anchor="middle" class="mono lbl">15</text>
+<rect class="reg" x="576.0" y="28" width="20.0" height="26"/>
+<text x="586.0" y="20" text-anchor="middle" class="mono lbl">17</text>
+<rect class="reg" x="556.0" y="28" width="20.0" height="26"/>
+<text x="566.0" y="20" text-anchor="middle" class="mono lbl">18</text>
+<rect class="reg" x="516.0" y="28" width="20.0" height="26"/>
+<text x="526.0" y="20" text-anchor="middle" class="mono lbl">20</text>
+<text x="626.0" y="67" text-anchor="middle" class="mono halo">TIM14EN</text>
+<text x="16" y="121" class="mono">TIM14-&gt;PSC</text>
+<text x="16" y="136" class="lbl">48 MHz / (47 + 1) = 1 MHz</text>
+<text x="16" y="151" class="mono lbl">= 0x002F</text>
+<text x="617.0" y="106" text-anchor="start" class="mono lbl">15</text>
+<text x="935.0" y="106" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="616.0" y="114" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M916.0 114 V118 M916.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M896.0 114 V118 M896.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M876.0 114 V118 M876.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M856.0 114 V118 M856.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M836.0 114 V118 M836.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M816.0 114 V118 M816.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M796.0 114 V118 M796.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M776.0 114 V118 M776.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M756.0 114 V118 M756.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M736.0 114 V118 M736.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M716.0 114 V118 M716.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M696.0 114 V118 M696.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M676.0 114 V118 M676.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M656.0 114 V118 M656.0 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M636.0 114 V118 M636.0 136 V140"/>
+<text x="926.0" y="127" text-anchor="middle" class="mono">1</text>
+<text x="906.0" y="127" text-anchor="middle" class="mono">1</text>
+<text x="886.0" y="127" text-anchor="middle" class="mono">1</text>
+<text x="866.0" y="127" text-anchor="middle" class="mono">1</text>
+<text x="846.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="826.0" y="127" text-anchor="middle" class="mono">1</text>
+<text x="806.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="786.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="766.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="746.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="726.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="706.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="686.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="666.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="646.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="626.0" y="127" text-anchor="middle" class="mono lbl">0</text>
+<text x="776.0" y="153" text-anchor="middle" class="mono halo">PSC</text>
+<text x="16" y="207" class="mono">TIM14-&gt;ARR</text>
+<text x="16" y="222" class="lbl">full 16-bit range: wraps every 65.536 ms</text>
+<text x="16" y="237" class="mono lbl">= 0xFFFF</text>
+<text x="617.0" y="192" text-anchor="start" class="mono lbl">15</text>
+<text x="935.0" y="192" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="616.0" y="200" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M916.0 200 V204 M916.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M896.0 200 V204 M896.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M876.0 200 V204 M876.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M856.0 200 V204 M856.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M836.0 200 V204 M836.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M816.0 200 V204 M816.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M796.0 200 V204 M796.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M776.0 200 V204 M776.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M756.0 200 V204 M756.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M736.0 200 V204 M736.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M716.0 200 V204 M716.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M696.0 200 V204 M696.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M676.0 200 V204 M676.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M656.0 200 V204 M656.0 222 V226"/>
+<path class="reg" stroke-width="0.6" d="M636.0 200 V204 M636.0 222 V226"/>
+<text x="926.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="906.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="886.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="866.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="846.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="826.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="806.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="786.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="766.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="746.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="726.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="706.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="686.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="666.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="646.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="626.0" y="213" text-anchor="middle" class="mono">1</text>
+<text x="776.0" y="239" text-anchor="middle" class="mono halo">ARR</text>
+<text x="16" y="293" class="mono">TIM14-&gt;CNT</text>
+<text x="16" y="308" class="lbl">read before and after each task, in µs</text>
+<text x="617.0" y="278" text-anchor="start" class="mono lbl">15</text>
+<text x="935.0" y="278" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="616.0" y="286" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M916.0 286 V290 M916.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M896.0 286 V290 M896.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M876.0 286 V290 M876.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M856.0 286 V290 M856.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M836.0 286 V290 M836.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M816.0 286 V290 M816.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M796.0 286 V290 M796.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M776.0 286 V290 M776.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M756.0 286 V290 M756.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M736.0 286 V290 M736.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M716.0 286 V290 M716.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M696.0 286 V290 M696.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M676.0 286 V290 M676.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M656.0 286 V290 M656.0 308 V312"/>
+<path class="reg" stroke-width="0.6" d="M636.0 286 V290 M636.0 308 V312"/>
+<text x="776.0" y="299" text-anchor="middle" class="mono">CNT</text>
+<text x="16" y="362" class="mono">TIM14-&gt;EGR</text>
+<text x="16" y="377" class="lbl">UG: copy PSC into the counter now</text>
+<text x="16" y="392" class="mono lbl">= 0x0001</text>
+<text x="617.0" y="347" text-anchor="start" class="mono lbl">15</text>
+<text x="935.0" y="347" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="616.0" y="355" width="300.0" height="26"/>
+<rect class="hifill" x="916.0" y="355" width="20.0" height="26"/>
+<text x="926.0" y="368" text-anchor="middle" class="mono">1</text>
+<text x="906.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="886.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="866.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="846.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="826.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="806.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="786.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="766.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="746.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="726.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="706.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="686.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="666.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="646.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="626.0" y="368" text-anchor="middle" class="mono lbl">0</text>
+<text x="926.0" y="394" text-anchor="middle" class="mono halo">UG</text>
+<text x="16" y="448" class="mono">TIM14-&gt;CR1</text>
+<text x="16" y="463" class="mono lbl">= 0x0001</text>
+<text x="617.0" y="433" text-anchor="start" class="mono lbl">15</text>
+<text x="935.0" y="433" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="796.0" y="441" width="120.0" height="26"/>
+<rect class="dash" x="616.0" y="441" width="160.0" height="26"/>
+<rect class="reg" x="776.0" y="441" width="20.0" height="26"/>
+<text x="786.0" y="433" text-anchor="middle" class="mono lbl">7</text>
+<rect class="hifill" x="916.0" y="441" width="20.0" height="26"/>
+<text x="926.0" y="454" text-anchor="middle" class="mono">1</text>
+<text x="906.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="886.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="866.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="846.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="826.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="806.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="786.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="766.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="746.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="726.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="706.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="686.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="666.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="646.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="626.0" y="454" text-anchor="middle" class="mono lbl">0</text>
+<text x="786.0" y="480" text-anchor="middle" class="mono halo lbl">ARPE</text>
+<text x="926.0" y="480" text-anchor="middle" class="mono halo">CEN</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="875" viewBox="0 0 875 128" role="img" aria-label="RCC-&gt;CSR2, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">RCC-&gt;CSR2</text>
+<text x="16" y="50" class="lbl">read once at boot, then RMVF</text>
+<text x="220.2" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="399.2" y="28" width="420.0" height="26"/>
+<text x="609.2" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="359.2" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="219.2" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="239.2" y="28" width="20.0" height="26"/>
+<text x="249.2" y="20" text-anchor="middle" class="mono lbl">30</text>
+<rect class="hifill" x="259.2" y="28" width="20.0" height="26"/>
+<text x="269.2" y="20" text-anchor="middle" class="mono lbl">29</text>
+<rect class="hifill" x="279.2" y="28" width="20.0" height="26"/>
+<text x="289.2" y="20" text-anchor="middle" class="mono lbl">28</text>
+<rect class="hifill" x="299.2" y="28" width="20.0" height="26"/>
+<text x="309.2" y="20" text-anchor="middle" class="mono lbl">27</text>
+<rect class="hifill" x="319.2" y="28" width="20.0" height="26"/>
+<text x="329.2" y="20" text-anchor="middle" class="mono lbl">26</text>
+<rect class="hifill" x="339.2" y="28" width="20.0" height="26"/>
+<text x="349.2" y="20" text-anchor="middle" class="mono lbl">25</text>
+<rect class="hifill" x="379.2" y="28" width="20.0" height="26"/>
+<text x="389.2" y="20" text-anchor="middle" class="mono lbl">23</text>
+<rect class="reg" x="819.2" y="28" width="20.0" height="26"/>
+<rect class="reg" x="839.2" y="28" width="20.0" height="26"/>
+<path class="dash" d="M229.2 54 L235.0 60"/>
+<path class="dash" d="M249.2 54 L249.2 76"/>
+<path class="dash" d="M269.2 54 L269.2 92"/>
+<path class="dash" d="M309.2 54 L309.2 76"/>
+<path class="dash" d="M349.2 54 L349.2 76"/>
+<path class="dash" d="M849.2 54 L849.2 76"/>
+<text x="235.0" y="67" text-anchor="middle" class="mono halo">LPWR</text>
+<text x="249.2" y="83" text-anchor="middle" class="mono halo">WWDG</text>
+<text x="269.2" y="99" text-anchor="middle" class="mono halo">IWDG</text>
+<text x="289.2" y="67" text-anchor="middle" class="mono halo">SFT</text>
+<text x="309.2" y="83" text-anchor="middle" class="mono halo">PWR</text>
+<text x="329.2" y="67" text-anchor="middle" class="mono halo">PIN</text>
+<text x="349.2" y="83" text-anchor="middle" class="mono halo">OBL</text>
+<text x="389.2" y="67" text-anchor="middle" class="mono halo">RMVF</text>
+<text x="829.2" y="67" text-anchor="middle" class="mono halo lbl">LSIRDY</text>
+<text x="849.2" y="83" text-anchor="middle" class="mono halo lbl">LSION</text>
+</svg>

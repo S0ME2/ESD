@@ -1,0 +1,1677 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "e3c1011b640bb85d2ea532f3d0fdb8296f80dbc55d55aecdc8f7b9a363433e6f",
+    "bytes": 34014
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/link.ld",
+    "sha256": "931bf17e17228b8d1b7ec1bf627cd670b91041adf8d38b623c80ad80eb21d16c",
+    "bytes": 1900
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/simulate.bat",
+    "sha256": "fe225fa0d25b59eca992906e04be2b48596d06d11a744ffb2a38d1ae7d35aae5",
+    "bytes": 1756
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/retarget.c",
+    "sha256": "143754d44a30d77b18de074caa7d5c496604fd20d67c1428b2f3b90b05da21ac",
+    "bytes": 3194
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/Main.c",
+    "sha256": "476addd34396adb3f3790f0f3d06ac46b574544b8db39afc3884544c5a7cb5d8",
+    "bytes": 13331
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/startup.c",
+    "sha256": "201b0fd759f47c24e2adb546527fa48fd2e2f49424d0460ae02272e9e469db7e",
+    "bytes": 6879
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/diagram.json",
+    "sha256": "72d468ece84b39277b9978c7f68342737bf5d628cff2af423e49f64411aaa3cb",
+    "bytes": 2010
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/Lab.md",
+    "sha256": "dd57279d1c9228a210591587803f1a1006e32552d6a13775a363e82f7720e893",
+    "bytes": 25750
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/Slide.md",
+    "sha256": "a51a1961e58bab1af4599c7ecb39bc43c6343538ad33e36f5e88fa0142dae2a6",
+    "bytes": 68003
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/build.bat",
+    "sha256": "a367d3972827c016274619608803e34484b3a2b8e05f1de0d6c4d7435d393684",
+    "bytes": 656
+  },
+  {
+    "path": "04_Startup_And_LinkerScript/README.md",
+    "sha256": "c2dba00662c8acd57b9a2c93a42ec693fa57a615b98b91e6f1c443c86f56e13b",
+    "bytes": 8884
+  },
+  {
+    "path": "_targets/c031c6.bat",
+    "sha256": "b7b1874647c161287e51e2586ff3968a7140716d3dd66e8b89d396ba5f826d7a",
+    "bytes": 664
+  },
+  {
+    "path": "_targets/app-board-diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "_targets/c031c6-pins.json",
+    "sha256": "bc8e47226c524835d430079e294d89bb0dd0e2200bc122e3737b45b6fb0196ce",
+    "bytes": 2433
+  },
+  {
+    "path": "_targets/c031c6-layout.json",
+    "sha256": "5b027068f70a4079c7925e1d3d99c9c07797a67fb7e54095ff39886cb8f6a6b6",
+    "bytes": 3566
+  },
+  {
+    "path": "17_Robot_Balancing/world.h",
+    "sha256": "29af7367c56c3d4c59a68efbd85918f169589e8e0b0623dd12e441b2143336ed",
+    "bytes": 2753
+  },
+  {
+    "path": "17_Robot_Balancing/simulate.bat",
+    "sha256": "7ed9f362f644fc5006af93f81196ab7e3dadd09383145424d5e5bec6f24693f6",
+    "bytes": 1755
+  },
+  {
+    "path": "17_Robot_Balancing/control.h",
+    "sha256": "37a567e7c15971885a2659cb90cd9a2a2ec7cc1f08d318a6045d287322082ed6",
+    "bytes": 3140
+  },
+  {
+    "path": "17_Robot_Balancing/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "17_Robot_Balancing/view.c",
+    "sha256": "746fcbe6de3b60ac6a1579331dfec49398dfa04c4b2b55f7ea8dd356a92c4b35",
+    "bytes": 4909
+  },
+  {
+    "path": "17_Robot_Balancing/world.c",
+    "sha256": "d8f048dabe66d7fad461a2440d4681aebcbc6ad220e8f1eb87e42183379f4d5e",
+    "bytes": 7293
+  },
+  {
+    "path": "17_Robot_Balancing/Main.c",
+    "sha256": "07cad454d50e09deba758c24ae8b1460a3d7e5806d04fefd13b706ecc8080a08",
+    "bytes": 16055
+  },
+  {
+    "path": "17_Robot_Balancing/control.c",
+    "sha256": "a182073825dde5caca9d89a489e14e65380bb646e9a39c5a09998ac2d79abf0c",
+    "bytes": 7508
+  },
+  {
+    "path": "17_Robot_Balancing/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "17_Robot_Balancing/Lab.md",
+    "sha256": "89ebf10d5cf5a2d61826fe2d0fb13d12286fc4ee89e63e5f23702f90d771e3c0",
+    "bytes": 13158
+  },
+  {
+    "path": "17_Robot_Balancing/Slide.md",
+    "sha256": "4640394d91227998c2cbc261c12e51a9036318aea23f0327514de6ff5b50d727",
+    "bytes": 55279
+  },
+  {
+    "path": "17_Robot_Balancing/params.h",
+    "sha256": "3620ef20876ed4d7e4ae51ae98bf4b18e9b69d9dfaaf6ce0605e08793893b716",
+    "bytes": 4391
+  },
+  {
+    "path": "17_Robot_Balancing/build.bat",
+    "sha256": "358091842da40aaf176884b5bd3eedd18b909023bdf51394af299a698cfa4a6d",
+    "bytes": 697
+  },
+  {
+    "path": "17_Robot_Balancing/README.md",
+    "sha256": "4c1ea896edf62b57e6a9c88ddf10c877ecd849f472e0374fa33f5950daf261c9",
+    "bytes": 7838
+  },
+  {
+    "path": "17_Robot_Balancing/view.h",
+    "sha256": "02798316604cadc8938e903630e2b6be6ace6e7e83384a1948e569f625d6859e",
+    "bytes": 1256
+  },
+  {
+    "path": "08_UART_And_Python_Host/simulate.bat",
+    "sha256": "8c5ef1d34fa461c387bb8c939e76cb7ee205cc67fecd872b0b772d0f0ae0b649",
+    "bytes": 1662
+  },
+  {
+    "path": "08_UART_And_Python_Host/uart.h",
+    "sha256": "ae5625974e90d91df96f17ae5fbbe9b165c1c7765e0a5e5352fbf54a592f7f22",
+    "bytes": 1206
+  },
+  {
+    "path": "08_UART_And_Python_Host/proto.h",
+    "sha256": "8110644a45aed9f357c00416066f3377a7a163320e9ba64d68c82f448e04fb6a",
+    "bytes": 979
+  },
+  {
+    "path": "08_UART_And_Python_Host/uart.c",
+    "sha256": "8452a8052bcec8b7d5f5a14923c00734d5e10a6deec745bb553bfb9b2c41227f",
+    "bytes": 5301
+  },
+  {
+    "path": "08_UART_And_Python_Host/wokwi.toml",
+    "sha256": "a06fa48d42f8198704f9aab77d9bd5a1d0a00e9ca7f093c65b892d729c8432fb",
+    "bytes": 404
+  },
+  {
+    "path": "08_UART_And_Python_Host/Main.c",
+    "sha256": "d1ca20052e7147eedce59420f95b76b51822cd855381a6f51d0e287ca85a6f8d",
+    "bytes": 9076
+  },
+  {
+    "path": "08_UART_And_Python_Host/host.py",
+    "sha256": "b06917cf068307a602488a56c303f265dac7264d4c265e5d801ea5b61ccab100",
+    "bytes": 8838
+  },
+  {
+    "path": "08_UART_And_Python_Host/diagram.json",
+    "sha256": "3537888f6ad73cf23a2eecf30563db2f0ccb3e2d65840cea8bc7f74cb2a8fa45",
+    "bytes": 2504
+  },
+  {
+    "path": "08_UART_And_Python_Host/Lab.md",
+    "sha256": "86f87843e460d416716cb01d421f09cda7affb3abdc04ab2c761be9ca15246d3",
+    "bytes": 8875
+  },
+  {
+    "path": "08_UART_And_Python_Host/proto.c",
+    "sha256": "cbbfb6ae91ec8c6cecb2efe7f7e4dfb5f55cd30baf012b0a6d6c9f0318dcc7b9",
+    "bytes": 1395
+  },
+  {
+    "path": "08_UART_And_Python_Host/Slide.md",
+    "sha256": "1659c0340891928dd60707def1bd413a3622810e1e15d03e6db3943c6699bf41",
+    "bytes": 41843
+  },
+  {
+    "path": "08_UART_And_Python_Host/build.bat",
+    "sha256": "2ec81dc0585b1ea18262ade51e621a2a4b13e19db4863179d8a6955807112312",
+    "bytes": 517
+  },
+  {
+    "path": "08_UART_And_Python_Host/README.md",
+    "sha256": "cff2ad1057da7bfb0d447236e9e971048cc66e9b39529bcf8e7b9f8f6f38292e",
+    "bytes": 4889
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/simulate.bat",
+    "sha256": "c25e93c011f224b212993fb773d37a107b4a1c9ff9888e9b34cab3ebc76183b7",
+    "bytes": 1889
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/Main.c",
+    "sha256": "b36ea996575c57b0e2889b63b3b89bcd498c4f8a6cc37dd7740c81a41154806c",
+    "bytes": 16168
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/diagram.json",
+    "sha256": "3537888f6ad73cf23a2eecf30563db2f0ccb3e2d65840cea8bc7f74cb2a8fa45",
+    "bytes": 2504
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/Lab.md",
+    "sha256": "5154972e08fb6f91f5a50e9f4739012b215ebea8ecfed683b79c8f7b0a0b85fe",
+    "bytes": 19624
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/Slide.md",
+    "sha256": "9a3476332c647ccf12f054b24ed34924a86f28ceb68e9c30e6bdd7ef1d3e0ae9",
+    "bytes": 98863
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/build.bat",
+    "sha256": "fdb2681635762e25094c4099d9967a74899ed86ace64edbe1551247272e80082",
+    "bytes": 659
+  },
+  {
+    "path": "05_GPIO_And_Interrupts/README.md",
+    "sha256": "865e21e09843ac031dea6418445384b41c9024c66e3cfba4260dc6980bca9db7",
+    "bytes": 6089
+  },
+  {
+    "path": "18_Robot_Competition/world.h",
+    "sha256": "c8db3f86c6ea14ff85bdc38ae5a51106fa857b430454bdfe323cb3d15d620bf6",
+    "bytes": 3927
+  },
+  {
+    "path": "18_Robot_Competition/strategy.h",
+    "sha256": "2f43d2b2b8e460ca9657acba9246c0834f272b46ff12eeae8009da07320a1b39",
+    "bytes": 5310
+  },
+  {
+    "path": "18_Robot_Competition/simulate.bat",
+    "sha256": "9413f707b2be9acd8cffd90d8fba7ae47cd189ad00055431d29b0e937073f46c",
+    "bytes": 1878
+  },
+  {
+    "path": "18_Robot_Competition/bots.c",
+    "sha256": "e4c1038c6be5a967a21eeaaa54e8a337326d6d894978cb93e7ad7a33d7d6229b",
+    "bytes": 8937
+  },
+  {
+    "path": "18_Robot_Competition/scene.c",
+    "sha256": "cd42cd78a307964df835ce1d25031fc66d8de966c387dfb0bd72b6d0034c48fa",
+    "bytes": 4028
+  },
+  {
+    "path": "18_Robot_Competition/referee.h",
+    "sha256": "ef90b93e0f097c22aa7caa7fe587cbe55177a8378e8228ecb3f6b828836da971",
+    "bytes": 4474
+  },
+  {
+    "path": "18_Robot_Competition/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "18_Robot_Competition/world.c",
+    "sha256": "111c52b76811abeac7a48f999519f9e73feca135b585f6d68523e7a2d517dec8",
+    "bytes": 9560
+  },
+  {
+    "path": "18_Robot_Competition/student.c",
+    "sha256": "bc6390c34fb17f36c8a91ee42f87eafc67c8c433c7920743e6fb96737a3cc449",
+    "bytes": 2820
+  },
+  {
+    "path": "18_Robot_Competition/scene.h",
+    "sha256": "c59a5eb57e3bb2eaa206a77c9156327c497a6dcfd01f6dc8f9bdaeb42541d918",
+    "bytes": 1626
+  },
+  {
+    "path": "18_Robot_Competition/Main.c",
+    "sha256": "972d31a32b0e99f001a713dc02469ed73e15e14808315bf432f80acf5693bdfe",
+    "bytes": 17404
+  },
+  {
+    "path": "18_Robot_Competition/referee.c",
+    "sha256": "f6eb584a618ab3ccd51bb0a35586620219d2f629472f53e1b910e73b6b4f4f6e",
+    "bytes": 6667
+  },
+  {
+    "path": "18_Robot_Competition/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "18_Robot_Competition/Lab.md",
+    "sha256": "5fa9e8efc281ae1fb125455fa9b03acc5cd30920e6a9d52c4345210da672f553",
+    "bytes": 11077
+  },
+  {
+    "path": "18_Robot_Competition/Slide.md",
+    "sha256": "db3e505b6cbd7f9c466aa917dd8058b7c4c740ec6d3ec61b63b7474af62190af",
+    "bytes": 54325
+  },
+  {
+    "path": "18_Robot_Competition/build.bat",
+    "sha256": "7d54ac4d62f8194caeb73c9022b386cd7e305d5b9f83d804e68e4d4e1598f057",
+    "bytes": 701
+  },
+  {
+    "path": "18_Robot_Competition/README.md",
+    "sha256": "fec856eafcfd62cde3259c6c421abadcf776afc5f70ea2e05b8c216179ae0b2f",
+    "bytes": 7928
+  },
+  {
+    "path": "12_Game/arcade.h",
+    "sha256": "020e51a24d5603bfb8274e55b719e6ac2775c31c76d4c70f10ba8a30eabbcd5a",
+    "bytes": 1326
+  },
+  {
+    "path": "12_Game/engine.h",
+    "sha256": "26345158ce407c1489359dd5b9f8a35ecc227666b4d3f0fb97fbbf633c0055b2",
+    "bytes": 3959
+  },
+  {
+    "path": "12_Game/simulate.bat",
+    "sha256": "264fa779353f7970d38517dcc4084c711bcf8556400e2f7524ce41e5e4ea5a57",
+    "bytes": 1661
+  },
+  {
+    "path": "12_Game/flappy.c",
+    "sha256": "1aab81024cd7a651cacac7d9df5897fdd3cc7cba9b61303b91bfda067725fed7",
+    "bytes": 7248
+  },
+  {
+    "path": "12_Game/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "12_Game/engine.c",
+    "sha256": "ddf6da42a736be004e1f5971d4ed73a22c9b3a0cef19bd5e56a0b67b69044c46",
+    "bytes": 3351
+  },
+  {
+    "path": "12_Game/snake.c",
+    "sha256": "5fa736b0f4e413e348cf12087c6ac2dae35cbf60ece7fe7b069ac7eab270d3ab",
+    "bytes": 6731
+  },
+  {
+    "path": "12_Game/Main.c",
+    "sha256": "5c7053b5c7f0ff3bc4a2f58443302561fea40266632826d068f12980b086a767",
+    "bytes": 9128
+  },
+  {
+    "path": "12_Game/breakout.c",
+    "sha256": "27be8bf7c9ecca22d5bc8b711109634d961aa5232b3a4a0ebd56733ac1d1a7e2",
+    "bytes": 8243
+  },
+  {
+    "path": "12_Game/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "12_Game/Lab.md",
+    "sha256": "bf74af87211d5caa93c249d55be85f9405f43dc01382b8c67a50dd551ac49421",
+    "bytes": 13312
+  },
+  {
+    "path": "12_Game/Slide.md",
+    "sha256": "bf25ed843012112c1b02032764e67d958092ce9e68b206151031ad79a8393313",
+    "bytes": 116378
+  },
+  {
+    "path": "12_Game/build.bat",
+    "sha256": "c3cab44fce222f8ef3c1e235dde3d35af254a7ed5d8dfa798f49fa62efec8479",
+    "bytes": 733
+  },
+  {
+    "path": "12_Game/README.md",
+    "sha256": "7ea1581afebf76d731a471f8cec5499dde8be968e619bdd9f482b0bce95ed9d4",
+    "bytes": 26876
+  },
+  {
+    "path": "12_Game/arcade.c",
+    "sha256": "3a526d895726098de82e7c966c4393d86cafdfe9bae8e8b49813233aa33ab6da",
+    "bytes": 5307
+  },
+  {
+    "path": "00_Architecture/Slide.md",
+    "sha256": "5c1aec657522d4226fd06f4b6ccfd3b97303b718e6a43b51f5586680c0abae5e",
+    "bytes": 41532
+  },
+  {
+    "path": "02_Development/Slide.md",
+    "sha256": "42dc8f6512857d8aae0ef97a4147534d75d3c931bc018bf5927156cc19efc47c",
+    "bytes": 17272
+  },
+  {
+    "path": "14_Drone_Missions/world.h",
+    "sha256": "1288246e0313ad6e0a28d7f85bda40c5dbb8ed7e96cb993660a6f6486ce60451",
+    "bytes": 3088
+  },
+  {
+    "path": "14_Drone_Missions/simulate.bat",
+    "sha256": "de47bbe65a90039e569899076c1f2a38ba27ba1b20f769c7d024d27f14f29754",
+    "bytes": 2079
+  },
+  {
+    "path": "14_Drone_Missions/mavlite.h",
+    "sha256": "94b90d7150abeffbc49072be1725b7eee2fbdd0b52dd2ea1f7ed102cc2a85218",
+    "bytes": 2700
+  },
+  {
+    "path": "14_Drone_Missions/control.h",
+    "sha256": "14a6f5376b0a764f5932d99743df5d2d9532b3305dbe46b8907785ac66e85e00",
+    "bytes": 2272
+  },
+  {
+    "path": "14_Drone_Missions/flight.h",
+    "sha256": "a04949ca7d730600988298e992507fd4949ae6f3e1f56f2feb5c2e0b8502a32b",
+    "bytes": 5342
+  },
+  {
+    "path": "14_Drone_Missions/wokwi.toml",
+    "sha256": "89f4ecd76076e7c935dc8c74b9d8b2ca8505f99da7cf1cda2f01ca18675ca6e5",
+    "bytes": 438
+  },
+  {
+    "path": "14_Drone_Missions/ui.c",
+    "sha256": "0bde44d5d353ea1384b8b183aac75eb61c6a007fac54f4a44d1b146ede74e121",
+    "bytes": 5169
+  },
+  {
+    "path": "14_Drone_Missions/ui.h",
+    "sha256": "c5ac6b519236d5dccee80e595a2bffd969f350d3bff2d3d00106199bb738995b",
+    "bytes": 1157
+  },
+  {
+    "path": "14_Drone_Missions/mavlite.c",
+    "sha256": "7f2e74d321a8372c4ffd1b327df7deb3bb38e9d9052f1bb8f718d9190e7feee7",
+    "bytes": 7466
+  },
+  {
+    "path": "14_Drone_Missions/world.c",
+    "sha256": "7129b3d58ca73ec252086bd5285b309ab5e7c5a4dba1a87b7372fe6faf976b79",
+    "bytes": 7475
+  },
+  {
+    "path": "14_Drone_Missions/fm.h",
+    "sha256": "4df9d3a7fdb8598486f83a45ca597ef5b3656dde0c80abc4928c815c897efdd8",
+    "bytes": 741
+  },
+  {
+    "path": "14_Drone_Missions/Main.c",
+    "sha256": "3f24ee5743ae6c5b6e2fc457fe50fefd25f8cd62d472aa41c5beacbedc4fbf03",
+    "bytes": 16071
+  },
+  {
+    "path": "14_Drone_Missions/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "14_Drone_Missions/Lab.md",
+    "sha256": "97cc1f94b5ab7f6cec77000b1e51b043b5052a4db6fdf1c566ec534895a6da1f",
+    "bytes": 13224
+  },
+  {
+    "path": "14_Drone_Missions/Slide.md",
+    "sha256": "794d9cd8edae53d1a1262c7ec8e0efcd18dfa5e818657188966a1822278d3319",
+    "bytes": 92986
+  },
+  {
+    "path": "14_Drone_Missions/build.bat",
+    "sha256": "e07ea4b5b2097811d922c40913f63d2507eaea968c195dee51587892a7852bab",
+    "bytes": 811
+  },
+  {
+    "path": "14_Drone_Missions/README.md",
+    "sha256": "cbeb1b7a8cd8202f42a61f71a9e1c24afe6b29dfbe50af3b806ed82b4fa132bd",
+    "bytes": 9451
+  },
+  {
+    "path": "14_Drone_Missions/fm.c",
+    "sha256": "8ab96ea1177bf120274ba4df65280c994af5b271bd5541f3fa06c9c40ff6832b",
+    "bytes": 395
+  },
+  {
+    "path": "14_Drone_Missions/flight.c",
+    "sha256": "555b12526fb345f7b04dcd6cff11fdccc2785e2a3f5d74d12d359366397d74ca",
+    "bytes": 21059
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/dma.c",
+    "sha256": "4fba562320081a35f202a9f32d044ffc0a88697b0b18dc21c5d146fdca5ea98e",
+    "bytes": 6940
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/simulate.bat",
+    "sha256": "d6980b773f541152899cb8493fed6922e14471eab69833f1a5840bc39d3b57ad",
+    "bytes": 1772
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/bench.h",
+    "sha256": "04e564d04dfe15e99a49e25a440fa5e68f5ee38b23c39316892d1e3e1902b011",
+    "bytes": 2204
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/fix.h",
+    "sha256": "2ec7bd27467b1fb9db0dbaf422a44fb769044e1b0a201f77879f08fa615e549b",
+    "bytes": 4967
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/fix.c",
+    "sha256": "68678cdc2c13b01e2a16515428e08830561f2ced08474a56cc928de175dd747d",
+    "bytes": 1769
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/dma.h",
+    "sha256": "994ad9be68511f0f95a7ff099a8bed43f56e5cd15eb26624aae4f78c355d3281",
+    "bytes": 1729
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/Main.c",
+    "sha256": "3ae638db5a11ffec85fe63c3a3a5eafae07019e8a2ca2717b1449fc6a13f6ac5",
+    "bytes": 18434
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/bench.c",
+    "sha256": "b20b90afb47f7947a253e3794bea18006833363b8691a4632ab888ff79c25f96",
+    "bytes": 11729
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/Lab.md",
+    "sha256": "12f88d30d9f86ac03bf7b33756afd35d21fcb3f7ce95341d911fb9e45799c758",
+    "bytes": 14735
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/Slide.md",
+    "sha256": "3c64abad643875c0fd33b24ee632fdd0325120019634d366a285851beee3ed23",
+    "bytes": 58822
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/build.bat",
+    "sha256": "b169f19c3f8b1563e9c67a48ffa7fdc1faaee0ef7810218365437df6bb36a087",
+    "bytes": 606
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/README.md",
+    "sha256": "0feb93e1e4daa90d1102be2e014417b2b473a8a0ce2bf22d52e5494054b06c57",
+    "bytes": 9384
+  },
+  {
+    "path": "03_Execution_Concurrency/Slide.md",
+    "sha256": "e7c3bd9f38e055219a511345aa70a11508d0401a60ba66852f68e3fd292d03dd",
+    "bytes": 20805
+  },
+  {
+    "path": "19_Final_Project/simulate.bat",
+    "sha256": "e7f6f21870a1ca0c911dbf51e9eddd5fef93676d999c43d795b2a6a4b3defc75",
+    "bytes": 1649
+  },
+  {
+    "path": "19_Final_Project/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "19_Final_Project/wdog.c",
+    "sha256": "84af3c0cfcee9682ee5cc952219170acd3df2e7386cff280de79226a0613501c",
+    "bytes": 2709
+  },
+  {
+    "path": "19_Final_Project/app.c",
+    "sha256": "63feb1255cacdd894fb8da104d6be5d26db1d5db62252ce834709e4d30f6a051",
+    "bytes": 5235
+  },
+  {
+    "path": "19_Final_Project/shell.c",
+    "sha256": "ddf1c21aa1831ac848d877115a63d896333e7dc2062cdb967663a0a8354ab5d7",
+    "bytes": 5734
+  },
+  {
+    "path": "19_Final_Project/Main.c",
+    "sha256": "529f2514c54b794e11862e4bd2f15cd5613ca8ad97e6ca0049f4da11c2de6497",
+    "bytes": 14629
+  },
+  {
+    "path": "19_Final_Project/wdog.h",
+    "sha256": "ffbc526f4516e0d8ab60323cc22f9cf155b2d9a8ebfa447da226f5183244065c",
+    "bytes": 1150
+  },
+  {
+    "path": "19_Final_Project/health.h",
+    "sha256": "48f97ab88e9bfa91512263926de4089daef45b59f427e6d3132ab9979e7f8cc6",
+    "bytes": 2340
+  },
+  {
+    "path": "19_Final_Project/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "19_Final_Project/Lab.md",
+    "sha256": "96476b8abbbcfe9872c160d27ef7716fd284b6048837f6f26d3a5b16f469ff45",
+    "bytes": 16516
+  },
+  {
+    "path": "19_Final_Project/Slide.md",
+    "sha256": "34e0cdb61d100b4974a54ca40b3cbab95a8a6c49db5aad4c7e3e1f644a60da00",
+    "bytes": 57527
+  },
+  {
+    "path": "19_Final_Project/app.h",
+    "sha256": "a0300717a47f1761c0ab871d1187d89249b202840917a36f58e0e6641ae11aac",
+    "bytes": 2636
+  },
+  {
+    "path": "19_Final_Project/health.c",
+    "sha256": "7ad8e87a1db3692fca902c40ec112460ad3ea044d7aad35cf7160fda52d825cb",
+    "bytes": 1118
+  },
+  {
+    "path": "19_Final_Project/sys.h",
+    "sha256": "89524cc9dc55f76c03b40c86a610b0a7c770c32f4f17d4fef0ae688e8c38c11e",
+    "bytes": 1397
+  },
+  {
+    "path": "19_Final_Project/build.bat",
+    "sha256": "117776fde8004557ada731c0eebac39beb77da89cdb285c58c91ccf15cee275f",
+    "bytes": 798
+  },
+  {
+    "path": "19_Final_Project/README.md",
+    "sha256": "d10d8301f3d66b42128238ee7066348ad6cd03abe63be1ac9b35ce042a36650d",
+    "bytes": 9440
+  },
+  {
+    "path": "19_Final_Project/prof.h",
+    "sha256": "a469d5b62bf4d338fdd39bfda8aa4ba0317e8d26a3d3f3d9cbc15a3b0e31fe41",
+    "bytes": 2056
+  },
+  {
+    "path": "19_Final_Project/prof.c",
+    "sha256": "3946f2da508f1c66c6a7f86dac852d62ad7ecc6f03b738b71d40ec0f15220366",
+    "bytes": 1463
+  },
+  {
+    "path": "15_Robot_Line_Follower/world.h",
+    "sha256": "9ee143bc29aa5a931635dcf99e4820810ac2f814ee18d4ade25abef2efb4ae36",
+    "bytes": 3865
+  },
+  {
+    "path": "15_Robot_Line_Follower/simulate.bat",
+    "sha256": "7d2b352aac315cdd65ab3e4095f265f6a9d6b5a65251a13f9998f51c1d01384d",
+    "bytes": 1733
+  },
+  {
+    "path": "15_Robot_Line_Follower/track.c",
+    "sha256": "7f37772e4a1c81294c3128225ffea7dd6dcb1e8a774cb3552fd7bf97f1e061cd",
+    "bytes": 7359
+  },
+  {
+    "path": "15_Robot_Line_Follower/control.h",
+    "sha256": "0e479816ea3381c83a60d73fdbbc6f826ee8dd707940dbaab0296c206b5a587a",
+    "bytes": 3555
+  },
+  {
+    "path": "15_Robot_Line_Follower/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "15_Robot_Line_Follower/view.c",
+    "sha256": "271f9a4a0b210981144ef0413c3f1ea67a84100c50b009a3d497dc8c7ab4de6c",
+    "bytes": 5798
+  },
+  {
+    "path": "15_Robot_Line_Follower/world.c",
+    "sha256": "9c9aaf484f93b3a4808cdf060cf2ad869f13b5aa1fa594aca7108848fc4ce4ce",
+    "bytes": 8527
+  },
+  {
+    "path": "15_Robot_Line_Follower/track.h",
+    "sha256": "f51422371618e3ecf0bd87012cc96dd19203dda1f636d51cd67262b31fd5cd27",
+    "bytes": 2206
+  },
+  {
+    "path": "15_Robot_Line_Follower/Main.c",
+    "sha256": "df85ec3d93ce4e0e03865ada97021779f7a893fcfb9d362c877a7f40e12ae0e8",
+    "bytes": 17025
+  },
+  {
+    "path": "15_Robot_Line_Follower/control.c",
+    "sha256": "ca754ab2a58bc6b0d0430197271045c72dc9ea82d39510abf4947055babb1b60",
+    "bytes": 5248
+  },
+  {
+    "path": "15_Robot_Line_Follower/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "15_Robot_Line_Follower/Lab.md",
+    "sha256": "af4e25e6914d90dc60e21c4c03ea05e62bb384901687838f2867b6a3cb61442e",
+    "bytes": 12822
+  },
+  {
+    "path": "15_Robot_Line_Follower/Slide.md",
+    "sha256": "f7c515ae8c4cca821aa1a62d114194cce74d615c94708135600257e3d83c4457",
+    "bytes": 50998
+  },
+  {
+    "path": "15_Robot_Line_Follower/build.bat",
+    "sha256": "6b6f086c79a6a3822395c4eead13041edf91f5a983a4e924aea852f0fdb7590e",
+    "bytes": 875
+  },
+  {
+    "path": "15_Robot_Line_Follower/README.md",
+    "sha256": "8dd4cbb89ccd7b66fab81adb1066152219f24c8aab471104876aab0f587ae60e",
+    "bytes": 8045
+  },
+  {
+    "path": "15_Robot_Line_Follower/view.h",
+    "sha256": "7ae129584b88957bde796d6a90d37426d936f47c77e5068d4be85476af933931",
+    "bytes": 822
+  },
+  {
+    "path": "07_RTOS/simulate.bat",
+    "sha256": "cee06cc89e33017059a99c250c2ba1baa38e7c2ea856acae69f047bd43558e3c",
+    "bytes": 1789
+  },
+  {
+    "path": "07_RTOS/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "07_RTOS/Main.c",
+    "sha256": "cbc721b90638764a689361f8efd0eda4f5ed0ae7dbea76b8969a19733f3ac704",
+    "bytes": 11557
+  },
+  {
+    "path": "07_RTOS/os.c",
+    "sha256": "1ab875e02a872aa644afb87a9f0439a8289e2e0829c1d2fba0dc2bdae470a179",
+    "bytes": 13800
+  },
+  {
+    "path": "07_RTOS/os.h",
+    "sha256": "a66d055499eabf30f03b898f20c13335a21582d6fd41f588847a2ea18d8ccd2e",
+    "bytes": 3341
+  },
+  {
+    "path": "07_RTOS/diagram.json",
+    "sha256": "c63471d12eb878409582b4e7372772bcffea724497a01b6af01d88257d942a5b",
+    "bytes": 2497
+  },
+  {
+    "path": "07_RTOS/Lab.md",
+    "sha256": "5287ec4504f51846240470ec1befcc4efafc93b2b36b4009c1abd08d23e24a00",
+    "bytes": 9530
+  },
+  {
+    "path": "07_RTOS/Slide.md",
+    "sha256": "e49192f79739fc350612d003125b07fac28c0266ef2bfb8d62c22cffd7fe1be4",
+    "bytes": 51874
+  },
+  {
+    "path": "07_RTOS/build.bat",
+    "sha256": "2d85b183b7cad4cff6d2ed514ffca53d3aa5116bf42a8190eaecad9c2e4d9049",
+    "bytes": 478
+  },
+  {
+    "path": "07_RTOS/README.md",
+    "sha256": "c06056ff47951044688dc07fe424aade6edcd7fd356a5f660a9d424af0bd4d01",
+    "bytes": 5164
+  },
+  {
+    "path": "01_Instruction_Set/Slide.md",
+    "sha256": "a725e30964cbb2f1b7ec0aca9ca2beadc1527fc2f242fafb982fdaaacaecd938",
+    "bytes": 51669
+  },
+  {
+    "path": "09_Sensors_And_Buses/simulate.bat",
+    "sha256": "78182b25217e21b0968cf21bc9c6ea51a79bc2af491801bedee5d676b85e7901",
+    "bytes": 1578
+  },
+  {
+    "path": "09_Sensors_And_Buses/spi.h",
+    "sha256": "f3348bd3aa559e2da294f9a8094d70a4f969efa48cbd9821d0990e288672215d",
+    "bytes": 373
+  },
+  {
+    "path": "09_Sensors_And_Buses/i2c.c",
+    "sha256": "c32bf19c18910e7a9c541ab41469539ce882adf10a9d6a46da1b236891144797",
+    "bytes": 4433
+  },
+  {
+    "path": "09_Sensors_And_Buses/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "09_Sensors_And_Buses/spi.c",
+    "sha256": "e2895850d3bb4b7c04568a228b94d33adac3df64fd779babccf8096420b0484b",
+    "bytes": 2492
+  },
+  {
+    "path": "09_Sensors_And_Buses/adc.c",
+    "sha256": "6c84c0944007a8476a537e8b5b5a417e83def6a73aa3affdd0b51cc9920dc1e2",
+    "bytes": 4598
+  },
+  {
+    "path": "09_Sensors_And_Buses/adc.h",
+    "sha256": "6386644f773ae5a5ed9669014ec2f9a14c94dcce247d1671fd6096cb5b513fc2",
+    "bytes": 457
+  },
+  {
+    "path": "09_Sensors_And_Buses/Main.c",
+    "sha256": "04f63ad4e465e20371ba305543469e1bee5e4539b6e27ec20eee3467db846a46",
+    "bytes": 10542
+  },
+  {
+    "path": "09_Sensors_And_Buses/diagram.json",
+    "sha256": "bcd5a1e7dfde92b5ea6ac545cf251f18d8b0951fc65871ff7345133f8b18316e",
+    "bytes": 1242
+  },
+  {
+    "path": "09_Sensors_And_Buses/Lab.md",
+    "sha256": "9e4845ab15aec841299423a57d05c0d3aa48039009182100d7bd98b81912b6e9",
+    "bytes": 8066
+  },
+  {
+    "path": "09_Sensors_And_Buses/Slide.md",
+    "sha256": "3729e7d1aac185358404cf794ca7d86d02261eb35b811638b635c477fcc31c9b",
+    "bytes": 48484
+  },
+  {
+    "path": "09_Sensors_And_Buses/i2c.h",
+    "sha256": "9c5195a3667a578cca4715e7825b8398e11b155ca173245f6eb2d85e8e746e7f",
+    "bytes": 569
+  },
+  {
+    "path": "09_Sensors_And_Buses/build.bat",
+    "sha256": "d832dd8ee52f2e352ef81bb042e38ef4ab858e5a164ebd8911d1f8c6399983e1",
+    "bytes": 554
+  },
+  {
+    "path": "09_Sensors_And_Buses/README.md",
+    "sha256": "13de233bff08379fad158668d53a3efc24694fee5f84d06d6057a7b541aefee0",
+    "bytes": 4809
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/link.ld",
+    "sha256": "827b07e91aa2fdedd942ff3bd186a1168b53d25b4f543b438b6fd26caac26359",
+    "bytes": 3387
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/simulate.bat",
+    "sha256": "8ac4a9c8486a69b5a83a4b67fffd6e8452583e097d85e8195cb8640a03c9f942",
+    "bytes": 1865
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/crash.c",
+    "sha256": "b98fbd4d5633f6f43ea29060cdb4d647b722e7711c9fe306a724ae9ded09753f",
+    "bytes": 14233
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/wdog.c",
+    "sha256": "dab742793cad54abac77054cddda5b93d0ce61a9fa2257ee20a0ce3cbe9488c5",
+    "bytes": 3810
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/diag.c",
+    "sha256": "cbcc883d953382b3b3dea0195c9cbfd9796413629eb4851676936d13c8e2cbad",
+    "bytes": 14567
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/crash.h",
+    "sha256": "b0d534ac6ff7e68ab1eefbbb6b3285a40944be48346ae1879b4d962b24df1680",
+    "bytes": 4375
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/diag.h",
+    "sha256": "f555a66409faf030c1c502bcec9ad9f683cf98bd62919f6652a595465d7a00f4",
+    "bytes": 6246
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/Main.c",
+    "sha256": "8dfd118fac264af151670c094552bcb1a71bc36c9e535d157c5ce14e1184e1c6",
+    "bytes": 26864
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/wdog.h",
+    "sha256": "4cba98ea3c0fa622c5bee85cb5b08bf79a7538e70572a46d4ef4c395c4a311eb",
+    "bytes": 6547
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/Lab.md",
+    "sha256": "593c7ca651cb2f5c6d907b958681bc95df6a76039a6f2f7ce780f5d67e0cbc23",
+    "bytes": 13661
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/Slide.md",
+    "sha256": "8b1d2926c3415e1c8e52ada74696572941556f098feb4446956c0843c4d5997d",
+    "bytes": 63515
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/build.bat",
+    "sha256": "7009b57aac40c2038a1ac4289d2e29917f84b463c3f50027352890f872939fe0",
+    "bytes": 693
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/README.md",
+    "sha256": "a64ed8b6a65dc90feedc019673c94f15854e1552decb75e67ce0fe7870e84f8c",
+    "bytes": 10430
+  },
+  {
+    "path": "06_Time_And_Timers/simulate.bat",
+    "sha256": "f831ff855f2ed3feabc894ed08b6eb176368fa402fdc994845dbfc72086756d6",
+    "bytes": 1776
+  },
+  {
+    "path": "06_Time_And_Timers/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "06_Time_And_Timers/Main.c",
+    "sha256": "a42a79d31110ecf1430ff5999cc659e277582eabc854b158bb6b9258386b6c2a",
+    "bytes": 20571
+  },
+  {
+    "path": "06_Time_And_Timers/diagram.json",
+    "sha256": "aeb9f1776c196e2be12795f287feaafbb7540a193b44f032cd9ac5b480efba2f",
+    "bytes": 2584
+  },
+  {
+    "path": "06_Time_And_Timers/Lab.md",
+    "sha256": "dc17d6a1a6ab19d71afa1aeb7d7db803b85324ce320babc5568f41271de5c837",
+    "bytes": 10925
+  },
+  {
+    "path": "06_Time_And_Timers/Slide.md",
+    "sha256": "34af649cb388affc98995f4e668cd07770740b9ac3130c287aa84251a7ef417d",
+    "bytes": 50245
+  },
+  {
+    "path": "06_Time_And_Timers/build.bat",
+    "sha256": "aee21bc09e6e47d06f50ae52ec91a12d2213baaa18f86a5cdbcccc1d8da529df",
+    "bytes": 430
+  },
+  {
+    "path": "06_Time_And_Timers/README.md",
+    "sha256": "be6a43ed9ecdac63b0ff39efe4fa5b960f0801af1cfc9059e295e23f4ae9956f",
+    "bytes": 7121
+  },
+  {
+    "path": "_spike/FINDINGS.md",
+    "sha256": "dc371ab0bd86550d03971e20c6230d547c5b5b9b2900ac5eed7980ffecaa7ad6",
+    "bytes": 27620
+  },
+  {
+    "path": "_spike/README.md",
+    "sha256": "2f96a94eb2aaccc0d01a5650396c6522a58daae1fb332f5e0e38dd0fb8e4e0b9",
+    "bytes": 3743
+  },
+  {
+    "path": "_build/pinmap.py",
+    "sha256": "011e8d0e96fe98cbaa48e41253f547c45509590a17ef997815423d78baeb5295",
+    "bytes": 21491
+  },
+  {
+    "path": "_build/regdiag.py",
+    "sha256": "c48a21e48956a38de17ac12b174dd113996646de567178e3d957b77041b57fec",
+    "bytes": 11972
+  },
+  {
+    "path": "_build/build-lesson.bat",
+    "sha256": "c9bfeee761126be511e4d59379c67b59c4e728ba119b914f4c95d366654f28a3",
+    "bytes": 5072
+  },
+  {
+    "path": "_build/build-slides.py",
+    "sha256": "db26ca734201025da6aea61dfc1afeab6f326abcd56e3820c5e04a027a7b3b6a",
+    "bytes": 26154
+  },
+  {
+    "path": "_build/wokwi-pins.py",
+    "sha256": "2609c09d11bf6997c8a70f5bc63b928ee129362e4230a38856f8d37bfcb3781a",
+    "bytes": 15612
+  },
+  {
+    "path": "_build/disasm.py",
+    "sha256": "72633afec0fc0850ba57d7d567c1efb3fdb9a8c79ab768577c2db39ec55e3a2c",
+    "bytes": 8951
+  },
+  {
+    "path": "13_Drone_Attitude/world.h",
+    "sha256": "766eb9e105815b0c097fe4a8bf0b0604f4b4ef4425f9ee782b83e8292b287ebf",
+    "bytes": 3358
+  },
+  {
+    "path": "13_Drone_Attitude/simulate.bat",
+    "sha256": "921ba352584b550307ec06a53ac39af93c150756597c1d19ca2e0f8274989f00",
+    "bytes": 1758
+  },
+  {
+    "path": "13_Drone_Attitude/control.h",
+    "sha256": "6d87f9e169d13178ab8c5cae2a542a33f0529aafb79bdc0a7d8f2b09d5a39eae",
+    "bytes": 5708
+  },
+  {
+    "path": "13_Drone_Attitude/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "13_Drone_Attitude/world.c",
+    "sha256": "8a09d1beeeb783de1b7f88ae79f7852ae223d772c6c446ada29e2d35ce1564c0",
+    "bytes": 9523
+  },
+  {
+    "path": "13_Drone_Attitude/Main.c",
+    "sha256": "52361cf8c1dd74e21fa0fe5e8f4bea38522d7fb1e98d36d965ed3c9c39c70fb2",
+    "bytes": 21885
+  },
+  {
+    "path": "13_Drone_Attitude/control.c",
+    "sha256": "5a6859e326742708081d11ce36fc36ed456855feb313c5d55905bca95bb3c1b2",
+    "bytes": 9348
+  },
+  {
+    "path": "13_Drone_Attitude/diagram.json",
+    "sha256": "a17460a3f688896c9cefaac33422b65a7bcbc5c578e1e7bbf5eb0dff872db142",
+    "bytes": 2252
+  },
+  {
+    "path": "13_Drone_Attitude/Lab.md",
+    "sha256": "74ce4dbe474f92f5f24972882a147334a64fa9c8744df9a6b7314d233edae197",
+    "bytes": 13130
+  },
+  {
+    "path": "13_Drone_Attitude/Slide.md",
+    "sha256": "f1bba7f2e8ac60333a4dcf06ff69ccb2c8f9fa1b2bacf6fbd69e6b95eb44d992",
+    "bytes": 56242
+  },
+  {
+    "path": "13_Drone_Attitude/build.bat",
+    "sha256": "fa1c85dc5974f1a1c646a520072066008e2729886bffac81da8e700b188506f2",
+    "bytes": 686
+  },
+  {
+    "path": "13_Drone_Attitude/README.md",
+    "sha256": "0bf0f000f4d9d00e262b28719d91a4d40f27697876e79c6f72a4cde364d0c6bb",
+    "bytes": 9492
+  },
+  {
+    "path": "16_Robot_Navigation/world.h",
+    "sha256": "b7f37bb3b744be655598a2ca612b4895c9a9a001eb0071e8c3004f085c9d5458",
+    "bytes": 2049
+  },
+  {
+    "path": "16_Robot_Navigation/mathx.h",
+    "sha256": "da7f7bba1858fe8da7cc083e317299fe4733db54cc4fe157c4f2ca72319ee4fd",
+    "bytes": 662
+  },
+  {
+    "path": "16_Robot_Navigation/simulate.bat",
+    "sha256": "46b6f7aca34ac89257f1483c55a94c10c88c2325189e7a2008da78eaaa8eb8ec",
+    "bytes": 1862
+  },
+  {
+    "path": "16_Robot_Navigation/sim.h",
+    "sha256": "8354fdea9347f8424ec8d67c106e3987adf95b2261e67af519bfb32a727a589f",
+    "bytes": 3617
+  },
+  {
+    "path": "16_Robot_Navigation/nav.c",
+    "sha256": "825ef7176246f80526a7730ab5ef2b4851fd0f8d5abcfb84013180eab7399ed4",
+    "bytes": 22092
+  },
+  {
+    "path": "16_Robot_Navigation/astar.c",
+    "sha256": "cd30627fccb22ee9e55f571e1d3a337999747e9094272f6d40c5bc0f2ff2bb22",
+    "bytes": 7115
+  },
+  {
+    "path": "16_Robot_Navigation/nav.h",
+    "sha256": "f9e8801ab0b89a07f9f9c08c73758aa1770681a1dd73055c72a9e7669a95b261",
+    "bytes": 4373
+  },
+  {
+    "path": "16_Robot_Navigation/wokwi.toml",
+    "sha256": "8871fd83fd2f133cde0480f5a9f26e9b297c7a0c7254978b1ab36ad9a4db111e",
+    "bytes": 229
+  },
+  {
+    "path": "16_Robot_Navigation/astar.h",
+    "sha256": "da229435351242e9778a78e0d09fa8bbeffdf9bace6e721160f51033b6ec0a15",
+    "bytes": 2312
+  },
+  {
+    "path": "16_Robot_Navigation/levels.c",
+    "sha256": "ee6ed4ff881ba72f281952dcd6c68761ed5b5dab75da6f401c8928543da42734",
+    "bytes": 3998
+  },
+  {
+    "path": "16_Robot_Navigation/view.c",
+    "sha256": "e9bab6fdb4c67a13cf78e1e4be5b4da8f6d7420fda5f1a25bff7907dc540797a",
+    "bytes": 3370
+  },
+  {
+    "path": "16_Robot_Navigation/levels.h",
+    "sha256": "d8fe4200bce032a94048dad134533d9341383f09ba1811a322d128abfcc4f669",
+    "bytes": 667
+  },
+  {
+    "path": "16_Robot_Navigation/mathx.c",
+    "sha256": "d4d2d3033bba6b9bd10419bcc47bfc55f7f175c828dbc1921e8026d03d034de8",
+    "bytes": 399
+  },
+  {
+    "path": "16_Robot_Navigation/world.c",
+    "sha256": "252462252301012ecc06f296746bbc454ccd4e4213c81ef6dff914b3852b3f58",
+    "bytes": 10757
+  },
+  {
+    "path": "16_Robot_Navigation/Main.c",
+    "sha256": "38a9e07c943fc1a8e63017f1efcf1e1db6b6f93f1274fe670fa1a96b55f0011e",
+    "bytes": 22697
+  },
+  {
+    "path": "16_Robot_Navigation/diagram.json",
+    "sha256": "da3d101d018c0018dab2b0e4922d901a2104e5c47fe2005bb63f4db441fe18ff",
+    "bytes": 1958
+  },
+  {
+    "path": "16_Robot_Navigation/Lab.md",
+    "sha256": "e92a7e792bfe4abd2290c97d4c6dbb45b908ec41be3d9194ef6de46cd0fa155b",
+    "bytes": 11342
+  },
+  {
+    "path": "16_Robot_Navigation/Slide.md",
+    "sha256": "1f8c39b0574aba8e830faa80f0aa267c43f5924a019d2e562343814aeac746ca",
+    "bytes": 55794
+  },
+  {
+    "path": "16_Robot_Navigation/build.bat",
+    "sha256": "d7013b003ca962e0d593bfc72c9945476fe26e465076627d4e6215f17adefa44",
+    "bytes": 886
+  },
+  {
+    "path": "16_Robot_Navigation/README.md",
+    "sha256": "e1145d3d583a7b8cc170fb4ab35cd693732e29274533bf1a003e5d9164a5a0a5",
+    "bytes": 10501
+  },
+  {
+    "path": "16_Robot_Navigation/view.h",
+    "sha256": "e5cee42ab34c2e8f4785bd377ee5120059995310ace28483cb2f2682027416db",
+    "bytes": 582
+  },
+  {
+    "path": "_lib/uart.h",
+    "sha256": "98e34b2d3ce474bd02c2544080541c3ef9b3a7bb1a00be80f1e6083123517a17",
+    "bytes": 1226
+  },
+  {
+    "path": "_lib/retarget.c",
+    "sha256": "019ad3bb1b7733a05869e73a058afceb2479e6b84dc48930a26167eca7b184ac",
+    "bytes": 3421
+  },
+  {
+    "path": "_lib/proto.h",
+    "sha256": "d62611a73d35782b7200967b048b411754248c2a8983da56220062023ddce506",
+    "bytes": 971
+  },
+  {
+    "path": "_lib/retarget.h",
+    "sha256": "a51f7c086ee6aeef81a54aa2e54ab3a16533d4cb980d620adac61d54a86b1b79",
+    "bytes": 285
+  },
+  {
+    "path": "_lib/i2c.c",
+    "sha256": "096aefb85c41a417a961855d52324692b746c8960b2ba3ce65428e070a2300e9",
+    "bytes": 4465
+  },
+  {
+    "path": "_lib/uart.c",
+    "sha256": "e805e76dee899ab0d4d8abc950ca91eb7e15cea6253841ee56c4526b0e66ba55",
+    "bytes": 5422
+  },
+  {
+    "path": "_lib/fmath.h",
+    "sha256": "44519d4d92f8a65bcb6598dc6cbcdfec1b8a539382ddfb46264ce8ac3728cb07",
+    "bytes": 3171
+  },
+  {
+    "path": "_lib/beep.c",
+    "sha256": "f30f5149b09e719088ce4ba5dfe90347ef834027930e6c725127aa680cb33f2d",
+    "bytes": 1706
+  },
+  {
+    "path": "_lib/beep.h",
+    "sha256": "f52391fb3541ba6420b4f36e0b3084b2410d4ed3bc8b8266f188ccf7ea1f6852",
+    "bytes": 802
+  },
+  {
+    "path": "_lib/adc.c",
+    "sha256": "96a627f1cf17584f98c8a939687b4b3f21b5132275221810a9fef8aa7a3353d9",
+    "bytes": 4630
+  },
+  {
+    "path": "_lib/gpio.h",
+    "sha256": "5807664e9cd39650be64ddcceb2b8252079f9ea7228ddf55342fe67da9324620",
+    "bytes": 2475
+  },
+  {
+    "path": "_lib/pad.c",
+    "sha256": "21d61bc5ba7869ebbdea8c9e910958d265baff1d9112422ce2fd13e42aa5dad6",
+    "bytes": 2381
+  },
+  {
+    "path": "_lib/adc.h",
+    "sha256": "186230e5ebe3db36d2921cfb8dc522d1e9e780c33295d58ebe94f2eb779e6a7e",
+    "bytes": 651
+  },
+  {
+    "path": "_lib/os.c",
+    "sha256": "41eb8088e55b00bb0e0aedcdb7a552cf2e8a52aaf908b930a6ed3a6b11c0776a",
+    "bytes": 13855
+  },
+  {
+    "path": "_lib/pad.h",
+    "sha256": "bb4e45e6c69db793a36d2fd034a46c6a4b02a0c32f41d8825d542b727bfcef20",
+    "bytes": 2198
+  },
+  {
+    "path": "_lib/os.h",
+    "sha256": "005da437dd54a17a2f3d9c961f8f2d18cda5d0c1c2c20f6aeecd2552f3dcc610",
+    "bytes": 3339
+  },
+  {
+    "path": "_lib/oled.c",
+    "sha256": "bee64b60cb12fcc9fabaa6a77b7f761197ac36df38f567a1162c5ca7ab351c91",
+    "bytes": 12713
+  },
+  {
+    "path": "_lib/oled.h",
+    "sha256": "c9cffcf2a29a4c058332c7cb0a417be98b55f5dd626e886350deda91eaa9d45c",
+    "bytes": 3401
+  },
+  {
+    "path": "_lib/proto.c",
+    "sha256": "83e292d13662287932ddd9b48577a3a65f39aac794fba25211666e4a23c0d0a8",
+    "bytes": 1403
+  },
+  {
+    "path": "_lib/i2c.h",
+    "sha256": "baafe9739eaccb837a0a65df2e8ee4edfa8eb956952ed6394353bdb907d6dd39",
+    "bytes": 601
+  },
+  {
+    "path": "17_Robot_Balancing/host/lqr.py",
+    "sha256": "bba5a0b551b26e069e5149ab0ca955fd6506000d8ce4dbdfa326c7e5a5309935",
+    "bytes": 12904
+  },
+  {
+    "path": "17_Robot_Balancing/host/sitl.c",
+    "sha256": "e99479b809aba01102af94c624e7260167c27d3711dfd9e2da3afcba4d4d5066",
+    "bytes": 13208
+  },
+  {
+    "path": "17_Robot_Balancing/host/run.bat",
+    "sha256": "90254374fed7e2941ec5d2620fb3d92680951a8c381980933185cb8b2d012333",
+    "bytes": 835
+  },
+  {
+    "path": "17_Robot_Balancing/host/run.sh",
+    "sha256": "563849a6a22781b2a25708eb19a9eda8dd7422923884a4a859223ff398110fd1",
+    "bytes": 645
+  },
+  {
+    "path": "_startup/c031c6/link.ld",
+    "sha256": "1ef28b4e20a352558b9f339b35fa0b826011650cbac6d1eaf955daebcee3c6ae",
+    "bytes": 2099
+  },
+  {
+    "path": "_startup/c031c6/startup.c",
+    "sha256": "541224b045e52f64f01d9a0e70115383c6e87c77862e6c18cfbd427cfae140b9",
+    "bytes": 5963
+  },
+  {
+    "path": "18_Robot_Competition/host/run.bat",
+    "sha256": "34d917abb1d7c2e4e5ecd3365530c2141dfdfcbbd6f976de978c3ba4ead6af60",
+    "bytes": 2823
+  },
+  {
+    "path": "18_Robot_Competition/host/run.sh",
+    "sha256": "d1faf242ea5ea9a292b66248229a00cad20425417e94540144d9699f17343540",
+    "bytes": 2403
+  },
+  {
+    "path": "18_Robot_Competition/host/register.h",
+    "sha256": "e6948c4559d729e26e11898573afe2523222885fb8586db8f5cdb9961d7fcafb",
+    "bytes": 825
+  },
+  {
+    "path": "18_Robot_Competition/host/league.c",
+    "sha256": "fc2bafc294f84f641b87c7336ef1d71abdcb396fdfd888f6f05f9a9a9ab7aa46",
+    "bytes": 18610
+  },
+  {
+    "path": "18_Robot_Competition/host/strategies/alice.c",
+    "sha256": "407cb510ebd0199c48544998ba4f8b650861d37bb23689417fc017341650fcde",
+    "bytes": 2672
+  },
+  {
+    "path": "18_Robot_Competition/host/strategies/cheater.c",
+    "sha256": "4319a9fed0cd5b31c030eceb72da9d8a5efc0b1ae9219161182e84448b485edb",
+    "bytes": 917
+  },
+  {
+    "path": "18_Robot_Competition/host/strategies/bob.c",
+    "sha256": "a2dc7f1db6291fb8e24eff5e1fc875fd429b523c1196a739f18db446b22233ba",
+    "bytes": 2200
+  },
+  {
+    "path": "12_Game/host/run.bat",
+    "sha256": "13e6fe832b484602a4b44d3f368333031a3ad24c8af751bd854d4a231e49b235",
+    "bytes": 540
+  },
+  {
+    "path": "12_Game/host/run.sh",
+    "sha256": "cc96b67b98a21c17204e8782a321e05838af23e9251769d25980f9554bffa5eb",
+    "bytes": 448
+  },
+  {
+    "path": "12_Game/host/embed_shots.py",
+    "sha256": "21902a79643101b60cb6713bb8c7a8415bcdb49d97d31944effde616797d2bc6",
+    "bytes": 3071
+  },
+  {
+    "path": "12_Game/host/test_games.c",
+    "sha256": "bcf8e7a43b106f0f185d2ad70ae262e099baa799dd86b552fd1401119efd34f6",
+    "bytes": 21090
+  },
+  {
+    "path": "12_Game/host/leaderboard.py",
+    "sha256": "a625dd0e5517480493116113fb8c7cebfd402075cf8cb1e07c0dcbb15d21ca25",
+    "bytes": 2745
+  },
+  {
+    "path": "12_Game/host/sprite.py",
+    "sha256": "b46f26e0d6c205ca66d88463d32c8e37c8ea6eba7ab9bdc0292fc9c685456722",
+    "bytes": 1665
+  },
+  {
+    "path": "12_Game/host/out/snake.txt",
+    "sha256": "d3f61c9b12fe3598133c9e7aed9fa0a48e69f9b9f83e22441380c816e1faea38",
+    "bytes": 4454
+  },
+  {
+    "path": "12_Game/host/out/flap.txt",
+    "sha256": "39d1921d965cb373cbef917723ffd1ab27ce31d26b785ff87ad7c8d5f726b3d3",
+    "bytes": 4454
+  },
+  {
+    "path": "12_Game/host/out/menu.txt",
+    "sha256": "5c83a2333b773d139b9cfc26e310afc1c1906bfa3079b9ecf0f0b4f8bc1c63c1",
+    "bytes": 4454
+  },
+  {
+    "path": "12_Game/host/out/gameover.txt",
+    "sha256": "77e890202f9ef0733fea6b6a0919eecf96d0bcd089371e1f27d589b92cd925f0",
+    "bytes": 4454
+  },
+  {
+    "path": "12_Game/host/out/breakout.txt",
+    "sha256": "0993066c332754f42b7954335a1a58b250b76947372c89136153bb683ffd5cd0",
+    "bytes": 4454
+  },
+  {
+    "path": "14_Drone_Missions/host/sitl.c",
+    "sha256": "afb58748ee225dd217a6e00977149a8b9e5badb739ec462f0e97e8f68046fac7",
+    "bytes": 25356
+  },
+  {
+    "path": "14_Drone_Missions/host/run.bat",
+    "sha256": "f1a35728a2f2636dab8f3348683a21c390fdaf71905cc26f94c8546b00bc99d7",
+    "bytes": 1250
+  },
+  {
+    "path": "14_Drone_Missions/host/run.sh",
+    "sha256": "6647060a0d82ee5bca86f40461453b3a014289e1f819733a08e31b5da77b37e3",
+    "bytes": 1334
+  },
+  {
+    "path": "14_Drone_Missions/host/mission.py",
+    "sha256": "9d90de3a323c7e64a62e9890caedb40d04b6d311faa86c4a5fac285c95230f78",
+    "bytes": 15509
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/fpu_compare.bat",
+    "sha256": "a4f4f5622cbc823249fdcaa7311d714f15e6756ebd944f0bea5b445a37692fba",
+    "bytes": 1321
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/fpu_compare.sh",
+    "sha256": "7c171aec1875dadd0573be294c846a9e9e03ee664f2ee875dfbdcef8cb077ab8",
+    "bytes": 1053
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/run.bat",
+    "sha256": "7fe376aa62ab868af3c202218ca030f25e0341fdcdd607adadb8ab9f9fe03c18",
+    "bytes": 1328
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/run.sh",
+    "sha256": "9039fc8d4231144caf5d33c4bb863238f28b2ea8b87b15de0367e80521233cd5",
+    "bytes": 985
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/kernel.c",
+    "sha256": "66585b001d3825c8215bf4e400f833090c95329f0021eb860fb539eb51daba9f",
+    "bytes": 1120
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/flashcost.py",
+    "sha256": "72cf4cda8b11b54a622d5cc1a937f8a5015d5f5c59defd6caed47dcfe0d02146",
+    "bytes": 3106
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/test_fix.c",
+    "sha256": "9cde65fe5c9b86110b2b523a183ec403fa413f32f3d73bcdb27af6eab49de9b8",
+    "bytes": 12508
+  },
+  {
+    "path": "10_Fixed_Point_And_DMA/host/m0sim.py",
+    "sha256": "80bd3c22aa254a3fa228320ee102cccdfa35fd2301c8ecb0056a7f8da1941405",
+    "bytes": 22872
+  },
+  {
+    "path": "19_Final_Project/host/test_app.c",
+    "sha256": "582bf2e54776d2dccdca50c73599f24e89b66bb4854b0a90fd3ac7ca0f6709d3",
+    "bytes": 11575
+  },
+  {
+    "path": "19_Final_Project/host/run.bat",
+    "sha256": "9eab04b18041c057fb7e093303509cd71588b6cf6edfa7ccbfcfbc7db3373cae",
+    "bytes": 725
+  },
+  {
+    "path": "19_Final_Project/host/run.sh",
+    "sha256": "569794c19838afd0b4eb5586a2bf9e1bbf83ff082397d1a6b2658576402b82e0",
+    "bytes": 308
+  },
+  {
+    "path": "15_Robot_Line_Follower/host/sitl.c",
+    "sha256": "2863c01f598740f6a202a5cc450ae74914bc5f23e27e2d649c832e2f81f50deb",
+    "bytes": 14383
+  },
+  {
+    "path": "15_Robot_Line_Follower/host/run.bat",
+    "sha256": "771caa49fef45b0eee12c02abe57f3cab9aad488886515e330e2b16dc7bf88c1",
+    "bytes": 1036
+  },
+  {
+    "path": "15_Robot_Line_Follower/host/run.sh",
+    "sha256": "cad70689afafee902eca0ab19b86cb87cbe51376012057cf51f42ead20a70de2",
+    "bytes": 649
+  },
+  {
+    "path": "15_Robot_Line_Follower/host/leaderboard.py",
+    "sha256": "88db6bd57d25251691313c95042081b878f420b9db788ac2db0074a7697f3f0e",
+    "bytes": 3056
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/host/run.bat",
+    "sha256": "0313c651f95cf26975543e5e9bb232cbec38a7c8c387d8d8ea2406ded1c49bdc",
+    "bytes": 552
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/host/run.sh",
+    "sha256": "3a16faaac7694888d11d324e09eb5d63ee95367a2be41ab4d6c75dc7a4d58bfe",
+    "bytes": 497
+  },
+  {
+    "path": "11_Faults_Watchdog_Power/host/test.c",
+    "sha256": "1f14db257c9a58e717e56f438df0e61d945e9bcbed72e157fad1e6eee9d7712d",
+    "bytes": 20588
+  },
+  {
+    "path": "_spike/f103c8/link.ld",
+    "sha256": "d87b88911f695257364a9056dd71c38aecda98655a87c99546e9e3bab2273dbe",
+    "bytes": 1744
+  },
+  {
+    "path": "_spike/f103c8/startup.c",
+    "sha256": "061fc78b65da4d9b1b192fbf317b3f2434e7dcb6ad444c8568bee49dd23584a6",
+    "bytes": 1764
+  },
+  {
+    "path": "_spike/f103c8/main.c",
+    "sha256": "1eaabecba1a2730bc4366a221d948d0d3ee1619887dd869cf5dec5a74c613c4d",
+    "bytes": 4018
+  },
+  {
+    "path": "_spike/f446re/link.ld",
+    "sha256": "538fc7c69359913c725827fec436d2d23bb9d2261e4ba277445a31a204cdf45c",
+    "bytes": 2021
+  },
+  {
+    "path": "_spike/f446re/startup.c",
+    "sha256": "2e0efd41daa4cd5b2288bacb75d162cac8094427e26bcffd2f5d6c305c9b76a9",
+    "bytes": 3016
+  },
+  {
+    "path": "_spike/f446re/main.c",
+    "sha256": "b041064e1981a287c01ed461931b2ac1297b76c80a868780e4c914fce508cd84",
+    "bytes": 3006
+  },
+  {
+    "path": "_spike/c031c6/link.ld",
+    "sha256": "931bf17e17228b8d1b7ec1bf627cd670b91041adf8d38b623c80ad80eb21d16c",
+    "bytes": 1900
+  },
+  {
+    "path": "_spike/c031c6/wokwi.toml",
+    "sha256": "c994e87cb0c0ba6cbdc78595b9233da9bf168e74f1c40c68ee4263f2e7c3023c",
+    "bytes": 59
+  },
+  {
+    "path": "_spike/c031c6/startup.c",
+    "sha256": "f972d5f7843bc3271fa75c10399f39b5a815dc08c1f397b942a693fe7ad5c721",
+    "bytes": 5919
+  },
+  {
+    "path": "_spike/c031c6/diagram.json",
+    "sha256": "b494cb6e7ff143cceea8d07c8c0eefcae6cd4203f12c2ccf0d7d96263d191844",
+    "bytes": 319
+  },
+  {
+    "path": "_spike/c031c6/main.c",
+    "sha256": "1cdc520ddad3da6f6fc836eba8e02d6409a20f2907233bda426771c61ebc4a70",
+    "bytes": 4143
+  },
+  {
+    "path": "_spike/l031k6/link.ld",
+    "sha256": "3e000bf7603360100c9c5a55fab565e6aa498305f52fbc5c49f1ed6e1bf28aa1",
+    "bytes": 1898
+  },
+  {
+    "path": "_spike/l031k6/startup.c",
+    "sha256": "ee67f37c565fa8c47aad10ff13fcc955050a0d522586e4659bb20744132a04b3",
+    "bytes": 2054
+  },
+  {
+    "path": "_spike/l031k6/main.c",
+    "sha256": "d916c2f1f7351b80b67bd9f58cf80b5676025f49078cf436667982059b63e5b2",
+    "bytes": 4136
+  },
+  {
+    "path": "13_Drone_Attitude/host/cycles.py",
+    "sha256": "661571a0efa84209167c4bc38858de951b2d877b167b0f4948f32286a7136daf",
+    "bytes": 5258
+  },
+  {
+    "path": "13_Drone_Attitude/host/sitl.c",
+    "sha256": "5db8f3ff13390ff1ede258350ccdb04c5a75caf7a0ee88e464f8d5aa7600c5b8",
+    "bytes": 19065
+  },
+  {
+    "path": "13_Drone_Attitude/host/run.bat",
+    "sha256": "b95d29b3c9bda65c777877b50873168276bc4cfe2b12ef22717061b28f12b4ae",
+    "bytes": 727
+  },
+  {
+    "path": "13_Drone_Attitude/host/run.sh",
+    "sha256": "d6d135310758298b73a7fa33326b4bc3ef3af381db5352efbf4ff121b066b8f3",
+    "bytes": 282
+  },
+  {
+    "path": "16_Robot_Navigation/host/sitl.c",
+    "sha256": "7332a0efbc472ae18c7446bfc8a1f2570040cb07c9054bf2e7ed4760fa513e36",
+    "bytes": 19866
+  },
+  {
+    "path": "16_Robot_Navigation/host/frame_maze.txt",
+    "sha256": "3d9a8b16dc5e140ffe6327c67a4b40412769dc86ed9da5c332e27e8f4929d8e1",
+    "bytes": 8256
+  },
+  {
+    "path": "16_Robot_Navigation/host/run.bat",
+    "sha256": "09e9d1d212a3149282c113ecbde94bdfb93944ba954e9f739d37afd4ad95c1f8",
+    "bytes": 778
+  },
+  {
+    "path": "16_Robot_Navigation/host/planner.py",
+    "sha256": "0c1e4b34b6b3e74a496726571a18cc942c06ca5a47d178688a62d9eb81bcf2cb",
+    "bytes": 18138
+  },
+  {
+    "path": "16_Robot_Navigation/host/run.sh",
+    "sha256": "df2df9c49ce15661a655bc9180356297fe496ebeb6e6eb29a38bb334d1e35e93",
+    "bytes": 537
+  },
+  {
+    "path": "16_Robot_Navigation/host/frame_trap.txt",
+    "sha256": "54c2eb56f74f668cf0b379bc15c0f78eec6166a8a18adc0cc3bfaeeeaad2e320",
+    "bytes": 8256
+  },
+  {
+    "path": "16_Robot_Navigation/host/paths.txt",
+    "sha256": "1f06e9c685d3dab365f44d775beeb0557140e405b65d0b0b42ace97edc8fbb84",
+    "bytes": 2495
+  },
+  {
+    "path": "16_Robot_Navigation/host/frame_door.txt",
+    "sha256": "76431e17cb119048b7cc15e7f48deb99fe91a776373135a13ecaf0d59a390664",
+    "bytes": 8256
+  }
+]

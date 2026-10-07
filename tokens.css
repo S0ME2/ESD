@@ -1,0 +1,15 @@
+/* Hallmark · macrostructure: Long Document + Workbench · tone: technical · anchor hue: teal */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · consistency across a course */
+:root {
+ --color-paper:#f5f6f4; --color-surface:#fff; --color-ink:#20302f;
+ --color-muted:#596765; --color-rule:#d8dfdb; --color-grid:#e9eeeb;
+ --color-accent:#076e63; --color-accent-hover:#055b52; --color-accent-soft:#e6f4ef;
+ --color-estimate:#a56418; --color-estimate-soft:#fcf2df;
+ --color-danger:#a3313d; --color-danger-soft:#f9e9eb; --color-focus:#087f72;
+ --color-hardware:#3b4d48; --color-physical:#a7ccc1; --color-white:#fff; --color-led:#279447;
+ --font-body:'Lab Sans',Arial,sans-serif; --font-display:var(--font-body);
+ --font-mono:'Lab Mono',monospace;
+ --space-xs:8px; --space-sm:12px; --space-md:20px; --space-lg:32px; --space-xl:48px;
+ --radius-card:8px; --radius-input:6px;
+ --ease-out:cubic-bezier(.2,.8,.2,1); --dur-short:140ms;
+}

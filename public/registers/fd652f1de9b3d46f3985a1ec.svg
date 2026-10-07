@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 172" role="img" aria-label="SysTick, 0xE000E010 - the kernel set it up; we only read VAL; LOAD, 32 bits; VAL, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="415" y="16" text-anchor="middle" class="lbl">SysTick, 0xE000E010 - the kernel set it up; we only read VAL</text>
+<text x="16" y="59" class="mono">LOAD</text>
+<text x="16" y="74" class="lbl">SYST_RVR, 47999 here</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="52" width="160.0" height="26"/>
+<text x="254.4" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="334.4" y="52" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 52 V56 M794.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M774.4 52 V56 M774.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M754.4 52 V56 M754.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M734.4 52 V56 M734.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M714.4 52 V56 M714.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M694.4 52 V56 M694.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M674.4 52 V56 M674.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M654.4 52 V56 M654.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M634.4 52 V56 M634.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M614.4 52 V56 M614.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M594.4 52 V56 M594.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M574.4 52 V56 M574.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M554.4 52 V56 M554.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M534.4 52 V56 M534.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M514.4 52 V56 M514.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M494.4 52 V56 M494.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M474.4 52 V56 M474.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M454.4 52 V56 M454.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M434.4 52 V56 M434.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M414.4 52 V56 M414.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M394.4 52 V56 M394.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M374.4 52 V56 M374.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M354.4 52 V56 M354.4 74 V78"/>
+<text x="335.4" y="44" text-anchor="start" class="mono lbl">23</text>
+<text x="574.4" y="65" text-anchor="middle" class="mono">RELOAD</text>
+<text x="16" y="128" class="mono">VAL</text>
+<text x="16" y="143" class="lbl">SYST_CVR, counts down</text>
+<text x="175.4" y="113" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="121" width="160.0" height="26"/>
+<text x="254.4" y="134" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="334.4" y="121" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 121 V125 M794.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M774.4 121 V125 M774.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M754.4 121 V125 M754.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M734.4 121 V125 M734.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M714.4 121 V125 M714.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M694.4 121 V125 M694.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M674.4 121 V125 M674.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M654.4 121 V125 M654.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M634.4 121 V125 M634.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M614.4 121 V125 M614.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M594.4 121 V125 M594.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M574.4 121 V125 M574.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M554.4 121 V125 M554.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M534.4 121 V125 M534.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M514.4 121 V125 M514.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M494.4 121 V125 M494.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M474.4 121 V125 M474.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M454.4 121 V125 M454.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M434.4 121 V125 M434.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M414.4 121 V125 M414.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M394.4 121 V125 M394.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M374.4 121 V125 M374.4 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M354.4 121 V125 M354.4 143 V147"/>
+<text x="335.4" y="113" text-anchor="start" class="mono lbl">23</text>
+<text x="574.4" y="134" text-anchor="middle" class="mono">CURRENT</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="907" viewBox="0 0 907 165" role="img" aria-label="SysTick-&gt;LOAD, 32 bits; SysTick-&gt;VAL, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">SysTick-&gt;LOAD</text>
+<text x="16" y="50" class="lbl">47 999: one tick per ms at 48 MHz</text>
+<text x="16" y="65" class="mono lbl">= 0x0000BB7F</text>
+<text x="252.2" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="251.2" y="28" width="160.0" height="26"/>
+<rect class="hifill" x="411.2" y="28" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M871.2 28 V32 M871.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M851.2 28 V32 M851.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M831.2 28 V32 M831.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M811.2 28 V32 M811.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M791.2 28 V32 M791.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M771.2 28 V32 M771.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M751.2 28 V32 M751.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M731.2 28 V32 M731.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M711.2 28 V32 M711.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M691.2 28 V32 M691.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M671.2 28 V32 M671.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M651.2 28 V32 M651.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M631.2 28 V32 M631.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M611.2 28 V32 M611.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M591.2 28 V32 M591.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M571.2 28 V32 M571.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M551.2 28 V32 M551.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M531.2 28 V32 M531.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M511.2 28 V32 M511.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M491.2 28 V32 M491.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M471.2 28 V32 M471.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M451.2 28 V32 M451.2 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M431.2 28 V32 M431.2 50 V54"/>
+<text x="412.2" y="20" text-anchor="start" class="mono lbl">23</text>
+<text x="881.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="861.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="841.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="821.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="801.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="781.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="761.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="741.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="721.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="701.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="681.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="661.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="641.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="621.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="601.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="581.2" y="41" text-anchor="middle" class="mono">1</text>
+<text x="561.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="541.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="521.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="501.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="481.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="461.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="441.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="421.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="401.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="381.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="361.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="341.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="321.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="301.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="281.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="261.2" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="651.2" y="67" text-anchor="middle" class="mono halo">RELOAD</text>
+<text x="16" y="121" class="mono">SysTick-&gt;VAL</text>
+<text x="16" y="136" class="lbl">counts DOWN from LOAD to 0</text>
+<text x="252.2" y="106" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="106" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="251.2" y="114" width="160.0" height="26"/>
+<text x="331.2" y="127" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="411.2" y="114" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M871.2 114 V118 M871.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M851.2 114 V118 M851.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M831.2 114 V118 M831.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M811.2 114 V118 M811.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M791.2 114 V118 M791.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M771.2 114 V118 M771.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M751.2 114 V118 M751.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M731.2 114 V118 M731.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M711.2 114 V118 M711.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M691.2 114 V118 M691.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M671.2 114 V118 M671.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M651.2 114 V118 M651.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M631.2 114 V118 M631.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M611.2 114 V118 M611.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M591.2 114 V118 M591.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M571.2 114 V118 M571.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M551.2 114 V118 M551.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M531.2 114 V118 M531.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M511.2 114 V118 M511.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M491.2 114 V118 M491.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M471.2 114 V118 M471.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M451.2 114 V118 M451.2 136 V140"/>
+<path class="reg" stroke-width="0.6" d="M431.2 114 V118 M431.2 136 V140"/>
+<text x="412.2" y="106" text-anchor="start" class="mono lbl">23</text>
+<text x="651.2" y="127" text-anchor="middle" class="mono">CURRENT</text>
+</svg>

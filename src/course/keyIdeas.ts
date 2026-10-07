@@ -1,0 +1,22 @@
+export const keyIdeas=[
+ 'The CPU follows instructions; memory stores values; pins connect the program to the outside world.',
+ 'Changing a value inside the CPU does not change a hardware device until the CPU writes it back.',
+ 'C source code must be translated and linked before the chip can run it.',
+ 'Two jobs can interfere when they update the same value. Protect the whole update.',
+ 'Startup prepares memory before your main function begins.',
+ 'A pin must have the right settings before it can read a button or drive an output.',
+ 'A timer counts regular ticks and can change a pin automatically.',
+ 'Tasks take turns using one CPU. Each task needs its own saved place to resume.',
+ 'A received message must be complete and checked before the program trusts it.',
+ 'A sensor reading is a number that needs units and a clear meaning.',
+ 'The same bits can mean different numbers. Agree on the scale before doing arithmetic.',
+ 'A watchdog resets the system when required work stops making progress.',
+ 'Drawing into memory and sending the drawing to a screen are separate jobs.',
+ 'A controller measures an error and changes the motors to reduce it.',
+ 'A drone needs a stable inner control loop before a mission can guide it to a position.',
+ 'A line follower uses sensor evidence to choose different speeds for its two wheels.',
+ 'A robot should update its map and plan when it discovers a new obstacle.',
+ 'Balancing needs control of movement as well as tilt.',
+ 'A strategy must act on the sensors it has, rather than hidden information about the opponent.',
+ 'A complete project needs clear inputs, safe outputs and measurements that show it meets its goals.'
+];

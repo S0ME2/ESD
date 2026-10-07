@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="791" viewBox="0 0 791 182" role="img" aria-label="ADC1-&gt;CHSELR, 32 bits; ADC1-&gt;ISR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">ADC1-&gt;CHSELR</text>
+<text x="16" y="50" class="lbl">1u &lt;&lt; 4</text>
+<text x="16" y="65" class="mono lbl">= 0x00000010</text>
+<text x="135.8" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="134.8" y="28" width="180.0" height="26"/>
+<rect class="reg" x="754.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="734.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="714.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="694.8" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="674.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="654.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="634.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="614.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="594.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="574.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="554.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="534.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="514.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="494.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="474.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="454.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="434.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="414.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="394.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="374.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="354.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="334.8" y="28" width="20.0" height="26"/>
+<rect class="reg" x="314.8" y="28" width="20.0" height="26"/>
+<text x="764.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="744.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="724.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="704.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="684.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="664.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="644.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="624.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="604.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="584.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="564.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="544.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="504.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="484.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="464.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="444.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="404.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="164.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="144.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="684.8" y="67" text-anchor="middle" class="mono halo">4</text>
+<text x="16" y="127" class="mono">ADC1-&gt;ISR</text>
+<text x="135.8" y="106" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="106" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="634.8" y="114" width="40.0" height="26"/>
+<rect class="dash" x="554.8" y="114" width="20.0" height="26"/>
+<rect class="dash" x="514.8" y="114" width="20.0" height="26"/>
+<rect class="dash" x="134.8" y="114" width="360.0" height="26"/>
+<text x="314.8" y="127" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="494.8" y="114" width="20.0" height="26"/>
+<text x="504.8" y="106" text-anchor="middle" class="mono lbl">13</text>
+<rect class="reg" x="534.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="574.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="594.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="614.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="674.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="694.8" y="114" width="20.0" height="26"/>
+<rect class="hifill" x="714.8" y="114" width="20.0" height="26"/>
+<text x="724.8" y="106" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="734.8" y="114" width="20.0" height="26"/>
+<rect class="reg" x="754.8" y="114" width="20.0" height="26"/>
+<text x="504.8" y="153" text-anchor="middle" class="mono halo">CCRDY</text>
+<text x="724.8" y="153" text-anchor="middle" class="mono halo">EOC</text>
+</svg>

@@ -1,0 +1,2054 @@
+[
+  {
+    "id": "note-0-0-0",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "What does the programmer’s model omit?",
+    "options": [
+      "The CPU registers and their names",
+      "Individual transistors and internal bus construction",
+      "The specified effects of register reads"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Registers are visible software state, so they belong in the model.",
+      "Implementation details such as individual transistors and bus-matrix construction; it retains registers, addresses and the specified effects of accesses.",
+      "Those effects are exactly what software needs the model to describe."
+    ]
+  },
+  {
+    "id": "note-0-0-1",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "List the visible state and hidden implementation in a programmer’s model.",
+    "options": [
+      "Transistors are visible; stacks and modes are hidden",
+      "Pipeline stages are visible; peripheral registers are hidden",
+      "Registers, addresses and exceptions are visible; pipeline construction is hidden"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Code uses stacks and execution modes, not individual transistors.",
+      "Software names peripheral registers, while the pipeline implementation is normally hidden.",
+      "Visible: CPU registers, memory, peripheral registers, modes/stacks and exceptions. Hidden: individual transistors, pipeline construction and bus matrix internals."
+    ]
+  },
+  {
+    "id": "note-0-0-2",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Name all five parts of this Cortex-M programmer’s model.",
+    "options": [
+      "Registers, caches, transistors, compiler and linker",
+      "Flash, SRAM, heap, stack and local variables",
+      "Registers, one address map, peripherals, modes/stacks and exceptions"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Compiler/linker are tools; caches/transistors do not replace the visible mode and exception rules.",
+      "These are memory categories, not all five parts of the machine model.",
+      "Registers; unified memory map; memory-mapped peripheral state; Thread/Handler modes with MSP/PSP; vectored exception handling."
+    ]
+  },
+  {
+    "id": "note-0-0-3",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "How does the CPU reach state outside its own registers?",
+    "options": [
+      "Only through calls into an operating system",
+      "Loads and stores to addresses in the common map",
+      "Dedicated IN/OUT instructions for every device"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Bare-metal code can access mapped hardware directly without an OS.",
+      "By address using loads/stores; this chip has no separate I/O port instruction space.",
+      "Cortex-M does not use a separate I/O instruction space."
+    ]
+  },
+  {
+    "id": "note-0-0-4",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Give three differences between a device register and a RAM variable.",
+    "options": [
+      "Hardware can change it, a read can consume data, and a write can drive a pin",
+      "It always stores bytes exactly like SRAM, but at a higher address",
+      "Only software changes it and reads have no effects"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Register values can change asynchronously; reads can acknowledge/consume events; writes can affect physical pins or start operations.",
+      "The address selects a device with documented effects, not ordinary storage.",
+      "Peripheral hardware also changes state and some reads acknowledge events."
+    ]
+  },
+  {
+    "id": "note-0-0-5",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Describe control, status and data register roles and who accesses them.",
+    "options": [
+      "Software configures control, checks status and transfers data; hardware updates status",
+      "Software writes status to invent received data; hardware reads control as payload",
+      "Control, status and data are three names for interchangeable registers"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Software writes control settings, reads hardware status, and reads/writes payload data as appropriate. Hardware updates status and received data.",
+      "Status reports actual device state; control selects behavior, not payload.",
+      "Their access rules and meanings differ; interchanging them can change hardware accidentally."
+    ]
+  },
+  {
+    "id": "note-0-0-6",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Which manual answers NVIC priority versus USART pin routing?",
+    "options": [
+      "ARM for NVIC priority; ST for USART pin routing",
+      "The board schematic for NVIC priority; ARM for USART alternate functions",
+      "ST for both because ST manufactures the whole chip"
+    ],
+    "correct": 0,
+    "explanations": [
+      "ARM’s core guide explains NVIC. ST’s reference manual/datasheet explains vendor registers and alternate-function pin choices.",
+      "A schematic describes wiring; ARM does not define this vendor pin multiplexer.",
+      "NVIC behavior belongs to the ARM core architecture; ST documents vendor pin routing."
+    ]
+  },
+  {
+    "id": "note-0-0-7",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "A peripheral ignores configuration and reads zero. What is the first suspect?",
+    "options": [
+      "The RCC clock gate is disabled",
+      "The register should be declared const instead of volatile",
+      "The peripheral needs a RAM allocation first"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Its RCC clock gate. Without a clock the device can ignore stores and return zero.",
+      "const does not power or clock hardware and would prevent configuration writes.",
+      "A mapped device exists independently of the program heap."
+    ]
+  },
+  {
+    "id": "note-0-0-8",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Name two causes of garbled or missing serial output from this model.",
+    "options": [
+      "Too many general-purpose CPU registers or an odd Thumb target",
+      "Wrong UART-clock divisor or wrong pin alternate function",
+      "A missing printf newline or little-endian RAM by itself"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Register count does not set baud; the odd target is the valid Thumb marker.",
+      "A divisor computed from the wrong UART clock produces wrong baud; incorrect pin mux/alternate function prevents correct signal routing.",
+      "Neither explains a wrong bit rate or disconnected TX route."
+    ]
+  },
+  {
+    "id": "note-0-0-9",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Why can casting a byte buffer to a word pointer HardFault on M0+? Would M3 necessarily fail?",
+    "options": [
+      "Any byte buffer is unreadable by M3 because it is an 8-bit object",
+      "Casting automatically aligns the address on both cores",
+      "The cast may produce an unaligned word access; M3 ordinary loads may support it"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Byte storage is readable; the issue is alignment and access instructions, not the label of the object.",
+      "A cast changes the pointer type, not where the buffer starts.",
+      "The buffer may not be naturally 4-byte aligned. M0+ disallows the unaligned word access; M3 ordinary loads may support it with extra cost."
+    ]
+  },
+  {
+    "id": "note-0-0-10",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Which three implementation effects must firmware account for?",
+    "options": [
+      "Pipeline/PC effects, bus clock gates and flash wait-state ordering",
+      "Only the C type sizes; hardware timing is always hidden",
+      "Only cache replacement and virtual page faults"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Pipeline/branch and PC behavior; different bus clock gates; flash wait states ordered before frequency increases.",
+      "Branches, clocks and flash timing have visible effects firmware must handle.",
+      "This small MCU uses wait states and has no desktop MMU/page-fault model."
+    ]
+  },
+  {
+    "id": "note-0-0-11",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "How does USART2 reach its handler without a registration call?",
+    "options": [
+      "The linker calls USART2_IRQHandler every time a byte arrives",
+      "USART2 searches RAM for a matching function name",
+      "Hardware uses vector entry 44, selected by IRQ 28"
+    ],
+    "correct": 2,
+    "explanations": [
+      "The linker builds addresses; hardware selects the handler at runtime.",
+      "Hardware follows a vector address, not source-language names.",
+      "IRQ 28 selects vector 16+28=44, whose stored function address is loaded by hardware."
+    ]
+  },
+  {
+    "id": "note-0-0-12",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Compare port-mapped and memory-mapped I/O and classify AVR and Cortex-M.",
+    "options": [
+      "Memory-mapped I/O means every peripheral register is SRAM",
+      "AVR has dedicated I/O operations; Cortex-M uses ordinary mapped loads/stores",
+      "Both need x86 IN/OUT for every GPIO access"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Mapped devices share address syntax with RAM but keep device-specific behavior.",
+      "Port mapping provides a separate I/O space and dedicated instructions, as in AVR IN/OUT. Cortex-M maps devices into the ordinary address space.",
+      "Cortex-M has mapped device registers, not x86 port instructions."
+    ]
+  },
+  {
+    "id": "note-0-0-13",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "Why did AVR need PROGMEM and LPM for flash constants?",
+    "options": [
+      "PROGMEM makes volatile reads atomic",
+      "LPM enables a peripheral clock before reading flash",
+      "AVR flash is in a separate program-memory space"
+    ],
+    "correct": 2,
+    "explanations": [
+      "PROGMEM concerns placement/access to flash, not concurrency.",
+      "LPM is a program-memory load, not an RCC clock command.",
+      "Its Harvard code/data spaces require separate program-memory access. The unified Cortex-M map reads flash constants through ordinary pointers."
+    ]
+  },
+  {
+    "id": "note-0-0-14",
+    "lesson": 0,
+    "topic": "note-0-0",
+    "topicTitle": "The five parts of the machine",
+    "question": "What provides desktop virtual-memory protection, and what can a bad pointer do here?",
+    "options": [
+      "The MCU MMU redirects every bad pointer to private task RAM",
+      "An MPU creates virtual addresses just like an MMU",
+      "A desktop MMU maps/protects virtual memory; this MCU pointer can reach RAM or devices"
+    ],
+    "correct": 2,
+    "explanations": [
+      "This chip lacks an MMU and separate task virtual maps.",
+      "An MPU checks permissions on real addresses; it does not perform virtual translation.",
+      "A desktop MMU translates/enforces virtual memory. This chip lacks it; a bad pointer can corrupt shared real RAM, reach a device, or fault at an unmapped address. Optional MPUs provide permissions without virtual maps."
+    ]
+  },
+  {
+    "id": "note-0-1-0",
+    "lesson": 0,
+    "topic": "note-0-1",
+    "topicTitle": "CPU state and special registers",
+    "question": "Where is the zero flag, and how is PRIMASK accessed?",
+    "options": [
+      "Z is APSR bit 30; MRS/MSR access PRIMASK",
+      "Z is APSR bit 30; LDR at a peripheral address reads PRIMASK",
+      "Z is stored in GPIO status; a RAM pointer accesses PRIMASK"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Z is xPSR/APSR bit 30. PRIMASK is a special core register accessed by MRS/MSR or CMSIS intrinsics, not a memory pointer.",
+      "Knowing the flag location does not make PRIMASK memory-mapped; it needs special-register access.",
+      "Z and PRIMASK are CPU state, not GPIO or normal memory registers."
+    ]
+  },
+  {
+    "id": "note-0-2-0",
+    "lesson": 0,
+    "topic": "note-0-2",
+    "topicTitle": "Addresses, alignment and byte order",
+    "question": "What bytes represent 0x12345678 in STM32 RAM?",
+    "options": [
+      "87 65 43 21, in increasing addresses",
+      "78 56 34 12, in increasing addresses",
+      "12 34 56 78, in increasing addresses"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Endianness rearranges whole bytes; it does not reverse bits or hexadecimal digits inside each byte.",
+      "78 56 34 12 at successive addresses; the least significant byte comes first.",
+      "That is big-endian ordering; STM32 puts the least significant byte first."
+    ]
+  },
+  {
+    "id": "note-0-3-0",
+    "lesson": 0,
+    "topic": "note-0-3",
+    "topicTitle": "Peripheral roles and the correct manual",
+    "question": "Why can reading a register be dangerous?",
+    "options": [
+      "Only writes can ever change a device",
+      "A read may clear an event or consume a byte",
+      "A read always overwrites every register in the peripheral"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Read side effects are part of many peripheral access rules.",
+      "A read can acknowledge an event or remove a received byte. Treating it like a repeatable RAM read can change device state accidentally.",
+      "Read effects are register-specific; they do not universally reset a whole block."
+    ]
+  },
+  {
+    "id": "note-0-4-0",
+    "lesson": 0,
+    "topic": "note-0-4",
+    "topicTitle": "Modes, stacks and exception vectors",
+    "question": "USART2 is IRQ 28. Which vector and IPSR value apply?",
+    "options": [
+      "Vector 44 and IPSR 44 (0x2C)",
+      "Vector 44 but IPSR remains zero",
+      "Vector 28 and IPSR 28"
+    ],
+    "correct": 0,
+    "explanations": [
+      "16+28=44. Vector entry 44 holds its target and IPSR records exception 44 while the handler executes.",
+      "IPSR is zero in Thread mode; an executing handler reports its exception identity.",
+      "External IRQ numbers start after 16 core vector entries; both use exception number 44 here."
+    ]
+  },
+  {
+    "id": "note-0-5-0",
+    "lesson": 0,
+    "topic": "note-0-5",
+    "topicTitle": "Clock gates, pin ownership and implementation costs",
+    "question": "A configured peripheral reads zero. What should you check first?",
+    "options": [
+      "Check the RCC clock gate first",
+      "Change the pin pull-up first, because it powers the peripheral",
+      "Install a new handler before checking the clock"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Its RCC clock gate, then the addressed block and pin mux. Configuration writes cannot take effect while its clock is disabled.",
+      "A pull resistor biases a pin; it does not provide the device clock.",
+      "Handler installation cannot make unclocked configuration registers work."
+    ]
+  },
+  {
+    "id": "note-1-0-0",
+    "lesson": 1,
+    "topic": "note-1-0",
+    "topicTitle": "Reading Thumb code and recognizing its limits",
+    "question": "Can a Cortex-M switch to A32 to get divide instructions?",
+    "options": [
+      "No; M0+ uses software division and M3/M4 have Thumb divide instructions",
+      "Yes; clearing the Thumb bit enables A32 divide",
+      "No Cortex-M supports division even through software"
+    ],
+    "correct": 0,
+    "explanations": [
+      "No Cortex-M has A32 state. M0+ division uses a library; M3/M4 provide Thumb-2 divide instructions.",
+      "Cortex-M has no A32 execution state; clearing the tag gives an invalid target.",
+      "Software can implement division; larger Cortex-M cores also have hardware Thumb division."
+    ]
+  },
+  {
+    "id": "note-1-1-0",
+    "lesson": 1,
+    "topic": "note-1-1",
+    "topicTitle": "Loads, arithmetic, bit fields and conditions",
+    "question": "Why does unsigned 0xFFFFFFFF compare differently from signed -1?",
+    "options": [
+      "CMP knows the C type and chooses the branch automatically",
+      "A signed cast changes every bit in the register",
+      "The same bits mean 4294967295 unsigned but −1 signed, with different branch tests"
+    ],
+    "correct": 2,
+    "explanations": [
+      "CMP creates flags; the compiler selects signed or unsigned branch conditions.",
+      "Interpretation changes without changing that bit pattern.",
+      "The bit pattern is identical, but unsigned comparison treats it as 4294967295 and uses carry-based branches; signed comparison treats it as negative and uses N/V."
+    ]
+  },
+  {
+    "id": "note-1-2-0",
+    "lesson": 1,
+    "topic": "note-1-2",
+    "topicTitle": "Calls, the ABI and tagged return addresses",
+    "question": "LR reads 0x0800028F. Where does an ordinary return resume?",
+    "options": [
+      "0x0800028A, re-executing the call",
+      "0x0800028F, executing an instruction at the odd byte",
+      "0x0800028E, after removing the Thumb tag"
+    ],
+    "correct": 2,
+    "explanations": [
+      "LR points after BL, not to the calling instruction itself.",
+      "Bit 0 marks Thumb state; the actual instruction starts at the aligned address.",
+      "0x0800028E: clear the Thumb tag, retaining the address of the instruction immediately after the call."
+    ]
+  },
+  {
+    "id": "note-1-3-0",
+    "lesson": 1,
+    "topic": "note-1-3",
+    "topicTitle": "Addresses, encodings and literal pools",
+    "question": "Can a narrow LDR reach offset 128?",
+    "options": [
+      "No; all narrow loads can reach only 31 bytes",
+      "Yes; its immediate is an unscaled 8-bit byte offset",
+      "No; narrow base-relative LDR reaches 124 bytes"
+    ],
+    "correct": 2,
+    "explanations": [
+      "LDRB reaches 31 bytes; word LDR scales its offset and reaches 124.",
+      "This narrow form uses five bits scaled by four, not an eight-bit byte offset.",
+      "No. Its maximum is 31×4=124 bytes; the compiler must adjust a base or use an available wider architecture encoding."
+    ]
+  },
+  {
+    "id": "note-1-4-0",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Why is there no BL to put in the optimized loop?",
+    "options": [
+      "All C function calls use B instead of BL on M0+",
+      "put was inlined into the two send blocks",
+      "The linker deleted transmission as unused"
+    ],
+    "correct": 1,
+    "explanations": [
+      "BL is supported; this missing call results from inlining, not the ISA.",
+      "The helper was inlined: its polling and store instructions appear directly in two send blocks.",
+      "The send instructions remain in the loop; only the separate helper call disappears."
+    ]
+  },
+  {
+    "id": "note-1-4-1",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "How many mnemonics covered roughly 80% of the cited image?",
+    "options": [
+      "Thirteen entries prove those instructions consume 79.6% of execution time",
+      "Thirteen grouped entries, totaling 79.6% of this static image",
+      "All 51 mnemonics appear equally often"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Static counts do not measure how often loops run at runtime.",
+      "Thirteen, counting PUSH/POP together in the frequency table; their cumulative share was79.6% in the -Os spike image.",
+      "The listed proportions are strongly unequal; a small group dominates this image."
+    ]
+  },
+  {
+    "id": "note-1-4-2",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Why does setting an ODR bit involve three core operations?",
+    "options": [
+      "Each C assignment is one indivisible machine instruction",
+      "Load ODR, change the register value, store it back",
+      "ORRS changes ODR directly through its address operand"
+    ],
+    "correct": 1,
+    "explanations": [
+      "C expressions can compile to several instructions and can be interrupted between them.",
+      "Load current word, modify a register operand, then store the word. A load–store ALU cannot update a memory bit directly; BSRR avoids the read by accepting a command.",
+      "ORRS operates on CPU registers; a separate store commits device state."
+    ]
+  },
+  {
+    "id": "note-1-4-3",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Which C mask operation corresponds to BICS?",
+    "options": [
+      "x |= mask",
+      "x ^= mask",
+      "x &= ~mask"
+    ],
+    "correct": 2,
+    "explanations": [
+      "OR inserts selected ones; BICS removes selected bits.",
+      "XOR toggles selected bits; BICS clears them regardless of their previous state.",
+      "x &= ~mask: preserve only bits not selected in the mask."
+    ]
+  },
+  {
+    "id": "note-1-4-4",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Why does the sample contain more shifts than subtraction?",
+    "options": [
+      "Shifts occur only in the division helper",
+      "M0+ implements every subtraction as a shift",
+      "Pin-field setup frequently builds shifted masks"
+    ],
+    "correct": 2,
+    "explanations": [
+      "GPIO field placement also needs shifts, independently of division.",
+      "SUBS exists; the measured shift count reflects the application fields.",
+      "GPIO/peripheral field setup repeatedly computes shifted masks and values, making LSLS common."
+    ]
+  },
+  {
+    "id": "note-1-4-5",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "CMP discards its subtraction result. What useful state remains?",
+    "options": [
+      "The subtraction result replaces the first operand",
+      "N, Z, C and V flags remain for branch decisions",
+      "Only the Z flag can change"
+    ],
+    "correct": 1,
+    "explanations": [
+      "CMP updates flags without retaining the arithmetic result in that operand.",
+      "The N/Z/C/V flags encode equality, sign, unsigned carry/no-borrow and signed overflow for later branches.",
+      "CMP supplies sign, carry/no-borrow and overflow flags as well as equality."
+    ]
+  },
+  {
+    "id": "note-1-4-6",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "How do BLT and BCC differ?",
+    "options": [
+      "BLT uses signed N/V; BCC uses unsigned carry",
+      "BLT uses carry; BCC compares N and V",
+      "They are interchangeable spellings of less-than"
+    ],
+    "correct": 0,
+    "explanations": [
+      "BLT tests signed less-than using N/V; BCC tests unsigned lower-than using carry. Interchanging them misinterprets high-bit-set values.",
+      "This swaps their meanings and gives incorrect results for negative bit patterns.",
+      "High-bit-set values distinguish signed and unsigned comparisons."
+    ]
+  },
+  {
+    "id": "note-1-4-7",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "What extra action does POP {r4,pc} perform versus restoring LR?",
+    "options": [
+      "It restores registers and branches to the saved target through PC",
+      "It restores PC as data but execution continues to the next instruction",
+      "It creates a fresh return address in LR"
+    ],
+    "correct": 0,
+    "explanations": [
+      "It loads the saved target directly into PC, combining register restoration with the function return.",
+      "Writing PC changes control flow; POP PC performs the return.",
+      "POP consumes saved stack values; BL creates a link-register return target."
+    ]
+  },
+  {
+    "id": "note-1-4-8",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Identify the addressing modes for s->field and buf[i].",
+    "options": [
+      "s->field uses a fixed base offset; buf[i] can use a runtime register offset",
+      "Both require a literal pool for every element",
+      "s->field uses the current PC; buf[i] always uses SP"
+    ],
+    "correct": 0,
+    "explanations": [
+      "A struct member uses a fixed immediate offset from its base; a byte-array element can use a register offset for the runtime index.",
+      "A literal pool loads constants; ordinary member/array access uses an address calculation.",
+      "Their bases come from the relevant pointers, not necessarily PC or SP."
+    ]
+  },
+  {
+    "id": "note-1-4-9",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "How does M0+ perform division, and what evidence appears in a map?",
+    "options": [
+      "A software helper such as __aeabi_uidiv; the map can include _udivsi3.o",
+      "The compiler evaluates every division at build time",
+      "SDIV runs directly on the M0+ integer ALU"
+    ],
+    "correct": 0,
+    "explanations": [
+      "It calls a software routine such as __aeabi_uidiv. A map can show libgcc _udivsi3.o pulled into the image.",
+      "Only constant cases can be folded; runtime operands need runtime division.",
+      "M0+ has no hardware divide instruction."
+    ]
+  },
+  {
+    "id": "note-1-4-10",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "What is A32, and when can this Cortex-M enter it?",
+    "options": [
+      "Handler mode automatically switches Cortex-M to A32",
+      "A32 means any Thumb instruction occupying 32 bits",
+      "A32 is ARM’s 32-bit instruction state; this Cortex-M never enters it"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Exceptions remain in Thumb execution on Cortex-M.",
+      "Encoding width and execution state are different; wide Thumb is still Thumb.",
+      "A32 is ARM’s32-bit instruction state. Cortex-M never enters it; its decoder supports Thumb only."
+    ]
+  },
+  {
+    "id": "note-1-4-11",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Name three operations a Cortex-M4 can encode directly that M0+ needs multiple instructions or a helper for.",
+    "options": [
+      "M4 adds only floating-point and no extra integer forms",
+      "Hardware divide, a large load offset and MOVW/MOVT constant construction",
+      "Every M4 instruction is supported on M0+ but takes more cycles"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Full Thumb-2 adds integer operations and addressing; floating-point depends on the variant.",
+      "Hardware division; a large base-relative load such asoffset2000; building a 32-bit constant with MOVW/MOVT without a literal pool. The M4 also supports wider addressing forms.",
+      "M0+ cannot decode the full M4 instruction set."
+    ]
+  },
+  {
+    "id": "note-1-4-12",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "The vector is 0x08000275 but code starts0x08000274. Explain the one-bit difference.",
+    "options": [
+      "Bit 0 tags Thumb; instructions start at the even address",
+      "The odd value means the linker created an unaligned instruction",
+      "The first byte at 0x08000274 is padding that execution skips"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Bit0 tags Thumb state. It does not add a byte to the instruction address; clearing it makes an invalid target state on Cortex-M.",
+      "Instruction placement remains aligned; function target encoding carries the tag.",
+      "The odd target contains a state tag, not a one-byte code offset."
+    ]
+  },
+  {
+    "id": "note-1-4-13",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Given LR0x0800028F, what runs after return and what could an even target imply?",
+    "options": [
+      "Resume at the vector-table base; LR always stores a vector index",
+      "Resume at 0x0800028E; an even computed target can mean a missing Thumb tag",
+      "Resume at 0x0800028F; even targets are always safer"
+    ],
+    "correct": 1,
+    "explanations": [
+      "An ordinary LR is a return target, not an index; exceptions use a distinct EXC_RETURN encoding.",
+      "Return resumes0x0800028E. A computed even function target/LR can indicate a missing Thumb tag and cause a fault.",
+      "Thumb targets need the state tag while the instruction address is even."
+    ]
+  },
+  {
+    "id": "note-1-4-14",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Classify x86, Cortex-M and AVR as register–memory or load–store.",
+    "options": [
+      "All three do arithmetic directly on arbitrary memory operands",
+      "x86 is register–memory; Cortex-M and AVR are load–store, with selected AVR I/O exceptions",
+      "Cortex-M is a stack machine and x86 is load–store"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Cortex-M ALU arithmetic uses registers; AVR has only selected I/O exceptions.",
+      "x86 is register–memory; Cortex-M and AVR are load–store, with AVR’s selected SBI I/O bit operations as an exception.",
+      "Cortex-M uses register operands; x86 supports memory operands in arithmetic."
+    ]
+  },
+  {
+    "id": "note-1-4-15",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "How does RISC-V implement a signed comparison branch without APSR, and what do ARM flags buy?",
+    "options": [
+      "RISC-V blt compares operands directly; ARM CMP produces reusable flags",
+      "ARM CMP branches immediately and cannot feed later tests",
+      "RISC-V blt first writes an ARM APSR register"
+    ],
+    "correct": 0,
+    "explanations": [
+      "RISC-V can use blt a 0,a 1,L directly. ARM CMP sets reusable flags that can feed several branches, improving encoding density at the cost of hidden dependencies.",
+      "CMP sets flags; subsequent branches can reuse them until another instruction changes them.",
+      "RISC-V does not depend on ARM’s APSR flag state."
+    ]
+  },
+  {
+    "id": "note-1-4-16",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Contrast stack return addresses with link registers. Why save LR in a non-leaf function?",
+    "options": [
+      "Every ARM BL automatically pushes the old LR to memory",
+      "BL overwrites LR, so a function making another call must save its own return target",
+      "Leaf functions must always save LR, while nested callers never do"
+    ],
+    "correct": 1,
+    "explanations": [
+      "BL writes LR without automatically stacking its previous value.",
+      "A stack-call instruction stores each return in memory. BL puts it in LR, so a laterBL overwrites it; savingLR first preserves the caller’s return.",
+      "A leaf can keep its return in LR; nested calls overwrite it and require preservation."
+    ]
+  },
+  {
+    "id": "note-1-4-17",
+    "lesson": 1,
+    "topic": "note-1-4",
+    "topicTitle": "Following printf through optimized code",
+    "question": "Why can a narrow instruction not contain0x40021000, and how do architectures solve that?",
+    "options": [
+      "A 16-bit instruction stores a full 32-bit address after its opcode",
+      "Too few immediate bits; Thumb uses a literal pool, RISC-V LUI/ADDI, x86 a longer encoding",
+      "Every architecture places all peripheral addresses in a dedicated CPU register"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Its total width cannot hold 32 address bits plus opcode/operands.",
+      "Opcode/register bits leave too little immediate space. Thumb loads a literal near code; RISC-V builds it withLUI/ADDI; variable-length x86 embeds a larger immediate.",
+      "Architectures encode or construct constants differently; there is no universal dedicated address register."
+    ]
+  },
+  {
+    "id": "note-2-0-0",
+    "lesson": 2,
+    "topic": "note-2-0",
+    "topicTitle": "The build assigns real addresses",
+    "question": "A header declares SystemCoreClock but linking fails. What is missing?",
+    "options": [
+      "Another extern declaration in the same header",
+      "A linked object must define storage for SystemCoreClock",
+      "A larger heap allocation at runtime"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Repeating declarations does not allocate storage or provide a definition.",
+      "A storage definition in an object included in the link. A declaration lets a file compile; it does not allocate the variable.",
+      "The linker needs a symbol definition before runtime begins."
+    ]
+  },
+  {
+    "id": "note-2-1-0",
+    "lesson": 2,
+    "topic": "note-2-1",
+    "topicTitle": "Sections and the memory budget",
+    "question": "Why does a nonzero initialized global cost both flash and RAM?",
+    "options": [
+      "Flash preserves the initial value; SRAM holds the writable runtime copy",
+      "The global stays only in Flash because it has an initial value",
+      "Flash and SRAM mirror each write automatically"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Its starting value must survive power loss in flash while its runtime value must remain writable in RAM; startup copies between them.",
+      "A writable global needs SRAM during execution despite its persistent initial image.",
+      "Startup copies initial bytes once; ordinary SRAM writes do not update Flash."
+    ]
+  },
+  {
+    "id": "note-2-2-0",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "What does Intel HEX type04 with data0800 establish?",
+    "options": [
+      "It writes data value 0x0800 into SRAM",
+      "It sets the program entry point to 0x00000800",
+      "Upper address bits become 0x0800, so offset zero targets 0x08000000"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Type 04 sets the address context for later data records; it is not a SRAM data write.",
+      "An extended linear address record sets high address bits, not the reset target.",
+      "The upper16 address bits become0x0800; an offset 0000 data record therefore targets0x08000000."
+    ]
+  },
+  {
+    "id": "note-2-2-1",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Name the build’s five stages and the one made explicit in embedded work.",
+    "options": [
+      "Preprocess, compile, assemble, link, locate; preprocess fixes all symbol addresses",
+      "Compile, execute, debug, print, reset; reset assigns addresses",
+      "Preprocess, compile, assemble, link, locate; locate fixes physical placement"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Preprocessing expands text; final addresses depend on linked sections and placement.",
+      "Execution and debugging occur after building; physical placement belongs to the linker script.",
+      "Preprocess,compile,assemble,link,locate. Locate binds sections/symbols to the chip’s physical addresses through the linker script."
+    ]
+  },
+  {
+    "id": "note-2-2-2",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Does .data occupy flash or RAM?",
+    "options": [
+      "Only Flash; startup uses it directly as writable storage",
+      "Both: Flash load image and writable SRAM run location",
+      "Only SRAM because writable data cannot have a Flash copy"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Ordinary runtime writes cannot treat Flash as SRAM; startup creates the writable copy.",
+      "Both: flash stores its initial payload at LMA; writable runtime objects live in RAM at VMA and must be copied.",
+      "Flash stores the initial bytes without making the runtime object read-only."
+    ]
+  },
+  {
+    "id": "note-2-2-3",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Who creates _sdata and _ebss, and how should C use them?",
+    "options": [
+      "C reads _sdata to obtain the starting address",
+      "The compiler creates initialized variables containing the boundaries",
+      "The linker defines boundaries; C takes their addresses with &"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Reading _sdata reads data located there; &_sdata obtains the linker-selected boundary.",
+      "These symbols represent selected addresses rather than stored pointer variables.",
+      "The linker script defines address symbols. Use&_sdata and&_ebss to retrieve boundaries; reading the symbols as objects reads memory there."
+    ]
+  },
+  {
+    "id": "note-2-2-4",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Why is a missing .bss clear intermittent?",
+    "options": [
+      "Prior SRAM contents vary; simulator zeros may hide missing initialization",
+      "The linker randomly relocates .bss at every reset",
+      "C automatically zeroes .bss on first read"
+    ],
+    "correct": 0,
+    "explanations": [
+      "RAM contents depend on startup/reset history; globals do not receive guaranteed zero values. Simulator or cold-boot zeros can hide the bug.",
+      "Placement is fixed in the firmware; varying contents cause the symptom.",
+      "C promises zero initialization, but startup must establish it before main."
+    ]
+  },
+  {
+    "id": "note-2-2-5",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Which linker map values come from the exact part datasheet, and what if RAM length is too large?",
+    "options": [
+      "Declare extra RAM to make the chip physically grow its stack memory",
+      "Use the part’s actual origins/capacities; excess declared RAM can place data outside hardware",
+      "Use the 4 GB address-space size as RAM length"
+    ],
+    "correct": 1,
+    "explanations": [
+      "A linker declaration cannot create hardware; it can only hide an overflow check.",
+      "FLASH/RAM origins and lengths. A falsely large length can permit placement or a stack outside physical RAM, even if linking succeeds.",
+      "Most addressable locations are not implemented SRAM."
+    ]
+  },
+  {
+    "id": "note-2-2-6",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "What does :020000040800 establish, and why might an 8-bit target not need it?",
+    "options": [
+      "Every 8-bit processor must ignore type 04 records",
+      "It changes the CPU word size from 8 to 32 bits",
+      "Type 04 supplies high address bits; small images within 16 bits may not need it"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Need depends on image addresses, not simply the processor’s data width.",
+      "HEX address records do not change the CPU’s instruction or word width.",
+      "An Intel HEX extended-linear-address record sets upper16 address bits to 0800. A small flash image within16-bit addressing needs no such upper portion."
+    ]
+  },
+  {
+    "id": "note-2-2-7",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Describe build-time, load-time and runtime address binding.",
+    "options": [
+      "This MCU uses runtime virtual translation for each load",
+      "Build fixes firmware addresses; loading chooses a base; MMU runtime maps virtual addresses",
+      "All three mean copying .data from Flash into SRAM"
+    ],
+    "correct": 1,
+    "explanations": [
+      "This part has no MMU and uses fixed addresses selected during build.",
+      "Build-time firmware fixes addresses permanently; a loader can pick a base at start; MMU-backed runtime translation maps virtual addresses during execution. This MCU uses build time, desktops use virtual translation.",
+      "Startup copying uses chosen addresses; it does not describe all address-binding strategies."
+    ]
+  },
+  {
+    "id": "note-2-2-8",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Why does .bss364 bytes have no flash payload while .data96 bytes does?",
+    "options": [
+      "Zeroing recreates .bss; .data needs stored initial bytes",
+      ".data takes only its size in Flash because SRAM is optional",
+      ".bss is free and consumes no SRAM"
+    ],
+    "correct": 0,
+    "explanations": [
+      "All-zero initialization can be recreated by a clear loop. Nonzero .data initial values must be stored somewhere persistent and copied.",
+      "Writable initialized objects need their SRAM run allocation as well.",
+      "It consumes runtime SRAM even without a Flash payload."
+    ]
+  },
+  {
+    "id": "note-2-2-9",
+    "lesson": 2,
+    "topic": "note-2-2",
+    "topicTitle": "Firmware files, boot and observation",
+    "question": "Compare PC and MCU bootstrap handoffs.",
+    "options": [
+      "The MCU requires a desktop kernel before it can execute startup",
+      "PC firmware loads further boot stages; MCU vectors select SP/PC, then startup calls main",
+      "Both begin directly at the C main symbol without initialization"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Bare-metal MCU startup runs without a kernel or process loader.",
+      "PC reset firmware loads a bootloader, then a kernel, then a user program. MCU reset loadsSP/PC from two vector words, then startup prepares C and calls main; it has no loader/OS chain.",
+      "The MCU needs hardware vector reads and startup; a PC also has earlier firmware stages."
+    ]
+  },
+  {
+    "id": "note-3-0-0",
+    "lesson": 3,
+    "topic": "note-3-0",
+    "topicTitle": "Polling, interrupts and DMA",
+    "question": "Why does an ISR not require AVR’s ISR macro here?",
+    "options": [
+      "Cortex-M has no saved interrupt context because only one core exists",
+      "Hardware saves the basic frame and the compiler preserves any extra callee-saved registers",
+      "An ordinary C handler never changes registers"
+    ],
+    "correct": 1,
+    "explanations": [
+      "One core still interrupts another execution sequence and must restore its context.",
+      "Hardware saves/restores the caller-clobbered frame and the C compiler preserves any callee-saved registers it uses; the vector points to an ordinary C function.",
+      "C handlers use registers; hardware and compiler preserve the required context."
+    ]
+  },
+  {
+    "id": "note-3-1-0",
+    "lesson": 3,
+    "topic": "note-3-1",
+    "topicTitle": "Visibility, atomicity and tearing",
+    "question": "Does volatile counter++ prevent a lost update?",
+    "options": [
+      "Yes; aligned storage makes the whole increment atomic",
+      "No; volatile preserves accesses but the load/add/store can interleave",
+      "Yes; volatile makes every C expression a single instruction"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Alignment can make each word access indivisible, not the complete read-modify-write sequence.",
+      "No. It forces the load/store but allows an ISR between them. Protect the whole update or give the counter one writer.",
+      "An increment still spans separate instructions."
+    ]
+  },
+  {
+    "id": "note-3-2-0",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Why can a long low-priority handler still cause trouble?",
+    "options": [
+      "Low priority means it never consumes execution time",
+      "Higher-priority preemption automatically makes all shared data safe",
+      "It delays equal/lower-priority requests and can still share data with urgent handlers"
+    ],
+    "correct": 2,
+    "explanations": [
+      "It runs when selected and occupies the core until return or preemption.",
+      "Preemption enables more interleavings; it does not supply synchronization.",
+      "It blocks equal/lower-priority handlers and delays their deadlines. Shared state can also be preempted by higher-priority handlers, so duration and synchronization both matter."
+    ]
+  },
+  {
+    "id": "note-3-2-1",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Name the three hardware rendezvous methods and a suitable polling case.",
+    "options": [
+      "Polling, interrupts and DMA; poll for a very short wait or acceptable human-speed sampling",
+      "DMA is always simplest even for a single rare button sample",
+      "Polling, cache and virtual memory; poll for every sustained byte stream"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Polling,interrupts,DMA. Poll for a very short wait whose interrupt setup/entry overhead exceeds the wait, or a simple human-speed input where occasional sampling delay is acceptable.",
+      "DMA has configuration/ownership costs; a simple short poll can be appropriate.",
+      "Cache/virtual memory are not these notification/transfer methods; long polling can waste CPU."
+    ]
+  },
+  {
+    "id": "note-3-2-2",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Why can an interrupt handler be an ordinary C function?",
+    "options": [
+      "The saved hardware frame, C ABI and vector entry cooperate with EXC_RETURN",
+      "Every ISR must manually push PC and xPSR in C",
+      "The compiler discovers handler names at runtime"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Hardware savesR0–R3,R12,LR,PC,xPSR; the ABI/compiler handles any callee-saved registers it uses. The vector supplies its entry and EXC_RETURN restores the frame.",
+      "Hardware performs that basic exception-frame save before entering the handler.",
+      "Names are resolved into vector addresses during build, not searched during events."
+    ]
+  },
+  {
+    "id": "note-3-2-3",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "What does volatile guarantee here, and what does it not provide?",
+    "options": [
+      "Required accesses remain visible; mutual exclusion is not provided",
+      "volatile prevents all interrupts during an access sequence",
+      "volatile makes a multiword struct snapshot consistent"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Required object accesses remain observable to the compiler. It supplies no mutual exclusion and cannot turn a multi-instruction increment into an atomic update.",
+      "It does not change PRIMASK or stop interrupt entry.",
+      "Separate fields can still come from different update generations."
+    ]
+  },
+  {
+    "id": "note-3-2-4",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Trace a counter increment lost to an interrupt.",
+    "options": [
+      "Main loads 5, ISR stores 6, then main reloads 6 and stores 7",
+      "The ISR stores 6, so main’s retained register automatically becomes 6",
+      "Both load 5 and each stores 6, so one increment is lost"
+    ],
+    "correct": 2,
+    "explanations": [
+      "That ordering preserves both updates; it is not the lost-update sequence.",
+      "Changing RAM does not update main’s saved CPU register snapshot.",
+      "Main loads 5. ISR loads 5, adds 1, stores 6. Main resumes its cached5, adds 1, stores 6. Two requests yield6 instead of7."
+    ]
+  },
+  {
+    "id": "note-3-2-5",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Does a byte written only by ISR and read only by main need a critical section?",
+    "options": [
+      "No protection or volatile is needed for any struct with one writer",
+      "Yes; every byte access tears into multiple bus transactions",
+      "Ordinarily no for this one-writer byte access; volatile is still needed"
+    ],
+    "correct": 2,
+    "explanations": [
+      "The byte conclusion does not extend to a coherent multi-field snapshot, and visibility still matters.",
+      "A single aligned byte access is indivisible on this core.",
+      "Its single aligned access is indivisible and has one writer, so ordinarily no. volatile is still required; a larger related-state protocol may need protection."
+    ]
+  },
+  {
+    "id": "note-3-2-6",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Why keep handlers short?",
+    "options": [
+      "Keep all processing in the ISR to avoid any main-loop delay",
+      "Record minimal state and return so other work can meet deadlines",
+      "A short ISR automatically eliminates every shared-data race"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Long ISR processing delays main and equal/lower-priority handlers.",
+      "They delay equal/lower-priority requests and main; long work increases latency and deadline failures. Record minimal state and process it later.",
+      "Duration reduction does not replace a correct sharing protocol."
+    ]
+  },
+  {
+    "id": "note-3-2-7",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "A device fails rarely after hours. What class of bug should be examined?",
+    "options": [
+      "volatile is missing only if the program fails immediately",
+      "Inspect races requiring rare unlucky interleavings",
+      "A long successful run proves all shared updates are atomic"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Compiler visibility and interleaving bugs can both produce delayed symptoms.",
+      "A race can require a tiny unlucky interleaving. Inspect all shared variables and their operations; repeated successful runs cannot demonstrate absence of the race.",
+      "Rare windows can remain unhit for hours."
+    ]
+  },
+  {
+    "id": "note-3-2-8",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "State the as-if rule and explain the hardware observer problem.",
+    "options": [
+      "Preserve C observable behavior; volatile prevents removal/caching of required external observations",
+      "Optimization must preserve one machine instruction per C operator",
+      "The compiler knows every hardware register change without volatile"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Optimization may change instructions if C-defined observable behavior is preserved. Device/ISR changes outside ordinary flow require volatile accesses so that caching/removal does not erase required observations.",
+      "The as-if rule permits a different instruction sequence with the same required behavior.",
+      "Asynchronous changes are not inferred from ordinary sequential C flow."
+    ]
+  },
+  {
+    "id": "note-3-2-9",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Define race, critical section, mutual exclusion and atomic operation generally.",
+    "options": [
+      "A critical section is any function declared volatile",
+      "Race depends on ordering; protect a critical section with exclusion; atomic operations appear indivisible",
+      "Atomic means fast; mutual exclusion means low priority"
+    ],
+    "correct": 1,
+    "explanations": [
+      "volatile qualifies object accesses; it does not mark protected functions or regions.",
+      "Race: result depends on interleaving. Critical section: code that must be protected. Mutual exclusion: only one context accesses that protected region at a time. Atomic: others cannot observe the operation partly completed.",
+      "Speed and priority do not define indivisibility or exclusive access."
+    ]
+  },
+  {
+    "id": "note-3-2-10",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "Why is disabling local interrupts insufficient on a dual-core processor?",
+    "options": [
+      "PRIMASK on one core pauses all processors",
+      "Another core continues; inter-core synchronization is required",
+      "Caches always make multi-core read-modify-write updates atomic"
+    ],
+    "correct": 1,
+    "explanations": [
+      "A local interrupt mask controls that core’s configurable exceptions.",
+      "The other core continues executing. Inter-core atomic operations and synchronization are needed; a mutex can be built on them.",
+      "Cache coherence alone does not turn a multi-instruction update into one atomic operation."
+    ]
+  },
+  {
+    "id": "note-3-2-11",
+    "lesson": 3,
+    "topic": "note-3-2",
+    "topicTitle": "Priority and applying the complete model",
+    "question": "What is tearing, and which shared objects exhibit it here?",
+    "options": [
+      "Every aligned 32-bit load tears because registers are 8 bits",
+      "Tearing means a pin changes while an LED is on",
+      "A reader combines old and new parts; uint64_t and structs can exhibit it"
+    ],
+    "correct": 2,
+    "explanations": [
+      "This is a 32-bit core; a single aligned word access is indivisible here.",
+      "It concerns inconsistent shared values, not physical pin damage.",
+      "A read combines old/new components into a nonexistent logical value. A64-bit value on a 32-bit core and a multi-field structure are the two examples."
+    ]
+  },
+  {
+    "id": "note-4-0-0",
+    "lesson": 4,
+    "topic": "note-4-0",
+    "topicTitle": "The actual board and addresses",
+    "question": "Why does a 4GB address space not imply4GB RAM?",
+    "options": [
+      "Only implemented blocks respond; this chip has 12 KB SRAM and 32 KB Flash",
+      "The 4 GB range is Flash because the program starts there",
+      "Every 32-bit address refers to one installed SRAM byte"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Addresses are names. Only mapped physical blocks respond; this part implements12 KB SRAM and 32 KB flash, with peripherals elsewhere.",
+      "The map includes many regions and holes; Flash occupies only its actual capacity.",
+      "Address width does not install memory behind every possible address."
+    ]
+  },
+  {
+    "id": "note-4-1-0",
+    "lesson": 4,
+    "topic": "note-4-1",
+    "topicTitle": "RCC register map and clock gates",
+    "question": "Which register enables USART2 and which bit?",
+    "options": [
+      "RCC->APBENR1 bit 17 at 0x4002103C",
+      "RCC->IOPENR bit 17 enables USART2",
+      "USART2->CR1 UE is sufficient without the RCC gate"
+    ],
+    "correct": 0,
+    "explanations": [
+      "RCC APBENR1 offset 0x3C, bit 17, at 0x4002103C.",
+      "IOPENR controls GPIO ports; USART2 uses APBENR1.",
+      "UE enables USART behavior only after its block receives a clock."
+    ]
+  },
+  {
+    "id": "note-4-2-0",
+    "lesson": 4,
+    "topic": "note-4-2",
+    "topicTitle": "GPIO and USART maps used by startup",
+    "question": "What two settings connect USART2 to PA2?",
+    "options": [
+      "PA2 MODER=10 and AFR[0] field=1, with clocks enabled",
+      "MODER=01 and AFR=1",
+      "Only AFR=1; MODER may remain analog"
+    ],
+    "correct": 0,
+    "explanations": [
+      "PA2 MODER=10 and its AFR[0] nibble=1, after enabling the GPIO and USART clocks.",
+      "Output mode gives GPIO ownership; alternate mode is needed for USART ownership.",
+      "The alternate-function number does not change the pin’s analog mode."
+    ]
+  },
+  {
+    "id": "note-4-3-0",
+    "lesson": 4,
+    "topic": "note-4-3",
+    "topicTitle": "Reset vectors and weak handlers",
+    "question": "Why can NMI and HardFault vectors contain the same address?",
+    "options": [
+      "Both are weak aliases to Default_Handler until overridden",
+      "An identical target proves both source functions were strongly defined",
+      "The processor cannot distinguish NMI from HardFault"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Both can be weak aliases of Default_Handler until separate strong handlers override them.",
+      "A shared weak default explains the same target without separate definitions.",
+      "They have distinct exception identities even if the default target is shared."
+    ]
+  },
+  {
+    "id": "note-4-4-0",
+    "lesson": 4,
+    "topic": "note-4-4",
+    "topicTitle": "Constructing C memory and budgeting it",
+    "question": "What does >RAM AT>FLASH express?",
+    "options": [
+      "Runtime placement in RAM, initial load bytes in Flash",
+      "Two independent writable copies automatically synchronized forever",
+      "Execution in Flash with initial bytes stored in SRAM"
+    ],
+    "correct": 0,
+    "explanations": [
+      "The section runs in RAM but its initial bytes are stored in flash; LOADADDR supplies the source for startup copying.",
+      "Startup copies the initial bytes; later SRAM writes do not synchronize Flash.",
+      "This reverses run and load destinations."
+    ]
+  },
+  {
+    "id": "note-4-5-0",
+    "lesson": 4,
+    "topic": "note-4-5",
+    "topicTitle": "Clock initialization and standard output",
+    "question": "Why must flash latency change before the clock?",
+    "options": [
+      "Flash latency controls UART baud but not instruction fetching",
+      "Changing the clock automatically changes FLASH->ACR",
+      "Flash needs enough response time before the core runs faster"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Latency concerns Flash access; UART has its own clock/divisor.",
+      "Firmware must configure the wait states in the safe order.",
+      "The faster core can otherwise fetch from flash before flash has supplied valid instruction data; the failure can appear far from clock setup."
+    ]
+  },
+  {
+    "id": "note-4-6-0",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "Why can moving the vector section create a clean build that will not boot?",
+    "options": [
+      "A valid HEX checksum guarantees a valid initial SP",
+      "Reset still reads the first Flash words as SP and target",
+      "The linker automatically teaches reset hardware the new table address"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Checksums establish record integrity, not semantic correctness of startup vectors.",
+      "The linker can legally place it elsewhere, but reset hardware still reads the first two flash words as SP/PC. Those words are then code bytes rather than valid startup values.",
+      "A legal section placement does not change this hardware reset mapping."
+    ]
+  },
+  {
+    "id": "note-4-6-1",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "Predict the effect of removing the .data copy loop.",
+    "options": [
+      "Its Flash initializer becomes writable and updates itself",
+      "It reliably becomes zero on every device and reset",
+      "The witness in SRAM loses its guaranteed initialized value"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Removing startup copying does not change Flash into runtime writable storage.",
+      "Without the copy, actual SRAM contents determine it; zero is not guaranteed.",
+      "The initialized witness is no longer guaranteed 0x00C0FFEE because its flash master is not transferred to SRAM. Record the actual replacement value in your environment."
+    ]
+  },
+  {
+    "id": "note-4-6-2",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "Predict the effect of removing the .bss clear loop.",
+    "options": [
+      "Zero-initialized globals depend on existing SRAM contents",
+      "Only Flash constants change; counters remain guaranteed zero",
+      "The compiler inserts a clear at each variable’s first use"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Frame counters/zero globals begin from whatever SRAM contains. Compare runs and reset types; a simulator that initializes RAM to zero can hide the fault.",
+      ".bss is SRAM for zero-initialized globals, including counters.",
+      "Startup must zero .bss before main; there is no required first-use clear."
+    ]
+  },
+  {
+    "id": "note-4-6-3",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "Why can moving .isr_vector after .text build cleanly but prevent startup?",
+    "options": [
+      "Hardware reads code bytes as vectors even though linking and checksums succeed",
+      "Reset searches all Flash for the .isr_vector section name",
+      "The compiler rejects every table placed after .text"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Compiler/linker/checksum validation need not enforce the reset contract. Hardware reads instruction bytes atflash base asSP/reset target rather than finding the moved table.",
+      "Section names are build metadata; reset hardware reads known addresses.",
+      "The placement can be legal to the tools while violating the reset contract."
+    ]
+  },
+  {
+    "id": "note-4-6-4",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "What should you observe while reducing declared RAM12K→8K→2K→1K?",
+    "options": [
+      "The stack remains hardcoded at 0x20003000 despite the LENGTH expression",
+      "Track stack/reservation movement and the build’s actual linker overflow threshold",
+      "Physical SRAM shrinks to match each linker declaration"
+    ],
+    "correct": 1,
+    "explanations": [
+      "_estack computed from ORIGIN plus LENGTH moves when the declared region changes.",
+      "Computed stack top and reservations move with the script. Existing occupied sections eventually exceed the region and trigger a linker overflow. Record the exact threshold from your build rather than assuming a fixed one.",
+      "The script changes allowed placement, not hardware capacity."
+    ]
+  },
+  {
+    "id": "note-4-6-5",
+    "lesson": 4,
+    "topic": "note-4-6",
+    "topicTitle": "Observe startup and deliberately break it",
+    "question": "How can you extend the LED-bar experiment while retaining a startup witness?",
+    "options": [
+      "Remove layout/witness reporting so only the creative pattern remains",
+      "Change frames/timing/playlist while retaining witness prints and LD4 updates",
+      "Accept serial pattern names alone as proof of LED wiring"
+    ],
+    "correct": 1,
+    "explanations": [
+      "That loses the requested startup evidence.",
+      "Edit pattern frames,timings and playlist in Main.c; continue printing layout/witness values and toggle LD4 each frame. Observe both serial evidence and actual LED behavior.",
+      "Serial output does not prove the actual pins and LEDs display the pattern."
+    ]
+  },
+  {
+    "id": "note-5-0-0",
+    "lesson": 5,
+    "topic": "note-5-0",
+    "topicTitle": "Locate each pin’s register field",
+    "question": "Where is pin 13’s alternate-function field?",
+    "options": [
+      "AFR[0], bits 23:20",
+      "AFR[1], bits 23:20",
+      "MODER bits 27:26 alone select its alternate-function number"
+    ],
+    "correct": 1,
+    "explanations": [
+      "AFR[0] covers pins 0–7; pin 13 belongs to AFR[1].",
+      "AFR[1], bits 23:20: index13/8=1 and nibble shift4×(13 mod8)=20.",
+      "MODER chooses the mode; the AFR nibble selects which peripheral function."
+    ]
+  },
+  {
+    "id": "note-5-1-0",
+    "lesson": 5,
+    "topic": "note-5-1",
+    "topicTitle": "Choose electrical behavior before reading a pin",
+    "question": "A pulled-up button reads pressed forever. Which mode might explain it?",
+    "options": [
+      "A pull-up drives the pin low when released",
+      "Analog mode leaves digital IDR zero; select input mode 00",
+      "Open-drain output type alone disables digital input reads"
+    ],
+    "correct": 1,
+    "explanations": [
+      "A functioning pull-up holds an undriven input high.",
+      "Analog mode disables the digital input and reads0. Set MODER00 explicitly before interpreting active-low IDR.",
+      "The relevant cause is analog MODER, not the output-driver type by itself."
+    ]
+  },
+  {
+    "id": "note-5-2-0",
+    "lesson": 5,
+    "topic": "note-5-2",
+    "topicTitle": "Atomic output commands",
+    "question": "What BSRR word writes LED pattern0x05 without changingPB8–15?",
+    "options": [
+      "0xFFFA0005",
+      "0x00000005",
+      "0x00FA0005"
+    ],
+    "correct": 2,
+    "explanations": [
+      "The upper reset half would also clear PB8–15; the inverse must be narrowed to eight bits.",
+      "This sets PB0/2 but does not reset the other six low pins to complete the pattern.",
+      "0x00FA0005: low half setsPB0/2, high half resets the other six low pins."
+    ]
+  },
+  {
+    "id": "note-5-3-0",
+    "lesson": 5,
+    "topic": "note-5-3",
+    "topicTitle": "Clear a field, insert its value, then read it back",
+    "question": "Why is MODER |=1u<<10 insufficient forPA5 output?",
+    "options": [
+      "OR automatically clears the unselected mode bit",
+      "Writing MODER=1u<<10 safely preserves every other field",
+      "OR cannot turn the reset 11 field into output 01"
+    ],
+    "correct": 2,
+    "explanations": [
+      "OR can set ones but cannot clear the existing high field bit.",
+      "Direct assignment clears the unrelated pin fields, including debug pin setup.",
+      "Its analog reset field is 11. OR cannot clear bit 11, so it remains11 instead of01."
+    ]
+  },
+  {
+    "id": "note-5-4-0",
+    "lesson": 5,
+    "topic": "note-5-4",
+    "topicTitle": "Buttons, sampling and the debouncer",
+    "question": "Why does a 1 kHz poll see fewer transitions than EXTI?",
+    "options": [
+      "EXTI creates artificial edges even with perfectly stable input",
+      "Bounce edges can fall between the 1 ms samples",
+      "A polling read clears every edge before EXTI sees it"
+    ],
+    "correct": 1,
+    "explanations": [
+      "EXTI detects configured input edges; it need not invent transitions.",
+      "Most bounce edges occur between1 ms samples. Polling reports sampled level changes rather than every physical edge.",
+      "IDR sampling does not universally acknowledge EXTI edge latches."
+    ]
+  },
+  {
+    "id": "note-5-5-0",
+    "lesson": 5,
+    "topic": "note-5-5",
+    "topicTitle": "The complete EXTI-to-vector route",
+    "question": "How do you routePC13, and which vector group handles it?",
+    "options": [
+      "GPIOC MODER=00 alone routes EXTI13 to port C",
+      "EXTICR[0] bit 13=1; IRQ 13 handles it directly",
+      "EXTICR[3] byte 15:8=2; IRQ 7 handles EXTI13"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Input mode enables sampling, but EXTICR separately selects the port watched by line 13.",
+      "Port selection uses allocated byte fields and shared vector groups, not one IRQ per pin.",
+      "Set EXTICR[3] byte15:8 to portC code2 (0x200 in that word). EXTI13 joins lines4–15 on IRQ 7."
+    ]
+  },
+  {
+    "id": "note-5-6-0",
+    "lesson": 5,
+    "topic": "note-5-6",
+    "topicTitle": "Record edges promptly and debounce in main",
+    "question": "Why assign RPR1=mask instead of RPR1|=mask?",
+    "options": [
+      "OR is safer because it preserves other pending ones",
+      "Assignment writes only the intended write-one-to-clear bits",
+      "Writing zero to every bit clears all EXTI flags"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Writing those preserved ones clears other pending events in this register.",
+      "Read-modify-write can copy other pending ones into the write, clearing lines you did not handle. A mask assignment acknowledges only your selected line.",
+      "EXTI pending flags clear on written ones, unlike the timer convention."
+    ]
+  },
+  {
+    "id": "note-5-7-0",
+    "lesson": 5,
+    "topic": "note-5-7",
+    "topicTitle": "Measure edges and isolate silent failures",
+    "question": "Why might a software-pendedIRQ5 enter the handler without increasing b_edges?",
+    "options": [
+      "NVIC pending did not create an EXTI line-1 latch",
+      "Every NVIC request automatically sets FPR1 bit 1",
+      "A correctly written handler must increment unconditionally on entry"
+    ],
+    "correct": 0,
+    "explanations": [
+      "NVIC pending alone does not set EXTI RPR/FPR. The handler checks those latches and correctly finds no line 1 edge.",
+      "NVIC delivery and the peripheral source latch are separate state.",
+      "A shared-vector handler checks source flags; a software NVIC request can have none."
+    ]
+  },
+  {
+    "id": "note-6-0-0",
+    "lesson": 6,
+    "topic": "note-6-0",
+    "topicTitle": "A hardware clock and a cooperative schedule",
+    "question": "What LOAD value produces1 ms from 48 MHz?",
+    "options": [
+      "47999 (0xBB7F), because the interval includes zero",
+      "48000, because LOAD stores the number of clocks directly",
+      "1000, because LOAD directly stores milliseconds per second"
+    ],
+    "correct": 0,
+    "explanations": [
+      "48000 clocks are needed, so LOAD=48000-1=47999 (0xBB7F).",
+      "SysTick’s inclusive countdown means LOAD is ticks minus one.",
+      "LOAD counts clock ticks; converting 48 MHz to 1 ms requires 48000 ticks."
+    ]
+  },
+  {
+    "id": "note-6-1-0",
+    "lesson": 6,
+    "topic": "note-6-1",
+    "topicTitle": "Timer map, fields and frequency",
+    "question": "At48 MHz, how doPSC47 andARR19999 produce50 Hz?",
+    "options": [
+      "PSC sets microseconds directly, independently of the timer clock",
+      "48 MHz divided by 48 and 20000 gives 50 Hz",
+      "PSC divides by 47 and ARR by 19999"
+    ],
+    "correct": 1,
+    "explanations": [
+      "PSC selects a clock division; its time meaning depends on f_timer.",
+      "They divide by 48 and 20000, so48000000/(48×20000)=50 updates/s.",
+      "Both fields encode divider/count minus one; include zero."
+    ]
+  },
+  {
+    "id": "note-6-2-0",
+    "lesson": 6,
+    "topic": "note-6-2",
+    "topicTitle": "Initialize preload, generate PWM and limit motion",
+    "question": "Why issueUG and then clearUIF before enablingUIE?",
+    "options": [
+      "UG loads buffered settings and sets UIF; clear that initialization event before UIE",
+      "UG clears all timer status flags automatically",
+      "UIE must be enabled first so the ISR can copy PSC into hardware"
+    ],
+    "correct": 0,
+    "explanations": [
+      "UG loads buffered divisors but also raises an update flag. Clearing it avoids treating initialization as the first real elapsed frame.",
+      "UG generates an update event and can raise UIF.",
+      "Hardware transfers buffered settings at update; an initialization ISR is unnecessary."
+    ]
+  },
+  {
+    "id": "note-6-3-0",
+    "lesson": 6,
+    "topic": "note-6-3",
+    "topicTitle": "Capture timestamps and the simulator fallback",
+    "question": "An echo starts at 65000 and ends at 5264. What width is(uint16_t)(end-start)?",
+    "options": [
+      "The negative ordinary subtraction means the pulse is invalid",
+      "65536 μs because any wrapped pulse lasts a whole timer cycle",
+      "5800 μs using 16-bit modular subtraction"
+    ],
+    "correct": 2,
+    "explanations": [
+      "One counter wrap is handled by reducing the difference modulo 65536.",
+      "The wrap alone does not specify duration; the start/end difference gives the elapsed count.",
+      "5800 µs: -59736 modulo65536=5800. The pulse crossed one timer wrap."
+    ]
+  },
+  {
+    "id": "note-6-4-0",
+    "lesson": 6,
+    "topic": "note-6-4",
+    "topicTitle": "Priorities, cross-checks and timer lab failures",
+    "question": "Why give capture higher priority than the servo update?",
+    "options": [
+      "Priority number 3 gives capture more urgency than number 1",
+      "Capture must be serviced before overwrite; servo update has a 20 ms frame window",
+      "Servo always needs highest priority because its output is visible"
+    ],
+    "correct": 1,
+    "explanations": [
+      "On this core smaller numeric values mean higher urgency.",
+      "A newer edge can overwrite a capture quickly, while a PWM update has20 ms of frame slack. Urgency follows the service deadline.",
+      "Hardware generates PWM edges; service urgency follows the deadline and overwrite risk."
+    ]
+  },
+  {
+    "id": "study-0-0",
+    "lesson": 0,
+    "topic": "fundamentals-0",
+    "topicTitle": "Core ideas",
+    "question": "Which memory keeps the program when power is off, and which holds changing values?",
+    "options": [
+      "Both retain all changing values automatically through power loss",
+      "Flash retains the program without power; SRAM holds temporary changing values",
+      "SRAM retains the program while Flash loses data on shutdown"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Ordinary SRAM has no power-off retention guarantee.",
+      "Flash retains instruction/constant bytes without power; SRAM is the runtime workspace and loses its contents when power is removed.",
+      "This reverses the memory roles; SRAM is volatile storage."
+    ]
+  },
+  {
+    "id": "study-0-1",
+    "lesson": 0,
+    "topic": "fundamentals-0",
+    "topicTitle": "Core ideas",
+    "question": "Why can writing the same number save data in one case and change an LED in another?",
+    "options": [
+      "The address selects SRAM storage or a GPIO device with different write effects",
+      "All writes become RAM variables until an ISR copies them to GPIO",
+      "The CPU recognizes LED values by the number alone"
+    ],
+    "correct": 0,
+    "explanations": [
+      "A number has no intrinsic LED meaning: the destination address and register rules determine whether it is stored or drives hardware.",
+      "A direct write to a mapped GPIO command register already reaches hardware.",
+      "The same value can be written to many destinations; address selects the effect."
+    ]
+  },
+  {
+    "id": "study-0-2",
+    "lesson": 0,
+    "topic": "fundamentals-0",
+    "topicTitle": "Core ideas",
+    "question": "Why might a correct pin command still leave the LED off?",
+    "options": [
+      "A valid store instruction guarantees visible light immediately",
+      "Clock, output mode and board wiring must all connect the command to the LED",
+      "An odd function pointer is enough to power the LED"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Correct instruction encoding alone does not establish chip configuration or board connection.",
+      "The instruction can be valid while the port clock is off, the pin has another owner, or the board LED is on another pin.",
+      "The Thumb tag concerns code branches, not pin clocks or wiring."
+    ]
+  },
+  {
+    "id": "study-1-0",
+    "lesson": 1,
+    "topic": "fundamentals-1",
+    "topicTitle": "Core ideas",
+    "question": "What does CMP change?",
+    "options": [
+      "CMP compares only pointers and cannot compare integers",
+      "CMP writes the result into the first operand",
+      "CMP sets subtraction flags without saving the subtraction result"
+    ],
+    "correct": 2,
+    "explanations": [
+      "Its register operands can represent integers; their later interpretation selects the branch condition.",
+      "CMP leaves operands intact and produces flags rather than a stored result.",
+      "CMP updates N/Z/C/V. Later branches choose which flags to interpret for equality, signed order or unsigned order."
+    ]
+  },
+  {
+    "id": "study-1-1",
+    "lesson": 1,
+    "topic": "fundamentals-1",
+    "topicTitle": "Core ideas",
+    "question": "Why can a literal-pool load appear in simple C?",
+    "options": [
+      "The constant/address may not fit the instruction immediate, so it is loaded nearby from Flash",
+      "A literal pool is a heap allocated by malloc",
+      "Every literal load transfers data from a USART receive buffer"
+    ],
+    "correct": 0,
+    "explanations": [
+      "A literal pool holds a constant the instruction cannot directly encode; a PC-relative load fetches it.",
+      "It is linked code-adjacent storage, not dynamically allocated SRAM.",
+      "Literal loads fetch constants, not inherently device payload."
+    ]
+  },
+  {
+    "id": "study-1-2",
+    "lesson": 1,
+    "topic": "fundamentals-1",
+    "topicTitle": "Core ideas",
+    "question": "Why is a function pointer odd?",
+    "options": [
+      "The compiler inserts a one-byte NOP before every function",
+      "Bit 0 marks Thumb state while the actual instruction address is aligned",
+      "The function begins at an unaligned odd byte in memory"
+    ],
+    "correct": 1,
+    "explanations": [
+      "An odd pointer does not represent padding or a one-byte offset.",
+      "The low bit is a branch-state marker. On this Thumb-only core an even function target lacks the required marker.",
+      "The instruction address remains aligned; the pointer encoding includes a tag."
+    ]
+  },
+  {
+    "id": "study-2-0",
+    "lesson": 2,
+    "topic": "fundamentals-2",
+    "topicTitle": "Core ideas",
+    "question": "Why can compilation succeed and linking fail?",
+    "options": [
+      "Compilation always links every external declaration immediately",
+      "Link failures always indicate C syntax errors",
+      "Declarations permit compilation, but linking still needs compatible definitions and valid placement"
+    ],
+    "correct": 2,
+    "explanations": [
+      "A compiler can accept an external declaration without seeing its definition.",
+      "Syntax is checked earlier; symbol resolution and memory placement are linker responsibilities.",
+      "The linker joins objects and resolves symbols; missing/duplicate definitions or region overflow can fail after each file compiled."
+    ]
+  },
+  {
+    "id": "study-2-1",
+    "lesson": 2,
+    "topic": "fundamentals-2",
+    "topicTitle": "Core ideas",
+    "question": "How do ELF and BIN differ?",
+    "options": [
+      "BIN has more symbol/debug information than ELF",
+      "ELF is C source that a simulator must compile",
+      "ELF has sections/addresses/symbols; BIN is raw bytes needing an external base"
+    ],
+    "correct": 2,
+    "explanations": [
+      "BIN is raw data and does not contain ELF symbol/section metadata.",
+      "ELF is already-built machine code and metadata; the simulator loads it.",
+      "ELF preserves structured image and debugging information. BIN strips that structure, so its programming base must be supplied separately; HEX carries addressed records."
+    ]
+  },
+  {
+    "id": "study-2-2",
+    "lesson": 2,
+    "topic": "fundamentals-2",
+    "topicTitle": "Core ideas",
+    "question": "Which tools answer “what instruction?”, “what symbol address?” and “how much memory?”",
+    "options": [
+      "objdump for instructions, nm for symbol addresses, size/map for memory",
+      "Use source line count for all three",
+      "nm executes the program and measures interrupt latency"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Disassembly shows encoded operations; the symbol listing associates names with addresses; section sizes and the map expose memory allocation.",
+      "Source lines neither determine machine instruction encoding nor reveal linked symbol addresses or exact bytes.",
+      "nm inspects symbols in an image; it does not run code or measure timing."
+    ]
+  },
+  {
+    "id": "study-3-0",
+    "lesson": 3,
+    "topic": "fundamentals-3",
+    "topicTitle": "Core ideas",
+    "question": "Is an aligned 32-bit load enough to read a coherent pair of 32-bit values?",
+    "options": [
+      "No; two indivisible word reads can still belong to different updates",
+      "Yes; alignment makes every adjacent pair a single atomic read",
+      "volatile forces both fields to update simultaneously"
+    ],
+    "correct": 0,
+    "explanations": [
+      "A coherent pair requires a snapshot protocol or short critical section. Atomic individual loads prevent tearing within each word, not between generations.",
+      "Two loads remain separate operations even when each address is aligned.",
+      "volatile preserves accesses without combining separate updates into one operation."
+    ]
+  },
+  {
+    "id": "study-3-1",
+    "lesson": 3,
+    "topic": "fundamentals-3",
+    "topicTitle": "Core ideas",
+    "question": "What is the difference between pending and active?",
+    "options": [
+      "Pending means running; active means waiting",
+      "Pending is waiting for service; active is executing or suspended by a more urgent handler",
+      "Disabling an IRQ necessarily removes its pending request"
+    ],
+    "correct": 1,
+    "explanations": [
+      "This reverses the exception-state meanings.",
+      "Pending records an outstanding request. Active describes a handler whose execution has started and not yet completed; enable/masks decide when pending can start.",
+      "Enable and pending state are separate; disabling delivery can leave a recorded request waiting."
+    ]
+  },
+  {
+    "id": "study-3-2",
+    "lesson": 3,
+    "topic": "fundamentals-3",
+    "topicTitle": "Core ideas",
+    "question": "Why does interrupt priority affect latency?",
+    "options": [
+      "More urgent eligible interrupts can preempt less urgent work; lower numbers mean higher urgency",
+      "Priority guarantees zero latency regardless of interrupt masking",
+      "Higher numeric values are always serviced first"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Priority determines preemption and waiting, so it affects event-to-handler latency. Only implemented priority bits count.",
+      "Masking and even more urgent work can still delay an interrupt.",
+      "This core uses smaller numeric priority values for higher urgency."
+    ]
+  },
+  {
+    "id": "study-4-0",
+    "lesson": 4,
+    "topic": "fundamentals-4",
+    "topicTitle": "Core ideas",
+    "question": "Why can omitted .bss initialization seem to work in a simulator?",
+    "options": [
+      "A simulator may supply initial zeros that hide the omitted clear loop",
+      "A simulator automatically repairs every missing startup loop",
+      ".bss is in Flash so its contents cannot vary"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Startup must establish C zero initialization independent of initial RAM contents. Simulator zeros are not proof the code cleared .bss.",
+      "It may incidentally start RAM at zero; that does not repair the program’s startup contract.",
+      ".bss allocates SRAM for zero-initialized runtime objects."
+    ]
+  },
+  {
+    "id": "study-4-1",
+    "lesson": 4,
+    "topic": "fundamentals-4",
+    "topicTitle": "Core ideas",
+    "question": "What are .data’s two addresses?",
+    "options": [
+      "Flash load address and SRAM run address",
+      "Two SRAM addresses so a background task can mirror writes",
+      "The CPU PC and LR values at reset"
+    ],
+    "correct": 0,
+    "explanations": [
+      "The load address locates persistent initial bytes; startup copies them to the run address used for writable data.",
+      "The initial image is in Flash; there is no automatic background mirroring task.",
+      "Those are control-flow state, not .data load and run locations."
+    ]
+  },
+  {
+    "id": "study-4-2",
+    "lesson": 4,
+    "topic": "fundamentals-4",
+    "topicTitle": "Core ideas",
+    "question": "Why might a correctly built interrupt handler never run?",
+    "options": [
+      "All correctly compiled functions are registered as handlers automatically",
+      "A misspelled handler may leave the expected weak default in the vector",
+      "The debugger must call the handler once before hardware can use it"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Compilation alone does not select the vector slot or replace its expected symbol.",
+      "Exact symbol names connect the vector to a strong handler definition. A different spelling can compile as an unrelated unused function.",
+      "A correct vector target works without debugger registration or an initial manual call."
+    ]
+  },
+  {
+    "id": "study-5-0",
+    "lesson": 5,
+    "topic": "fundamentals-5",
+    "topicTitle": "Core ideas",
+    "question": "Why is a pulled-up button active low?",
+    "options": [
+      "Active low means the handler runs at lower interrupt priority",
+      "A pull-up holds released high; pressing connects ground and reads low",
+      "A pull-up actively drives zero when no button is pressed"
+    ],
+    "correct": 1,
+    "explanations": [
+      "Active-low describes signal meaning; it is unrelated to NVIC urgency.",
+      "The open switch leaves the resistor holding one. Closing the ground switch produces zero and a falling edge, so the logical pressed state is low.",
+      "Pull-up means bias toward the positive supply, not ground."
+    ]
+  },
+  {
+    "id": "study-5-1",
+    "lesson": 5,
+    "topic": "fundamentals-5",
+    "topicTitle": "Core ideas",
+    "question": "What does FPR1=2 with NVIC IRQ 5 disabled tell you?",
+    "options": [
+      "FPR1=2 means the handler has run twice",
+      "Line 1 detected a falling edge, but IRQ 5 delivery is disabled",
+      "The button edge was not detected because no handler ran"
+    ],
+    "correct": 1,
+    "explanations": [
+      "It is a bit mask identifying pending line 1, not an event counter.",
+      "FPR1 bit 1 is source evidence. Disabled NVIC IRQ 5 prevents its handler from starting, so detection can succeed while main continues.",
+      "The pending peripheral flag itself proves detection even with delivery closed."
+    ]
+  },
+  {
+    "id": "study-5-2",
+    "lesson": 5,
+    "topic": "fundamentals-5",
+    "topicTitle": "Core ideas",
+    "question": "Why assign a mask to an EXTI write-one-to-clear register instead of OR-ing it?",
+    "options": [
+      "OR preserves all other pending flags because their values stay one",
+      "Assign only the intended mask so unrelated pending ones are not acknowledged",
+      "Assign zero to the whole register to clear the selected line"
+    ],
+    "correct": 1,
+    "explanations": [
+      "A written one clears a pending flag here, so preserving that one in the write discards its event.",
+      "A read-modify-write copies other set flags into its written value; write-one-to-clear semantics would then clear them too.",
+      "Zero leaves write-one-to-clear flags alone; the selected bit must be written as one."
+    ]
+  },
+  {
+    "id": "study-6-0",
+    "lesson": 6,
+    "topic": "fundamentals-6",
+    "topicTitle": "Core ideas",
+    "question": "From 0xFFFFFFF0 to 0x10, what is the elapsed unsigned 32-bit time?",
+    "options": [
+      "The counter moved backwards so elapsed time is invalid",
+      "The result proves no more than 32 ticks passed regardless of observation gap",
+      "32 ticks (0x20), assuming the actual interval fits the 32-bit range"
+    ],
+    "correct": 2,
+    "explanations": [
+      "This is the normal forward wrap of an unsigned counter.",
+      "An unseen full wrap would give the same difference; a bound on the true interval is required.",
+      "Unsigned modular subtraction gives (0x10−0xFFFFFFF0) mod 2^32 = 0x20. It cannot count unseen full cycles of the counter."
+    ]
+  },
+  {
+    "id": "study-6-1",
+    "lesson": 6,
+    "topic": "fundamentals-6",
+    "topicTitle": "Core ideas",
+    "question": "Rise-handler delay is 10 μs and fall-handler delay is 100 μs. What error does live-CNT subtraction add?",
+    "options": [
+      "The measured width is 90 μs too long",
+      "Hardware capture inherits exactly the same +90 μs timestamp error",
+      "The delays cancel because both edges generate interrupts"
+    ],
+    "correct": 0,
+    "explanations": [
+      "Reading live CNT timestamps handler arrival. The falling handler adds 100 μs and the rising handler adds 10 μs, leaving a +90 μs error.",
+      "Capture records the counter at the edge before ISR service, avoiding this arrival-time error.",
+      "They cancel only if equal; these delays differ by 90 μs."
+    ]
+  },
+  {
+    "id": "study-6-2",
+    "lesson": 6,
+    "topic": "fundamentals-6",
+    "topicTitle": "Core ideas",
+    "question": "How do TIM SR and EXTI pending flags differ when clearing?",
+    "options": [
+      "Both clear by reading IDR before returning",
+      "Both clear by writing one because they are status registers",
+      "Timer SR flags clear with zero; EXTI RPR1/FPR1 clear with one"
+    ],
+    "correct": 2,
+    "explanations": [
+      "GPIO input reads do not replace the documented timer/EXTI flag-clear operation.",
+      "Status register roles do not imply one universal clear convention.",
+      "Use each register’s specified convention: the relevant timer status flags are write-zero-to-clear, while EXTI pending flags are write-one-to-clear."
+    ]
+  }
+]

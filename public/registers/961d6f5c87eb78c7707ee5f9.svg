@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="382" viewBox="0 0 382 292" role="img" aria-label="MPU6050 registers (layout from the Adafruit_MPU6050 driver); CONFIG, 8 bits; GYRO_CONFIG, 8 bits; PWR_MGMT_1, 8 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="191" y="16" text-anchor="middle" class="lbl">MPU6050 registers (layout from the Adafruit_MPU6050 driver)</text>
+<text x="16" y="59" class="mono">CONFIG</text>
+<text x="16" y="74" class="lbl">0x1A, = 3: 44 Hz</text>
+<text x="16" y="89" class="mono lbl">= 0x03</text>
+<text x="207.4" y="44" text-anchor="start" class="mono lbl">7</text>
+<text x="365.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="206.4" y="52" width="100.0" height="26"/>
+<rect class="hifill" x="306.4" y="52" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M346.4 52 V56 M346.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M326.4 52 V56 M326.4 74 V78"/>
+<text x="307.4" y="44" text-anchor="start" class="mono lbl">2</text>
+<text x="356.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="336.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="316.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="296.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="276.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="256.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="236.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="216.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="336.4" y="91" text-anchor="middle" class="mono halo">DLPF_CFG</text>
+<text x="16" y="145" class="mono">GYRO_CONFIG</text>
+<text x="16" y="160" class="lbl">0x1B, left at 0: 250 deg/s</text>
+<text x="207.4" y="130" text-anchor="start" class="mono lbl">7</text>
+<text x="365.4" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="306.4" y="138" width="60.0" height="26"/>
+<text x="336.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="206.4" y="138" width="60.0" height="26"/>
+<text x="236.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="266.4" y="138" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M286.4 138 V142 M286.4 160 V164"/>
+<text x="267.4" y="130" text-anchor="start" class="mono lbl">4</text>
+<text x="305.4" y="130" text-anchor="end" class="mono lbl">3</text>
+<text x="286.4" y="177" text-anchor="middle" class="mono halo lbl">FS_SEL</text>
+<text x="16" y="231" class="mono">PWR_MGMT_1</text>
+<text x="16" y="246" class="lbl">0x6B, = 0: awake</text>
+<text x="16" y="261" class="mono lbl">= 0x00</text>
+<text x="207.4" y="216" text-anchor="start" class="mono lbl">7</text>
+<text x="365.4" y="216" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="246.4" y="224" width="120.0" height="26"/>
+<rect class="dash" x="206.4" y="224" width="20.0" height="26"/>
+<rect class="hifill" x="226.4" y="224" width="20.0" height="26"/>
+<text x="236.4" y="216" text-anchor="middle" class="mono lbl">6</text>
+<text x="356.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="336.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="316.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="296.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="276.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="256.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="236.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="216.4" y="237" text-anchor="middle" class="mono lbl">0</text>
+<text x="236.4" y="263" text-anchor="middle" class="mono halo">SLEEP</text>
+</svg>

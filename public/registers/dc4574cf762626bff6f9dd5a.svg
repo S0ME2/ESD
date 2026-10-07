@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="824" viewBox="0 0 824 324" role="img" aria-label="The printed xPSR decoded, and the lr bit that picks the stack; xPSR, 32 bits; EXC_RETURN, 32 bits; EXC_RETURN, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="412" y="16" text-anchor="middle" class="lbl">The printed xPSR decoded, and the lr bit that picks the stack</text>
+<text x="16" y="59" class="mono">xPSR</text>
+<text x="16" y="74" class="lbl">stacked at the fault</text>
+<text x="16" y="89" class="mono lbl">= 0x61000000</text>
+<text x="169.0" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="807.0" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="328.0" y="52" width="360.0" height="26"/>
+<rect class="dash" x="248.0" y="52" width="60.0" height="26"/>
+<rect class="reg" x="168.0" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="188.0" y="52" width="20.0" height="26"/>
+<text x="198.0" y="44" text-anchor="middle" class="mono lbl">30</text>
+<rect class="hifill" x="208.0" y="52" width="20.0" height="26"/>
+<text x="218.0" y="44" text-anchor="middle" class="mono lbl">29</text>
+<rect class="reg" x="228.0" y="52" width="20.0" height="26"/>
+<text x="238.0" y="44" text-anchor="middle" class="mono lbl">28</text>
+<rect class="hifill" x="308.0" y="52" width="20.0" height="26"/>
+<text x="318.0" y="44" text-anchor="middle" class="mono lbl">24</text>
+<rect class="reg" x="688.0" y="52" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M788.0 52 V56 M788.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M768.0 52 V56 M768.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M748.0 52 V56 M748.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M728.0 52 V56 M728.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M708.0 52 V56 M708.0 74 V78"/>
+<text x="689.0" y="44" text-anchor="start" class="mono lbl">5</text>
+<text x="798.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="778.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="758.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="738.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="718.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="698.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="678.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="658.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="638.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="618.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="598.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="578.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="558.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="538.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="518.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="498.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="478.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="458.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="438.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="418.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="398.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="378.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="358.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="338.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="318.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="298.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="278.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="258.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="238.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="218.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="198.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="178.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="178.0" y="91" text-anchor="middle" class="mono halo lbl">N</text>
+<text x="198.0" y="91" text-anchor="middle" class="mono halo">Z</text>
+<text x="218.0" y="91" text-anchor="middle" class="mono halo">C</text>
+<text x="238.0" y="91" text-anchor="middle" class="mono halo lbl">V</text>
+<text x="318.0" y="91" text-anchor="middle" class="mono halo">T</text>
+<text x="748.0" y="91" text-anchor="middle" class="mono halo lbl">ISR</text>
+<text x="16" y="145" class="mono">EXC_RETURN</text>
+<text x="16" y="160" class="lbl">a task faulted</text>
+<text x="16" y="175" class="mono lbl">= 0xFFFFFFFD</text>
+<text x="169.0" y="130" text-anchor="start" class="mono lbl">31</text>
+<text x="807.0" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="168.0" y="138" width="560.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M708.0 138 V142 M708.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M688.0 138 V142 M688.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M668.0 138 V142 M668.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M648.0 138 V142 M648.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M628.0 138 V142 M628.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M608.0 138 V142 M608.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M588.0 138 V142 M588.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M568.0 138 V142 M568.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M548.0 138 V142 M548.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M528.0 138 V142 M528.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M508.0 138 V142 M508.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M488.0 138 V142 M488.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M468.0 138 V142 M468.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M448.0 138 V142 M448.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M428.0 138 V142 M428.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M408.0 138 V142 M408.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M388.0 138 V142 M388.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M368.0 138 V142 M368.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M348.0 138 V142 M348.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M328.0 138 V142 M328.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M308.0 138 V142 M308.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M288.0 138 V142 M288.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M268.0 138 V142 M268.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M248.0 138 V142 M248.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M228.0 138 V142 M228.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M208.0 138 V142 M208.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M188.0 138 V142 M188.0 160 V164"/>
+<text x="727.0" y="130" text-anchor="end" class="mono lbl">4</text>
+<rect class="reg" x="728.0" y="138" width="20.0" height="26"/>
+<text x="738.0" y="130" text-anchor="middle" class="mono lbl">3</text>
+<rect class="hifill" x="748.0" y="138" width="20.0" height="26"/>
+<text x="758.0" y="130" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="768.0" y="138" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M788.0 138 V142 M788.0 160 V164"/>
+<text x="769.0" y="130" text-anchor="start" class="mono lbl">1</text>
+<text x="798.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="778.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="758.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="738.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="718.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="698.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="678.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="658.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="638.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="618.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="598.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="578.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="558.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="538.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="518.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="498.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="478.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="458.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="438.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="418.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="398.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="378.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="358.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="338.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="318.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="298.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="278.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="258.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="238.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="218.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="198.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="178.0" y="151" text-anchor="middle" class="mono">1</text>
+<path class="dash" d="M758.0 164 L758.0 186"/>
+<text x="448.0" y="177" text-anchor="middle" class="mono halo lbl">all ones</text>
+<text x="738.0" y="177" text-anchor="middle" class="mono halo lbl">Thread</text>
+<text x="758.0" y="193" text-anchor="middle" class="mono halo">PSP</text>
+<text x="16" y="247" class="mono">EXC_RETURN</text>
+<text x="16" y="262" class="lbl">a handler faulted</text>
+<text x="16" y="277" class="mono lbl">= 0xFFFFFFF1</text>
+<text x="169.0" y="232" text-anchor="start" class="mono lbl">31</text>
+<text x="807.0" y="232" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="168.0" y="240" width="560.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M708.0 240 V244 M708.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M688.0 240 V244 M688.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M668.0 240 V244 M668.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M648.0 240 V244 M648.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M628.0 240 V244 M628.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M608.0 240 V244 M608.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M588.0 240 V244 M588.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M568.0 240 V244 M568.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M548.0 240 V244 M548.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M528.0 240 V244 M528.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M508.0 240 V244 M508.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M488.0 240 V244 M488.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M468.0 240 V244 M468.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M448.0 240 V244 M448.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M428.0 240 V244 M428.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M408.0 240 V244 M408.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M388.0 240 V244 M388.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M368.0 240 V244 M368.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M348.0 240 V244 M348.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M328.0 240 V244 M328.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M308.0 240 V244 M308.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M288.0 240 V244 M288.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M268.0 240 V244 M268.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M248.0 240 V244 M248.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M228.0 240 V244 M228.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M208.0 240 V244 M208.0 262 V266"/>
+<path class="reg" stroke-width="0.6" d="M188.0 240 V244 M188.0 262 V266"/>
+<text x="727.0" y="232" text-anchor="end" class="mono lbl">4</text>
+<rect class="reg" x="728.0" y="240" width="20.0" height="26"/>
+<text x="738.0" y="232" text-anchor="middle" class="mono lbl">3</text>
+<rect class="hifill" x="748.0" y="240" width="20.0" height="26"/>
+<text x="758.0" y="232" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="768.0" y="240" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M788.0 240 V244 M788.0 262 V266"/>
+<text x="769.0" y="232" text-anchor="start" class="mono lbl">1</text>
+<text x="798.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="778.0" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="758.0" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="738.0" y="253" text-anchor="middle" class="mono lbl">0</text>
+<text x="718.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="698.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="678.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="658.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="638.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="618.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="598.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="578.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="558.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="538.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="518.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="498.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="478.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="458.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="438.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="418.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="398.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="378.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="358.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="338.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="318.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="298.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="278.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="258.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="238.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="218.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="198.0" y="253" text-anchor="middle" class="mono">1</text>
+<text x="178.0" y="253" text-anchor="middle" class="mono">1</text>
+<path class="dash" d="M758.0 266 L758.0 288"/>
+<text x="448.0" y="279" text-anchor="middle" class="mono halo lbl">all ones</text>
+<text x="738.0" y="279" text-anchor="middle" class="mono halo lbl">Thread</text>
+<text x="758.0" y="295" text-anchor="middle" class="mono halo">PSP</text>
+</svg>

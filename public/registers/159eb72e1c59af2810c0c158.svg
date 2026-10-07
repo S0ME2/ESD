@@ -1,0 +1,281 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="875" viewBox="0 0 875 681" role="img" aria-label="Every register the lesson uses.  Shaded = a field this lesson writes or reads.; DMA1-&gt;ISR, 32 bits; DMA1-&gt;IFCR, 32 bits; DMA1_ChannelN-&gt;CCR, 32 bits; DMA1_ChannelN-&gt;CNDTR, 32 bits; DMA1_ChannelN-&gt;CPAR, 32 bits; DMA1_ChannelN-&gt;CMAR, 32 bits; DMAMUX1_ChannelN-&gt;CCR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="438" y="16" text-anchor="middle" class="lbl">Every register the lesson uses.  Shaded = a field this lesson writes or reads.</text>
+<text x="16" y="59" class="mono">DMA1-&gt;ISR</text>
+<text x="16" y="74" class="lbl">common: flags, 4 per channel</text>
+<text x="220.2" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="219.2" y="52" width="400.0" height="26"/>
+<text x="419.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="619.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="639.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="659.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="679.2" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="699.2" y="52" width="20.0" height="26"/>
+<text x="709.2" y="44" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="719.2" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="739.2" y="52" width="20.0" height="26"/>
+<text x="749.2" y="44" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="759.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="779.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="799.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="819.2" y="52" width="20.0" height="26"/>
+<rect class="reg" x="839.2" y="52" width="20.0" height="26"/>
+<path class="dash" d="M649.2 78 L649.2 100"/>
+<path class="dash" d="M669.2 78 L669.2 116"/>
+<path class="dash" d="M709.2 78 L709.2 100"/>
+<path class="dash" d="M749.2 78 L749.2 116"/>
+<path class="dash" d="M789.2 78 L789.2 100"/>
+<path class="dash" d="M829.2 78 L829.2 116"/>
+<text x="629.2" y="91" text-anchor="middle" class="mono halo lbl">TEIF3</text>
+<text x="649.2" y="107" text-anchor="middle" class="mono halo lbl">HTIF3</text>
+<text x="669.2" y="123" text-anchor="middle" class="mono halo lbl">TCIF3</text>
+<text x="689.2" y="91" text-anchor="middle" class="mono halo lbl">GIF3</text>
+<text x="709.2" y="107" text-anchor="middle" class="mono halo">TEIF2</text>
+<text x="729.2" y="91" text-anchor="middle" class="mono halo lbl">HTIF2</text>
+<text x="749.2" y="123" text-anchor="middle" class="mono halo">TCIF2</text>
+<text x="769.2" y="91" text-anchor="middle" class="mono halo lbl">GIF2</text>
+<text x="789.2" y="107" text-anchor="middle" class="mono halo lbl">TEIF1</text>
+<text x="809.2" y="91" text-anchor="middle" class="mono halo lbl">HTIF1</text>
+<text x="829.2" y="123" text-anchor="middle" class="mono halo lbl">TCIF1</text>
+<text x="849.2" y="91" text-anchor="middle" class="mono halo lbl">GIF1</text>
+<text x="16" y="177" class="mono">DMA1-&gt;IFCR</text>
+<text x="16" y="192" class="lbl">common: write 1 to clear</text>
+<text x="220.2" y="162" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="162" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="219.2" y="170" width="400.0" height="26"/>
+<text x="419.2" y="183" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="619.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="639.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="659.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="679.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="699.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="719.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="739.2" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="759.2" y="170" width="20.0" height="26"/>
+<text x="769.2" y="162" text-anchor="middle" class="mono lbl">4</text>
+<rect class="reg" x="779.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="799.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="819.2" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="839.2" y="170" width="20.0" height="26"/>
+<path class="dash" d="M649.2 196 L649.2 218"/>
+<path class="dash" d="M669.2 196 L669.2 234"/>
+<path class="dash" d="M709.2 196 L709.2 218"/>
+<path class="dash" d="M729.2 196 L729.2 234"/>
+<path class="dash" d="M769.2 196 L769.2 218"/>
+<path class="dash" d="M789.2 196 L789.2 234"/>
+<path class="dash" d="M829.2 196 L829.2 218"/>
+<path class="dash" d="M849.2 196 L849.2 234"/>
+<text x="629.2" y="209" text-anchor="middle" class="mono halo lbl">CTEIF3</text>
+<text x="649.2" y="225" text-anchor="middle" class="mono halo lbl">CHTIF3</text>
+<text x="669.2" y="241" text-anchor="middle" class="mono halo lbl">CTCIF3</text>
+<text x="689.2" y="209" text-anchor="middle" class="mono halo lbl">CGIF3</text>
+<text x="709.2" y="225" text-anchor="middle" class="mono halo lbl">CTEIF2</text>
+<text x="729.2" y="241" text-anchor="middle" class="mono halo lbl">CHTIF2</text>
+<text x="749.2" y="209" text-anchor="middle" class="mono halo lbl">CTCIF2</text>
+<text x="769.2" y="225" text-anchor="middle" class="mono halo">CGIF2</text>
+<text x="789.2" y="241" text-anchor="middle" class="mono halo lbl">CTEIF1</text>
+<text x="809.2" y="209" text-anchor="middle" class="mono halo lbl">CHTIF1</text>
+<text x="829.2" y="225" text-anchor="middle" class="mono halo lbl">CTCIF1</text>
+<text x="849.2" y="241" text-anchor="middle" class="mono halo">CGIF1</text>
+<text x="16" y="295" class="mono">DMA1_ChannelN-&gt;CCR</text>
+<text x="16" y="310" class="lbl">channel: how</text>
+<text x="220.2" y="280" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="280" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="219.2" y="288" width="340.0" height="26"/>
+<text x="389.2" y="301" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="559.2" y="288" width="20.0" height="26"/>
+<text x="569.2" y="280" text-anchor="middle" class="mono lbl">14</text>
+<rect class="hifill" x="579.2" y="288" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M599.2 288 V292 M599.2 310 V314"/>
+<text x="580.2" y="280" text-anchor="start" class="mono lbl">13</text>
+<text x="618.2" y="280" text-anchor="end" class="mono lbl">12</text>
+<text x="599.2" y="301" text-anchor="middle" class="mono">PL</text>
+<rect class="hifill" x="619.2" y="288" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M639.2 288 V292 M639.2 310 V314"/>
+<text x="658.2" y="280" text-anchor="end" class="mono lbl">10</text>
+<rect class="hifill" x="659.2" y="288" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M679.2 288 V292 M679.2 310 V314"/>
+<text x="698.2" y="280" text-anchor="end" class="mono lbl">8</text>
+<rect class="hifill" x="699.2" y="288" width="20.0" height="26"/>
+<text x="709.2" y="280" text-anchor="middle" class="mono lbl">7</text>
+<rect class="hifill" x="719.2" y="288" width="20.0" height="26"/>
+<text x="729.2" y="280" text-anchor="middle" class="mono lbl">6</text>
+<rect class="hifill" x="739.2" y="288" width="20.0" height="26"/>
+<text x="749.2" y="280" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="759.2" y="288" width="20.0" height="26"/>
+<rect class="reg" x="779.2" y="288" width="20.0" height="26"/>
+<rect class="reg" x="799.2" y="288" width="20.0" height="26"/>
+<rect class="reg" x="819.2" y="288" width="20.0" height="26"/>
+<rect class="hifill" x="839.2" y="288" width="20.0" height="26"/>
+<path class="dash" d="M679.2 314 L679.2 336"/>
+<path class="dash" d="M729.2 314 L729.2 336"/>
+<path class="dash" d="M769.2 314 L769.2 336"/>
+<path class="dash" d="M809.2 314 L809.2 336"/>
+<path class="dash" d="M849.2 314 L849.2 336"/>
+<text x="569.2" y="327" text-anchor="middle" class="mono halo">MEM2MEM</text>
+<text x="639.2" y="327" text-anchor="middle" class="mono halo">MSIZE</text>
+<text x="679.2" y="343" text-anchor="middle" class="mono halo">PSIZE</text>
+<text x="709.2" y="327" text-anchor="middle" class="mono halo">MINC</text>
+<text x="729.2" y="343" text-anchor="middle" class="mono halo">PINC</text>
+<text x="749.2" y="327" text-anchor="middle" class="mono halo">CIRC</text>
+<text x="769.2" y="343" text-anchor="middle" class="mono halo lbl">DIR</text>
+<text x="789.2" y="327" text-anchor="middle" class="mono halo lbl">TEIE</text>
+<text x="809.2" y="343" text-anchor="middle" class="mono halo lbl">HTIE</text>
+<text x="829.2" y="327" text-anchor="middle" class="mono halo lbl">TCIE</text>
+<text x="849.2" y="343" text-anchor="middle" class="mono halo">EN</text>
+<text x="16" y="397" class="mono">DMA1_ChannelN-&gt;CNDTR</text>
+<text x="16" y="412" class="lbl">channel: how many</text>
+<text x="220.2" y="382" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="382" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="219.2" y="390" width="320.0" height="26"/>
+<text x="379.2" y="403" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="539.2" y="390" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M839.2 390 V394 M839.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M819.2 390 V394 M819.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M799.2 390 V394 M799.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M779.2 390 V394 M779.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M759.2 390 V394 M759.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M739.2 390 V394 M739.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M719.2 390 V394 M719.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M699.2 390 V394 M699.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M679.2 390 V394 M679.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M659.2 390 V394 M659.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M639.2 390 V394 M639.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M619.2 390 V394 M619.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M599.2 390 V394 M599.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M579.2 390 V394 M579.2 412 V416"/>
+<path class="reg" stroke-width="0.6" d="M559.2 390 V394 M559.2 412 V416"/>
+<text x="540.2" y="382" text-anchor="start" class="mono lbl">15</text>
+<text x="699.2" y="403" text-anchor="middle" class="mono">NDT</text>
+<text x="16" y="466" class="mono">DMA1_ChannelN-&gt;CPAR</text>
+<text x="16" y="481" class="lbl">channel: from</text>
+<text x="220.2" y="451" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="451" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="219.2" y="459" width="640.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M839.2 459 V463 M839.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M819.2 459 V463 M819.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M799.2 459 V463 M799.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M779.2 459 V463 M779.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M759.2 459 V463 M759.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M739.2 459 V463 M739.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M719.2 459 V463 M719.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M699.2 459 V463 M699.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M679.2 459 V463 M679.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M659.2 459 V463 M659.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M639.2 459 V463 M639.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M619.2 459 V463 M619.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M599.2 459 V463 M599.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M579.2 459 V463 M579.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M559.2 459 V463 M559.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M539.2 459 V463 M539.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M519.2 459 V463 M519.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M499.2 459 V463 M499.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M479.2 459 V463 M479.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M459.2 459 V463 M459.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M439.2 459 V463 M439.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M419.2 459 V463 M419.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M399.2 459 V463 M399.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M379.2 459 V463 M379.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M359.2 459 V463 M359.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M339.2 459 V463 M339.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M319.2 459 V463 M319.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M299.2 459 V463 M299.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M279.2 459 V463 M279.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M259.2 459 V463 M259.2 481 V485"/>
+<path class="reg" stroke-width="0.6" d="M239.2 459 V463 M239.2 481 V485"/>
+<text x="539.2" y="472" text-anchor="middle" class="mono">PA</text>
+<text x="16" y="535" class="mono">DMA1_ChannelN-&gt;CMAR</text>
+<text x="16" y="550" class="lbl">channel: to</text>
+<text x="220.2" y="520" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="520" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="219.2" y="528" width="640.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M839.2 528 V532 M839.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M819.2 528 V532 M819.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M799.2 528 V532 M799.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M779.2 528 V532 M779.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M759.2 528 V532 M759.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M739.2 528 V532 M739.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M719.2 528 V532 M719.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M699.2 528 V532 M699.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M679.2 528 V532 M679.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M659.2 528 V532 M659.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M639.2 528 V532 M639.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M619.2 528 V532 M619.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M599.2 528 V532 M599.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M579.2 528 V532 M579.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M559.2 528 V532 M559.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M539.2 528 V532 M539.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M519.2 528 V532 M519.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M499.2 528 V532 M499.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M479.2 528 V532 M479.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M459.2 528 V532 M459.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M439.2 528 V532 M439.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M419.2 528 V532 M419.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M399.2 528 V532 M399.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M379.2 528 V532 M379.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M359.2 528 V532 M359.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M339.2 528 V532 M339.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M319.2 528 V532 M319.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M299.2 528 V532 M299.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M279.2 528 V532 M279.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M259.2 528 V532 M259.2 550 V554"/>
+<path class="reg" stroke-width="0.6" d="M239.2 528 V532 M239.2 550 V554"/>
+<text x="539.2" y="541" text-anchor="middle" class="mono">MA</text>
+<text x="16" y="604" class="mono">DMAMUX1_ChannelN-&gt;CCR</text>
+<text x="16" y="619" class="lbl">DMAMUX: which request</text>
+<text x="220.2" y="589" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="589" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="539.2" y="597" width="120.0" height="26"/>
+<text x="599.2" y="610" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="219.2" y="597" width="60.0" height="26"/>
+<text x="249.2" y="610" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="279.2" y="597" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M359.2 597 V601 M359.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M339.2 597 V601 M339.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M319.2 597 V601 M319.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M299.2 597 V601 M299.2 619 V623"/>
+<text x="280.2" y="589" text-anchor="start" class="mono lbl">28</text>
+<text x="378.2" y="589" text-anchor="end" class="mono lbl">24</text>
+<text x="329.2" y="610" text-anchor="middle" class="mono">SYNC_ID</text>
+<rect class="reg" x="379.2" y="597" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M459.2 597 V601 M459.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M439.2 597 V601 M439.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M419.2 597 V601 M419.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M399.2 597 V601 M399.2 619 V623"/>
+<text x="478.2" y="589" text-anchor="end" class="mono lbl">19</text>
+<text x="429.2" y="610" text-anchor="middle" class="mono">NBREQ</text>
+<rect class="reg" x="479.2" y="597" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M499.2 597 V601 M499.2 619 V623"/>
+<text x="518.2" y="589" text-anchor="end" class="mono lbl">17</text>
+<text x="499.2" y="610" text-anchor="middle" class="mono">SPOL</text>
+<rect class="reg" x="519.2" y="597" width="20.0" height="26"/>
+<text x="529.2" y="589" text-anchor="middle" class="mono lbl">16</text>
+<rect class="reg" x="659.2" y="597" width="20.0" height="26"/>
+<text x="669.2" y="589" text-anchor="middle" class="mono lbl">9</text>
+<rect class="reg" x="679.2" y="597" width="20.0" height="26"/>
+<text x="689.2" y="589" text-anchor="middle" class="mono lbl">8</text>
+<rect class="hifill" x="699.2" y="597" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M839.2 597 V601 M839.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M819.2 597 V601 M819.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M799.2 597 V601 M799.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M779.2 597 V601 M779.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M759.2 597 V601 M759.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M739.2 597 V601 M739.2 619 V623"/>
+<path class="reg" stroke-width="0.6" d="M719.2 597 V601 M719.2 619 V623"/>
+<text x="700.2" y="589" text-anchor="start" class="mono lbl">7</text>
+<text x="779.2" y="610" text-anchor="middle" class="mono">DMAREQ_ID</text>
+<path class="dash" d="M689.2 623 L689.2 645"/>
+<text x="529.2" y="636" text-anchor="middle" class="mono halo lbl">SE</text>
+<text x="669.2" y="636" text-anchor="middle" class="mono halo lbl">EGE</text>
+<text x="689.2" y="652" text-anchor="middle" class="mono halo lbl">SOIE</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="786" viewBox="0 0 786 238" role="img" aria-label="RCC-&gt;CR bits left unnamed: 19:16 external-oscillator (HSE) and CSS, 9 and 7:5 the kernel clock; FLASH-&gt;ACR, 32 bits; RCC-&gt;CR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="393" y="16" text-anchor="middle" class="lbl">RCC-&gt;CR bits left unnamed: 19:16 external-oscillator (HSE) and CSS, 9 and 7:5 the kernel clock</text>
+<text x="16" y="59" class="mono">FLASH-&gt;ACR</text>
+<text x="16" y="74" class="lbl">0x40022000</text>
+<text x="131.0" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="610.0" y="52" width="100.0" height="26"/>
+<text x="660.0" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="550.0" y="52" width="20.0" height="26"/>
+<rect class="dash" x="450.0" y="52" width="80.0" height="26"/>
+<text x="490.0" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="410.0" y="52" width="20.0" height="26"/>
+<rect class="dash" x="130.0" y="52" width="260.0" height="26"/>
+<text x="260.0" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="390.0" y="52" width="20.0" height="26"/>
+<text x="400.0" y="44" text-anchor="middle" class="mono lbl">18</text>
+<rect class="reg" x="430.0" y="52" width="20.0" height="26"/>
+<text x="440.0" y="44" text-anchor="middle" class="mono lbl">16</text>
+<rect class="reg" x="530.0" y="52" width="20.0" height="26"/>
+<text x="540.0" y="44" text-anchor="middle" class="mono lbl">11</text>
+<rect class="reg" x="570.0" y="52" width="20.0" height="26"/>
+<text x="580.0" y="44" text-anchor="middle" class="mono lbl">9</text>
+<rect class="reg" x="590.0" y="52" width="20.0" height="26"/>
+<text x="600.0" y="44" text-anchor="middle" class="mono lbl">8</text>
+<rect class="hifill" x="710.0" y="52" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M750.0 52 V56 M750.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M730.0 52 V56 M730.0 74 V78"/>
+<text x="711.0" y="44" text-anchor="start" class="mono lbl">2</text>
+<path class="dash" d="M440.0 78 L440.0 100"/>
+<path class="dash" d="M600.0 78 L600.0 100"/>
+<text x="400.0" y="91" text-anchor="middle" class="mono halo lbl">DBG_SWEN</text>
+<text x="440.0" y="107" text-anchor="middle" class="mono halo lbl">PROGEMPTY</text>
+<text x="540.0" y="91" text-anchor="middle" class="mono halo lbl">ICRST</text>
+<text x="580.0" y="91" text-anchor="middle" class="mono halo lbl">ICEN</text>
+<text x="600.0" y="107" text-anchor="middle" class="mono halo lbl">PRFTEN</text>
+<text x="740.0" y="91" text-anchor="middle" class="mono halo">LATENCY</text>
+<text x="16" y="161" class="mono">RCC-&gt;CR</text>
+<text x="16" y="176" class="lbl">0x40021000</text>
+<text x="131.0" y="146" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="146" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="670.0" y="154" width="100.0" height="26"/>
+<text x="720.0" y="167" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="450.0" y="154" width="40.0" height="26"/>
+<rect class="dash" x="130.0" y="154" width="240.0" height="26"/>
+<text x="250.0" y="167" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="370.0" y="154" width="20.0" height="26"/>
+<rect class="reg" x="390.0" y="154" width="20.0" height="26"/>
+<rect class="reg" x="410.0" y="154" width="20.0" height="26"/>
+<rect class="reg" x="430.0" y="154" width="20.0" height="26"/>
+<rect class="hifill" x="490.0" y="154" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M530.0 154 V158 M530.0 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M510.0 154 V158 M510.0 176 V180"/>
+<text x="491.0" y="146" text-anchor="start" class="mono lbl">13</text>
+<text x="549.0" y="146" text-anchor="end" class="mono lbl">11</text>
+<text x="520.0" y="167" text-anchor="middle" class="mono">HSIDIV</text>
+<rect class="hifill" x="550.0" y="154" width="20.0" height="26"/>
+<text x="560.0" y="146" text-anchor="middle" class="mono lbl">10</text>
+<rect class="reg" x="570.0" y="154" width="20.0" height="26"/>
+<rect class="reg" x="590.0" y="154" width="20.0" height="26"/>
+<rect class="reg" x="610.0" y="154" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M650.0 154 V158 M650.0 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M630.0 154 V158 M630.0 176 V180"/>
+<path class="dash" d="M600.0 180 L600.0 202"/>
+<text x="560.0" y="193" text-anchor="middle" class="mono halo">HSIRDY</text>
+<text x="600.0" y="209" text-anchor="middle" class="mono halo lbl">HSION</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="786" viewBox="0 0 786 103" role="img" aria-label="GPIOA-&gt;MODER, offset 0x00: sixteen 2-bit fields, one per pin (numbered inside). PA5 shaded.; MODER, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="393" y="16" text-anchor="middle" class="lbl">GPIOA-&gt;MODER, offset 0x00: sixteen 2-bit fields, one per pin (numbered inside). PA5 shaded.</text>
+<text x="16" y="59" class="mono">MODER</text>
+<text x="16" y="74" class="lbl">2 bits per pin</text>
+<text x="131.0" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="130.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M150.0 52 V56 M150.0 74 V78"/>
+<text x="150.0" y="65" text-anchor="middle" class="mono">15</text>
+<rect class="reg" x="170.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M190.0 52 V56 M190.0 74 V78"/>
+<text x="190.0" y="65" text-anchor="middle" class="mono">14</text>
+<rect class="reg" x="210.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M230.0 52 V56 M230.0 74 V78"/>
+<text x="230.0" y="65" text-anchor="middle" class="mono">13</text>
+<rect class="reg" x="250.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M270.0 52 V56 M270.0 74 V78"/>
+<text x="270.0" y="65" text-anchor="middle" class="mono">12</text>
+<rect class="reg" x="290.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M310.0 52 V56 M310.0 74 V78"/>
+<text x="310.0" y="65" text-anchor="middle" class="mono">11</text>
+<rect class="reg" x="330.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M350.0 52 V56 M350.0 74 V78"/>
+<text x="350.0" y="65" text-anchor="middle" class="mono">10</text>
+<rect class="reg" x="370.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M390.0 52 V56 M390.0 74 V78"/>
+<text x="390.0" y="65" text-anchor="middle" class="mono">9</text>
+<rect class="reg" x="410.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M430.0 52 V56 M430.0 74 V78"/>
+<text x="430.0" y="65" text-anchor="middle" class="mono">8</text>
+<rect class="reg" x="450.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M470.0 52 V56 M470.0 74 V78"/>
+<text x="470.0" y="65" text-anchor="middle" class="mono">7</text>
+<rect class="reg" x="490.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M510.0 52 V56 M510.0 74 V78"/>
+<text x="510.0" y="65" text-anchor="middle" class="mono">6</text>
+<rect class="hifill" x="530.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M550.0 52 V56 M550.0 74 V78"/>
+<text x="531.0" y="44" text-anchor="start" class="mono lbl">11</text>
+<text x="569.0" y="44" text-anchor="end" class="mono lbl">10</text>
+<text x="550.0" y="65" text-anchor="middle" class="mono">5</text>
+<rect class="reg" x="570.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M590.0 52 V56 M590.0 74 V78"/>
+<text x="590.0" y="65" text-anchor="middle" class="mono">4</text>
+<rect class="reg" x="610.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M630.0 52 V56 M630.0 74 V78"/>
+<text x="630.0" y="65" text-anchor="middle" class="mono">3</text>
+<rect class="reg" x="650.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M670.0 52 V56 M670.0 74 V78"/>
+<text x="670.0" y="65" text-anchor="middle" class="mono">2</text>
+<rect class="reg" x="690.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M710.0 52 V56 M710.0 74 V78"/>
+<text x="710.0" y="65" text-anchor="middle" class="mono">1</text>
+<rect class="reg" x="730.0" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M750.0 52 V56 M750.0 74 V78"/>
+<text x="750.0" y="65" text-anchor="middle" class="mono">0</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="786" viewBox="0 0 786 112" role="img" aria-label="SPI1-&gt;SR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="41" class="mono">SPI1-&gt;SR</text>
+<text x="131.0" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="130.0" y="28" width="380.0" height="26"/>
+<text x="320.0" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="510.0" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M530.0 28 V32 M530.0 50 V54"/>
+<rect class="reg" x="550.0" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M570.0 28 V32 M570.0 50 V54"/>
+<rect class="reg" x="590.0" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="610.0" y="28" width="20.0" height="26"/>
+<text x="620.0" y="20" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="630.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="650.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="670.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="690.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="710.0" y="28" width="20.0" height="26"/>
+<rect class="reg" x="730.0" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="750.0" y="28" width="20.0" height="26"/>
+<path class="dash" d="M570.0 54 L570.0 76"/>
+<path class="dash" d="M760.0 54 L760.0 76"/>
+<text x="530.0" y="67" text-anchor="middle" class="mono halo lbl">FTLVL</text>
+<text x="570.0" y="83" text-anchor="middle" class="mono halo lbl">FRLVL</text>
+<text x="620.0" y="67" text-anchor="middle" class="mono halo">BSY</text>
+<text x="740.0" y="67" text-anchor="middle" class="mono halo lbl">TXE</text>
+<text x="760.0" y="83" text-anchor="middle" class="mono halo">RXNE</text>
+</svg>

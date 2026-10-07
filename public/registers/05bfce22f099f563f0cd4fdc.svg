@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="971" viewBox="0 0 971 446" role="img" aria-label="IWDG at 0x40003000, as wdog.c programs it for 1.000 s; KR, 32 bits; PR, 32 bits; RLR, 32 bits; SR, 32 bits; WINR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="486" y="16" text-anchor="middle" class="lbl">IWDG at 0x40003000, as wdog.c programs it for 1.000 s</text>
+<text x="16" y="59" class="mono">KR</text>
+<text x="16" y="74" class="lbl">0xCCCC start, 0x5555 unlock, 0xAAAA refresh</text>
+<text x="316.2" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="52" width="320.0" height="26"/>
+<text x="475.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="635.2" y="52" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M935.2 52 V56 M935.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M915.2 52 V56 M915.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M895.2 52 V56 M895.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M875.2 52 V56 M875.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M855.2 52 V56 M855.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M835.2 52 V56 M835.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M815.2 52 V56 M815.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M795.2 52 V56 M795.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M775.2 52 V56 M775.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M755.2 52 V56 M755.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M735.2 52 V56 M735.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M715.2 52 V56 M715.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M695.2 52 V56 M695.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M675.2 52 V56 M675.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M655.2 52 V56 M655.2 74 V78"/>
+<text x="636.2" y="44" text-anchor="start" class="mono lbl">15</text>
+<text x="795.2" y="65" text-anchor="middle" class="mono">KEY</text>
+<text x="16" y="128" class="mono">PR</text>
+<text x="16" y="143" class="lbl">/32: 32 kHz -&gt; 1 kHz</text>
+<text x="16" y="158" class="mono lbl">= 0x00000003</text>
+<text x="316.2" y="113" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="121" width="580.0" height="26"/>
+<rect class="hifill" x="895.2" y="121" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M935.2 121 V125 M935.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M915.2 121 V125 M915.2 143 V147"/>
+<text x="896.2" y="113" text-anchor="start" class="mono lbl">2</text>
+<text x="945.2" y="134" text-anchor="middle" class="mono">1</text>
+<text x="925.2" y="134" text-anchor="middle" class="mono">1</text>
+<text x="905.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="885.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="865.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="845.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="825.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="805.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="785.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="765.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="745.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="725.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="705.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="685.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="665.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="645.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="625.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="605.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="585.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="565.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="545.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="525.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="505.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="485.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="465.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="134" text-anchor="middle" class="mono lbl">0</text>
+<text x="925.2" y="160" text-anchor="middle" class="mono halo">PR</text>
+<text x="16" y="214" class="mono">RLR</text>
+<text x="16" y="229" class="lbl">999 + 1 counts = 1.000 s</text>
+<text x="16" y="244" class="mono lbl">= 0x000003E7</text>
+<text x="316.2" y="199" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="199" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="207" width="400.0" height="26"/>
+<rect class="hifill" x="715.2" y="207" width="240.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M935.2 207 V211 M935.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M915.2 207 V211 M915.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M895.2 207 V211 M895.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M875.2 207 V211 M875.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M855.2 207 V211 M855.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M835.2 207 V211 M835.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M815.2 207 V211 M815.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M795.2 207 V211 M795.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M775.2 207 V211 M775.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M755.2 207 V211 M755.2 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M735.2 207 V211 M735.2 229 V233"/>
+<text x="716.2" y="199" text-anchor="start" class="mono lbl">11</text>
+<text x="945.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="925.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="905.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="885.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="865.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="845.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="825.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="805.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="785.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="765.2" y="220" text-anchor="middle" class="mono">1</text>
+<text x="745.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="725.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="705.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="685.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="665.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="645.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="625.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="605.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="585.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="565.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="545.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="525.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="505.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="485.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="465.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="445.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="425.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="405.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="385.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="365.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="345.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="325.2" y="220" text-anchor="middle" class="mono lbl">0</text>
+<text x="835.2" y="246" text-anchor="middle" class="mono halo">RL</text>
+<text x="16" y="300" class="mono">SR</text>
+<text x="16" y="315" class="lbl">update in progress, polled to 0</text>
+<text x="316.2" y="285" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="285" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="293" width="580.0" height="26"/>
+<text x="605.2" y="306" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="895.2" y="293" width="20.0" height="26"/>
+<text x="905.2" y="285" text-anchor="middle" class="mono lbl">2</text>
+<rect class="hifill" x="915.2" y="293" width="20.0" height="26"/>
+<text x="925.2" y="285" text-anchor="middle" class="mono lbl">1</text>
+<rect class="hifill" x="935.2" y="293" width="20.0" height="26"/>
+<path class="dash" d="M925.2 319 L925.2 341"/>
+<text x="905.2" y="332" text-anchor="middle" class="mono halo">WVU</text>
+<text x="925.2" y="348" text-anchor="middle" class="mono halo">RVU</text>
+<text x="945.2" y="332" text-anchor="middle" class="mono halo">PVU</text>
+<text x="16" y="402" class="mono">WINR</text>
+<text x="16" y="417" class="lbl">window: never written by wdog.c</text>
+<text x="316.2" y="387" text-anchor="start" class="mono lbl">31</text>
+<text x="954.2" y="387" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="315.2" y="395" width="400.0" height="26"/>
+<text x="515.2" y="408" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="715.2" y="395" width="240.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M935.2 395 V399 M935.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M915.2 395 V399 M915.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M895.2 395 V399 M895.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M875.2 395 V399 M875.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M855.2 395 V399 M855.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M835.2 395 V399 M835.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M815.2 395 V399 M815.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M795.2 395 V399 M795.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M775.2 395 V399 M775.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M755.2 395 V399 M755.2 417 V421"/>
+<path class="reg" stroke-width="0.6" d="M735.2 395 V399 M735.2 417 V421"/>
+<text x="716.2" y="387" text-anchor="start" class="mono lbl">11</text>
+<text x="835.2" y="408" text-anchor="middle" class="mono">WIN</text>
+</svg>

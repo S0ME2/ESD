@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" viewBox="0 0 850 96" role="img" aria-label="IPSR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">IPSR</text>
+<text x="16" y="50" class="lbl">inside USART2_IRQHandler</text>
+<text x="16" y="65" class="mono lbl">= 0x0000002C</text>
+<text x="194.6" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="832.6" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="193.6" y="28" width="520.0" height="26"/>
+<rect class="hifill" x="713.6" y="28" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M813.6 28 V32 M813.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M793.6 28 V32 M793.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M773.6 28 V32 M773.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M753.6 28 V32 M753.6 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M733.6 28 V32 M733.6 50 V54"/>
+<text x="714.6" y="20" text-anchor="start" class="mono lbl">5</text>
+<text x="823.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="803.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="783.6" y="41" text-anchor="middle" class="mono">1</text>
+<text x="763.6" y="41" text-anchor="middle" class="mono">1</text>
+<text x="743.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="723.6" y="41" text-anchor="middle" class="mono">1</text>
+<text x="703.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="683.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="663.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="643.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="623.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="603.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="583.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="563.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="543.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="523.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="503.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="483.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="463.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="443.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="423.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="403.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="383.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="363.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="343.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="323.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="303.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="283.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="263.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="243.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="223.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="203.6" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="773.6" y="67" text-anchor="middle" class="mono halo">ISR</text>
+</svg>

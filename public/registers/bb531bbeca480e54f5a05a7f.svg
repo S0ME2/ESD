@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 291" role="img" aria-label="The special registers.  Shaded = what this deck uses; xPSR, 32 bits; PRIMASK, 32 bits; CONTROL, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="415" y="16" text-anchor="middle" class="lbl">The special registers.  Shaded = what this deck uses</text>
+<text x="16" y="59" class="mono">xPSR</text>
+<text x="16" y="74" class="lbl">stacked on entry</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="334.4" y="52" width="360.0" height="26"/>
+<text x="514.4" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="254.4" y="52" width="60.0" height="26"/>
+<text x="284.4" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="174.4" y="52" width="20.0" height="26"/>
+<text x="184.4" y="65" text-anchor="middle" class="mono">N</text>
+<rect class="reg" x="194.4" y="52" width="20.0" height="26"/>
+<text x="204.4" y="44" text-anchor="middle" class="mono lbl">30</text>
+<text x="204.4" y="65" text-anchor="middle" class="mono">Z</text>
+<rect class="reg" x="214.4" y="52" width="20.0" height="26"/>
+<text x="224.4" y="44" text-anchor="middle" class="mono lbl">29</text>
+<text x="224.4" y="65" text-anchor="middle" class="mono">C</text>
+<rect class="reg" x="234.4" y="52" width="20.0" height="26"/>
+<text x="244.4" y="44" text-anchor="middle" class="mono lbl">28</text>
+<text x="244.4" y="65" text-anchor="middle" class="mono">V</text>
+<rect class="reg" x="314.4" y="52" width="20.0" height="26"/>
+<text x="324.4" y="44" text-anchor="middle" class="mono lbl">24</text>
+<text x="324.4" y="65" text-anchor="middle" class="mono">T</text>
+<rect class="hifill" x="694.4" y="52" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 52 V56 M794.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M774.4 52 V56 M774.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M754.4 52 V56 M754.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M734.4 52 V56 M734.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M714.4 52 V56 M714.4 74 V78"/>
+<text x="695.4" y="44" text-anchor="start" class="mono lbl">5</text>
+<text x="754.4" y="65" text-anchor="middle" class="mono">exception no.</text>
+<text x="16" y="128" class="mono">PRIMASK</text>
+<text x="16" y="143" class="lbl">1 = interrupts masked</text>
+<text x="175.4" y="113" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="121" width="620.0" height="26"/>
+<text x="484.4" y="134" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="794.4" y="121" width="20.0" height="26"/>
+<text x="804.4" y="160" text-anchor="middle" class="mono halo">PM</text>
+<text x="16" y="214" class="mono">CONTROL</text>
+<text x="16" y="229" class="lbl">stack and privilege</text>
+<text x="175.4" y="199" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="199" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="207" width="600.0" height="26"/>
+<text x="474.4" y="220" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="774.4" y="207" width="20.0" height="26"/>
+<text x="784.4" y="199" text-anchor="middle" class="mono lbl">1</text>
+<rect class="reg" x="794.4" y="207" width="20.0" height="26"/>
+<path class="dash" d="M804.4 233 L804.4 255"/>
+<text x="784.4" y="246" text-anchor="middle" class="mono halo lbl">SPSEL</text>
+<text x="804.4" y="262" text-anchor="middle" class="mono halo lbl">nPRIV</text>
+</svg>

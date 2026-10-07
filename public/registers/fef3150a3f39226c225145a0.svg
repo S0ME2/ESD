@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="853" viewBox="0 0 853 388" role="img" aria-label="Cortex-M3/M4/M7 ONLY - this register does not exist on the STM32C031. Bits from CMSIS core_cm4.h; SCB-&gt;CFSR, 32 bits; SCB-&gt;CFSR, 32 bits; SCB-&gt;HFSR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="422" y="16" text-anchor="middle" class="lbl">Cortex-M3/M4/M7 ONLY - this register does not exist on the STM32C031. Bits from CMSIS core_cm4.h</text>
+<text x="16" y="59" class="mono">SCB-&gt;CFSR</text>
+<text x="16" y="74" class="lbl">UFSR 31:16</text>
+<text x="188.2" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="826.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="507.2" y="52" width="320.0" height="26"/>
+<text x="667.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="347.2" y="52" width="80.0" height="26"/>
+<text x="387.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="187.2" y="52" width="120.0" height="26"/>
+<text x="247.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="307.2" y="52" width="20.0" height="26"/>
+<text x="317.2" y="44" text-anchor="middle" class="mono lbl">25</text>
+<rect class="hifill" x="327.2" y="52" width="20.0" height="26"/>
+<text x="337.2" y="44" text-anchor="middle" class="mono lbl">24</text>
+<rect class="reg" x="427.2" y="52" width="20.0" height="26"/>
+<text x="437.2" y="44" text-anchor="middle" class="mono lbl">19</text>
+<rect class="reg" x="447.2" y="52" width="20.0" height="26"/>
+<text x="457.2" y="44" text-anchor="middle" class="mono lbl">18</text>
+<rect class="hifill" x="467.2" y="52" width="20.0" height="26"/>
+<text x="477.2" y="44" text-anchor="middle" class="mono lbl">17</text>
+<rect class="hifill" x="487.2" y="52" width="20.0" height="26"/>
+<text x="497.2" y="44" text-anchor="middle" class="mono lbl">16</text>
+<path class="dash" d="M337.2 78 L337.2 100"/>
+<path class="dash" d="M457.2 78 L457.2 100"/>
+<path class="dash" d="M477.2 78 L477.2 116"/>
+<text x="317.2" y="91" text-anchor="middle" class="mono halo">DIVBYZERO</text>
+<text x="337.2" y="107" text-anchor="middle" class="mono halo">UNALIGNED</text>
+<text x="437.2" y="91" text-anchor="middle" class="mono halo lbl">NOCP</text>
+<text x="457.2" y="107" text-anchor="middle" class="mono halo lbl">INVPC</text>
+<text x="477.2" y="123" text-anchor="middle" class="mono halo">INVSTATE</text>
+<text x="497.2" y="91" text-anchor="middle" class="mono halo">UNDEFINSTR</text>
+<text x="16" y="177" class="mono">SCB-&gt;CFSR</text>
+<text x="16" y="192" class="lbl">BFSR 15:8, MMFSR 7:0</text>
+<text x="188.2" y="162" text-anchor="start" class="mono lbl">31</text>
+<text x="826.2" y="162" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="767.2" y="170" width="20.0" height="26"/>
+<rect class="dash" x="687.2" y="170" width="20.0" height="26"/>
+<rect class="dash" x="527.2" y="170" width="20.0" height="26"/>
+<rect class="dash" x="187.2" y="170" width="320.0" height="26"/>
+<text x="347.2" y="183" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="507.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="547.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="567.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="587.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="607.2" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="627.2" y="170" width="20.0" height="26"/>
+<text x="637.2" y="162" text-anchor="middle" class="mono lbl">9</text>
+<rect class="reg" x="647.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="667.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="707.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="727.2" y="170" width="20.0" height="26"/>
+<rect class="reg" x="747.2" y="170" width="20.0" height="26"/>
+<rect class="hifill" x="787.2" y="170" width="20.0" height="26"/>
+<text x="797.2" y="162" text-anchor="middle" class="mono lbl">1</text>
+<rect class="hifill" x="807.2" y="170" width="20.0" height="26"/>
+<path class="dash" d="M557.2 196 L557.2 218"/>
+<path class="dash" d="M577.2 196 L577.2 234"/>
+<path class="dash" d="M617.2 196 L617.2 250"/>
+<path class="dash" d="M637.2 196 L637.2 218"/>
+<path class="dash" d="M657.2 196 L657.2 234"/>
+<path class="dash" d="M717.2 196 L717.2 218"/>
+<path class="dash" d="M737.2 196 L737.2 234"/>
+<path class="dash" d="M797.2 196 L797.2 218"/>
+<path class="dash" d="M817.2 196 L817.2 234"/>
+<text x="517.2" y="209" text-anchor="middle" class="mono halo lbl">BFARVALID</text>
+<text x="557.2" y="225" text-anchor="middle" class="mono halo lbl">LSPERR</text>
+<text x="577.2" y="241" text-anchor="middle" class="mono halo lbl">STKERR</text>
+<text x="597.2" y="209" text-anchor="middle" class="mono halo lbl">UNSTKERR</text>
+<text x="617.2" y="257" text-anchor="middle" class="mono halo lbl">IMPRECISERR</text>
+<text x="637.2" y="225" text-anchor="middle" class="mono halo">PRECISERR</text>
+<text x="657.2" y="241" text-anchor="middle" class="mono halo lbl">IBUSERR</text>
+<text x="677.2" y="209" text-anchor="middle" class="mono halo lbl">MMARVALID</text>
+<text x="717.2" y="225" text-anchor="middle" class="mono halo lbl">MLSPERR</text>
+<text x="737.2" y="241" text-anchor="middle" class="mono halo lbl">MSTKERR</text>
+<text x="757.2" y="209" text-anchor="middle" class="mono halo lbl">MUNSTKERR</text>
+<text x="797.2" y="225" text-anchor="middle" class="mono halo">DACCVIOL</text>
+<text x="817.2" y="241" text-anchor="middle" class="mono halo">IACCVIOL</text>
+<text x="16" y="311" class="mono">SCB-&gt;HFSR</text>
+<text x="16" y="326" class="lbl">not on this chip either</text>
+<text x="188.2" y="296" text-anchor="start" class="mono lbl">31</text>
+<text x="826.2" y="296" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="807.2" y="304" width="20.0" height="26"/>
+<rect class="dash" x="227.2" y="304" width="560.0" height="26"/>
+<text x="507.2" y="317" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="187.2" y="304" width="20.0" height="26"/>
+<rect class="hifill" x="207.2" y="304" width="20.0" height="26"/>
+<text x="217.2" y="296" text-anchor="middle" class="mono lbl">30</text>
+<rect class="reg" x="787.2" y="304" width="20.0" height="26"/>
+<text x="797.2" y="296" text-anchor="middle" class="mono lbl">1</text>
+<path class="dash" d="M197.2 330 L218.8 336"/>
+<path class="dash" d="M217.2 330 L217.2 352"/>
+<text x="218.8" y="343" text-anchor="middle" class="mono halo lbl">DEBUGEVT</text>
+<text x="217.2" y="359" text-anchor="middle" class="mono halo">FORCED</text>
+<text x="797.2" y="343" text-anchor="middle" class="mono halo lbl">VECTTBL</text>
+</svg>

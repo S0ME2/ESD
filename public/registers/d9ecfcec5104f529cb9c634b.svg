@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" viewBox="0 0 510 238" role="img" aria-label="TIM14, channel 1 as a capture input on both edges; CCMR1, 16 bits; CCER, 16 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="255" y="16" text-anchor="middle" class="lbl">TIM14, channel 1 as a capture input on both edges</text>
+<text x="16" y="59" class="mono">CCMR1</text>
+<text x="16" y="74" class="lbl">CC1S = 01: input, TI1</text>
+<text x="16" y="89" class="mono lbl">= 0x0001</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">15</text>
+<text x="493.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="52" width="160.0" height="26"/>
+<rect class="reg" x="334.4" y="52" width="80.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.4 52 V56 M394.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M374.4 52 V56 M374.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M354.4 52 V56 M354.4 74 V78"/>
+<text x="335.4" y="44" text-anchor="start" class="mono lbl">7</text>
+<text x="413.4" y="44" text-anchor="end" class="mono lbl">4</text>
+<rect class="reg" x="414.4" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.4 52 V56 M434.4 74 V78"/>
+<text x="453.4" y="44" text-anchor="end" class="mono lbl">2</text>
+<rect class="hifill" x="454.4" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.4 52 V56 M474.4 74 V78"/>
+<text x="484.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="464.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="444.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="404.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M474.4 78 L474.4 100"/>
+<text x="374.4" y="91" text-anchor="middle" class="mono halo lbl">IC1F</text>
+<text x="434.4" y="91" text-anchor="middle" class="mono halo lbl">IC1PSC</text>
+<text x="474.4" y="107" text-anchor="middle" class="mono halo">CC1S</text>
+<text x="16" y="161" class="mono">CCER</text>
+<text x="16" y="176" class="lbl">both edges, enabled</text>
+<text x="16" y="191" class="mono lbl">= 0x000B</text>
+<text x="175.4" y="146" text-anchor="start" class="mono lbl">15</text>
+<text x="493.4" y="146" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="434.4" y="154" width="20.0" height="26"/>
+<rect class="dash" x="174.4" y="154" width="240.0" height="26"/>
+<rect class="hifill" x="414.4" y="154" width="20.0" height="26"/>
+<text x="424.4" y="146" text-anchor="middle" class="mono lbl">3</text>
+<rect class="hifill" x="454.4" y="154" width="20.0" height="26"/>
+<text x="464.4" y="146" text-anchor="middle" class="mono lbl">1</text>
+<rect class="hifill" x="474.4" y="154" width="20.0" height="26"/>
+<text x="484.4" y="167" text-anchor="middle" class="mono">1</text>
+<text x="464.4" y="167" text-anchor="middle" class="mono">1</text>
+<text x="444.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.4" y="167" text-anchor="middle" class="mono">1</text>
+<text x="404.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.4" y="167" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M484.4 180 L484.4 202"/>
+<text x="424.4" y="193" text-anchor="middle" class="mono halo">CC1NP</text>
+<text x="464.4" y="193" text-anchor="middle" class="mono halo">CC1P</text>
+<text x="484.4" y="209" text-anchor="middle" class="mono halo">CC1E</text>
+</svg>

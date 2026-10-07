@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="907" viewBox="0 0 907 429" role="img" aria-label="The five, drawn to scale.  Shaded = a field this kernel depends on.; xPSR, 32 bits; MSP, 32 bits; PSP, 32 bits; PRIMASK, 32 bits; CONTROL, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="454" y="16" text-anchor="middle" class="lbl">The five, drawn to scale.  Shaded = a field this kernel depends on.</text>
+<text x="16" y="59" class="mono">xPSR</text>
+<text x="16" y="74" class="lbl">APSR, IPSR and EPSR in one word</text>
+<text x="252.2" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="411.2" y="52" width="360.0" height="26"/>
+<text x="591.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="331.2" y="52" width="60.0" height="26"/>
+<text x="361.2" y="65" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="251.2" y="52" width="20.0" height="26"/>
+<text x="261.2" y="65" text-anchor="middle" class="mono">N</text>
+<rect class="reg" x="271.2" y="52" width="20.0" height="26"/>
+<text x="281.2" y="44" text-anchor="middle" class="mono lbl">30</text>
+<text x="281.2" y="65" text-anchor="middle" class="mono">Z</text>
+<rect class="reg" x="291.2" y="52" width="20.0" height="26"/>
+<text x="301.2" y="44" text-anchor="middle" class="mono lbl">29</text>
+<text x="301.2" y="65" text-anchor="middle" class="mono">C</text>
+<rect class="reg" x="311.2" y="52" width="20.0" height="26"/>
+<text x="321.2" y="44" text-anchor="middle" class="mono lbl">28</text>
+<text x="321.2" y="65" text-anchor="middle" class="mono">V</text>
+<rect class="hifill" x="391.2" y="52" width="20.0" height="26"/>
+<text x="401.2" y="44" text-anchor="middle" class="mono lbl">24</text>
+<text x="401.2" y="65" text-anchor="middle" class="mono">T</text>
+<rect class="reg" x="771.2" y="52" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M871.2 52 V56 M871.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M851.2 52 V56 M851.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M831.2 52 V56 M831.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M811.2 52 V56 M811.2 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M791.2 52 V56 M791.2 74 V78"/>
+<text x="772.2" y="44" text-anchor="start" class="mono lbl">5</text>
+<text x="831.2" y="65" text-anchor="middle" class="mono">ISR</text>
+<text x="16" y="128" class="mono">MSP</text>
+<text x="16" y="143" class="lbl">main stack: handlers</text>
+<text x="252.2" y="113" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="251.2" y="121" width="640.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M871.2 121 V125 M871.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M851.2 121 V125 M851.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M831.2 121 V125 M831.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M811.2 121 V125 M811.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M791.2 121 V125 M791.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M771.2 121 V125 M771.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M751.2 121 V125 M751.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M731.2 121 V125 M731.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M711.2 121 V125 M711.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M691.2 121 V125 M691.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M671.2 121 V125 M671.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M651.2 121 V125 M651.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M631.2 121 V125 M631.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M611.2 121 V125 M611.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M591.2 121 V125 M591.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M571.2 121 V125 M571.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M551.2 121 V125 M551.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M531.2 121 V125 M531.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M511.2 121 V125 M511.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M491.2 121 V125 M491.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M471.2 121 V125 M471.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M451.2 121 V125 M451.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M431.2 121 V125 M431.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M411.2 121 V125 M411.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M391.2 121 V125 M391.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M371.2 121 V125 M371.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M351.2 121 V125 M351.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M331.2 121 V125 M331.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M311.2 121 V125 M311.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M291.2 121 V125 M291.2 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M271.2 121 V125 M271.2 143 V147"/>
+<text x="571.2" y="134" text-anchor="middle" class="mono">stack address</text>
+<text x="16" y="197" class="mono">PSP</text>
+<text x="16" y="212" class="lbl">process stack: tasks</text>
+<text x="252.2" y="182" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="182" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="251.2" y="190" width="640.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M871.2 190 V194 M871.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M851.2 190 V194 M851.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M831.2 190 V194 M831.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M811.2 190 V194 M811.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M791.2 190 V194 M791.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M771.2 190 V194 M771.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M751.2 190 V194 M751.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M731.2 190 V194 M731.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M711.2 190 V194 M711.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M691.2 190 V194 M691.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M671.2 190 V194 M671.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M651.2 190 V194 M651.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M631.2 190 V194 M631.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M611.2 190 V194 M611.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M591.2 190 V194 M591.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M571.2 190 V194 M571.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M551.2 190 V194 M551.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M531.2 190 V194 M531.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M511.2 190 V194 M511.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M491.2 190 V194 M491.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M471.2 190 V194 M471.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M451.2 190 V194 M451.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M431.2 190 V194 M431.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M411.2 190 V194 M411.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M391.2 190 V194 M391.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M371.2 190 V194 M371.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M351.2 190 V194 M351.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M331.2 190 V194 M331.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M311.2 190 V194 M311.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M291.2 190 V194 M291.2 212 V216"/>
+<path class="reg" stroke-width="0.6" d="M271.2 190 V194 M271.2 212 V216"/>
+<text x="571.2" y="203" text-anchor="middle" class="mono">stack address</text>
+<text x="16" y="266" class="mono">PRIMASK</text>
+<text x="16" y="281" class="lbl">interrupt mask</text>
+<text x="252.2" y="251" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="251" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="251.2" y="259" width="620.0" height="26"/>
+<text x="561.2" y="272" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="871.2" y="259" width="20.0" height="26"/>
+<text x="881.2" y="298" text-anchor="middle" class="mono halo">PM</text>
+<text x="16" y="352" class="mono">CONTROL</text>
+<text x="16" y="367" class="lbl">Thread mode&#x27;s stack and privilege</text>
+<text x="252.2" y="337" text-anchor="start" class="mono lbl">31</text>
+<text x="890.2" y="337" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="251.2" y="345" width="600.0" height="26"/>
+<text x="551.2" y="358" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="851.2" y="345" width="20.0" height="26"/>
+<text x="861.2" y="337" text-anchor="middle" class="mono lbl">1</text>
+<rect class="reg" x="871.2" y="345" width="20.0" height="26"/>
+<path class="dash" d="M881.2 371 L881.2 393"/>
+<text x="861.2" y="384" text-anchor="middle" class="mono halo">SPSEL</text>
+<text x="881.2" y="400" text-anchor="middle" class="mono halo lbl">nPRIV</text>
+</svg>

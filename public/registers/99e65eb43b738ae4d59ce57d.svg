@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="862" viewBox="0 0 862 112" role="img" aria-label="DMAMUX1_Channel0-&gt;CCR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">DMAMUX1_Channel0-&gt;CCR</text>
+<text x="16" y="50" class="lbl">request 5 = ADC1</text>
+<text x="16" y="65" class="mono lbl">= 0x00000005</text>
+<text x="206.9" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="844.9" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="525.9" y="28" width="120.0" height="26"/>
+<rect class="dash" x="205.9" y="28" width="60.0" height="26"/>
+<rect class="reg" x="265.9" y="28" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M345.9 28 V32 M345.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M325.9 28 V32 M325.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M305.9 28 V32 M305.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M285.9 28 V32 M285.9 50 V54"/>
+<text x="266.9" y="20" text-anchor="start" class="mono lbl">28</text>
+<text x="364.9" y="20" text-anchor="end" class="mono lbl">24</text>
+<rect class="reg" x="365.9" y="28" width="100.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M445.9 28 V32 M445.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M425.9 28 V32 M425.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M405.9 28 V32 M405.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M385.9 28 V32 M385.9 50 V54"/>
+<text x="464.9" y="20" text-anchor="end" class="mono lbl">19</text>
+<rect class="reg" x="465.9" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M485.9 28 V32 M485.9 50 V54"/>
+<text x="504.9" y="20" text-anchor="end" class="mono lbl">17</text>
+<rect class="reg" x="505.9" y="28" width="20.0" height="26"/>
+<text x="515.9" y="20" text-anchor="middle" class="mono lbl">16</text>
+<rect class="reg" x="645.9" y="28" width="20.0" height="26"/>
+<text x="655.9" y="20" text-anchor="middle" class="mono lbl">9</text>
+<rect class="reg" x="665.9" y="28" width="20.0" height="26"/>
+<text x="675.9" y="20" text-anchor="middle" class="mono lbl">8</text>
+<rect class="hifill" x="685.9" y="28" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M825.9 28 V32 M825.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M805.9 28 V32 M805.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M785.9 28 V32 M785.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M765.9 28 V32 M765.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M745.9 28 V32 M745.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M725.9 28 V32 M725.9 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M705.9 28 V32 M705.9 50 V54"/>
+<text x="686.9" y="20" text-anchor="start" class="mono lbl">7</text>
+<text x="835.9" y="41" text-anchor="middle" class="mono">1</text>
+<text x="815.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="795.9" y="41" text-anchor="middle" class="mono">1</text>
+<text x="775.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="755.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="735.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="715.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="695.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="675.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="655.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="635.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="615.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="595.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="575.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="555.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="535.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="515.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="495.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="475.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="455.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="435.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="415.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="395.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="375.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="355.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="335.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="315.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="295.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="275.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="255.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="235.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="215.9" y="41" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M675.9 54 L675.9 76"/>
+<text x="315.9" y="67" text-anchor="middle" class="mono halo lbl">SYNC_ID</text>
+<text x="415.9" y="67" text-anchor="middle" class="mono halo lbl">NBREQ</text>
+<text x="485.9" y="67" text-anchor="middle" class="mono halo lbl">SPOL</text>
+<text x="515.9" y="67" text-anchor="middle" class="mono halo lbl">SE</text>
+<text x="655.9" y="67" text-anchor="middle" class="mono halo lbl">EGE</text>
+<text x="675.9" y="83" text-anchor="middle" class="mono halo lbl">SOIE</text>
+<text x="765.9" y="67" text-anchor="middle" class="mono halo">DMAREQ_ID</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="818" viewBox="0 0 818 189" role="img" aria-label="Two formats, to scale.  The bits are ordinary int32_t / int16_t - only the meaning differs.; Q16.16, 32 bits; Q15, 16 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="409" y="16" text-anchor="middle" class="lbl">Two formats, to scale.  The bits are ordinary int32_t / int16_t - only the meaning differs.</text>
+<text x="16" y="59" class="mono">Q16.16</text>
+<text x="16" y="74" class="lbl">value = raw / 65536</text>
+<text x="162.6" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="800.6" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="161.6" y="52" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M461.6 52 V56 M461.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M441.6 52 V56 M441.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M421.6 52 V56 M421.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M401.6 52 V56 M401.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M381.6 52 V56 M381.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M361.6 52 V56 M361.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M341.6 52 V56 M341.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M321.6 52 V56 M321.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M301.6 52 V56 M301.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M281.6 52 V56 M281.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M261.6 52 V56 M261.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M241.6 52 V56 M241.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M221.6 52 V56 M221.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M201.6 52 V56 M201.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M181.6 52 V56 M181.6 74 V78"/>
+<text x="480.6" y="44" text-anchor="end" class="mono lbl">16</text>
+<text x="321.6" y="65" text-anchor="middle" class="mono">integer part (signed)</text>
+<rect class="hifill" x="481.6" y="52" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M781.6 52 V56 M781.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M761.6 52 V56 M761.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M741.6 52 V56 M741.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M721.6 52 V56 M721.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M701.6 52 V56 M701.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M681.6 52 V56 M681.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M661.6 52 V56 M661.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M641.6 52 V56 M641.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M621.6 52 V56 M621.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M601.6 52 V56 M601.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M581.6 52 V56 M581.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M561.6 52 V56 M561.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M541.6 52 V56 M541.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M521.6 52 V56 M521.6 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M501.6 52 V56 M501.6 74 V78"/>
+<text x="641.6" y="65" text-anchor="middle" class="mono">fraction</text>
+<text x="16" y="128" class="mono">Q15</text>
+<text x="16" y="143" class="lbl">value = raw / 32768</text>
+<text x="482.6" y="113" text-anchor="start" class="mono lbl">15</text>
+<text x="800.6" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="481.6" y="121" width="20.0" height="26"/>
+<rect class="hifill" x="501.6" y="121" width="300.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M781.6 121 V125 M781.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M761.6 121 V125 M761.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M741.6 121 V125 M741.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M721.6 121 V125 M721.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M701.6 121 V125 M701.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M681.6 121 V125 M681.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M661.6 121 V125 M661.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M641.6 121 V125 M641.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M621.6 121 V125 M621.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M601.6 121 V125 M601.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M581.6 121 V125 M581.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M561.6 121 V125 M561.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M541.6 121 V125 M541.6 143 V147"/>
+<path class="reg" stroke-width="0.6" d="M521.6 121 V125 M521.6 143 V147"/>
+<text x="502.6" y="113" text-anchor="start" class="mono lbl">14</text>
+<text x="651.6" y="134" text-anchor="middle" class="mono">fraction</text>
+<text x="491.6" y="160" text-anchor="middle" class="mono halo lbl">sign</text>
+</svg>

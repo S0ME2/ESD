@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="869" viewBox="0 0 869 172" role="img" aria-label="Numbered by pin; PB0-PB7, the LED bar, shaded; GPIOB-&gt;MODER, 32 bits; GPIOB-&gt;ODR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="434" y="16" text-anchor="middle" class="lbl">Numbered by pin; PB0-PB7, the LED bar, shaded</text>
+<text x="16" y="59" class="mono">GPIOB-&gt;MODER</text>
+<text x="16" y="74" class="lbl">2 bits per pin, 01 = output</text>
+<text x="213.8" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="851.8" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="212.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M232.8 52 V56 M232.8 74 V78"/>
+<text x="232.8" y="65" text-anchor="middle" class="mono">15</text>
+<rect class="reg" x="252.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M272.8 52 V56 M272.8 74 V78"/>
+<text x="272.8" y="65" text-anchor="middle" class="mono">14</text>
+<rect class="reg" x="292.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M312.8 52 V56 M312.8 74 V78"/>
+<text x="312.8" y="65" text-anchor="middle" class="mono">13</text>
+<rect class="reg" x="332.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M352.8 52 V56 M352.8 74 V78"/>
+<text x="352.8" y="65" text-anchor="middle" class="mono">12</text>
+<rect class="reg" x="372.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M392.8 52 V56 M392.8 74 V78"/>
+<text x="392.8" y="65" text-anchor="middle" class="mono">11</text>
+<rect class="reg" x="412.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M432.8 52 V56 M432.8 74 V78"/>
+<text x="432.8" y="65" text-anchor="middle" class="mono">10</text>
+<rect class="reg" x="452.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M472.8 52 V56 M472.8 74 V78"/>
+<text x="472.8" y="65" text-anchor="middle" class="mono">9</text>
+<rect class="reg" x="492.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M512.8 52 V56 M512.8 74 V78"/>
+<text x="512.8" y="65" text-anchor="middle" class="mono">8</text>
+<rect class="hifill" x="532.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M552.8 52 V56 M552.8 74 V78"/>
+<text x="533.8" y="44" text-anchor="start" class="mono lbl">15</text>
+<text x="571.8" y="44" text-anchor="end" class="mono lbl">14</text>
+<text x="552.8" y="65" text-anchor="middle" class="mono">7</text>
+<rect class="hifill" x="572.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M592.8 52 V56 M592.8 74 V78"/>
+<text x="611.8" y="44" text-anchor="end" class="mono lbl">12</text>
+<text x="592.8" y="65" text-anchor="middle" class="mono">6</text>
+<rect class="hifill" x="612.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M632.8 52 V56 M632.8 74 V78"/>
+<text x="651.8" y="44" text-anchor="end" class="mono lbl">10</text>
+<text x="632.8" y="65" text-anchor="middle" class="mono">5</text>
+<rect class="hifill" x="652.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M672.8 52 V56 M672.8 74 V78"/>
+<text x="691.8" y="44" text-anchor="end" class="mono lbl">8</text>
+<text x="672.8" y="65" text-anchor="middle" class="mono">4</text>
+<rect class="hifill" x="692.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M712.8 52 V56 M712.8 74 V78"/>
+<text x="731.8" y="44" text-anchor="end" class="mono lbl">6</text>
+<text x="712.8" y="65" text-anchor="middle" class="mono">3</text>
+<rect class="hifill" x="732.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M752.8 52 V56 M752.8 74 V78"/>
+<text x="771.8" y="44" text-anchor="end" class="mono lbl">4</text>
+<text x="752.8" y="65" text-anchor="middle" class="mono">2</text>
+<rect class="hifill" x="772.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M792.8 52 V56 M792.8 74 V78"/>
+<text x="811.8" y="44" text-anchor="end" class="mono lbl">2</text>
+<text x="792.8" y="65" text-anchor="middle" class="mono">1</text>
+<rect class="hifill" x="812.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M832.8 52 V56 M832.8 74 V78"/>
+<text x="832.8" y="65" text-anchor="middle" class="mono">0</text>
+<text x="16" y="128" class="mono">GPIOB-&gt;ODR</text>
+<text x="16" y="143" class="lbl">1 bit per pin</text>
+<text x="213.8" y="113" text-anchor="start" class="mono lbl">31</text>
+<text x="851.8" y="113" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="212.8" y="121" width="320.0" height="26"/>
+<text x="372.8" y="134" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="532.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="552.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="572.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="592.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="612.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="632.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="652.8" y="121" width="20.0" height="26"/>
+<rect class="reg" x="672.8" y="121" width="20.0" height="26"/>
+<rect class="hifill" x="692.8" y="121" width="20.0" height="26"/>
+<text x="702.8" y="113" text-anchor="middle" class="mono lbl">7</text>
+<text x="702.8" y="134" text-anchor="middle" class="mono">7</text>
+<rect class="hifill" x="712.8" y="121" width="20.0" height="26"/>
+<text x="722.8" y="113" text-anchor="middle" class="mono lbl">6</text>
+<text x="722.8" y="134" text-anchor="middle" class="mono">6</text>
+<rect class="hifill" x="732.8" y="121" width="20.0" height="26"/>
+<text x="742.8" y="113" text-anchor="middle" class="mono lbl">5</text>
+<text x="742.8" y="134" text-anchor="middle" class="mono">5</text>
+<rect class="hifill" x="752.8" y="121" width="20.0" height="26"/>
+<text x="762.8" y="113" text-anchor="middle" class="mono lbl">4</text>
+<text x="762.8" y="134" text-anchor="middle" class="mono">4</text>
+<rect class="hifill" x="772.8" y="121" width="20.0" height="26"/>
+<text x="782.8" y="113" text-anchor="middle" class="mono lbl">3</text>
+<text x="782.8" y="134" text-anchor="middle" class="mono">3</text>
+<rect class="hifill" x="792.8" y="121" width="20.0" height="26"/>
+<text x="802.8" y="113" text-anchor="middle" class="mono lbl">2</text>
+<text x="802.8" y="134" text-anchor="middle" class="mono">2</text>
+<rect class="hifill" x="812.8" y="121" width="20.0" height="26"/>
+<text x="822.8" y="113" text-anchor="middle" class="mono lbl">1</text>
+<text x="822.8" y="134" text-anchor="middle" class="mono">1</text>
+<rect class="hifill" x="832.8" y="121" width="20.0" height="26"/>
+<text x="842.8" y="134" text-anchor="middle" class="mono">0</text>
+</svg>

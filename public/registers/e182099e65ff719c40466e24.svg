@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 96" role="img" aria-label="PRIMASK, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">PRIMASK</text>
+<text x="16" y="50" class="lbl">1 = interrupts masked</text>
+<text x="175.4" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="28" width="620.0" height="26"/>
+<text x="484.4" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="794.4" y="28" width="20.0" height="26"/>
+<text x="804.4" y="67" text-anchor="middle" class="mono halo">PM</text>
+</svg>

@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 323" role="img" aria-label="The kernel&#x27;s SysTick: RELOAD = 47 999, one interrupt per ms; LOAD, 32 bits; VAL, 32 bits; ICSR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="415" y="16" text-anchor="middle" class="lbl">The kernel&#x27;s SysTick: RELOAD = 47 999, one interrupt per ms</text>
+<text x="16" y="59" class="mono">LOAD</text>
+<text x="16" y="74" class="lbl">SYST_RVR</text>
+<text x="16" y="89" class="mono lbl">= 0x0000BB7F</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="52" width="160.0" height="26"/>
+<rect class="hifill" x="334.4" y="52" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 52 V56 M794.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M774.4 52 V56 M774.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M754.4 52 V56 M754.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M734.4 52 V56 M734.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M714.4 52 V56 M714.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M694.4 52 V56 M694.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M674.4 52 V56 M674.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M654.4 52 V56 M654.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M634.4 52 V56 M634.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M614.4 52 V56 M614.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M594.4 52 V56 M594.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M574.4 52 V56 M574.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M554.4 52 V56 M554.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M534.4 52 V56 M534.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M514.4 52 V56 M514.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M494.4 52 V56 M494.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M474.4 52 V56 M474.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M454.4 52 V56 M454.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M434.4 52 V56 M434.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M414.4 52 V56 M414.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M394.4 52 V56 M394.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M374.4 52 V56 M374.4 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M354.4 52 V56 M354.4 74 V78"/>
+<text x="335.4" y="44" text-anchor="start" class="mono lbl">23</text>
+<text x="804.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="784.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="764.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="744.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="724.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="704.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="684.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="664.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="644.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="624.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="604.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="584.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="564.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="544.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="524.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="504.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="484.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="464.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="444.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="404.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="574.4" y="91" text-anchor="middle" class="mono halo">RELOAD</text>
+<text x="16" y="145" class="mono">VAL</text>
+<text x="16" y="160" class="lbl">SYST_CVR, counts DOWN</text>
+<text x="175.4" y="130" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="174.4" y="138" width="160.0" height="26"/>
+<text x="254.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="hifill" x="334.4" y="138" width="480.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 138 V142 M794.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M774.4 138 V142 M774.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M754.4 138 V142 M754.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M734.4 138 V142 M734.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M714.4 138 V142 M714.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M694.4 138 V142 M694.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M674.4 138 V142 M674.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M654.4 138 V142 M654.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M634.4 138 V142 M634.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M614.4 138 V142 M614.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M594.4 138 V142 M594.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M574.4 138 V142 M574.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M554.4 138 V142 M554.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M534.4 138 V142 M534.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M514.4 138 V142 M514.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M494.4 138 V142 M494.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M474.4 138 V142 M474.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M454.4 138 V142 M454.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M434.4 138 V142 M434.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M414.4 138 V142 M414.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M394.4 138 V142 M394.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M374.4 138 V142 M374.4 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M354.4 138 V142 M354.4 160 V164"/>
+<text x="335.4" y="130" text-anchor="start" class="mono lbl">23</text>
+<text x="574.4" y="151" text-anchor="middle" class="mono">CURRENT</text>
+<text x="16" y="214" class="mono">ICSR</text>
+<text x="16" y="229" class="lbl">SCB</text>
+<text x="175.4" y="199" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="199" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="574.4" y="207" width="120.0" height="26"/>
+<text x="634.4" y="220" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="374.4" y="207" width="80.0" height="26"/>
+<text x="414.4" y="220" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="314.4" y="207" width="20.0" height="26"/>
+<rect class="dash" x="194.4" y="207" width="40.0" height="26"/>
+<rect class="reg" x="174.4" y="207" width="20.0" height="26"/>
+<rect class="reg" x="234.4" y="207" width="20.0" height="26"/>
+<rect class="reg" x="254.4" y="207" width="20.0" height="26"/>
+<rect class="hifill" x="274.4" y="207" width="20.0" height="26"/>
+<text x="284.4" y="199" text-anchor="middle" class="mono lbl">26</text>
+<rect class="reg" x="294.4" y="207" width="20.0" height="26"/>
+<rect class="reg" x="334.4" y="207" width="20.0" height="26"/>
+<rect class="reg" x="354.4" y="207" width="20.0" height="26"/>
+<rect class="reg" x="454.4" y="207" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.4 207 V211 M554.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M534.4 207 V211 M534.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M514.4 207 V211 M514.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M494.4 207 V211 M494.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M474.4 207 V211 M474.4 229 V233"/>
+<text x="514.4" y="220" text-anchor="middle" class="mono">VECTPENDING</text>
+<rect class="reg" x="694.4" y="207" width="120.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M794.4 207 V211 M794.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M774.4 207 V211 M774.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M754.4 207 V211 M754.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M734.4 207 V211 M734.4 229 V233"/>
+<path class="reg" stroke-width="0.6" d="M714.4 207 V211 M714.4 229 V233"/>
+<text x="754.4" y="220" text-anchor="middle" class="mono">VECTACTIVE</text>
+<path class="dash" d="M184.4 233 L213.9 239"/>
+<path class="dash" d="M244.4 233 L244.4 255"/>
+<path class="dash" d="M264.4 233 L264.4 271"/>
+<path class="dash" d="M284.4 233 L284.4 287"/>
+<path class="dash" d="M344.4 233 L344.4 255"/>
+<path class="dash" d="M364.4 233 L364.4 271"/>
+<text x="213.9" y="246" text-anchor="middle" class="mono halo lbl">NMIPENDSET</text>
+<text x="244.4" y="262" text-anchor="middle" class="mono halo lbl">PENDSVSET</text>
+<text x="264.4" y="278" text-anchor="middle" class="mono halo lbl">PENDSVCLR</text>
+<text x="284.4" y="294" text-anchor="middle" class="mono halo">PENDSTSET</text>
+<text x="304.4" y="246" text-anchor="middle" class="mono halo lbl">PENDSTCLR</text>
+<text x="344.4" y="262" text-anchor="middle" class="mono halo lbl">ISRPREEMPT</text>
+<text x="364.4" y="278" text-anchor="middle" class="mono halo lbl">ISRPENDING</text>
+</svg>

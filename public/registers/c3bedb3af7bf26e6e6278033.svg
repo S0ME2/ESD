@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="877" viewBox="0 0 877 254" role="img" aria-label="SCB-&gt;SCR picks how deep WFI sleeps; PWR-&gt;CR1 picks which deep mode; SCB-&gt;SCR, 32 bits; PWR-&gt;CR1, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="438" y="16" text-anchor="middle" class="lbl">SCB-&gt;SCR picks how deep WFI sleeps; PWR-&gt;CR1 picks which deep mode</text>
+<text x="16" y="59" class="mono">SCB-&gt;SCR</text>
+<text x="16" y="74" class="lbl">0 here: plain Sleep</text>
+<text x="16" y="89" class="mono lbl">= 0x00000000</text>
+<text x="220.2" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="839.2" y="52" width="20.0" height="26"/>
+<rect class="dash" x="779.2" y="52" width="20.0" height="26"/>
+<rect class="dash" x="219.2" y="52" width="540.0" height="26"/>
+<rect class="reg" x="759.2" y="52" width="20.0" height="26"/>
+<text x="769.2" y="44" text-anchor="middle" class="mono lbl">4</text>
+<rect class="hifill" x="799.2" y="52" width="20.0" height="26"/>
+<text x="809.2" y="44" text-anchor="middle" class="mono lbl">2</text>
+<rect class="reg" x="819.2" y="52" width="20.0" height="26"/>
+<text x="829.2" y="44" text-anchor="middle" class="mono lbl">1</text>
+<text x="849.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="829.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="809.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="789.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="769.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="749.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="729.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="709.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="689.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="669.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="649.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="629.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="609.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="589.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="569.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="549.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="529.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="509.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="489.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="469.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="449.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="429.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="409.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="389.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="369.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="349.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="329.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="309.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="289.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="269.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="249.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="229.2" y="65" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M809.2 78 L809.2 100"/>
+<path class="dash" d="M829.2 78 L829.2 116"/>
+<text x="769.2" y="91" text-anchor="middle" class="mono halo lbl">SEVONPEND</text>
+<text x="809.2" y="107" text-anchor="middle" class="mono halo">SLEEPDEEP</text>
+<text x="829.2" y="123" text-anchor="middle" class="mono halo lbl">SLEEPONEXIT</text>
+<text x="16" y="177" class="mono">PWR-&gt;CR1</text>
+<text x="16" y="192" class="lbl">used only when SLEEPDEEP = 1</text>
+<text x="220.2" y="162" text-anchor="start" class="mono lbl">31</text>
+<text x="858.2" y="162" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="759.2" y="170" width="20.0" height="26"/>
+<rect class="dash" x="219.2" y="170" width="520.0" height="26"/>
+<text x="479.2" y="183" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="739.2" y="170" width="20.0" height="26"/>
+<text x="749.2" y="162" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="779.2" y="170" width="20.0" height="26"/>
+<text x="789.2" y="162" text-anchor="middle" class="mono lbl">3</text>
+<rect class="hifill" x="799.2" y="170" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M839.2 170 V174 M839.2 192 V196"/>
+<path class="reg" stroke-width="0.6" d="M819.2 170 V174 M819.2 192 V196"/>
+<text x="800.2" y="162" text-anchor="start" class="mono lbl">2</text>
+<text x="829.2" y="183" text-anchor="middle" class="mono">LPMS</text>
+<path class="dash" d="M789.2 196 L789.2 218"/>
+<text x="749.2" y="209" text-anchor="middle" class="mono halo lbl">FPD_SLP</text>
+<text x="789.2" y="225" text-anchor="middle" class="mono halo lbl">FPD_STOP</text>
+</svg>

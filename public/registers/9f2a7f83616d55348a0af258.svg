@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="805" viewBox="0 0 805 96" role="img" aria-label="GPIOB-&gt;BSRR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">GPIOB-&gt;BSRR</text>
+<text x="16" y="50" class="lbl">leds = 0b00000101</text>
+<text x="16" y="65" class="mono lbl">= 0x00FA0005</text>
+<text x="149.8" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="787.8" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="148.8" y="28" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M288.8 28 V32 M288.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M268.8 28 V32 M268.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M248.8 28 V32 M248.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M228.8 28 V32 M228.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M208.8 28 V32 M208.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M188.8 28 V32 M188.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M168.8 28 V32 M168.8 50 V54"/>
+<text x="307.8" y="20" text-anchor="end" class="mono lbl">24</text>
+<rect class="hifill" x="308.8" y="28" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M448.8 28 V32 M448.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M428.8 28 V32 M428.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M408.8 28 V32 M408.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M388.8 28 V32 M388.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M368.8 28 V32 M368.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M348.8 28 V32 M348.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M328.8 28 V32 M328.8 50 V54"/>
+<text x="467.8" y="20" text-anchor="end" class="mono lbl">16</text>
+<rect class="reg" x="468.8" y="28" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M608.8 28 V32 M608.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M588.8 28 V32 M588.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M568.8 28 V32 M568.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M548.8 28 V32 M548.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M528.8 28 V32 M528.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M508.8 28 V32 M508.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M488.8 28 V32 M488.8 50 V54"/>
+<text x="627.8" y="20" text-anchor="end" class="mono lbl">8</text>
+<rect class="hifill" x="628.8" y="28" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M768.8 28 V32 M768.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M748.8 28 V32 M748.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M728.8 28 V32 M728.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M708.8 28 V32 M708.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M688.8 28 V32 M688.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M668.8 28 V32 M668.8 50 V54"/>
+<path class="reg" stroke-width="0.6" d="M648.8 28 V32 M648.8 50 V54"/>
+<text x="778.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="758.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="738.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="718.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="698.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="678.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="658.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="638.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="618.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="598.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="578.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="558.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="538.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="518.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="498.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="478.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="458.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="438.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="418.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="398.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="378.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="358.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="338.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="318.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="298.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="278.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="258.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="238.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="218.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="198.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="178.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="158.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="388.8" y="67" text-anchor="middle" class="mono halo">BR7..BR0</text>
+<text x="708.8" y="67" text-anchor="middle" class="mono halo">BS7..BS0</text>
+</svg>

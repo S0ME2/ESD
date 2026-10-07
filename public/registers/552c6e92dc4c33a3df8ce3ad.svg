@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" viewBox="0 0 830 206" role="img" aria-label="TIM3-&gt;SR, the two writes: a 0 clears a flag, a 1 leaves it alone; SR, 32 bits; SR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="415" y="16" text-anchor="middle" class="lbl">TIM3-&gt;SR, the two writes: a 0 clears a flag, a 1 leaves it alone</text>
+<text x="16" y="59" class="mono">SR</text>
+<text x="16" y="74" class="lbl">= ~TIM_SR_UIF   right</text>
+<text x="16" y="89" class="mono lbl">= 0xFFFFFFFE</text>
+<text x="175.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="694.4" y="52" width="20.0" height="26"/>
+<rect class="dash" x="634.4" y="52" width="40.0" height="26"/>
+<rect class="dash" x="174.4" y="52" width="380.0" height="26"/>
+<rect class="reg" x="554.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="574.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="594.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="614.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="674.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="714.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="734.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="754.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="774.4" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="794.4" y="52" width="20.0" height="26"/>
+<text x="804.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="784.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="764.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="744.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="724.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="704.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="684.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="664.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="644.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="624.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="604.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="584.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="564.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="544.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="524.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="504.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="484.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="464.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="444.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="424.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="404.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="384.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="364.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="344.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="324.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="304.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="284.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="264.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="244.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="224.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="204.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="184.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="804.4" y="91" text-anchor="middle" class="mono halo">UIF</text>
+<text x="16" y="145" class="mono">SR</text>
+<text x="16" y="160" class="lbl">= TIM_SR_UIF   wrong</text>
+<text x="16" y="175" class="mono lbl">= 0x00000001</text>
+<text x="175.4" y="130" text-anchor="start" class="mono lbl">31</text>
+<text x="813.4" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="694.4" y="138" width="20.0" height="26"/>
+<rect class="dash" x="634.4" y="138" width="40.0" height="26"/>
+<rect class="dash" x="174.4" y="138" width="380.0" height="26"/>
+<rect class="reg" x="554.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="574.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="594.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="614.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="674.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="714.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="734.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="754.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="774.4" y="138" width="20.0" height="26"/>
+<rect class="hifill" x="794.4" y="138" width="20.0" height="26"/>
+<text x="804.4" y="151" text-anchor="middle" class="mono">1</text>
+<text x="784.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="764.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="744.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="724.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="704.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="684.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="664.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="644.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="624.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="604.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="584.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="564.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="544.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="504.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="484.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="464.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="444.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="404.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.4" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="804.4" y="177" text-anchor="middle" class="mono halo">UIF</text>
+</svg>

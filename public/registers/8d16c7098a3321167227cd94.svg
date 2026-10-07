@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="791" viewBox="0 0 791 341" role="img" aria-label="The three RCC registers this lesson uses.  Shaded = a field it writes or polls; IOPENR bits are GPIOxEN, one per port: A B C D F; RCC-&gt;CR, 32 bits; RCC-&gt;IOPENR, 32 bits; RCC-&gt;APBENR1, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="395" y="16" text-anchor="middle" class="lbl">The three RCC registers this lesson uses.  Shaded = a field it writes or polls</text>
+<text x="395" y="34" text-anchor="middle" class="lbl">IOPENR bits are GPIOxEN, one per port: A B C D F</text>
+<text x="16" y="77" class="mono">RCC-&gt;CR</text>
+<text x="16" y="92" class="lbl">0x40021000</text>
+<text x="135.8" y="62" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="62" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="674.8" y="70" width="100.0" height="26"/>
+<text x="724.8" y="83" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="454.8" y="70" width="40.0" height="26"/>
+<rect class="dash" x="134.8" y="70" width="240.0" height="26"/>
+<text x="254.8" y="83" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="374.8" y="70" width="20.0" height="26"/>
+<rect class="reg" x="394.8" y="70" width="20.0" height="26"/>
+<rect class="reg" x="414.8" y="70" width="20.0" height="26"/>
+<rect class="reg" x="434.8" y="70" width="20.0" height="26"/>
+<rect class="hifill" x="494.8" y="70" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M534.8 70 V74 M534.8 92 V96"/>
+<path class="reg" stroke-width="0.6" d="M514.8 70 V74 M514.8 92 V96"/>
+<text x="495.8" y="62" text-anchor="start" class="mono lbl">13</text>
+<text x="553.8" y="62" text-anchor="end" class="mono lbl">11</text>
+<text x="524.8" y="83" text-anchor="middle" class="mono">HSIDIV</text>
+<rect class="hifill" x="554.8" y="70" width="20.0" height="26"/>
+<text x="564.8" y="62" text-anchor="middle" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="70" width="20.0" height="26"/>
+<rect class="reg" x="594.8" y="70" width="20.0" height="26"/>
+<rect class="reg" x="614.8" y="70" width="60.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M654.8 70 V74 M654.8 92 V96"/>
+<path class="reg" stroke-width="0.6" d="M634.8 70 V74 M634.8 92 V96"/>
+<path class="dash" d="M404.8 96 L404.8 118"/>
+<path class="dash" d="M424.8 96 L424.8 134"/>
+<path class="dash" d="M584.8 96 L584.8 118"/>
+<path class="dash" d="M604.8 96 L604.8 134"/>
+<text x="384.8" y="109" text-anchor="middle" class="mono halo lbl">CSSON</text>
+<text x="404.8" y="125" text-anchor="middle" class="mono halo lbl">HSEBYP</text>
+<text x="424.8" y="141" text-anchor="middle" class="mono halo lbl">HSERDY</text>
+<text x="444.8" y="109" text-anchor="middle" class="mono halo lbl">HSEON</text>
+<text x="564.8" y="109" text-anchor="middle" class="mono halo">HSIRDY</text>
+<text x="584.8" y="125" text-anchor="middle" class="mono halo lbl">HSIKERON</text>
+<text x="604.8" y="141" text-anchor="middle" class="mono halo lbl">HSION</text>
+<text x="644.8" y="109" text-anchor="middle" class="mono halo lbl">HSIKERDIV</text>
+<text x="16" y="195" class="mono">RCC-&gt;IOPENR</text>
+<text x="16" y="210" class="lbl">0x40021034</text>
+<text x="135.8" y="180" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="180" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="674.8" y="188" width="20.0" height="26"/>
+<rect class="dash" x="134.8" y="188" width="520.0" height="26"/>
+<text x="394.8" y="201" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="654.8" y="188" width="20.0" height="26"/>
+<text x="664.8" y="180" text-anchor="middle" class="mono lbl">5</text>
+<text x="664.8" y="201" text-anchor="middle" class="mono">F</text>
+<rect class="reg" x="694.8" y="188" width="20.0" height="26"/>
+<text x="704.8" y="180" text-anchor="middle" class="mono lbl">3</text>
+<text x="704.8" y="201" text-anchor="middle" class="mono">D</text>
+<rect class="reg" x="714.8" y="188" width="20.0" height="26"/>
+<text x="724.8" y="180" text-anchor="middle" class="mono lbl">2</text>
+<text x="724.8" y="201" text-anchor="middle" class="mono">C</text>
+<rect class="hifill" x="734.8" y="188" width="20.0" height="26"/>
+<text x="744.8" y="180" text-anchor="middle" class="mono lbl">1</text>
+<text x="744.8" y="201" text-anchor="middle" class="mono">B</text>
+<rect class="hifill" x="754.8" y="188" width="20.0" height="26"/>
+<text x="764.8" y="201" text-anchor="middle" class="mono">A</text>
+<text x="16" y="264" class="mono">RCC-&gt;APBENR1</text>
+<text x="16" y="279" class="lbl">0x4002103C</text>
+<text x="135.8" y="249" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="249" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="754.8" y="257" width="20.0" height="26"/>
+<rect class="dash" x="574.8" y="257" width="160.0" height="26"/>
+<text x="654.8" y="270" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="434.8" y="257" width="100.0" height="26"/>
+<text x="484.8" y="270" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="354.8" y="257" width="60.0" height="26"/>
+<text x="384.8" y="270" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="234.8" y="257" width="100.0" height="26"/>
+<text x="284.8" y="270" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="134.8" y="257" width="60.0" height="26"/>
+<text x="164.8" y="270" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="194.8" y="257" width="20.0" height="26"/>
+<text x="204.8" y="249" text-anchor="middle" class="mono lbl">28</text>
+<rect class="reg" x="214.8" y="257" width="20.0" height="26"/>
+<text x="224.8" y="249" text-anchor="middle" class="mono lbl">27</text>
+<rect class="reg" x="334.8" y="257" width="20.0" height="26"/>
+<text x="344.8" y="249" text-anchor="middle" class="mono lbl">21</text>
+<rect class="hifill" x="414.8" y="257" width="20.0" height="26"/>
+<text x="424.8" y="249" text-anchor="middle" class="mono lbl">17</text>
+<rect class="reg" x="534.8" y="257" width="20.0" height="26"/>
+<text x="544.8" y="249" text-anchor="middle" class="mono lbl">11</text>
+<rect class="reg" x="554.8" y="257" width="20.0" height="26"/>
+<text x="564.8" y="249" text-anchor="middle" class="mono lbl">10</text>
+<rect class="reg" x="734.8" y="257" width="20.0" height="26"/>
+<text x="744.8" y="249" text-anchor="middle" class="mono lbl">1</text>
+<path class="dash" d="M224.8 283 L224.8 305"/>
+<path class="dash" d="M564.8 283 L564.8 305"/>
+<text x="204.8" y="296" text-anchor="middle" class="mono halo lbl">PWREN</text>
+<text x="224.8" y="312" text-anchor="middle" class="mono halo lbl">DBGEN</text>
+<text x="344.8" y="296" text-anchor="middle" class="mono halo lbl">I2C1EN</text>
+<text x="424.8" y="296" text-anchor="middle" class="mono halo">USART2EN</text>
+<text x="544.8" y="296" text-anchor="middle" class="mono halo lbl">WWDGEN</text>
+<text x="564.8" y="312" text-anchor="middle" class="mono halo lbl">RTCAPBEN</text>
+<text x="744.8" y="296" text-anchor="middle" class="mono halo lbl">TIM3EN</text>
+</svg>

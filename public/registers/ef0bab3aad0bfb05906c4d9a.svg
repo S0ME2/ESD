@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="786" viewBox="0 0 786 120" role="img" aria-label="IEEE 754 single precision: value = (-1)^sign x 1.mantissa x 2^(exponent - 127); float, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="393" y="16" text-anchor="middle" class="lbl">IEEE 754 single precision: value = (-1)^sign x 1.mantissa x 2^(exponent - 127)</text>
+<text x="16" y="59" class="mono">float</text>
+<text x="16" y="74" class="lbl">32 bits</text>
+<text x="131.0" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="769.0" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="130.0" y="52" width="20.0" height="26"/>
+<rect class="reg" x="150.0" y="52" width="160.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M290.0 52 V56 M290.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M270.0 52 V56 M270.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M250.0 52 V56 M250.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M230.0 52 V56 M230.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M210.0 52 V56 M210.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M190.0 52 V56 M190.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M170.0 52 V56 M170.0 74 V78"/>
+<text x="151.0" y="44" text-anchor="start" class="mono lbl">30</text>
+<text x="309.0" y="44" text-anchor="end" class="mono lbl">23</text>
+<text x="230.0" y="65" text-anchor="middle" class="mono">exponent</text>
+<rect class="hifill" x="310.0" y="52" width="460.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M750.0 52 V56 M750.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M730.0 52 V56 M730.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M710.0 52 V56 M710.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M690.0 52 V56 M690.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M670.0 52 V56 M670.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M650.0 52 V56 M650.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M630.0 52 V56 M630.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M610.0 52 V56 M610.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M590.0 52 V56 M590.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M570.0 52 V56 M570.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M550.0 52 V56 M550.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M530.0 52 V56 M530.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M510.0 52 V56 M510.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M490.0 52 V56 M490.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M470.0 52 V56 M470.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M450.0 52 V56 M450.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M430.0 52 V56 M430.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M410.0 52 V56 M410.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M390.0 52 V56 M390.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M370.0 52 V56 M370.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M350.0 52 V56 M350.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M330.0 52 V56 M330.0 74 V78"/>
+<text x="540.0" y="65" text-anchor="middle" class="mono">mantissa</text>
+<path class="dash" d="M140.0 78 L145.8 84"/>
+<text x="145.8" y="91" text-anchor="middle" class="mono halo lbl">sign</text>
+</svg>

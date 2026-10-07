@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="901" viewBox="0 0 901 222" role="img" aria-label="DMA1_Channel1 after scan_start(); DMA1_Channel1-&gt;CCR, 32 bits; DMA1_Channel1-&gt;CNDTR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="450" y="16" text-anchor="middle" class="lbl">DMA1_Channel1 after scan_start()</text>
+<text x="16" y="59" class="mono">DMA1_Channel1-&gt;CCR</text>
+<text x="16" y="74" class="lbl">16-bit, MINC, circular, high, on</text>
+<text x="16" y="89" class="mono lbl">= 0x000025A1</text>
+<text x="245.8" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="883.8" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="244.8" y="52" width="340.0" height="26"/>
+<rect class="reg" x="584.8" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="604.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M624.8 52 V56 M624.8 74 V78"/>
+<text x="605.8" y="44" text-anchor="start" class="mono lbl">13</text>
+<text x="643.8" y="44" text-anchor="end" class="mono lbl">12</text>
+<rect class="hifill" x="644.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M664.8 52 V56 M664.8 74 V78"/>
+<text x="683.8" y="44" text-anchor="end" class="mono lbl">10</text>
+<rect class="hifill" x="684.8" y="52" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M704.8 52 V56 M704.8 74 V78"/>
+<text x="723.8" y="44" text-anchor="end" class="mono lbl">8</text>
+<rect class="hifill" x="724.8" y="52" width="20.0" height="26"/>
+<text x="734.8" y="44" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="744.8" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="764.8" y="52" width="20.0" height="26"/>
+<text x="774.8" y="44" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="784.8" y="52" width="20.0" height="26"/>
+<rect class="reg" x="804.8" y="52" width="20.0" height="26"/>
+<rect class="reg" x="824.8" y="52" width="20.0" height="26"/>
+<rect class="reg" x="844.8" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="864.8" y="52" width="20.0" height="26"/>
+<text x="874.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="854.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="834.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="814.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="794.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="774.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="754.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="734.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="714.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="694.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="674.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="654.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="634.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="614.8" y="65" text-anchor="middle" class="mono">1</text>
+<text x="594.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="574.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="554.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="534.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="514.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="494.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="474.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="454.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="434.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="414.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="394.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="374.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="354.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="334.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="314.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="294.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="274.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="254.8" y="65" text-anchor="middle" class="mono lbl">0</text>
+<path class="dash" d="M624.8 78 L624.8 100"/>
+<path class="dash" d="M704.8 78 L704.8 100"/>
+<path class="dash" d="M754.8 78 L754.8 100"/>
+<path class="dash" d="M794.8 78 L794.8 100"/>
+<path class="dash" d="M834.8 78 L834.8 100"/>
+<path class="dash" d="M874.8 78 L874.8 100"/>
+<text x="594.8" y="91" text-anchor="middle" class="mono halo lbl">MEM2MEM</text>
+<text x="624.8" y="107" text-anchor="middle" class="mono halo">PL</text>
+<text x="664.8" y="91" text-anchor="middle" class="mono halo">MSIZE</text>
+<text x="704.8" y="107" text-anchor="middle" class="mono halo">PSIZE</text>
+<text x="734.8" y="91" text-anchor="middle" class="mono halo">MINC</text>
+<text x="754.8" y="107" text-anchor="middle" class="mono halo lbl">PINC</text>
+<text x="774.8" y="91" text-anchor="middle" class="mono halo">CIRC</text>
+<text x="794.8" y="107" text-anchor="middle" class="mono halo lbl">DIR</text>
+<text x="814.8" y="91" text-anchor="middle" class="mono halo lbl">TEIE</text>
+<text x="834.8" y="107" text-anchor="middle" class="mono halo lbl">HTIE</text>
+<text x="854.8" y="91" text-anchor="middle" class="mono halo lbl">TCIE</text>
+<text x="874.8" y="107" text-anchor="middle" class="mono halo">EN</text>
+<text x="16" y="161" class="mono">DMA1_Channel1-&gt;CNDTR</text>
+<text x="16" y="176" class="lbl">transfers left</text>
+<text x="16" y="191" class="mono lbl">= 0x00000003</text>
+<text x="245.8" y="146" text-anchor="start" class="mono lbl">31</text>
+<text x="883.8" y="146" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="244.8" y="154" width="320.0" height="26"/>
+<rect class="hifill" x="564.8" y="154" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M864.8 154 V158 M864.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M844.8 154 V158 M844.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M824.8 154 V158 M824.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M804.8 154 V158 M804.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M784.8 154 V158 M784.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M764.8 154 V158 M764.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M744.8 154 V158 M744.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M724.8 154 V158 M724.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M704.8 154 V158 M704.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M684.8 154 V158 M684.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M664.8 154 V158 M664.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M644.8 154 V158 M644.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M624.8 154 V158 M624.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M604.8 154 V158 M604.8 176 V180"/>
+<path class="reg" stroke-width="0.6" d="M584.8 154 V158 M584.8 176 V180"/>
+<text x="565.8" y="146" text-anchor="start" class="mono lbl">15</text>
+<text x="874.8" y="167" text-anchor="middle" class="mono">1</text>
+<text x="854.8" y="167" text-anchor="middle" class="mono">1</text>
+<text x="834.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="814.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="794.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="774.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="754.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="734.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="714.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="694.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="674.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="654.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="634.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="614.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="594.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="574.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="554.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="534.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="514.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="494.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="474.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="454.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="434.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="414.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="394.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="374.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="354.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="334.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="314.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="294.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="274.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="254.8" y="167" text-anchor="middle" class="mono lbl">0</text>
+<text x="724.8" y="193" text-anchor="middle" class="mono halo">NDT</text>
+</svg>

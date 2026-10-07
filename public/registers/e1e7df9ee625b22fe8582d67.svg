@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="798" viewBox="0 0 798 182" role="img" aria-label="USART2-&gt;ISR, 32 bits; USART2-&gt;ICR, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">USART2-&gt;ISR</text>
+<text x="16" y="50" class="lbl">status, read</text>
+<text x="143.4" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="781.4" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="142.4" y="28" width="80.0" height="26"/>
+<text x="182.4" y="41" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="762.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="742.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="722.4" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="702.4" y="28" width="20.0" height="26"/>
+<text x="712.4" y="20" text-anchor="middle" class="mono lbl">3</text>
+<rect class="reg" x="682.4" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="662.4" y="28" width="20.0" height="26"/>
+<text x="672.4" y="20" text-anchor="middle" class="mono lbl">5</text>
+<rect class="reg" x="642.4" y="28" width="20.0" height="26"/>
+<rect class="hifill" x="622.4" y="28" width="20.0" height="26"/>
+<text x="632.4" y="20" text-anchor="middle" class="mono lbl">7</text>
+<rect class="reg" x="602.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="582.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="562.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="542.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="522.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="502.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="482.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="462.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="442.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="422.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="402.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="382.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="362.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="342.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="322.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="302.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="282.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="262.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="242.4" y="28" width="20.0" height="26"/>
+<rect class="reg" x="222.4" y="28" width="20.0" height="26"/>
+<text x="712.4" y="67" text-anchor="middle" class="mono halo">ORE</text>
+<text x="672.4" y="67" text-anchor="middle" class="mono halo">RXNE</text>
+<text x="632.4" y="67" text-anchor="middle" class="mono halo">TXE</text>
+<text x="16" y="121" class="mono">USART2-&gt;ICR</text>
+<text x="16" y="136" class="lbl">write 1 to clear</text>
+<text x="143.4" y="106" text-anchor="start" class="mono lbl">31</text>
+<text x="781.4" y="106" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="562.4" y="114" width="20.0" height="26"/>
+<rect class="dash" x="442.4" y="114" width="60.0" height="26"/>
+<text x="472.4" y="127" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="382.4" y="114" width="40.0" height="26"/>
+<rect class="dash" x="142.4" y="114" width="220.0" height="26"/>
+<text x="252.4" y="127" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="762.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="742.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="722.4" y="114" width="20.0" height="26"/>
+<rect class="hifill" x="702.4" y="114" width="20.0" height="26"/>
+<text x="712.4" y="106" text-anchor="middle" class="mono lbl">3</text>
+<rect class="reg" x="682.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="662.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="642.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="622.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="602.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="582.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="542.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="522.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="502.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="422.4" y="114" width="20.0" height="26"/>
+<rect class="reg" x="362.4" y="114" width="20.0" height="26"/>
+<text x="712.4" y="153" text-anchor="middle" class="mono halo">ORECF</text>
+</svg>

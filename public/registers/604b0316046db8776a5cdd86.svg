@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="862" viewBox="0 0 862 206" role="img" aria-label="Line n is bit n in every one of them; line 1 is 1u &lt;&lt; 1 = 0x00000002; RTSR1 FTSR1 RPR1 FPR1, 32 bits; IMR1, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="431" y="16" text-anchor="middle" class="lbl">Line n is bit n in every one of them; line 1 is 1u &lt;&lt; 1 = 0x00000002</text>
+<text x="16" y="59" class="mono">RTSR1 FTSR1 RPR1 FPR1</text>
+<text x="16" y="74" class="lbl">the bit the code writes</text>
+<text x="16" y="89" class="mono lbl">= 0x00000002</text>
+<text x="207.4" y="44" text-anchor="start" class="mono lbl">31</text>
+<text x="845.4" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="206.4" y="52" width="320.0" height="26"/>
+<rect class="reg" x="526.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="546.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="566.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="586.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="606.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="626.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="646.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="666.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="686.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="706.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="726.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="746.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="766.4" y="52" width="20.0" height="26"/>
+<rect class="reg" x="786.4" y="52" width="20.0" height="26"/>
+<rect class="hifill" x="806.4" y="52" width="20.0" height="26"/>
+<text x="816.4" y="44" text-anchor="middle" class="mono lbl">1</text>
+<rect class="reg" x="826.4" y="52" width="20.0" height="26"/>
+<text x="836.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="816.4" y="65" text-anchor="middle" class="mono">1</text>
+<text x="796.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="776.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="756.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="736.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="716.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="696.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="676.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="656.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="636.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="616.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="596.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="576.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="556.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="536.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="516.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="496.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="476.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="456.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="436.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="416.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="396.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="376.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="356.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="336.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="316.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="296.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="276.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="256.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="236.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="216.4" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="816.4" y="91" text-anchor="middle" class="mono halo">line 1</text>
+<text x="16" y="145" class="mono">IMR1</text>
+<text x="16" y="160" class="lbl">+ direct lines 19 23 25 31</text>
+<text x="207.4" y="130" text-anchor="start" class="mono lbl">31</text>
+<text x="845.4" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="dash" x="466.4" y="138" width="60.0" height="26"/>
+<text x="496.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="386.4" y="138" width="60.0" height="26"/>
+<text x="416.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="dash" x="346.4" y="138" width="20.0" height="26"/>
+<rect class="dash" x="226.4" y="138" width="100.0" height="26"/>
+<text x="276.4" y="151" text-anchor="middle" class="lbl">reserved</text>
+<rect class="reg" x="206.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="326.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="366.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="446.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="526.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="546.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="566.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="586.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="606.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="626.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="646.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="666.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="686.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="706.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="726.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="746.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="766.4" y="138" width="20.0" height="26"/>
+<rect class="reg" x="786.4" y="138" width="20.0" height="26"/>
+<rect class="hifill" x="806.4" y="138" width="20.0" height="26"/>
+<text x="816.4" y="130" text-anchor="middle" class="mono lbl">1</text>
+<rect class="reg" x="826.4" y="138" width="20.0" height="26"/>
+<text x="816.4" y="177" text-anchor="middle" class="mono halo">line 1</text>
+</svg>

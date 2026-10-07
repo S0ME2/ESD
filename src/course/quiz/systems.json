@@ -1,0 +1,3458 @@
+[
+  {
+    "id": "note-7-0-0",
+    "lesson": 7,
+    "topic": "note-7-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "How does pin n map to IDR, MODER and AFR?",
+    "options": [
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: four bits per pin.",
+      "IDR: bits 2n+1:2n; MODER: bit n; AFR: four bits per pin.",
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: two bits per pin."
+    ],
+    "correct": 0,
+    "explanations": [
+      "IDR bit n reads its level; MODER bits2n+1:2n select mode; AFR uses a four-bit alternate-function number when mode is alternate.",
+      "IDR has one input bit and MODER has two mode bits; this reverses them.",
+      "The IDR and MODER fields are right, but AFR needs four bits for the alternate-function number."
+    ]
+  },
+  {
+    "id": "note-7-1-0",
+    "lesson": 7,
+    "topic": "note-7-1",
+    "topicTitle": "The Job That Never Yields",
+    "question": "Why does the infinite prime search freeze a superloop?",
+    "options": [
+      "The prime calculation disables SysTick automatically.",
+      "It never returns control to the cooperative loop.",
+      "The LED task has a smaller stack than the prime task."
+    ],
+    "correct": 1,
+    "explanations": [
+      "An ordinary calculation does not disable interrupts; the cooperative job never returns.",
+      "It never returns to the cooperative loop, so no other job gets control. Preemption saves its context and allows urgent work to interrupt it.",
+      "Stack size does not give a cooperative task control while another job never yields."
+    ]
+  },
+  {
+    "id": "note-7-2-0",
+    "lesson": 7,
+    "topic": "note-7-2",
+    "topicTitle": "A Task Is a Stack and Nine Numbers",
+    "question": "Why must sp occupy the first TCB field?",
+    "options": [
+      "Assembly expects the saved stack pointer at TCB offset zero.",
+      "The first field is the only field preserved during preemption.",
+      "The CPU requires all stack pointers to be at offset zero."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The assembly reads the saved pointer at TCB offset zero. Reordering the field without changing assembly restores the wrong stack.",
+      "The saved context is on the stack; TCB fields are ordinary persistent memory.",
+      "This is the assembly's layout contract, not a CPU rule for C structures."
+    ]
+  },
+  {
+    "id": "note-7-3-0",
+    "lesson": 7,
+    "topic": "note-7-3",
+    "topicTitle": "The Core's Own Registers — All on One Page",
+    "question": "How are core special registers accessed?",
+    "options": [
+      "Read and write them through volatile memory addresses.",
+      "Use LDR to read and STR to write every core register.",
+      "MRS to read; MSR to write."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Special core registers use instructions, unlike memory-mapped peripherals.",
+      "LDR/STR access memory; MRS/MSR access these special registers.",
+      "Use MRS to read and MSR to write special core registers, usually through CMSIS wrappers. They have no memory-map address."
+    ]
+  },
+  {
+    "id": "note-7-4-0",
+    "lesson": 7,
+    "topic": "note-7-4",
+    "topicTitle": "Two Stack Pointers",
+    "question": "Which stack stores handler locals and which stores an interrupted task frame?",
+    "options": [
+      "Handler locals use PSP; the task frame uses MSP.",
+      "Locals: MSP; interrupted PSP task frame: PSP.",
+      "Handler locals and the interrupted task frame both use MSP."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Handler mode uses MSP; this reverses the two roles.",
+      "Handler locals use MSP. Hardware stacks the interrupted task frame on PSP when that task was using PSP.",
+      "A task using PSP has its exception frame pushed on PSP before the handler uses MSP."
+    ]
+  },
+  {
+    "id": "note-7-5-0",
+    "lesson": 7,
+    "topic": "note-7-5",
+    "topicTitle": "The System Control Block — Every Register on One Page",
+    "question": "Why assign an ICSR action mask rather than read-modify-write it?",
+    "options": [
+      "Read-modify-write can repeat other write-one actions.",
+      "Assignment clears every action bit omitted from the mask.",
+      "A read-modify-write is required to preserve all pending bits."
+    ],
+    "correct": 0,
+    "explanations": [
+      "ICSR contains write-one action bits. Reading and writing back other set bits can request unrelated actions, so write only the desired mask.",
+      "Omitted write-one action bits receive zero, which does not request their actions.",
+      "Writing back action bits can request actions; these are not ordinary stored settings."
+    ]
+  },
+  {
+    "id": "note-7-6-0",
+    "lesson": 7,
+    "topic": "note-7-6",
+    "topicTitle": "PendSV — an Exception You Pend Yourself",
+    "question": "Why defer a task switch requested by a UART ISR?",
+    "options": [
+      "Wait until UART disables all future interrupts.",
+      "Switch immediately inside UART before returning from the ISR.",
+      "Finish the UART handler before switching task context."
+    ],
+    "correct": 2,
+    "explanations": [
+      "PendSV waits for active handlers; permanently disabling UART is unnecessary.",
+      "The handler still runs above the interrupted task and must finish before its context changes.",
+      "The UART handler must finish on MSP before the task underneath it changes. Lowest-priority PendSV waits for active handlers to complete, then restores the task context."
+    ]
+  },
+  {
+    "id": "note-7-7-0",
+    "lesson": 7,
+    "topic": "note-7-7",
+    "topicTitle": "The Switch, Drawn",
+    "question": "How many bytes of register context does a paused task need?",
+    "options": [
+      "32 bytes, because hardware saves eight words.",
+      "64 bytes for registers, plus space for locals.",
+      "128 bytes, because each saved register uses eight bytes."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Software also saves eight words, bringing register context to 64 bytes.",
+      "Sixteen 32-bit registers occupy 64 bytes: eight hardware-saved and eight software-saved words. Task locals need additional stack space.",
+      "Registers here are 32-bit words, four bytes each."
+    ]
+  },
+  {
+    "id": "note-7-8-0",
+    "lesson": 7,
+    "topic": "note-7-8",
+    "topicTitle": "The Switch, as Compiled",
+    "question": "Why skip the outgoing save on the first switch?",
+    "options": [
+      "Saving main would overwrite the interrupt vector table.",
+      "The first switch needs no incoming context either.",
+      "No kernel task has run, so os_current is null."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The reason is the absence of an outgoing kernel task, not vector-table overlap.",
+      "A new task still needs its fabricated incoming frame restored.",
+      "No kernel task has run yet, so os_current is null. Main has no outgoing task PSP context to save."
+    ]
+  },
+  {
+    "id": "note-7-9-0",
+    "lesson": 7,
+    "topic": "note-7-9",
+    "topicTitle": "Why `r8`–`r11` Go the Long Way Round",
+    "question": "Why must high registers be restored before low registers?",
+    "options": [
+      "Low registers must be restored first to provide addresses.",
+      "High registers are not saved on Thumb-1.",
+      "High registers temporarily travel through r4–r7."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Here r4–r7 carry temporary high-register values; restoring them early would lose their real values.",
+      "They are saved through low-register carriers because STM/LDM cannot list them directly.",
+      "High registers travel through r4–r7. Restore r8–r11 first, then restore the true r4–r7 values after those temporary copies are finished."
+    ]
+  },
+  {
+    "id": "note-7-10-0",
+    "lesson": 7,
+    "topic": "note-7-10",
+    "topicTitle": "The First Switch — Forging a Frame",
+    "question": "Where does a new task receive its first argument?",
+    "options": [
+      "In the stacked r1 slot.",
+      "In the TCB name pointer.",
+      "In the r0 slot."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The calling convention puts the first argument in r0; r1 is the second argument register.",
+      "The name is metadata; exception return restores r0 as the function argument.",
+      "Put the argument in the forged hardware frame's r0 slot. That matches AAPCS first-argument passing."
+    ]
+  },
+  {
+    "id": "note-7-11-0",
+    "lesson": 7,
+    "topic": "note-7-11",
+    "topicTitle": "Who Runs Next",
+    "question": "Why does starting the scan after current rotate equal-priority tasks?",
+    "options": [
+      "The first equal-priority task after current wins.",
+      "The scan always chooses the lowest array index.",
+      "Equal-priority tasks receive higher priorities each tick."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The first equal-priority candidate after current wins, and only a strictly greater priority replaces it. Starting after the next current task rotates the choice.",
+      "Starting after current changes the first index visited and prevents that bias.",
+      "Their priorities stay equal; scan order rotates the first eligible candidate."
+    ]
+  },
+  {
+    "id": "note-7-12-0",
+    "lesson": 7,
+    "topic": "note-7-12",
+    "topicTitle": "The Tick, and Sleeping",
+    "question": "Why use delay_until instead of a delay after finishing periodic work?",
+    "options": [
+      "It waits a full period after every completion.",
+      "It makes each task's computation take a fixed duration.",
+      "It keeps deadlines on a fixed grid without work-time drift."
+    ],
+    "correct": 2,
+    "explanations": [
+      "That relative waiting rule adds work duration and causes drift.",
+      "It fixes release deadlines, not the duration of computation.",
+      "An absolute deadline advances from the previous deadline, keeping a fixed grid. Delaying after completion instead accumulates work duration as drift."
+    ]
+  },
+  {
+    "id": "note-7-13-0",
+    "lesson": 7,
+    "topic": "note-7-13",
+    "topicTitle": "Measured — a Hog That Does Not Hurt",
+    "question": "How can bar show zero CPU percentage and still meet deadlines?",
+    "options": [
+      "The hog voluntarily yields every time the bar is due.",
+      "Tick samples miss its short, timely bursts.",
+      "Zero percent proves the bar never actually ran."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The hog never yields; priority preemption gives the bar CPU time.",
+      "Tick sampling can miss its very short bursts, rounding usage to zero. Higher task priority still lets those bursts preempt the hog on schedule.",
+      "Sampled profiling can miss short executions; zero is not proof of no work."
+    ]
+  },
+  {
+    "id": "note-7-14-0",
+    "lesson": 7,
+    "topic": "note-7-14",
+    "topicTitle": "Sharing — the Mutex",
+    "question": "Why use a mutex for long task resource ownership but masking for bookkeeping?",
+    "options": [
+      "A mutex masks interrupts until its owner releases it.",
+      "Mutexes block contenders; brief masks protect kernel state.",
+      "Mask interrupts for the entire serial report to avoid contention."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A mutex blocks competing tasks while allowing unrelated interrupts and work.",
+      "A mutex makes only contenders sleep during long ownership. Interrupt masking briefly protects kernel state but would freeze the system if held for the entire long operation.",
+      "Long masking prevents timely service; use bounded bookkeeping masks and task ownership."
+    ]
+  },
+  {
+    "id": "note-7-15-0",
+    "lesson": 7,
+    "topic": "note-7-15",
+    "topicTitle": "Priority Inversion",
+    "question": "How can Mid block High without using High's mutex?",
+    "options": [
+      "Mid preempts Low and delays Low releasing the mutex.",
+      "Mid secretly acquires High's mutex too.",
+      "High loses its original priority when it requests a mutex."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Mid preempts Low, preventing the mutex owner from finishing. High then waits indirectly for Mid even though Mid never uses that resource.",
+      "Mid delays High indirectly by preventing Low, the actual owner, from finishing.",
+      "High blocks waiting for ownership; its dependency on Low causes the inversion."
+    ]
+  },
+  {
+    "id": "note-7-16-0",
+    "lesson": 7,
+    "topic": "note-7-16",
+    "topicTitle": "Priority Inheritance — Measured",
+    "question": "What priority changes occur on contention and unlock?",
+    "options": [
+      "Keep the inherited priority permanently after unlock.",
+      "Raise the waiter and leave the owner's priority unchanged.",
+      "Boost owner to waiter priority; restore base on unlock."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This implementation restores base priority on unlock; permanent boosting distorts scheduling.",
+      "The owner must run to release the mutex, so it receives the waiter's urgency.",
+      "On contention the owner borrows the waiting task's higher priority. This one-mutex implementation restores base_prio when the owner unlocks; nested ownership needs fuller accounting."
+    ]
+  },
+  {
+    "id": "note-7-17-0",
+    "lesson": 7,
+    "topic": "note-7-17",
+    "topicTitle": "Queues — Data Between Tasks, and From Interrupts",
+    "question": "What should an ISR do when its destination queue is full?",
+    "options": [
+      "Fail immediately under the defined loss policy.",
+      "Overwrite the oldest byte without reporting any loss.",
+      "Sleep in the ISR until a consumer frees a slot."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Return failure immediately and apply a defined loss/error policy. An ISR cannot sleep waiting for queue capacity.",
+      "Silent loss can corrupt messages; overflow needs a defined policy and observable failure.",
+      "An ISR cannot use a blocking task operation; it must finish promptly."
+    ]
+  },
+  {
+    "id": "note-7-18-0",
+    "lesson": 7,
+    "topic": "note-7-18",
+    "topicTitle": "Sizing a Stack — the High-Water Mark",
+    "question": "Convert 115 stack words to bytes and explain why margin remains necessary.",
+    "options": [
+      "115 bytes; one stack word is one byte.",
+      "460 bytes is a guaranteed maximum for every future run.",
+      "460 bytes; reserve margin for unexercised paths."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Each stack word is four bytes, so 115 words occupy 460 bytes.",
+      "High-water evidence covers exercised paths, so additional margin remains necessary.",
+      "115 words × 4 bytes = 460 bytes. Reserve margin because unexercised paths and deeper nesting can exceed the observed high-water mark."
+    ]
+  },
+  {
+    "id": "note-7-19-0",
+    "lesson": 7,
+    "topic": "note-7-19",
+    "topicTitle": "When It Is Too Small — Measured",
+    "question": "Why did the too-small stack corrupt primes without crashing?",
+    "options": [
+      "Overflow wrote into valid RAM containing primes.",
+      "Any stack overflow must immediately generate HardFault.",
+      "The prime algorithm changed because its priority was too low."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Memory below the report stack was ordinary writable RAM containing primes. Without a guard, its nineteen excess words silently overwrote another task's data.",
+      "Without a guard, writes can land in valid RAM and silently corrupt data.",
+      "The observed corruption came from overlapping stack writes, not scheduling priority."
+    ]
+  },
+  {
+    "id": "note-7-20-0",
+    "lesson": 7,
+    "topic": "note-7-20",
+    "topicTitle": "A HardFault That Says Where",
+    "question": "Which saved value should addr2line use after a normal instruction fault?",
+    "options": [
+      "Frame word 6, stacked pc, with the matching ELF.",
+      "Use frame word 5, the stacked lr, for every ordinary fault.",
+      "Use the current handler pc instead of the stacked pc."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Use the hardware frame's word 6, the stacked pc, with the matching ELF. If pc is an invalid target, inspect stacked lr as well.",
+      "Word 6 holds pc; lr is useful especially when pc is an invalid branch target.",
+      "The handler pc identifies the reporter, not interrupted execution."
+    ]
+  },
+  {
+    "id": "note-7-21-0",
+    "lesson": 7,
+    "topic": "note-7-21",
+    "topicTitle": "What You Built, and What a Real RTOS Adds",
+    "question": "What extra context may an M4F switch need?",
+    "options": [
+      "Floating-point register state when the task uses the FPU.",
+      "Only the same integer frame; an FPU changes no task state.",
+      "Always save all GPIO registers as floating-point context."
+    ],
+    "correct": 0,
+    "explanations": [
+      "An M4F may need floating-point register state in addition to the integer context. The required extra frame depends on FPU use.",
+      "Floating-point registers can hold task state and require preservation when used.",
+      "GPIO is shared peripheral state, not the FPU register context."
+    ]
+  },
+  {
+    "id": "note-7-22-0",
+    "lesson": 7,
+    "topic": "note-7-22",
+    "topicTitle": "How the Measurements Were Made",
+    "question": "Why choose __builtin_trap instead of an unaligned access for the emulator fault test?",
+    "options": [
+      "The trap tests a real stack overflow automatically.",
+      "Unaligned access is guaranteed to fault in every emulator.",
+      "UDF faults in both; the emulator accepts that load."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It deliberately emits an undefined instruction; it does not create an overflow.",
+      "Renode accepts this access, so it is not a reliable common trigger.",
+      "Renode accepts the unaligned load that ARMv6-M silicon rejects. __builtin_trap emits a deliberate undefined instruction that faults in both environments."
+    ]
+  },
+  {
+    "id": "note-8-0-0",
+    "lesson": 8,
+    "topic": "note-8-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "How does pin n map to IDR, MODER and AFR?",
+    "options": [
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: four bits per pin.",
+      "IDR: bits 2n+1:2n; MODER: bit n; AFR: four bits per pin.",
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: two bits per pin."
+    ],
+    "correct": 0,
+    "explanations": [
+      "IDR bit n reads its level; MODER bits2n+1:2n select mode; AFR uses a four-bit alternate-function number when mode is alternate.",
+      "IDR has one input bit and MODER has two mode bits; this reverses them.",
+      "The IDR and MODER fields are right, but AFR needs four bits for the alternate-function number."
+    ]
+  },
+  {
+    "id": "note-8-1-0",
+    "lesson": 8,
+    "topic": "note-8-1",
+    "topicTitle": "The Model, Fourth Instance",
+    "question": "Which registers carry received and outgoing UART bytes?",
+    "options": [
+      "Read RDR; write TDR.",
+      "Reading RDR clears TXE.",
+      "Read TDR and write RDR."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Read RDR for incoming data and write TDR for outgoing data. Those operations clear RXNE and TXE respectively.",
+      "RDR read clears receive availability; TDR write affects transmit availability.",
+      "TDR transmits and RDR receives; this reverses their directions."
+    ]
+  },
+  {
+    "id": "note-8-2-0",
+    "lesson": 8,
+    "topic": "note-8-2",
+    "topicTitle": "Clock Gate, Pins, Baud Rate",
+    "question": "Calculate baud for 48 MHz divided by BRR417.",
+    "options": [
+      "115200 baud exactly.",
+      "417 baud.",
+      "About 115108 baud."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The integer divisor 417 gives about 115108, not exactly the requested rate.",
+      "BRR is a clock divisor; divide the 48 MHz clock by it.",
+      "48000000/417 is about 115108 baud, 0.08% below 115200. Small mismatch is tolerated because each start bit resynchronizes reception."
+    ]
+  },
+  {
+    "id": "note-8-3-0",
+    "lesson": 8,
+    "topic": "note-8-3",
+    "topicTitle": "One Byte on the Wire",
+    "question": "How long does a 90-character 8N1 line take at 115200?",
+    "options": [
+      "78.1 ms, counting 100 bits per character.",
+      "6.25 ms, counting only eight data bits per character.",
+      "About 7.81 ms for 900 bit periods."
+    ],
+    "correct": 2,
+    "explanations": [
+      "8N1 takes ten bits per byte, not one hundred.",
+      "8N1 adds start and stop bits, making ten bits per character.",
+      "Ninety bytes require 900 bit-times in 8N1. 900/115200 is about 7.81 ms."
+    ]
+  },
+  {
+    "id": "note-8-4-0",
+    "lesson": 8,
+    "topic": "note-8-4",
+    "topicTitle": "Why Receive Must Be an Interrupt",
+    "question": "Which deadline does the 64-byte queue relax?",
+    "options": [
+      "The queue removes every receive deadline.",
+      "The parser task deadline, not the ISR byte deadline.",
+      "The ISR can ignore RDR for 5.5 ms."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A finite queue can fill, and hardware still requires timely service.",
+      "It relaxes the protocol task's service deadline to roughly 5.5 ms of burst accumulation. The ISR must still read hardware within about 86.8 microseconds per byte.",
+      "Software buffering helps the task only after the ISR collects each hardware byte."
+    ]
+  },
+  {
+    "id": "note-8-5-0",
+    "lesson": 8,
+    "topic": "note-8-5",
+    "topicTitle": "One Interrupt, Three Jobs",
+    "question": "How do rx_overruns and rx_dropped differ?",
+    "options": [
+      "Overrun: hardware loss; drop: software queue full.",
+      "Overrun is a checksum error; drop is a bad command.",
+      "Both mean the queue was full before hardware read."
+    ],
+    "correct": 0,
+    "explanations": [
+      "An overrun means hardware lost a byte before RDR was serviced. A drop means the ISR read a byte but the software queue was full.",
+      "These counters describe byte loss at different layers, not parser validation.",
+      "Overrun happens in hardware; drop happens after an ISR read when software storage is full."
+    ]
+  },
+  {
+    "id": "note-8-6-0",
+    "lesson": 8,
+    "topic": "note-8-6",
+    "topicTitle": "Transmit — a Lock-Free Ring",
+    "question": "Why must data be stored before head advances?",
+    "options": [
+      "Write ordering is irrelevant because the producer is a task.",
+      "Head signals that the stored data is ready to consume.",
+      "Advance head first so the ISR can reserve the slot."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The ISR can interrupt the task between the two writes, exposing unfinished data.",
+      "The ISR treats an advanced head as proof that data is ready. Publishing the index first could make it send an uninitialized slot.",
+      "The consumer interprets published head as ready data and may read it immediately."
+    ]
+  },
+  {
+    "id": "note-8-7-0",
+    "lesson": 8,
+    "topic": "note-8-7",
+    "topicTitle": "`TXEIE` — On Only While There Is Work",
+    "question": "Why can an empty TX ring cause an interrupt storm?",
+    "options": [
+      "An empty ring makes RXNE repeatedly assert.",
+      "TXE stays asserted while empty and TXEIE stays enabled.",
+      "TXE clears automatically when software has no work."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The storm comes from an enabled transmit-empty interrupt, not receive data.",
+      "TXE remains set whenever hardware is empty. If TXEIE remains enabled with no queued work, the higher-priority ISR continuously reenters and starves task producers.",
+      "TXE describes empty hardware, independent of the software ring."
+    ]
+  },
+  {
+    "id": "note-8-8-0",
+    "lesson": 8,
+    "topic": "note-8-8",
+    "topicTitle": "Replacing `printf`'s Back End — Weak Again",
+    "question": "How does a strong _write replace the library's polled backend?",
+    "options": [
+      "Both _write implementations run for each printf.",
+      "The strong _write wins weak-symbol resolution.",
+      "The entire C library must be removed."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Symbol resolution chooses the strong definition; it does not call both.",
+      "The linker selects the strong uart.c definition over the weak retarget definition. Other syscall stubs remain linked normally.",
+      "A strong override replaces this weak backend while other library and syscall code remains."
+    ]
+  },
+  {
+    "id": "note-8-9-0",
+    "lesson": 8,
+    "topic": "note-8-9",
+    "topicTitle": "Two Tasks, One Serial Port",
+    "question": "Why lock formatting as well as outgoing characters?",
+    "options": [
+      "Lock only the checksum byte to preserve frame boundaries.",
+      "It protects frame boundaries and shared formatter state.",
+      "A character-level lock also makes the formatter reentrant."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Other parts of concurrent frames can still interleave; the whole call needs ownership.",
+      "Whole-call locking protects both complete frame boundaries and newlib-nano's shared nonreentrant formatter state. It also serializes multiple ring producers.",
+      "Formatting has shared state before characters reach the output lock."
+    ]
+  },
+  {
+    "id": "note-8-10-0",
+    "lesson": 8,
+    "topic": "note-8-10",
+    "topicTitle": "Lines — for People and for Programs",
+    "question": "Why reject an entire overlong command instead of processing its prefix?",
+    "options": [
+      "Execute the valid-looking prefix and ignore the suffix.",
+      "The truncated prefix could execute a different command.",
+      "Increase the length counter without bounding storage."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The suffix may change meaning; accepting a truncation can execute the wrong command.",
+      "A truncated prefix may be a different valid command. Whole-line rejection prevents partial input from changing state.",
+      "Unbounded input can write outside the buffer; reject the whole overlong line."
+    ]
+  },
+  {
+    "id": "note-8-11-0",
+    "lesson": 8,
+    "topic": "note-8-11",
+    "topicTitle": "The Frame — Borrowed From GPS",
+    "question": "What corruption can XOR fail to detect?",
+    "options": [
+      "A valid XOR proves the sender's identity.",
+      "Equal bit flips in different bytes can cancel.",
+      "XOR detects every two-bit error."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Anyone can recompute this unkeyed checksum after changing a message.",
+      "Two flips in the same bit position of different bytes cancel. XOR also cannot detect an attacker who changes the body and recomputes its checksum.",
+      "Equal bit flips in two different bytes cancel in XOR."
+    ]
+  },
+  {
+    "id": "note-8-12-0",
+    "lesson": 8,
+    "topic": "note-8-12",
+    "topicTitle": "Measured — a Session",
+    "question": "What should a missing-star frame do to the LED state?",
+    "options": [
+      "Apply the LED field, then send NAK for missing star.",
+      "Reject the frame and leave LED state unchanged.",
+      "Treat the absent checksum as zero and continue."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Validation must finish before outputs change; rejection should preserve LED state.",
+      "Reject it, for example with NAK,NOSTAR, and leave the LED state unchanged. Only a complete validated command may change outputs.",
+      "A missing checksum is an incomplete frame, not an implicit valid checksum."
+    ]
+  },
+  {
+    "id": "note-8-13-0",
+    "lesson": 8,
+    "topic": "note-8-13",
+    "topicTitle": "`host.py` — the Other End",
+    "question": "Why is offline file parsing needed for browser Wokwi?",
+    "options": [
+      "Offline parsing supplies hardware flow control.",
+      "Browser UART is confined; captured text can be parsed.",
+      "A local script can always open the browser's UART directly."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It analyzes captured printable records; it does not control the original serial link.",
+      "Browser Wokwi confines serial access to the browser. Printable captured text can be copied into a file and parsed by a local host program.",
+      "Browser confinement prevents that direct local serial path."
+    ]
+  },
+  {
+    "id": "note-8-14-0",
+    "lesson": 8,
+    "topic": "note-8-14",
+    "topicTitle": "Measured — `host.py` Reads the Board",
+    "question": "Can one corrupted telemetry line increment both bad and lost counts?",
+    "options": [
+      "Yes: a rejected record can later cause a sequence gap.",
+      "No; bad and lost must describe disjoint events.",
+      "Yes; every valid telemetry line must count as bad first."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Yes. Checksum rejection counts the record as bad, and its missing valid sequence later creates a gap.",
+      "One rejected sequence record can count as bad now and cause a valid-sequence gap later.",
+      "Only rejection and a resulting missing sequence cause those counters."
+    ]
+  },
+  {
+    "id": "note-8-15-0",
+    "lesson": 8,
+    "topic": "note-8-15",
+    "topicTitle": "The Silent-Failure Checklist, UART Edition",
+    "question": "Reception stops after first overrun: what action may be missing?",
+    "options": [
+      "Disable all receive checking permanently.",
+      "Clear ORE via ICR.ORECF.",
+      "Read RDR repeatedly; it always clears ORE."
+    ],
+    "correct": 1,
+    "explanations": [
+      "That hides the problem; clear the flag and continue servicing receive data.",
+      "Write ORECF in ICR to clear the overrun flag, and service pending receive data. Reading RDR alone does not clear ORE.",
+      "ORE needs its documented ORECF write in ICR; RDR alone is insufficient."
+    ]
+  },
+  {
+    "id": "note-8-16-0",
+    "lesson": 8,
+    "topic": "note-8-16",
+    "topicTitle": "What Carries Forward",
+    "question": "Which validation rule survives a switch to DMA?",
+    "options": [
+      "Trust every DMA buffer because DMA validates checksums.",
+      "Validate complete messages before applying fields.",
+      "Apply each field as soon as its first byte arrives."
+    ],
+    "correct": 1,
+    "explanations": [
+      "DMA transports bytes; message validation remains software's responsibility.",
+      "Validate a complete message and integrity before applying fields. Faster transport does not prove data correctness.",
+      "A partial message may later fail length or integrity checks."
+    ]
+  },
+  {
+    "id": "note-9-0-0",
+    "lesson": 9,
+    "topic": "note-9-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "How does pin n map to IDR, MODER and AFR?",
+    "options": [
+      "IDR: bits 2n+1:2n; MODER: bit n; AFR: four bits per pin.",
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: two bits per pin.",
+      "IDR: bit n; MODER: bits 2n+1:2n; AFR: four bits per pin."
+    ],
+    "correct": 2,
+    "explanations": [
+      "IDR has one input bit and MODER has two mode bits; this reverses them.",
+      "The IDR and MODER fields are right, but AFR needs four bits for the alternate-function number.",
+      "IDR bit n reads its level; MODER bits2n+1:2n select mode; AFR uses a four-bit alternate-function number when mode is alternate."
+    ]
+  },
+  {
+    "id": "note-9-1-0",
+    "lesson": 9,
+    "topic": "note-9-1",
+    "topicTitle": "Three Doors, One Model",
+    "question": "Which bus fits a plain voltage rather than encoded registers?",
+    "options": [
+      "ADC, for converting the analog voltage.",
+      "Use I2C because every sensor signal is a byte.",
+      "Use SPI MOSI as a voltage-measurement input."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A plain voltage belongs on an ADC input. I2C and SPI exchange bytes with external devices.",
+      "A plain voltage is analog and requires conversion before byte protocols apply.",
+      "SPI exchanges timed digital bits; an ADC estimates voltage."
+    ]
+  },
+  {
+    "id": "note-9-2-0",
+    "lesson": 9,
+    "topic": "note-9-2",
+    "topicTitle": "The ADC — a Voltage Becomes a Number",
+    "question": "Convert code2048 with VDDA3300 mV.",
+    "options": [
+      "Approximately 1650 mV.",
+      "3300 mV because code 2048 is the maximum.",
+      "825 mV because code 2048 is one quarter scale."
+    ],
+    "correct": 0,
+    "explanations": [
+      "2048×3300/4095 is approximately 1650 mV. This assumes VDDA really is 3300 mV.",
+      "A 12-bit ADC's maximum code is 4095, so 2048 is approximately half scale.",
+      "2048/4095 is approximately one half, not one quarter."
+    ]
+  },
+  {
+    "id": "note-9-3-0",
+    "lesson": 9,
+    "topic": "note-9-3",
+    "topicTitle": "The ADC — Every Register on One Page",
+    "question": "What changes when CHSELRMOD changes?",
+    "options": [
+      "CHSELR becomes sequence slots instead of a mask.",
+      "It swaps the ADC reference voltage.",
+      "It changes ADC resolution from 12 bits to 8 bits."
+    ],
+    "correct": 0,
+    "explanations": [
+      "CHSELRMOD=0 interprets CHSELR as a channel bitmask. Setting it reinterprets the register as eight four-bit sequence slots.",
+      "The mode controls mask versus sequence fields, not the reference.",
+      "CHSELRMOD changes channel-selection interpretation, not conversion resolution."
+    ]
+  },
+  {
+    "id": "note-9-4-0",
+    "lesson": 9,
+    "topic": "note-9-4",
+    "topicTitle": "A Start-Up Sequence You Must Follow",
+    "question": "Why must ADC clock configuration precede enabling?",
+    "options": [
+      "CKMODE may change only while the ADC is disabled.",
+      "Enabling first automatically selects the best clock.",
+      "CKMODE may be changed while conversions run."
+    ],
+    "correct": 0,
+    "explanations": [
+      "CKMODE can change only while ADC is disabled. Select it before enabling and starting conversions.",
+      "The intended clock mode must be configured explicitly before enable.",
+      "The configuration requires the ADC disabled; set it before enabling."
+    ]
+  },
+  {
+    "id": "note-9-5-0",
+    "lesson": 9,
+    "topic": "note-9-5",
+    "topicTitle": "Choosing a Channel — and Waiting for It",
+    "question": "Why is missing CCRDY a silent wrong-data risk?",
+    "options": [
+      "It may convert the previous channel instead.",
+      "A missing ready wait always produces a visible bus fault.",
+      "CCRDY only reports UART readiness."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Selection settles asynchronously. Starting early can return a plausible conversion of the previous input rather than a visible error.",
+      "An old channel can produce a plausible code without an exception.",
+      "This ADC flag reports completion of channel-selection configuration."
+    ]
+  },
+  {
+    "id": "note-9-6-0",
+    "lesson": 9,
+    "topic": "note-9-6",
+    "topicTitle": "3.3 V Is a Guess — Measure It",
+    "question": "Why does lower VREFINT code imply higher supply?",
+    "options": [
+      "The fixed voltage becomes a smaller fraction of VDDA.",
+      "ADC code is directly proportional to VDDA for fixed VREFINT.",
+      "The internal reference voltage rises when supply rises."
+    ],
+    "correct": 0,
+    "explanations": [
+      "VREFINT is fixed while ADC reference is VDDA. A larger VDDA makes that same internal voltage a smaller ADC fraction, so its code falls.",
+      "For a fixed input and changing reference, the fraction is inversely related.",
+      "VREFINT stays nominally fixed; its ratio to VDDA decreases."
+    ]
+  },
+  {
+    "id": "note-9-7-0",
+    "lesson": 9,
+    "topic": "note-9-7",
+    "topicTitle": "I²C — Two Wires, Many Chips",
+    "question": "Why are I2C pins open drain?",
+    "options": [
+      "Pull-ups are unnecessary because released pins drive high.",
+      "Drive low or release; pull-ups provide high.",
+      "Each participant actively drives high and low."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Release is not a high drive; external pull-ups establish high.",
+      "Every participant can pull low or release. Pull-ups establish high without conflicting actively driven output levels on shared wires.",
+      "Shared open-drain participants pull low or release; active-high driving risks contention."
+    ]
+  },
+  {
+    "id": "note-9-8-0",
+    "lesson": 9,
+    "topic": "note-9-8",
+    "topicTitle": "Reading a Register — One Transaction, Two Directions",
+    "question": "Why not insert STOP between register index and data read?",
+    "options": [
+      "STOP guarantees no other controller can access the bus.",
+      "Repeated START retains ownership across direction change.",
+      "Repeated START resets the sensor's selected register."
+    ],
+    "correct": 1,
+    "explanations": [
+      "STOP releases ownership, allowing another controller to intervene.",
+      "Repeated START retains bus ownership while changing direction. STOP could let another controller intervene between index selection and data read.",
+      "It changes transfer direction while retaining the register-read transaction."
+    ]
+  },
+  {
+    "id": "note-9-9-0",
+    "lesson": 9,
+    "topic": "note-9-9",
+    "topicTitle": "The I²C Block — Every Register on One Page",
+    "question": "Which I2C setup register can change only with PE clear?",
+    "options": [
+      "Change RXDR to select the I2C clock rate.",
+      "Change TIMINGR while CR1.PE remains set.",
+      "TIMINGR."
+    ],
+    "correct": 2,
+    "explanations": [
+      "RXDR contains received data, not timing settings.",
+      "The required setup clears PE before changing timing.",
+      "TIMINGR must be changed with CR1.PE cleared. Reenable only after timing configuration is ready."
+    ]
+  },
+  {
+    "id": "note-9-10-0",
+    "lesson": 9,
+    "topic": "note-9-10",
+    "topicTitle": "The C0's I²C Block Does the Bit-Banging",
+    "question": "Why does the final eight-byte phase set AUTOEND?",
+    "options": [
+      "It causes another START after every received byte.",
+      "Issue STOP after the final eight bytes.",
+      "It stops after the index byte before the read."
+    ],
+    "correct": 1,
+    "explanations": [
+      "AUTOEND ends the configured final byte count with STOP.",
+      "It asks hardware to issue STOP after the eight-byte final phase. The preceding index-write phase must keep ownership for repeated START.",
+      "The index phase must preserve ownership; AUTOEND belongs on the final read phase."
+    ]
+  },
+  {
+    "id": "note-9-11-0",
+    "lesson": 9,
+    "topic": "note-9-11",
+    "topicTitle": "When Nobody Answers",
+    "question": "Why send STOP even after failed addressing?",
+    "options": [
+      "A NACK always releases the bus without cleanup.",
+      "Keep ownership indefinitely to preserve the register index.",
+      "Release ownership so the next transaction can begin."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Error paths must ensure STOP and relinquish ownership rather than assuming success cleanup.",
+      "A failed transaction should release the bus so later work can start.",
+      "A failed transaction must still relinquish the bus. Missing STOP can leave the next START unable to begin."
+    ]
+  },
+  {
+    "id": "note-9-12-0",
+    "lesson": 9,
+    "topic": "note-9-12",
+    "topicTitle": "The MPU6050",
+    "question": "Interpret accel bytes C0 00 at default sensitivity.",
+    "options": [
+      "+3 g because 0xC000 is unsigned 49152.",
+      "-16384 counts, or -1 g at 16384 counts/g.",
+      "-0.5 g because sensitivity is 32768 counts/g."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The signed 16-bit conversion is -16384, which corresponds to -1 g.",
+      "C0 00 combines to 0xC000; cast to int16_t it is -16384. At 16384 counts/g this is -1 g.",
+      "The specified default sensitivity is 16384 counts/g."
+    ]
+  },
+  {
+    "id": "note-9-13-0",
+    "lesson": 9,
+    "topic": "note-9-13",
+    "topicTitle": "SPI — Select, Then Shift",
+    "question": "Does successful SPI transmit prove MAX7219 is present?",
+    "options": [
+      "Yes; SPI always returns a device identity on MOSI.",
+      "Yes; TXE is an acknowledgment from MAX7219.",
+      "No; MAX7219 returns no ACK or identity."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This write-only connection has no identity or acknowledgment response.",
+      "TXE describes MCU transmit-buffer room, not a response from the display.",
+      "No. This interface has no acknowledgment or returned identity, so the MCU can finish sending into disconnected wires."
+    ]
+  },
+  {
+    "id": "note-9-14-0",
+    "lesson": 9,
+    "topic": "note-9-14",
+    "topicTitle": "The SPI Block — Every Register on One Page",
+    "question": "Why wait BSY after TXE or RXNE?",
+    "options": [
+      "TXE guarantees every final bit has left the pin.",
+      "TXE is buffer room; BSY clear is wire completion.",
+      "Raise CS immediately after writing DR."
+    ],
+    "correct": 1,
+    "explanations": [
+      "TXE means buffer room; the shift operation can still be busy.",
+      "TXE means buffer room, not wire completion. BSY clear ensures the final bits left before raising CS to latch the command.",
+      "That can latch before the whole command has shifted; wait for wire completion."
+    ]
+  },
+  {
+    "id": "note-9-15-0",
+    "lesson": 9,
+    "topic": "note-9-15",
+    "topicTitle": "The C0's SPI Block",
+    "question": "Why does the pointer width used for DR matter?",
+    "options": [
+      "Access width selects packing; use sixteen bits here.",
+      "Any volatile pointer width sends the same frame.",
+      "A 32-bit access is always faster and equally safe."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The SPI packs data according to access width. A volatile 16-bit write selects the intended sixteen-bit frame rather than extra data from a 32-bit access.",
+      "Access width affects SPI packing; volatile does not choose the required width.",
+      "It can supply unintended extra data; use the intended 16-bit access."
+    ]
+  },
+  {
+    "id": "note-9-16-0",
+    "lesson": 9,
+    "topic": "note-9-16",
+    "topicTitle": "The MAX7219",
+    "question": "Which MAX7219 register leaves power-up shutdown?",
+    "options": [
+      "Set intensity only; shutdown clears automatically.",
+      "Register 0x0C with data 1.",
+      "Write register 0x0C with zero."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Intensity does not replace the explicit shutdown register setting.",
+      "Write register 0x0C with 1 to leave shutdown. Also verify scan limit, decode and display-test settings.",
+      "Zero selects shutdown; one leaves it."
+    ]
+  },
+  {
+    "id": "note-9-17-0",
+    "lesson": 9,
+    "topic": "note-9-17",
+    "topicTitle": "A Ball, in Integers",
+    "question": "Why keep fractional positions for an integer-pixel display?",
+    "options": [
+      "Use fractional coordinates only when drawing pixels.",
+      "Fractions accumulate before drawing rounds positions.",
+      "Round every small motion to zero before accumulation."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Preserve fractions in simulation state; round when selecting display pixels.",
+      "Small accelerations can accumulate as fractional motion instead of being truncated to zero on every tick. Only drawing needs whole-pixel coordinates.",
+      "That permanently loses fractional motion on each update."
+    ]
+  },
+  {
+    "id": "note-9-18-0",
+    "lesson": 9,
+    "topic": "note-9-18",
+    "topicTitle": "One Bus, Two Tasks",
+    "question": "Why use a mutex for transactions and masking for a sample copy?",
+    "options": [
+      "Mask all interrupts throughout every I2C transaction.",
+      "A mutex alone makes a multiword sample copy atomic against an ISR.",
+      "Mutex for bus ownership; brief mask for coherent copy."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Long polling ownership would delay unrelated deadlines; use a mutex for transactions.",
+      "An ISR may still update the sample; protect the tiny copy appropriately.",
+      "A transaction owns the bus for hundreds of microseconds, so contenders should block on a mutex. A tiny sample copy can mask interrupts briefly to prevent tearing."
+    ]
+  },
+  {
+    "id": "note-9-19-0",
+    "lesson": 9,
+    "topic": "note-9-19",
+    "topicTitle": "The Silent-Failure Checklist, Bus Edition",
+    "question": "Which failures can produce plausible data instead of an obvious hang?",
+    "options": [
+      "Only a hung bus can return wrong data.",
+      "Calibration bias, stale channel, or sleeping IMU zeros.",
+      "Every successful ACK proves calibrated sensor data."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Wrong calibration, stale channel selection and sleeping sensors can return plausible data.",
+      "Missing calibration biases values; skipped CCRDY may read the old channel; a sleeping IMU can ACK while returning zeros. Plausibility is not proof of correct setup.",
+      "ACK proves one bus stage, not correct calibration or wake state."
+    ]
+  },
+  {
+    "id": "note-9-20-0",
+    "lesson": 9,
+    "topic": "note-9-20",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "What does a substituted IMU identity read prove?",
+    "options": [
+      "It proves the MAX7219 received and displayed SPI output.",
+      "It validates the MPU6050's acceleration scale.",
+      "The modeled combined I2C transport path only."
+    ],
+    "correct": 2,
+    "explanations": [
+      "An I2C identity read supplies no evidence about the separate SPI device.",
+      "A substituted identity tests transport, not the absent sensor's interpretation.",
+      "It proves the generic combined I2C write/repeated-START/read path works in that model. It does not validate MPU6050 interpretation or MAX7219 output."
+    ]
+  },
+  {
+    "id": "note-9-21-0",
+    "lesson": 9,
+    "topic": "note-9-21",
+    "topicTitle": "What Carries Forward",
+    "question": "Estimate CPU waiting for 250 µs reads at 50 Hz.",
+    "options": [
+      "0.0125% CPU.",
+      "12.5% CPU.",
+      "1.25% CPU."
+    ],
+    "correct": 2,
+    "explanations": [
+      "12500 microseconds is 0.0125 seconds; multiply the fraction by 100 for percent.",
+      "250 microseconds times 50 is 12500 microseconds, 1.25% of one second.",
+      "250 microseconds × 50 = 12500 microseconds per second, or 1.25% CPU if continuously polled."
+    ]
+  },
+  {
+    "id": "note-10-0-0",
+    "lesson": 10,
+    "topic": "note-10-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "Which pins belong to analog inputs, UART and I2C in this experiment?",
+    "options": [
+      "PA0/1/4 AF1 UART; PA2/3 analog; PB8/9 AF6 OLED; PA5 LD4; PB4/5 buttons; PA6/PB3 unused analog.",
+      "PA0/1/4 analog; PA2/3 AF1 UART; PB8/9 AF1 OLED; PA5 LD4; PB4/5 buttons; PA6/PB3 unused analog.",
+      "PA0/1/4 analog; PA2/3 AF1 UART; PB8/9 AF6 I2C; PA5 LD4; PB4/5 buttons; PA6/PB3 unused analog."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The analog and UART roles are swapped: PA0/PA1/PA4 are analog inputs; PA2/PA3 use AF1 UART.",
+      "PB8/PB9 use AF6 for the I2C OLED connection, not AF1.",
+      "PA0/PA1/PA4 analog X/Y/knob; PA2/PA3 AF1 UART; PB8/PB9 AF6 I2C OLED; PA5 output LD4; PB4/PB5 inputs arena/DMA buttons; PA6 and PB3 unused analog reset."
+    ]
+  },
+  {
+    "id": "note-10-1-0",
+    "lesson": 10,
+    "topic": "note-10-1",
+    "topicTitle": "The Arena",
+    "question": "Why return a checksum from a benchmark?",
+    "options": [
+      "It measures elapsed time directly.",
+      "It forces every arithmetic operation into floating point.",
+      "Make results observable and compare arithmetic checksums."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A checksum makes results observable and comparable; timing is measured separately.",
+      "The checksum can observe either fixed-point or floating-point results.",
+      "It makes the computed results observable, preventing dead-code elimination. It also lets independent executions compare arithmetic results."
+    ]
+  },
+  {
+    "id": "note-10-2-0",
+    "lesson": 10,
+    "topic": "note-10-2",
+    "topicTitle": "The Same C, Two CPUs",
+    "question": "Why does identical float C become calls on M0+ but instructions on M4F?",
+    "options": [
+      "M0+ and M4F have the same FPU, but different clocks.",
+      "C float always means one hardware instruction on every ARM core.",
+      "M4F has hardware float instructions; M0+ uses software helpers."
+    ],
+    "correct": 2,
+    "explanations": [
+      "M0+ lacks an FPU; hardware availability changes emitted operations.",
+      "The compiler uses software helpers when the target lacks the needed hardware.",
+      "M4F has an FPU instruction set, while M0+ lacks one. Its compiler therefore implements float operations with soft-float library calls."
+    ]
+  },
+  {
+    "id": "note-10-3-0",
+    "lesson": 10,
+    "topic": "note-10-3",
+    "topicTitle": "What `__aeabi_fmul` Has to Do",
+    "question": "Why is software float multiply more than one integer MULS?",
+    "options": [
+      "Unpack, wide multiply, normalize, round and repack.",
+      "A float multiply only needs to add its mantissas.",
+      "MULS directly handles IEEE754 exponent and rounding."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It must unpack IEEE754 fields, handle exceptional values, compute a 48-bit mantissa product, normalize, round and repack. A single MULS provides only a low 32-bit integer product.",
+      "Mantissas multiply, exponents combine, and normalization/rounding are also required.",
+      "MULS is an integer product instruction, so software must implement floating-point rules."
+    ]
+  },
+  {
+    "id": "note-10-4-0",
+    "lesson": 10,
+    "topic": "note-10-4",
+    "topicTitle": "Fixed Point — an Integer With an Agreed Binary Point",
+    "question": "Represent 0.5 in Q15 and Q16.16.",
+    "options": [
+      "Q15: 16384; Q16.16: 32768.",
+      "Q15: 8192; Q16.16: 16384.",
+      "Q15: 32768; Q16.16: 65536."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Q15 stores 0.5 as 16384; Q16.16 stores it as 32768. Each is half its format's raw unit scale.",
+      "Those raw values represent one quarter, not one half.",
+      "Those are full unit scales; half a unit uses half those integers."
+    ]
+  },
+  {
+    "id": "note-10-5-0",
+    "lesson": 10,
+    "topic": "note-10-5",
+    "topicTitle": "The Arithmetic Rules",
+    "question": "Why does Q16.16 multiplication need a 64-bit intermediate?",
+    "options": [
+      "The raw product is Q32.32; widen, then shift sixteen bits.",
+      "The result needs a 128-bit product because each operand is 64-bit.",
+      "A 32-bit product can be shifted first to recover lost high bits."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Two raw Q16.16 values produce Q32.32, requiring a 64-bit product. Shifting that wide result sixteen bits restores the intended binary point.",
+      "The raw operands are 32-bit and produce a 64-bit Q32.32 intermediate.",
+      "Overflow loses product bits before shifting; widen before multiplication."
+    ]
+  },
+  {
+    "id": "note-10-6-0",
+    "lesson": 10,
+    "topic": "note-10-6",
+    "topicTitle": "Q15 Multiply, on the Chip",
+    "question": "Why can the compiler remove Q15 multiplication's lower saturation test?",
+    "options": [
+      "Q15 multiplication can never overflow either endpoint.",
+      "Negative products can go below -1 even with valid Q15 operands.",
+      "Valid Q15 products cannot go below -1; +1 still needs clamping."
+    ],
+    "correct": 2,
+    "explanations": [
+      "-1 times -1 is +1, which exceeds signed Q15's positive endpoint.",
+      "Operands in the Q15 range bound their product below by -1.",
+      "A valid Q15-by-Q15 product cannot be less than -1. Only the +1 result from -1×-1 exceeds the positive endpoint."
+    ]
+  },
+  {
+    "id": "note-10-7-0",
+    "lesson": 10,
+    "topic": "note-10-7",
+    "topicTitle": "Q16.16 Multiply Needs 64 Bits",
+    "question": "Which product bits matter when rescaling a Q16.16 multiplication?",
+    "options": [
+      "Only the highest 16 product bits determine all fractional detail.",
+      "The middle 32 bits of the 64-bit product after shifting sixteen.",
+      "Only the lowest 32 product bits are needed."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The rescaled 32-bit result contains both integer and fractional bits.",
+      "After shifting away sixteen fractional bits, the middle 32 product bits form the rescaled raw result. Low-only MULS is insufficient.",
+      "Rescaling shifts away 16 bits, so needed middle bits extend beyond a low-only product."
+    ]
+  },
+  {
+    "id": "note-10-8-0",
+    "lesson": 10,
+    "topic": "note-10-8",
+    "topicTitle": "Rounding — Truncation Drifts",
+    "question": "Why can truncation produce integrator drift even with small per-step error?",
+    "options": [
+      "Integrator error depends only on the final display rounding.",
+      "Repeated arithmetic-shift bias accumulates in the state.",
+      "Every rounding error is random and cancels exactly."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Repeated arithmetic inside the state update changes the state itself.",
+      "Arithmetic shifts have a negative error bias near half an LSB per product. Repetition inside a filter or integrator accumulates that bias instead of averaging it away.",
+      "Truncation can have a systematic negative bias that accumulates."
+    ]
+  },
+  {
+    "id": "note-10-9-0",
+    "lesson": 10,
+    "topic": "note-10-9",
+    "topicTitle": "Overflow — Saturate, Don't Wrap",
+    "question": "Why is saturation preferable to a wrapped motor demand?",
+    "options": [
+      "Saturation restores the exact value after overflow.",
+      "Wrap preserves demand direction while saturation reverses it.",
+      "Clamping preserves direction; wrap can reverse it."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Clamping loses magnitude accuracy while preserving bounded direction.",
+      "Signed wrap can reverse sign; saturation clamps to a limiting endpoint.",
+      "Wrap can reverse sign, turning forward demand into reverse. Saturation still loses accuracy but preserves the limiting direction."
+    ]
+  },
+  {
+    "id": "note-10-10-0",
+    "lesson": 10,
+    "topic": "note-10-10",
+    "topicTitle": "Guard Bits — Why the FIR's Accumulator Is Safe",
+    "question": "Why does a unity-sum positive FIR fit where an arbitrary 16-tap FIR may not?",
+    "options": [
+      "Every 16-tap filter has the same accumulator bound.",
+      "Positive unity-sum coefficients amplify by sixteen.",
+      "Their total positive weight bounds output by input."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Coefficient signs and magnitudes control the sum's bound, not tap count alone.",
+      "Their total weight is one, so the output stays within the input magnitude bound.",
+      "Positive coefficients summing to one bound output by the largest input magnitude. Arbitrary coefficients can make the sum far larger and require guard bits or a wider accumulator."
+    ]
+  },
+  {
+    "id": "note-10-11-0",
+    "lesson": 10,
+    "topic": "note-10-11",
+    "topicTitle": "Division — No Instruction at All",
+    "question": "Why can Q16.16 division be slower than float division?",
+    "options": [
+      "Its scaled numerator needs a general 64-bit division helper.",
+      "Fixed-point division never needs rescaling.",
+      "Every fixed-point divide is one hardware instruction on M0+."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Scaled fixed-point division uses a 64-bit numerator and general 64-bit helper. Its measured model cost can exceed the soft-float divide helper.",
+      "Its numerator must be scaled to produce the intended output format.",
+      "Scaled wide division requires a helper on this core."
+    ]
+  },
+  {
+    "id": "note-10-12-0",
+    "lesson": 10,
+    "topic": "note-10-12",
+    "topicTitle": "Sine, Three Ways",
+    "question": "Why does binary-angle representation avoid explicit range reduction?",
+    "options": [
+      "65536 units per turn match uint16_t wraparound.",
+      "The angle's integer value never overflows.",
+      "The representation eliminates the need for sine interpolation."
+    ],
+    "correct": 0,
+    "explanations": [
+      "A full turn is exactly 65536 units, so uint16_t overflow wraps automatically. Quadrants and table fractions come directly from angle bits.",
+      "Unsigned 16-bit overflow is the mechanism that wraps one full turn.",
+      "It simplifies wrapping and quadrant selection, while lookup/interpolation may still be required."
+    ]
+  },
+  {
+    "id": "note-10-13-0",
+    "lesson": 10,
+    "topic": "note-10-13",
+    "topicTitle": "Measuring Cycles — SysTick as a Stopwatch",
+    "question": "Why mask the elapsed difference and bound benchmark duration?",
+    "options": [
+      "Handle one wrap; exclude ambiguous extra full wraps.",
+      "Subtract without masking because SysTick never wraps.",
+      "Masking can recover any number of missed wraps."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The 24-bit downcounter wraps, so masking computes modular elapsed cycles. Durations spanning a whole extra wrap cannot be distinguished and must be avoided.",
+      "The 24-bit counter wraps; modular masking handles one bounded interval.",
+      "Extra whole wraps are indistinguishable; bound the measurement duration."
+    ]
+  },
+  {
+    "id": "note-10-14-0",
+    "lesson": 10,
+    "topic": "note-10-14",
+    "topicTitle": "The Overhead You Must Subtract",
+    "question": "How do fn0 subtraction and baseline subtraction differ?",
+    "options": [
+      "Both remove exactly the same repeated loop costs.",
+      "fn(0): fixed overhead; baseline: per-iteration overhead.",
+      "Baseline subtraction removes all algorithm arithmetic."
+    ],
+    "correct": 1,
+    "explanations": [
+      "fn(0) removes fixed overhead; baseline removes per-iteration loop/load costs.",
+      "fn(0) subtraction removes fixed call/read overhead. Baseline subtraction removes repeated loop/index/load overhead per iteration.",
+      "Its purpose is overhead removal, not subtracting the workload being measured."
+    ]
+  },
+  {
+    "id": "note-10-15-0",
+    "lesson": 10,
+    "topic": "note-10-15",
+    "topicTitle": "A Second Witness — the M0+ Model",
+    "question": "What strengthens the cycle model beyond simply counting instructions?",
+    "options": [
+      "Actual ELF execution plus independent host checksums.",
+      "Instruction counts alone prove all arithmetic correct.",
+      "Matching one workload proves every workload matches."
+    ],
+    "correct": 0,
+    "explanations": [
+      "It runs the actual ELF and checks result checksums against independent host C. Matching 21 of 22 workloads tests arithmetic execution as well as instruction timing accounting.",
+      "Running actual ELF and comparing independent checksums tests execution as well.",
+      "The evidence is workload-specific: 21 of 22 matched, leaving an exception."
+    ]
+  },
+  {
+    "id": "note-10-16-0",
+    "lesson": 10,
+    "topic": "note-10-16",
+    "topicTitle": "The Leaderboard",
+    "question": "Why is PI's fixed-point speedup smaller than sine's?",
+    "options": [
+      "Sine is slower because a lookup repeats float range reduction.",
+      "Fixed-point PI eliminates every wide multiply.",
+      "PI retains wide arithmetic; table sine removes more work."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The fixed-point table removes most of that range-reduction/polynomial work.",
+      "PI still performs wide arithmetic; table sine replaces much more expensive computation.",
+      "Q16.16 PI still needs several wide multiplies and saturating arithmetic. Q15 table sine replaces costly range reduction and polynomial work almost entirely."
+    ]
+  },
+  {
+    "id": "note-10-17-0",
+    "lesson": 10,
+    "topic": "note-10-17",
+    "topicTitle": "What Each Format Costs in Flash",
+    "question": "Why must flashcost measurements be repeated after code changes?",
+    "options": [
+      "Helper sizes depend only on the number of source lines.",
+      "A helper's cost is unchanged for every toolchain and link.",
+      "The final link changes helper inclusion and sharing."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Final symbol inclusion and sharing determine footprint.",
+      "Different code/toolchain/link decisions can change both total size and attribution.",
+      "Helpers are included and shared according to the final linked code. Code or toolchain changes can alter both totals and attribution."
+    ]
+  },
+  {
+    "id": "note-10-18-0",
+    "lesson": 10,
+    "topic": "note-10-18",
+    "topicTitle": "When Float Is Fine",
+    "question": "Calculate CPU share for the float PI at 500 Hz.",
+    "options": [
+      "0.016% CPU, using only 784 cycles per second.",
+      "8.2% CPU.",
+      "About 0.82%: 784*500/48000000*100."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The controller runs 500 times per second, so multiply cost by its rate.",
+      "392000/48000000 is about 0.00817; in percent this is about 0.82%.",
+      "784×500=392000 cycles/s. Dividing by 48000000 gives about 0.82% CPU."
+    ]
+  },
+  {
+    "id": "note-10-19-0",
+    "lesson": 10,
+    "topic": "note-10-19",
+    "topicTitle": "Accuracy Against Cost",
+    "question": "Why can a PI's error exceed one LSB although individual multiplies are accurately rounded?",
+    "options": [
+      "One-LSB operation error is a strict bound on the entire repeated controller.",
+      "Correctly rounded products make all constants exact.",
+      "Quantized gains and time-step constants introduce repeated approximation."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Repeated state updates and coefficient approximation can exceed a single-operation error bound.",
+      "Constants such as dt can already be quantized before multiplication.",
+      "Its constants, such as dt=0.01, are quantized too. Repeated use of approximated gains/time steps can dominate individual operation rounding error."
+    ]
+  },
+  {
+    "id": "note-10-20-0",
+    "lesson": 10,
+    "topic": "note-10-20",
+    "topicTitle": "DMA — a Second Bus Master",
+    "question": "What role does DMAMUX play between ADC and DMA?",
+    "options": [
+      "It stores samples instead of the DMA destination buffer.",
+      "It performs the ADC conversion itself.",
+      "Route a peripheral request to the chosen DMA channel."
+    ],
+    "correct": 2,
+    "explanations": [
+      "DMAMUX selects request routing, not sample storage.",
+      "ADC converts; DMAMUX routes the resulting request to DMA.",
+      "It routes a selected peripheral request to a DMA channel. Without the correct mapping, valid channel configuration may never receive a trigger."
+    ]
+  },
+  {
+    "id": "note-10-21-0",
+    "lesson": 10,
+    "topic": "note-10-21",
+    "topicTitle": "DMA and DMAMUX — Every Register on One Page",
+    "question": "Which four channel registers describe how, how many, from and to?",
+    "options": [
+      "CCR is count; CNDTR is destination; CMAR is mode.",
+      "CPAR always holds the CPU's current instruction address.",
+      "CCR: mode; CNDTR: count; CPAR: source; CMAR: destination."
+    ],
+    "correct": 2,
+    "explanations": [
+      "CCR holds configuration, CNDTR count, and CMAR memory address.",
+      "CPAR specifies the peripheral/source address for this transfer.",
+      "CCR specifies how; CNDTR how many; CPAR from the peripheral/source; CMAR to memory. ISR/IFCR report and clear common flags."
+    ]
+  },
+  {
+    "id": "note-10-22-0",
+    "lesson": 10,
+    "topic": "note-10-22",
+    "topicTitle": "The DMAMUX — Which Request, Which Channel",
+    "question": "Which DMAMUX selector feeds DMA1 channel1 for ADC1?",
+    "options": [
+      "DMAMUX1_Channel0, request 5.",
+      "DMAMUX1_Channel0 with request ID 0.",
+      "DMAMUX1_Channel1 with request ID 1."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Use DMAMUX1_Channel0 with request ID 5 for ADC1. It feeds DMA1_Channel1 because the numbering is offset by one.",
+      "The channel is correct but request 0 is not the configured ADC1 request.",
+      "DMA channel 1 is fed by DMAMUX channel 0; ADC1 request is 5."
+    ]
+  },
+  {
+    "id": "note-10-23-0",
+    "lesson": 10,
+    "topic": "note-10-23",
+    "topicTitle": "One DMA Channel, Four Registers",
+    "question": "Why enable MINC but leave PINC clear for ADC scanning?",
+    "options": [
+      "Enable both increments to read successive ADC registers.",
+      "Enable PINC and disable MINC.",
+      "Increment RAM slots but keep the ADC DR address fixed."
+    ],
+    "correct": 2,
+    "explanations": [
+      "ADC results all arrive in the same DR register; only RAM slots advance.",
+      "That walks away from DR while repeatedly overwriting one RAM slot.",
+      "Each result comes from the same DR address, but must land in successive RAM slots. MINC steps RAM; PINC would incorrectly move the source register address."
+    ]
+  },
+  {
+    "id": "note-10-24-0",
+    "lesson": 10,
+    "topic": "note-10-24",
+    "topicTitle": "The ADC — Every Register on One Page",
+    "question": "Who should read ADC DR while a DMA scan owns it?",
+    "options": [
+      "CPU should read DR to verify every DMA write.",
+      "CPU and DMA should alternate DR reads without coordination.",
+      "DMA alone consumes DR; CPU reads the scan buffer."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Use the DMA buffer and completion/ownership rules instead of stealing hardware reads.",
+      "They race to consume hardware results and can disrupt sample ordering.",
+      "DMA alone should read DR while it owns acquisition. CPU readers consume scan_buf rather than racing for hardware results."
+    ]
+  },
+  {
+    "id": "note-10-25-0",
+    "lesson": 10,
+    "topic": "note-10-25",
+    "topicTitle": "The ADC Side — Scan, Continuous, DMA",
+    "question": "Determine the three scan-buffer channels and full-scan period.",
+    "options": [
+      "IN0, IN1, IN4; about 21.6 microseconds per scan.",
+      "IN4, IN1, IN0; about 64.8 microseconds per scan.",
+      "IN0, IN1, IN2; about 7.21 microseconds per full scan."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Ascending scan channels are IN0, IN1 and IN4: X, Y and knob. Three conversions at 7.21 microseconds give about 21.6 microseconds per scan.",
+      "The specified scan is ascending and takes three times 7.21 microseconds.",
+      "The selected channels are 0,1,4; three conversions form one scan."
+    ]
+  },
+  {
+    "id": "note-10-26-0",
+    "lesson": 10,
+    "topic": "note-10-26",
+    "topicTitle": "Trust, But Watch — the Stuck-DMA Detector",
+    "question": "Why choose 0xFFFF rather than zero as an initial ADC buffer value?",
+    "options": [
+      "0xFFFF is the largest legal 12-bit result.",
+      "Zero cannot ever be a legal ADC result.",
+      "It is outside the legal twelve-bit range."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Legal 12-bit results end at 4095; the out-of-range sentinel exposes writes.",
+      "Zero is a valid lower-end sample, so unchanged zero does not prove motion.",
+      "0xFFFF is outside a twelve-bit ADC's legal 0–4095 result range. A changed sentinel demonstrates actual writes; zero could be a legitimate sample."
+    ]
+  },
+  {
+    "id": "note-10-27-0",
+    "lesson": 10,
+    "topic": "note-10-27",
+    "topicTitle": "Memory to Memory — and a Surprise in `memcpy`",
+    "question": "Why can DMA use CPAR for a RAM source?",
+    "options": [
+      "Memory-to-memory mode allows RAM in CPAR.",
+      "RAM-source mode disables both address increments.",
+      "CPAR can only point inside the peripheral region."
+    ],
+    "correct": 0,
+    "explanations": [
+      "In memory-to-memory mode the source need not be a peripheral despite the CPAR name. Configure both address increments and proper word widths.",
+      "Copying a block requires appropriate increments and widths at both ends.",
+      "Memory-to-memory mode permits a RAM source despite the register name."
+    ]
+  },
+  {
+    "id": "note-10-28-0",
+    "lesson": 10,
+    "topic": "note-10-28",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Which DMA claims are predicted rather than measured?",
+    "options": [
+      "A configured request ID proves the destination changed.",
+      "Every calculated scan time is a measured Wokwi result.",
+      "Request/register setup and the calculated scan rate."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Configuration rules establish expectation, while completion and changed buffers establish transfer.",
+      "The unsupported model has not demonstrated actual DMA motion.",
+      "Request IDs, register values and the calculated scan rate come from configuration rules. Actual DMA motion has not been observed in the unsupported Wokwi model."
+    ]
+  },
+  {
+    "id": "note-10-29-0",
+    "lesson": 10,
+    "topic": "note-10-29",
+    "topicTitle": "What Carries Forward",
+    "question": "Which four fixed-point safeguards matter for a high-rate filter?",
+    "options": [
+      "Round only the final output and assume accumulator range.",
+      "Fit range, round, saturate and bound accumulator growth.",
+      "Use narrow intermediates and wrap to minimize instructions."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Intermediate rescaling bias and accumulator overflow also need explicit safeguards.",
+      "Choose a range that fits, round rescaling, saturate overflow and prove accumulator guard-bit bounds. Then measure cost and accuracy at the required rate.",
+      "That risks lost product bits and sign-changing overflow; range and accuracy matter."
+    ]
+  },
+  {
+    "id": "note-11-0-0",
+    "lesson": 11,
+    "topic": "note-11-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "Which pins belong to analog inputs, UART and I2C in this experiment?",
+    "options": [
+      "PA0/1/4 AF1 UART; PA2/3 analog; PB8/9 AF6 OLED; PA5 heartbeat; PB4/5/PB3 buttons; PA6 unused analog.",
+      "PA0/1/4 analog; PA2/3 AF1 UART; PB8/9 AF6 OLED; PA5 heartbeat; PB4/5/PB3 buttons; PA6 unused analog.",
+      "PA0/1/4 analog; PA2/3 AF1 UART; PB8/9 AF1 OLED; PA5 heartbeat; PB4/5/PB3 buttons; PA6 unused analog."
+    ],
+    "correct": 1,
+    "explanations": [
+      "They are analog pad/knob inputs; UART uses PA2/PA3.",
+      "PA0/PA1/PA4 analog pad/knob; PA2/PA3 AF1 UART; PB8/PB9 AF6 OLED; PA5 output heartbeat; PB4/PB5 inputs select/run and PB3 input stick select; PA6 unused analog buzzer.",
+      "The OLED connection on PB8/PB9 uses AF6, not AF1; the other listed pin roles match this experiment."
+    ]
+  },
+  {
+    "id": "note-11-1-0",
+    "lesson": 11,
+    "topic": "note-11-1",
+    "topicTitle": "The Crash Lab",
+    "question": "Why do some deliberate bugs avoid HardFault?",
+    "options": [
+      "Valid mapped accesses and software operations may return.",
+      "HardFault automatically detects all task starvation.",
+      "Every C-language error raises a hardware exception."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Mapped flash reads, ordinary writable-RAM overflow and software division can return without a core fault. Hangs and starvation require watchdog policy rather than relying on exceptions.",
+      "Starvation requires a progress/watchdog rule, not just exception handling.",
+      "Mapped accesses and software operations may return; hangs can produce no exception."
+    ]
+  },
+  {
+    "id": "note-11-2-0",
+    "lesson": 11,
+    "topic": "note-11-2",
+    "topicTitle": "What the Core Does When Something Goes Wrong",
+    "question": "Which registers need saving beyond the hardware fault frame?",
+    "options": [
+      "Save only r0–r3 because hardware omits them.",
+      "Save only pc and discard operand registers.",
+      "r4–r11."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Hardware already saves r0–r3; software must capture r4–r11.",
+      "Operand registers are needed to reconstruct failed accesses.",
+      "Save r4–r11 before C runs. Hardware already saved r0–r3, r12, lr, pc and xPSR."
+    ]
+  },
+  {
+    "id": "note-11-3-0",
+    "lesson": 11,
+    "topic": "note-11-3",
+    "topicTitle": "One Handler, No Reasons",
+    "question": "How can M0+ recover a fault address without BFAR?",
+    "options": [
+      "Assume the failing address equals stacked pc.",
+      "Read BFAR because every Cortex-M includes it.",
+      "Decode the access and use preserved operand registers."
+    ],
+    "correct": 2,
+    "explanations": [
+      "pc identifies the instruction, not necessarily its data address.",
+      "This ARMv6-M core lacks BFAR; decode the instruction with preserved registers.",
+      "Decode the faulting instruction and recompute its effective address from preserved registers. Validate that address against alignment and the chip memory map."
+    ]
+  },
+  {
+    "id": "note-11-4-0",
+    "lesson": 11,
+    "topic": "note-11-4",
+    "topicTitle": "What `CFSR` Would Have Told You — Not on This Chip",
+    "question": "Does STM32C031 provide CFSR?",
+    "options": [
+      "No; it is absent on this ARMv6-M core.",
+      "Yes; CFSR is another name for GPIO IDR.",
+      "Yes; CFSR is mandatory on ARMv6-M."
+    ],
+    "correct": 0,
+    "explanations": [
+      "No. CFSR/HFSR/MMFAR/BFAR are ARMv7-M comparison registers, absent from this ARMv6-M core.",
+      "GPIO input data is unrelated to configurable fault status.",
+      "Those detailed fault registers belong to the ARMv7-M comparison, not this core."
+    ]
+  },
+  {
+    "id": "note-11-5-0",
+    "lesson": 11,
+    "topic": "note-11-5",
+    "topicTitle": "The Evidence, Decoded",
+    "question": "How does stacked xPSR bit 9 change reconstructed sp?",
+    "options": [
+      "Add one word: sp=frame+36 bytes.",
+      "Bit 9 adds eight words, making frame+64.",
+      "Bit 9 removes one word, making frame+28."
+    ],
+    "correct": 0,
+    "explanations": [
+      "If bit 9 is set, add one padding word: pre-fault sp=frame+36 bytes instead of frame+32.",
+      "It indicates one padding word, four bytes, not another complete frame.",
+      "The bit indicates added alignment padding, so the reconstructed pointer increases."
+    ]
+  },
+  {
+    "id": "note-11-6-0",
+    "lesson": 11,
+    "topic": "note-11-6",
+    "topicTitle": "The Handler — Save First, Think Later",
+    "question": "Why save high registers before entering C?",
+    "options": [
+      "Preserve fault-time address operands before C reuses them.",
+      "High registers contain only constants and are irrelevant.",
+      "C preserves the original r4–r11 values for every diagnostic."
+    ],
+    "correct": 0,
+    "explanations": [
+      "C may reuse those registers before diagnosis. Preserving them first supplies the base/index values needed to reconstruct the failed access.",
+      "They can hold base/index operands essential to reconstructing an access.",
+      "C can reuse them during execution; capture fault-time values before C starts."
+    ]
+  },
+  {
+    "id": "note-11-7-0",
+    "lesson": 11,
+    "topic": "note-11-7",
+    "topicTitle": "Reading the Instruction at pc",
+    "question": "How can preserved r3 reveal an LDR address?",
+    "options": [
+      "The address is always stacked pc plus zero.",
+      "The address is r2 because LDR writes r2.",
+      "The effective address is preserved r3."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This instruction is register-based: preserved r3 plus the decoded offset.",
+      "r2 is the destination; r3 supplies the base address.",
+      "For LDR r2,[r3,#0], effective address is preserved r3. Other addressing forms add the decoded scaled immediate or index register."
+    ]
+  },
+  {
+    "id": "note-11-8-0",
+    "lesson": 11,
+    "topic": "note-11-8",
+    "topicTitle": "The Verdict — Five Questions in Order",
+    "question": "Why check executable pc before decoding it?",
+    "options": [
+      "Check only whether pc is nonzero.",
+      "Decoding an invalid pc is safe because fault handlers cannot fault.",
+      "Reading an invalid pc could fault the diagnostic itself."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A nonzero value can still point outside executable memory or lack valid Thumb state.",
+      "Fault handlers can fault again; validate instruction memory before reading it.",
+      "Reading an invalid pc can trigger another fault in the diagnostic. Thumb/executable-region checks must precede instruction memory access."
+    ]
+  },
+  {
+    "id": "note-11-9-0",
+    "lesson": 11,
+    "topic": "note-11-9",
+    "topicTitle": "Fault 1 — Unaligned",
+    "question": "Why can a byte access never misalign?",
+    "options": [
+      "An odd byte address must generate HardFault.",
+      "Every address satisfies one-byte alignment.",
+      "Byte accesses require two-byte alignment."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Odd addresses are valid for byte accesses; wider accesses have stricter alignment.",
+      "A byte needs only one-byte alignment. Every address is a multiple of one.",
+      "Byte width is one, so every address is aligned for a byte."
+    ]
+  },
+  {
+    "id": "note-11-10-0",
+    "lesson": 11,
+    "topic": "note-11-10",
+    "topicTitle": "Faults 2 and 3 — Nothing There, or Read-Only",
+    "question": "Why is an ordinary flash store not programming?",
+    "options": [
+      "Any STR automatically starts a flash program cycle.",
+      "Flash requires its unlock/control/program-width sequence.",
+      "Ordinary flash stores always produce the same observed fault here."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Flash programming needs explicit unlocking/control and the required width.",
+      "Flash requires its key/control programming sequence and appropriate program width. An ordinary store is either refused with controller status or may fault; that outcome remains unobserved here.",
+      "The target outcome remains unobserved; refusal/status or fault depends on the path."
+    ]
+  },
+  {
+    "id": "note-11-11-0",
+    "lesson": 11,
+    "topic": "note-11-11",
+    "topicTitle": "Faults 4 and 5 — Jumping Where Code Is Not",
+    "question": "How can lr locate an invalid callback call site?",
+    "options": [
+      "Ignore lr whenever pc is invalid.",
+      "lr points just after BLX at the caller.",
+      "Use lr as the destination address of the callback."
+    ],
+    "correct": 1,
+    "explanations": [
+      "An invalid target makes lr especially useful for finding the BLX call site.",
+      "lr points just after the BLX call even when pc became an invalid target. Use it with the matching ELF to locate the caller.",
+      "lr identifies return/caller context, while pc is the failed target."
+    ]
+  },
+  {
+    "id": "note-11-12-0",
+    "lesson": 11,
+    "topic": "note-11-12",
+    "topicTitle": "Faults 6 and 7 — and Two Things That Do Not Fault",
+    "question": "Why can a NULL read succeed while a NULL call faults?",
+    "options": [
+      "Reading zero must fail because NULL is always unmapped.",
+      "Zero is readable flash, but invalid call state.",
+      "Calling zero executes the same valid flash data as a read."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Address zero aliases readable flash on this chip.",
+      "Address zero aliases readable flash. Calling through zero clears Thumb state, which Cortex-M cannot execute.",
+      "A branch through zero requests invalid non-Thumb execution."
+    ]
+  },
+  {
+    "id": "note-11-13-0",
+    "lesson": 11,
+    "topic": "note-11-13",
+    "topicTitle": "The Flight Recorder — RAM That Survives a Reset",
+    "question": "Why validate retained RAM with magic and checksum?",
+    "options": [
+      "noinit automatically validates RAM after power loss.",
+      "Reject arbitrary, stale or corrupted retained records.",
+      "A magic word alone proves the entire retained record is intact."
+    ],
+    "correct": 1,
+    "explanations": [
+      "It skips initialization but cannot guarantee meaningful power-on contents.",
+      "After power-on, retained contents may be arbitrary or stale/corrupted. Magic plus checksum rejects records without valid integrity.",
+      "Magic checks identity; checksum checks record integrity against corruption/stale data."
+    ]
+  },
+  {
+    "id": "note-11-14-0",
+    "lesson": 11,
+    "topic": "note-11-14",
+    "topicTitle": "Why Did We Reset? Two Witnesses",
+    "question": "Why record a firmware reset reason besides RCC flags?",
+    "options": [
+      "RCC records every C function that requested reset.",
+      "reset_why distinguishes the software-reset paths.",
+      "A firmware reason replaces all RCC flags."
+    ],
+    "correct": 1,
+    "explanations": [
+      "RCC records reset class; firmware metadata distinguishes software paths.",
+      "RCC can identify software reset but not which firmware path requested it. reset_why distinguishes fault, canary, soft dog and command.",
+      "Both are useful: hardware cause and firmware intent answer different questions."
+    ]
+  },
+  {
+    "id": "note-11-15-0",
+    "lesson": 11,
+    "topic": "note-11-15",
+    "topicTitle": "Stack Overflow — Nothing Faults",
+    "question": "How can a stack guard cause exception-entry lockup?",
+    "options": [
+      "Faulting again during HardFault stacking can lock up.",
+      "A guard guarantees HardFault always has a usable stack.",
+      "HardFault always moves the interrupted frame to a fresh PSP."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Exception entry pushes onto the already failing stack. A second fault during HardFault entry can lock the core instead of running the reporter.",
+      "Exception entry itself needs stack space and can fail on the damaged stack.",
+      "Hardware pushes to the relevant interrupted stack; no fresh task stack is guaranteed."
+    ]
+  },
+  {
+    "id": "note-11-16-0",
+    "lesson": 11,
+    "topic": "note-11-16",
+    "topicTitle": "The Watchdog — a Timer You Must Keep Resetting",
+    "question": "Which three questions determine watchdog effectiveness?",
+    "options": [
+      "Only timeout duration matters.",
+      "Only which LED blinks before reset matters.",
+      "Feed policy, clock survival and disable capability."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Refresh ownership, a surviving clock and disable capability determine what failures are caught.",
+      "An indicator does not establish the watchdog's progress contract or clock independence.",
+      "Who feeds and what progress it proves; what clock keeps counting through failure; and whether guarded code can disable it."
+    ]
+  },
+  {
+    "id": "note-11-17-0",
+    "lesson": 11,
+    "topic": "note-11-17",
+    "topicTitle": "The IWDG — Four Keys",
+    "question": "Calculate nominal IWDG timeout for PR=1 and RLR=3999.",
+    "options": [
+      "125 ms, using prescaler one.",
+      "One second nominally.",
+      "One second exactly on every physical board."
+    ],
+    "correct": 1,
+    "explanations": [
+      "PR=1 encodes divide-by-eight, not literal divide-by-one.",
+      "(3999+1)×8/32000=1 second nominally. Real LSI tolerance changes physical time.",
+      "The nominal result assumes 32 kHz; real LSI tolerance changes it."
+    ]
+  },
+  {
+    "id": "note-11-18-0",
+    "lesson": 11,
+    "topic": "note-11-18",
+    "topicTitle": "The WWDG — a Window, and a Shorter Reach",
+    "question": "Why is WWDG maximum below one second at 48 MHz?",
+    "options": [
+      "The counter can always be extended indefinitely by software.",
+      "Finite counter/prescaler limit: about 699.05 ms at 48 MHz.",
+      "It reaches exactly one second because all watchdogs use LSI."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The finite hardware counter/prescaler bounds the maximum at this clock.",
+      "The maximum is 64×4096×128/48 MHz≈699.05 ms. The finite counter and prescaler cannot stretch it to one second at that clock.",
+      "WWDG uses the stated 48 MHz-derived timing, unlike independent IWDG."
+    ]
+  },
+  {
+    "id": "note-11-19-0",
+    "lesson": 11,
+    "topic": "note-11-19",
+    "topicTitle": "Which Dog Will You See Bite? Three Dogs",
+    "question": "Which watchdog catches a hang with interrupts disabled?",
+    "options": [
+      "Any periodic timer ISR can reset the hung CPU while all interrupts are disabled.",
+      "The SysTick software watchdog continues even with IRQs masked.",
+      "A hardware watchdog whose clock keeps counting, such as silicon IWDG."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A masked ISR cannot execute; use a hardware watchdog whose clock still runs.",
+      "Its ticks depend on interrupts, which stop under the mask.",
+      "A hardware watchdog whose clock continues. The SysTick-based soft dog stops when interrupts are disabled; independent IWDG works on silicon."
+    ]
+  },
+  {
+    "id": "note-11-20-0",
+    "lesson": 11,
+    "topic": "note-11-20",
+    "topicTitle": "Feeding Honestly — the Heartbeat Bitmap",
+    "question": "Why feed only when all required jobs check in?",
+    "options": [
+      "Feed when any one job checks in.",
+      "Feed every iteration even when required bits are missing.",
+      "All bits prove all required jobs completed this round."
+    ],
+    "correct": 2,
+    "explanations": [
+      "One active job can conceal another starved essential job.",
+      "Loop activity does not prove completion of all required jobs.",
+      "All required bits prove every job completed since the previous feed. Loop/ISR activity alone can hide a starved job."
+    ]
+  },
+  {
+    "id": "note-11-21-0",
+    "lesson": 11,
+    "topic": "note-11-21",
+    "topicTitle": "Measured — Who Feeds, Against What Failure",
+    "question": "Why does timer-ISR feeding miss a hung main loop?",
+    "options": [
+      "The timer ISR detects every deadlock automatically.",
+      "Timer activity proves the main loop must be advancing.",
+      "Its interrupts run even while main remains hung."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Its refresh only demonstrates ISR activity unless it checks required job progress.",
+      "Interrupts can run while main remains hung.",
+      "The timer interrupt still runs and feeds despite stopped main work. Its feed proves only interrupt activity."
+    ]
+  },
+  {
+    "id": "note-11-22-0",
+    "lesson": 11,
+    "topic": "note-11-22",
+    "topicTitle": "How Tight Can the Timeout Be?",
+    "question": "How did the blocking report change safe timeout?",
+    "options": [
+      "The timeout can stay at 280 ms because reports are nonessential.",
+      "Gap rose 275→455 ms; timeout rose 280→460 ms.",
+      "The report reduced the feed gap to 95 ms."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A blocking report still extends the feed gap to 455 ms and needs margin.",
+      "It raised modeled worst feed gap from 275 to 455 ms. The chosen margin therefore raised timeout from 280 to 460 ms.",
+      "The modeled gap increased from 275 to 455 ms."
+    ]
+  },
+  {
+    "id": "note-11-23-0",
+    "lesson": 11,
+    "topic": "note-11-23",
+    "topicTitle": "The Post-Mortem of a Watchdog Reset",
+    "question": "Why maintain watchdog evidence before the reset?",
+    "options": [
+      "Reset has no logger; maintain timestamps beforehand.",
+      "Record evidence only after reset from current loop timestamps.",
+      "The watchdog reset first calls the application's logging ISR."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Hardware reset does not call a logging handler. Persist loop/job timestamps continuously so boot can diagnose the last known progress.",
+      "Post-reset timestamps cannot reconstruct lost progress; persist evidence beforehand.",
+      "Hardware reset does not provide such a logging callback."
+    ]
+  },
+  {
+    "id": "note-11-24-0",
+    "lesson": 11,
+    "topic": "note-11-24",
+    "topicTitle": "Power — the Registers on One Page",
+    "question": "Which register selects deep versus ordinary WFI sleep?",
+    "options": [
+      "PWR->CR1.LPMS alone makes WFI deep.",
+      "PRIMASK selects the physical low-power mode.",
+      "SCB->SCR.SLEEPDEEP."
+    ],
+    "correct": 2,
+    "explanations": [
+      "SCB SLEEPDEEP enables deep sleep; LPMS selects which deep mode.",
+      "PRIMASK masks configurable interrupts, not deep-sleep mode.",
+      "SCB->SCR.SLEEPDEEP selects ordinary versus deep sleep. PWR->CR1.LPMS chooses the specific deep mode."
+    ]
+  },
+  {
+    "id": "note-11-25-0",
+    "lesson": 11,
+    "topic": "note-11-25",
+    "topicTitle": "WFI, and What Sleep Means on the C0",
+    "question": "Which sleep modes destroy the retained SRAM record?",
+    "options": [
+      "Standby and Shutdown lose SRAM and wake as reset.",
+      "Every WFI clears SRAM.",
+      "Standby preserves all noinit contents because startup skips them."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Standby and Shutdown lose SRAM and wake as reset. Their noinit record cannot be trusted as preserved data.",
+      "Ordinary sleep preserves SRAM; Standby/Shutdown lose it.",
+      "Skipping initialization cannot preserve SRAM through a mode that loses its contents."
+    ]
+  },
+  {
+    "id": "note-11-26-0",
+    "lesson": 11,
+    "topic": "note-11-26",
+    "topicTitle": "Measuring CPU Load With the Clock You Already Have",
+    "question": "Why read the second VAL before unmasking interrupts?",
+    "options": [
+      "Unmask first so handler time is counted as idle.",
+      "WFI never wakes while PRIMASK is set.",
+      "Exclude subsequent handler execution from idle time."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Handler execution is work; the measurement should exclude it.",
+      "A pending interrupt can wake WFI while handler execution waits for unmasking.",
+      "It excludes handler execution from the measured idle interval. Pending interrupt wakes WFI while its handler waits until PRIMASK is restored."
+    ]
+  },
+  {
+    "id": "note-11-27-0",
+    "lesson": 11,
+    "topic": "note-11-27",
+    "topicTitle": "HAL vs CMSIS — the Same Store",
+    "question": "What HAL dependencies matter beyond GPIO call cost?",
+    "options": [
+      "HAL timeouts never depend on interrupts or a tick.",
+      "Tick ownership, init, handles and callbacks.",
+      "HAL GPIO timing describes every HAL dependency."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Timeout behavior can depend on HAL tick ownership and progress.",
+      "HAL timeouts may depend on HAL tick ownership, plus init/handles/callback infrastructure. A small GPIO call comparison does not capture those dependencies.",
+      "Tick ownership, initialization, handles and callbacks add dependencies beyond one call."
+    ]
+  },
+  {
+    "id": "note-11-28-0",
+    "lesson": 11,
+    "topic": "note-11-28",
+    "topicTitle": "The Crash Detective",
+    "question": "In what order should mystery fault evidence be examined?",
+    "options": [
+      "Start by decoding any pc before checking Thumb state.",
+      "State/frame → instruction/address → map/alignment/rights.",
+      "Inspect only source code line count."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Invalid instruction memory can cause another fault; validate state/frame first.",
+      "Decode Thumb state and frame stack, then instruction and effective address, then map/alignment/permissions. Inspect lr if pc is an invalid target.",
+      "Instruction, address, map and alignment evidence establish what failed."
+    ]
+  },
+  {
+    "id": "note-11-29-0",
+    "lesson": 11,
+    "topic": "note-11-29",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Which claims remain unobserved on the target?",
+    "options": [
+      "All listed target behaviors have already been measured.",
+      "A host model measures physical current draw.",
+      "Target faults, reset, sleep and retention; silicon current."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Wokwi fault/reset/sleep/retention claims remain open and current needs silicon.",
+      "Physical current requires hardware measurement; model output cannot supply it.",
+      "Wokwi fault behavior, WWDG reset, WFI under PRIMASK and SRAM retention still need execution. Current draw requires silicon."
+    ]
+  },
+  {
+    "id": "note-11-30-0",
+    "lesson": 11,
+    "topic": "note-11-30",
+    "topicTitle": "What Carries Forward",
+    "question": "What should be examined when stacked pc is implausible?",
+    "options": [
+      "Use the handler's lr as if it were the interrupted function's return address.",
+      "Assume pc is trustworthy and ignore the rest of the frame.",
+      "Stacked lr can identify the caller of the invalid branch target."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Use stacked task lr; handler lr may instead be EXC_RETURN.",
+      "An implausible target may come from a bad callback; lr can locate its caller.",
+      "Inspect stacked lr. It can identify the call site that branched to the invalid target."
+    ]
+  },
+  {
+    "id": "note-12-0-0",
+    "lesson": 12,
+    "topic": "note-12-0",
+    "topicTitle": "Connections and port mapping",
+    "question": "Which signal routes control the OLED and buzzer?",
+    "options": [
+      "PB8/PB9 AF6 drive the buzzer; PA6 AF1 carries OLED I2C.",
+      "PB8/PB9 AF1 push-pull I2C; PA6 AF6 UART sound.",
+      "PB8/PB9 AF6 open-drain I2C1 for OLED; PA6 AF1 TIM3_CH1 PWM for buzzer."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This swaps the routes: PB8/PB9 carry I2C, and PA6 carries TIM3_CH1 PWM.",
+      "OLED uses AF6 open-drain I2C; the buzzer uses AF1 timer PWM, not UART.",
+      "PB8/PB9 AF6 route I2C1 SCL/SDA, with open-drain and pull-ups; PA6 AF1 routes TIM3_CH1 PWM to the buzzer."
+    ]
+  },
+  {
+    "id": "note-12-1-0",
+    "lesson": 12,
+    "topic": "note-12-1",
+    "topicTitle": "What You Are Building",
+    "question": "How do the three games' input and end conditions differ?",
+    "options": [
+      "SNAKE ends after three misses; BREAKOUT ends on self-collision; FLAP uses held steering.",
+      "SNAKE: stick/collision; BREAKOUT: paddle/serve/three misses; FLAP: flap edges/pipe or ground.",
+      "All three use stick steering and end only on a wall collision."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Three misses belongs to BREAKOUT, self-collision to SNAKE, and FLAP acts on flap edges.",
+      "SNAKE steers with the stick and ends on wall/self collision. BREAKOUT moves a paddle/serves and ends after three misses; FLAP uses flap edges and ends on pipe/ground collision.",
+      "Each has different control and loss rules: snake collision, breakout misses, and flap pipe/ground collision."
+    ]
+  },
+  {
+    "id": "note-12-2-0",
+    "lesson": 12,
+    "topic": "note-12-2",
+    "topicTitle": "Two Halves — Platform and Game",
+    "question": "Why can the same game files run on both host and MCU?",
+    "options": [
+      "Abstract input and replaceable hardware output hooks.",
+      "Their game logic directly writes the MCU's I2C registers.",
+      "Host success requires identical hardware registers on the computer."
+    ],
+    "correct": 0,
+    "explanations": [
+      "They receive abstract input, draw RAM and use replaceable sound/score/bus hooks. Neither game state nor physics depends directly on MCU registers.",
+      "Abstract hooks isolate platform details from the pure game core.",
+      "Host hooks replace hardware while preserving game rules."
+    ]
+  },
+  {
+    "id": "note-12-3-0",
+    "lesson": 12,
+    "topic": "note-12-3",
+    "topicTitle": "The SSD1306 — 1 KB of Picture at the End of Two Wires",
+    "question": "How many picture bytes does a 128×64 monochrome panel require?",
+    "options": [
+      "8192 bytes.",
+      "1024 bytes.",
+      "128 bytes."
+    ],
+    "correct": 1,
+    "explanations": [
+      "There are 8192 one-bit pixels, packed eight to a byte.",
+      "128×64=8192 one-bit pixels, requiring 1024 picture bytes. Eight pages contain 128 vertical-strip bytes each.",
+      "One page is 128 bytes; eight pages make the full picture."
+    ]
+  },
+  {
+    "id": "note-12-4-0",
+    "lesson": 12,
+    "topic": "note-12-4",
+    "topicTitle": "A Pixel Is a Bit — Which Byte, Which Bit",
+    "question": "Which byte and mask represent pixel(40,12) in the prefixed framebuffer?",
+    "options": [
+      "fb[12][41] with mask 0x01.",
+      "fb[1][41], mask 0x10.",
+      "fb[1][40] with mask 0x10."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Rows are grouped into pages: row 12 is page 1 and bit 4.",
+      "Page is 12>>3=1, mask is 1<<(12&7)=0x10. With the prefixed array, logical column 40 is physical fb[1][41].",
+      "The prefix occupies column slot zero, so picture column 40 is physical index 41."
+    ]
+  },
+  {
+    "id": "note-12-5-0",
+    "lesson": 12,
+    "topic": "note-12-5",
+    "topicTitle": "The SSD1306 — Everything It Understands, on One Page",
+    "question": "What differentiates SSD1306 commands from memory-mapped MCU register writes?",
+    "options": [
+      "I2C command bytes control the panel’s own picture RAM.",
+      "SSD1306 opcodes are written to MCU MODER.",
+      "OLED picture RAM is a direct alias of the MCU framebuffer."
+    ],
+    "correct": 0,
+    "explanations": [
+      "They are byte-stream opcodes and parameters sent after an I2C control byte. The panel has its own picture RAM instead of MCU memory-mapped registers.",
+      "They are I2C byte-stream commands to a separate display controller.",
+      "The MCU buffer and panel RAM are separate; transfer copies picture data."
+    ]
+  },
+  {
+    "id": "note-12-6-0",
+    "lesson": 12,
+    "topic": "note-12-6",
+    "topicTitle": "Every Write Starts With a Control Byte",
+    "question": "Why does the framebuffer reserve one prefix byte per page?",
+    "options": [
+      "0x40 selects data and permits direct page transfer.",
+      "It reserves a checksum byte that the OLED validates.",
+      "The prefix byte is an extra visible column."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Permanent 0x40 selects pixel data and lets the page transmit directly. It avoids copying the picture into a separate outgoing buffer.",
+      "This is an I2C control byte, not a checksum.",
+      "0x40 selects data mode and is not a picture column."
+    ]
+  },
+  {
+    "id": "note-12-7-0",
+    "lesson": 12,
+    "topic": "note-12-7",
+    "topicTitle": "Bringing the Panel Up — 16 Commands",
+    "question": "Why can a correctly ACKing display remain black?",
+    "options": [
+      "The charge pump may still be disabled.",
+      "Changing UART baud turns on the OLED charge pump.",
+      "An ACK guarantees the charge pump and display are on."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The charge pump can remain disabled even though command/data writes ACK. Configure 8D 14 and turn the display on after setup.",
+      "The display needs its own 8D 14 command and display-on setup.",
+      "Bus acceptance does not prove internal display configuration."
+    ]
+  },
+  {
+    "id": "note-12-8-0",
+    "lesson": 12,
+    "topic": "note-12-8",
+    "topicTitle": "I2C1 — the MCU's Side of the Wire, on One Page",
+    "question": "Which I2C data register is used for OLED page writes?",
+    "options": [
+      "ADC DR, because pixels are analog levels.",
+      "RXDR, because every display transaction is a read.",
+      "TXDR for outgoing command and picture bytes."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Pixels are transmitted as I2C bytes, not ADC samples.",
+      "Page output writes outgoing data through TXDR.",
+      "TXDR supplies the outgoing command and pixel bytes. The OLED path does not use RXDR for measurement data."
+    ]
+  },
+  {
+    "id": "note-12-9-0",
+    "lesson": 12,
+    "topic": "note-12-9",
+    "topicTitle": "Sending One Page",
+    "question": "Decode why OLED page transfer sets NBYTES to129 rather than128.",
+    "options": [
+      "One 0x40 control byte plus 128 picture bytes.",
+      "128 pixels plus a mandatory XOR checksum.",
+      "One address byte plus 128 pixels."
+    ],
+    "correct": 0,
+    "explanations": [
+      "NBYTES includes the 0x40 control byte plus 128 picture bytes. Address itself is on the wire but not counted in payload NBYTES.",
+      "The extra byte selects data mode; this page path has no such checksum.",
+      "Address is not included in payload NBYTES; the extra byte is control 0x40."
+    ]
+  },
+  {
+    "id": "note-12-10-0",
+    "lesson": 12,
+    "topic": "note-12-10",
+    "topicTitle": "The Bus Budget — Arithmetic Before Code",
+    "question": "Can a full screen fit a20 ms frame budget at modeled400 kHz?",
+    "options": [
+      "No; about 24.9 ms already exceeds the budget.",
+      "Yes; 1024 bytes divided by 400000 is 2.56 ms.",
+      "Yes; drawing takes zero time, so transfer always fits."
+    ],
+    "correct": 0,
+    "explanations": [
+      "No. Modeled full transfer is about 24.9 ms, exceeding 20 ms before update or draw computation.",
+      "That ignores eight bits plus acknowledgment and transaction overhead per byte.",
+      "The modeled transfer alone is about 24.9 ms, already over budget."
+    ]
+  },
+  {
+    "id": "note-12-11-0",
+    "lesson": 12,
+    "topic": "note-12-11",
+    "topicTitle": "The Framebuffer and Dirty Pages",
+    "question": "What should happen to a dirty bit when its page transfer fails?",
+    "options": [
+      "Clear it before transfer so the next frame starts clean.",
+      "Keep it set until that page transfers successfully.",
+      "Clear every dirty bit when any one page succeeds."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A failed transfer would lose the retry request if cleared early.",
+      "Keep it set. Clear a dirty bit only after a successful transfer so failed pages retry later.",
+      "Only successfully transferred pages may be marked clean."
+    ]
+  },
+  {
+    "id": "note-12-12-0",
+    "lesson": 12,
+    "topic": "note-12-12",
+    "topicTitle": "The Trap — Clear, Then Redraw Everything",
+    "question": "Why does clear/redraw dirty an unchanged final image?",
+    "options": [
+      "Dirty flags compare only final image bytes.",
+      "Drawing an identical final image can never create bus work.",
+      "Intermediate erase/redraw writes mark pages dirty."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This tracker marks changes as writes occur, including erase and redraw.",
+      "Intermediate byte changes still dirty pages even when the final picture matches.",
+      "Erasing changes lit bytes to zero and redrawing changes them back. Dirty tracking records actual intermediate changes even when the final picture is identical."
+    ]
+  },
+  {
+    "id": "note-12-13-0",
+    "lesson": 12,
+    "topic": "note-12-13",
+    "topicTitle": "Measured on the Host — What Dirty Pages Save",
+    "question": "Why does FLAP benefit less from dirty pages than SNAKE?",
+    "options": [
+      "FLAP changes only one byte per tick.",
+      "SNAKE always forces all eight pages dirty.",
+      "Its tall moving pipes change most pages."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Tall moving pipes touch many pages, unlike localized snake changes.",
+      "Usually only head/tail/apple regions change; it can save more traffic.",
+      "Its moving pipes span nearly the whole screen height, dirtying most pages each tick. SNAKE usually changes only head, tail and perhaps apple."
+    ]
+  },
+  {
+    "id": "note-12-14-0",
+    "lesson": 12,
+    "topic": "note-12-14",
+    "topicTitle": "The Game Loop — Update at a Fixed Rate, Render When Time Allows",
+    "question": "Why can a pass run two updates but draw only once?",
+    "options": [
+      "Each picture must correspond to exactly one simulation update.",
+      "Drawing twice is necessary to make two elapsed steps count.",
+      "Catch up fixed simulation steps, then draw the final state."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Simulation can catch up multiple fixed steps before showing its final state.",
+      "State updates advance the simulation; intermediate pictures are optional.",
+      "Simulation updates follow the fixed deadline grid, while drawing need happen only for the final state. Catching up two updates preserves speed without two expensive flushes."
+    ]
+  },
+  {
+    "id": "note-12-15-0",
+    "lesson": 12,
+    "topic": "note-12-15",
+    "topicTitle": "Why a Fixed Step — and the Spiral of Death",
+    "question": "What condition creates the catch-up spiral of death?",
+    "options": [
+      "The cap speeds up each individual update automatically.",
+      "Every missed deadline can be recovered with unlimited catch-up.",
+      "Update cost exceeds the period, so backlog grows."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The cap drops unrecoverable elapsed time and allows rendering; it does not reduce update cost.",
+      "If update work exceeds the period, backlog grows as catch-up runs.",
+      "If each update consumes more time than its period, catching up creates further missed deadlines. The four-update cap drops unrecoverable elapsed time and permits rendering."
+    ]
+  },
+  {
+    "id": "note-12-16-0",
+    "lesson": 12,
+    "topic": "note-12-16",
+    "topicTitle": "A Microsecond Stopwatch, Free, From SysTick",
+    "question": "Why retry the combined ms/VAL read when ms changes?",
+    "options": [
+      "Changing ms has no effect on which interval VAL represents.",
+      "Read VAL only once; it includes the complete lifetime in milliseconds.",
+      "The pair may span different milliseconds, so retry for coherence."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A rollover can combine mismatched millisecond and submillisecond values.",
+      "VAL is a wrapping subinterval counter and needs coherent pairing with ms.",
+      "The two values must describe the same interval. If ms changes between reads, VAL may belong to a different millisecond and the pair needs retrying."
+    ]
+  },
+  {
+    "id": "note-12-17-0",
+    "lesson": 12,
+    "topic": "note-12-17",
+    "topicTitle": "One Loop, or the RTOS?",
+    "question": "When should an OLED move into a low-priority RTOS task?",
+    "options": [
+      "When fast independent deadlines need CPU during flush.",
+      "Only when the OLED has stopped acknowledging.",
+      "Give the OLED the highest priority because transfer is slow."
+    ],
+    "correct": 0,
+    "explanations": [
+      "When fast independent deadlines must run during the long flush, such as drone attitude/motor control. Low-priority bounded display work then yields to control.",
+      "Independent fast deadlines motivate scheduling separation even when the display works.",
+      "Control needs urgency; bounded display work belongs at lower priority."
+    ]
+  },
+  {
+    "id": "note-12-18-0",
+    "lesson": 12,
+    "topic": "note-12-18",
+    "topicTitle": "Input — Levels, Edges and Zones",
+    "question": "Why must button edges be sampled per update rather than per picture?",
+    "options": [
+      "A pressed edge lasts for every call until the button is released.",
+      "Read input only when a page is transmitted.",
+      "A one-call pressed edge may vanish between pictures."
+    ],
+    "correct": 2,
+    "explanations": [
+      "This edge lasts for one pad_read call, so preserve/sample it per update.",
+      "Simulation updates can outnumber pictures; picture-based reads can skip edges.",
+      "pressed exists for only one pad_read call. Reading per rendered frame can skip edges when several updates are due."
+    ]
+  },
+  {
+    "id": "note-12-19-0",
+    "lesson": 12,
+    "topic": "note-12-19",
+    "topicTitle": "Sprites — and Why `const` Is Enough on ARM",
+    "question": "Why is plain const sufficient to keep ARM sprites out of RAM?",
+    "options": [
+      "Every ARM flash read needs AVR pgm_read_byte.",
+      "Normal ARM loads can read flash .rodata.",
+      "const sprites are copied into SRAM on ARM by default."
+    ],
+    "correct": 1,
+    "explanations": [
+      "ARM uses one address space and ordinary loads, unlike that AVR-specific API.",
+      "ARM has one address space and normal loads can read flash .rodata. The linker places const tables there without an AVR-style special flash-read API.",
+      "The linker can place const in flash .rodata and ordinary ARM loads read it."
+    ]
+  },
+  {
+    "id": "note-12-20-0",
+    "lesson": 12,
+    "topic": "note-12-20",
+    "topicTitle": "Physics in Two Lines — and Fixed Point",
+    "question": "Why did a gentle paddle stick fail before subpixel accumulation?",
+    "options": [
+      "Small stick inputs are not measurable by ADC.",
+      "Whole-pixel truncation lost inputs below 25%.",
+      "The paddle needs a faster OLED to move at low input."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The problem was integer rounding in movement: below 25% truncated to zero.",
+      "Whole-pixel x*4/100 rounds inputs below 25% to zero every step. Fractional state preserves those increments until they become a visible pixel.",
+      "Fractional accumulation fixes simulation motion even before display transfer."
+    ]
+  },
+  {
+    "id": "note-12-21-0",
+    "lesson": 12,
+    "topic": "note-12-21",
+    "topicTitle": "Collision — Four Comparisons",
+    "question": "How does prior ball position help choose the bounce axis?",
+    "options": [
+      "Old column overlap: reverse vy; side entry: reverse vx.",
+      "Always reverse both velocity components on every collision.",
+      "Use only the new position to identify the crossed face."
+    ],
+    "correct": 0,
+    "explanations": [
+      "If its old position already overlapped brick columns, it entered through top/bottom, so reverse vy. Otherwise it crossed a side, so reverse vx.",
+      "Entry direction determines the bounce axis; reversing both changes the trajectory incorrectly.",
+      "The old position distinguishes prior overlap from side entry."
+    ]
+  },
+  {
+    "id": "note-12-22-0",
+    "lesson": 12,
+    "topic": "note-12-22",
+    "topicTitle": "Randomness You Can Replay — xorshift32",
+    "question": "Why can deterministic randomness improve game verification?",
+    "options": [
+      "A deterministic generator guarantees fair difficulty for every player.",
+      "Known seed and input reproduce the same game results.",
+      "Unpredictable new seeds are necessary for exact regression hashes."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Reproducibility supports verification but does not by itself prove fairness.",
+      "A known seed and input script reproduce score, timing and framebuffer hash. This enables exact regression comparison without requiring unpredictable randomness.",
+      "A known seed and inputs are what make exact reproduction possible."
+    ]
+  },
+  {
+    "id": "note-12-23-0",
+    "lesson": 12,
+    "topic": "note-12-23",
+    "topicTitle": "Sound — a Sequencer on a Timer",
+    "question": "Why can a tone overrun its requested duration during a full flush?",
+    "options": [
+      "Blocked sound_poll cannot advance; the timer continues the old tone.",
+      "OLED transfer stops the hardware tone immediately.",
+      "The requested duration is enforced independently by sound_poll during blocking I2C."
+    ],
+    "correct": 0,
+    "explanations": [
+      "sound_poll cannot advance the sequence while polled OLED output blocks the loop. The hardware keeps the previous tone playing until polling resumes.",
+      "The timer keeps the previous tone active while software polling is blocked.",
+      "sound_poll cannot advance until the loop resumes."
+    ]
+  },
+  {
+    "id": "note-12-24-0",
+    "lesson": 12,
+    "topic": "note-12-24",
+    "topicTitle": "SNAKE",
+    "question": "When may the snake safely enter its old tail cell?",
+    "options": [
+      "Never; the old tail must always count as a wall.",
+      "Always; the tail cell is never occupied for collision purposes.",
+      "Only when it vacates during the same nongrowing move."
+    ],
+    "correct": 2,
+    "explanations": [
+      "It is legal when that tail vacates during the same nongrowing move.",
+      "When growing, the tail stays and entering it is a collision.",
+      "Only when the tail vacates in the same move and the snake is not growing. Collision checks must precede destructive body mutation."
+    ]
+  },
+  {
+    "id": "note-12-25-0",
+    "lesson": 12,
+    "topic": "note-12-25",
+    "topicTitle": "BREAKOUT",
+    "question": "How does a bit-packed brick map make destruction cheap?",
+    "options": [
+      "A linked-list traversal locates every brick object.",
+      "Mask one column bit; zero rows detect completion.",
+      "Clear the brick by OR-ing its bit into the row."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A bit mask directly identifies a column; no object traversal is required.",
+      "A column is one bit, so an AND mask removes it and all-zero row words detect wave completion. No per-brick object search is required.",
+      "OR sets a bit; an AND with the inverse mask removes it."
+    ]
+  },
+  {
+    "id": "note-12-26-0",
+    "lesson": 12,
+    "topic": "note-12-26",
+    "topicTitle": "FLAP",
+    "question": "Why did flapping below the gap middle perform poorly?",
+    "options": [
+      "A flap is too weak to reach the gap from its middle.",
+      "Gap middle is always safest regardless of vertical dynamics.",
+      "An eleven-pixel climb can hit the gap’s upper pipe."
+    ],
+    "correct": 2,
+    "explanations": [
+      "A flap climbs about eleven pixels and can overshoot into the upper pipe.",
+      "Input timing must account for predicted climb, which favored near-bottom triggers.",
+      "A flap climbs about eleven pixels. Triggering near the gap middle can hit its upper pipe; near-bottom timing leaves space for the climb."
+    ]
+  },
+  {
+    "id": "note-12-27-0",
+    "lesson": 12,
+    "topic": "note-12-27",
+    "topicTitle": "The Arcade — a State Machine",
+    "question": "Why delay button acceptance on the game-over screen?",
+    "options": [
+      "It prevents the game engine from storing the score.",
+      "It makes the checksum computation take 0.75 seconds.",
+      "The losing press must not dismiss its own result."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Score/state entry is separate; delayed acceptance gives a deliberate next action.",
+      "The input gate prevents the losing press from immediately dismissing the result.",
+      "The press causing the loss must not also dismiss its result. The 0.75-second gate gives a separate deliberate next action."
+    ]
+  },
+  {
+    "id": "note-12-28-0",
+    "lesson": 12,
+    "topic": "note-12-28",
+    "topicTitle": "`$SCORE` — a Class Leaderboard With a Checksum",
+    "question": "Does a valid SCORE checksum prove an honest score?",
+    "options": [
+      "Yes; no two different messages can share an XOR.",
+      "No; anyone can fabricate and checksum the body.",
+      "Yes; XOR authenticates the player's score."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Different bodies can share XOR, including canceling bit changes.",
+      "No. Anyone can invent a body and recompute XOR; a valid checksum detects accidents, not authenticated honesty.",
+      "A sender can fabricate a score and recompute XOR without a secret."
+    ]
+  },
+  {
+    "id": "note-12-29-0",
+    "lesson": 12,
+    "topic": "note-12-29",
+    "topicTitle": "What the Host Test Proves",
+    "question": "What hardware properties remain unproven by host game tests?",
+    "options": [
+      "Only scoring remains unproven because hardware is abstracted.",
+      "Panel acceptance, timing, input focus and playability.",
+      "Host tests prove the real I2C transfer duration."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Host logic checks cover scoring; physical bus/panel/input/timing still need target work.",
+      "OLED command acceptance, real bus/CPU timing, simulator button focus and playability. Host stubs validate game logic and emitted bytes only.",
+      "Counting and stubs do not measure physical timing or electrical behavior."
+    ]
+  },
+  {
+    "id": "note-12-30-0",
+    "lesson": 12,
+    "topic": "note-12-30",
+    "topicTitle": "Flash and RAM",
+    "question": "Why does initialized data count against both flash and RAM budgets?",
+    "options": [
+      "It occupies RAM only because it is writable.",
+      "Flash holds initial contents; RAM holds mutable data.",
+      "It occupies flash only because initialization is constant."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Flash stores the initial contents that startup copies to RAM.",
+      "Its initial contents must be stored in flash and copied to writable RAM at boot. It consumes capacity in both regions.",
+      "The program uses the mutable copy in RAM after startup."
+    ]
+  },
+  {
+    "id": "note-12-31-0",
+    "lesson": 12,
+    "topic": "note-12-31",
+    "topicTitle": "What Was Measured — and What Could Not Be",
+    "question": "Why are counted bytes stronger evidence than modeled flush time?",
+    "options": [
+      "Byte counts prove the configured I2C clock is correct.",
+      "Time adds bus-rate assumptions to observed byte counts.",
+      "The modeled time directly measures the target bus."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Counts observe emitted traffic, not the physical clock or duration.",
+      "The counting stub observes exact bytes emitted by real display code. Duration additionally depends on assumed bus rate and overhead, requiring target measurement.",
+      "It assumes rate and overhead; target timing still needs observation."
+    ]
+  },
+  {
+    "id": "note-12-32-0",
+    "lesson": 12,
+    "topic": "note-12-32",
+    "topicTitle": "What Carries Forward",
+    "question": "Why can an OLED flush disrupt a drone control loop on the same bus?",
+    "options": [
+      "Raising OLED priority always fixes fast control deadlines.",
+      "OLED traffic cannot affect sensors on the same I2C bus.",
+      "It occupies shared bus and polling CPU for too long."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Control needs priority and bounded low-priority display traffic; a long flush can exceed deadlines.",
+      "A long display transaction occupies the shared bus and can delay sensing.",
+      "It occupies shared bus and, with polling, CPU for about 25 ms. That exceeds many control deadlines, so isolate low-priority bounded display traffic."
+    ]
+  },
+  {
+    "id": "study-7-0",
+    "lesson": 7,
+    "topic": "fundamentals-7",
+    "topicTitle": "Fundamentals",
+    "question": "Why does a task using PSP not imply an ISR uses PSP?",
+    "options": [
+      "Task frame may use PSP; Handler mode uses MSP.",
+      "Exception entry first copies the task frame to MSP.",
+      "PSP is selected for both Thread and Handler mode."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Thread mode can use PSP for its task stack. Handler mode uses MSP; exception entry can save the interrupted task’s basic frame on PSP before the handler runs on MSP.",
+      "The basic frame remains on the interrupted PSP; handler locals use MSP.",
+      "Handler mode uses MSP even when the interrupted task used PSP."
+    ]
+  },
+  {
+    "id": "study-7-1",
+    "lesson": 7,
+    "topic": "fundamentals-7",
+    "topicTitle": "Fundamentals",
+    "question": "What does a forged initial task frame accomplish?",
+    "options": [
+      "It proves the task already executed once before scheduling.",
+      "A fabricated suspended context enables first exception return.",
+      "It skips exception return and calls the task inside PendSV."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The frame is fabricated; the new task has not yet run.",
+      "It prepares stack contents that look like a suspended exception context, including a valid PC and Thumb state, so the first exception return can enter the task.",
+      "A forged frame lets the normal restore and exception-return path enter a new task."
+    ]
+  },
+  {
+    "id": "study-7-2",
+    "lesson": 7,
+    "topic": "fundamentals-7",
+    "topicTitle": "Fundamentals",
+    "question": "Does unused stack pattern prove a task can never overflow?",
+    "options": [
+      "Yes; untouched words prove every future path fits.",
+      "Yes; the pattern physically prevents writes beyond the stack.",
+      "No; it proves observed use, requiring margin."
+    ],
+    "correct": 2,
+    "explanations": [
+      "They show observed use only; rare/deeper paths can exceed it.",
+      "A pattern is measurement/detection evidence, not a memory guard.",
+      "It measures the deepest use observed so far. Rare call paths and interrupt interactions still need stress and margin; a canary/high-water mark is evidence, not a universal proof."
+    ]
+  },
+  {
+    "id": "study-8-0",
+    "lesson": 8,
+    "topic": "fundamentals-8",
+    "topicTitle": "Fundamentals",
+    "question": "Why is one read() call not guaranteed to return one whole message?",
+    "options": [
+      "read always returns exactly one UART byte.",
+      "Byte-stream reads may split or combine application frames.",
+      "read always waits until one full application frame arrives."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Buffering can return many bytes; the API does not define application boundaries.",
+      "A byte stream can be split or combined by buffering and timing. Accumulate bytes and parse according to the protocol’s actual boundary and length rules.",
+      "A byte-stream read may split or combine frames; software must accumulate and parse boundaries."
+    ]
+  },
+  {
+    "id": "study-8-1",
+    "lesson": 8,
+    "topic": "fundamentals-8",
+    "topicTitle": "Fundamentals",
+    "question": "What must a ring buffer distinguish?",
+    "options": [
+      "Read/write positions, empty/full convention and overflow policy.",
+      "Only total array length; positions can be inferred from bytes.",
+      "head equal to tail can mean full and empty with no extra convention."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Read and write positions, empty versus full state, and what happens on overflow. Producer and consumer must publish positions safely; silent overwriting can corrupt messages.",
+      "The ring must track read/write positions and distinguish empty/full.",
+      "An explicit reserved-slot/count/state convention is needed to distinguish those cases."
+    ]
+  },
+  {
+    "id": "study-8-2",
+    "lesson": 8,
+    "topic": "fundamentals-8",
+    "topicTitle": "Fundamentals",
+    "question": "What should a parser do with an excessive length or bad checksum?",
+    "options": [
+      "Keep waiting forever until malformed data becomes complete.",
+      "Reject safely, bound waits and resynchronize.",
+      "Accept its valid prefix and ignore the checksum."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Waits and storage must be bounded; invalid frames need a resynchronization policy.",
+      "Reject it without indexing outside the buffer, bound the incomplete-frame wait, and resynchronize according to the protocol. A plausible prefix does not make the payload trustworthy.",
+      "Partial plausibility does not establish length or integrity; reject and resynchronize."
+    ]
+  },
+  {
+    "id": "study-9-0",
+    "lesson": 9,
+    "topic": "fundamentals-9",
+    "topicTitle": "Fundamentals",
+    "question": "What does open-drain mean for SDA and SCL?",
+    "options": [
+      "Both lines actively drive high when no participant drives low.",
+      "Each participant needs a separate dedicated SDA wire.",
+      "Drive low or release; pull-ups establish high."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Open-drain participants release; pull-ups produce high.",
+      "Open-drain SDA/SCL support shared wires without opposing high/low drives.",
+      "A participant drives low or releases the wire. Pull-ups produce high. Multiple participants can share a wire without one actively driving high against another’s low."
+    ]
+  },
+  {
+    "id": "study-9-1",
+    "lesson": 9,
+    "topic": "fundamentals-9",
+    "topicTitle": "Fundamentals",
+    "question": "Why use a repeated START for a register read?",
+    "options": [
+      "It releases bus ownership so another controller can intervene.",
+      "It is an acknowledgment from the sensor.",
+      "Switch index-write to read without releasing bus ownership."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Repeated START preserves ownership while switching from index write to read.",
+      "START is a controller-generated transaction boundary, not an ACK.",
+      "It changes from writing the register index to reading from the same addressed device without relinquishing the bus, following the device’s transaction requirements."
+    ]
+  },
+  {
+    "id": "study-9-2",
+    "lesson": 9,
+    "topic": "fundamentals-9",
+    "topicTitle": "Fundamentals",
+    "question": "When does a MAX7219 command take effect?",
+    "options": [
+      "Immediately when the first MOSI bit is visible.",
+      "After the whole word shifts in and the latch rises.",
+      "As soon as TXE says the MCU buffer is empty."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The whole register/data word must shift in before the latch edge commits it.",
+      "A complete register/data word is shifted in using its specified clock order, then the rising chip-select/latch edge commits it. Seeing MOSI bits alone does not prove the device latched them.",
+      "Buffer room is not complete wire transfer or a rising latch edge."
+    ]
+  },
+  {
+    "id": "study-10-0",
+    "lesson": 10,
+    "topic": "fundamentals-10",
+    "topicTitle": "Fundamentals",
+    "question": "Why can fixed-point multiplication overflow when the final answer would fit?",
+    "options": [
+      "A fitting final result guarantees every intermediate fits.",
+      "The unscaled product needs a wider intermediate before rescaling.",
+      "Rescale after a narrow multiplication; shifting repairs overflow."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The unscaled product has more fractional bits and can require a wider range.",
+      "The unscaled intermediate product needs more bits than either operand. Widen before multiplication, then rescale and range-check.",
+      "Overflow has already discarded bits; widen before multiplying."
+    ]
+  },
+  {
+    "id": "study-10-1",
+    "lesson": 10,
+    "topic": "fundamentals-10",
+    "topicTitle": "Fundamentals",
+    "question": "Does DMA make a buffer safe to read at any time?",
+    "options": [
+      "Yes; DMA updates memory atomically as an entire buffer.",
+      "Yes; volatile alone establishes complete buffer ownership.",
+      "No; define completed-buffer ownership and overrun handling."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Individual transfers do not make a coherent whole-buffer snapshot.",
+      "Volatile does not stop concurrent DMA writes or define completion/overrun rules.",
+      "No. DMA and CPU are concurrent memory users. Establish which completed region belongs to the consumer, publish completion safely, and detect overrun before accepting a snapshot."
+    ]
+  },
+  {
+    "id": "study-10-2",
+    "lesson": 10,
+    "topic": "fundamentals-10",
+    "topicTitle": "Fundamentals",
+    "question": "How do you distinguish “DMA requested” from “DMA worked”?",
+    "options": [
+      "A request register readback proves RAM changed.",
+      "A zero-filled buffer always proves a zero-valued transfer.",
+      "Bounded completion plus observed buffer changes."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Configuration is intention; observe bounded completion and actual destination changes.",
+      "Zero may be unchanged memory; recognizable sentinels distinguish actual writes.",
+      "Check completion and actual buffer changes under a bounded wait. Use recognizable starting buffer contents to distinguish a real transfer from unchanged memory; a simulator may not implement the configured peripheral."
+    ]
+  },
+  {
+    "id": "study-11-0",
+    "lesson": 11,
+    "topic": "fundamentals-11",
+    "topicTitle": "Fundamentals",
+    "question": "What does the saved PC help you find?",
+    "options": [
+      "It identifies only the reporter's current instruction.",
+      "It always directly provides the failed data address.",
+      "Locate interrupted execution in the matching ELF."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The saved pc belongs to the interrupted/faulting context, unlike live handler pc.",
+      "pc locates execution; operand registers/instruction decoding may identify the data address.",
+      "It locates interrupted/faulting execution in the ELF and disassembly. Interpret it alongside exception type and available fault evidence; do not assume all fault PCs identify an identical cause."
+    ]
+  },
+  {
+    "id": "study-11-1",
+    "lesson": 11,
+    "topic": "fundamentals-11",
+    "topicTitle": "Fundamentals",
+    "question": "Why read reset flags before clearing them?",
+    "options": [
+      "Clear first so reading returns the newest historical cause.",
+      "Flags must never be cleared after recording.",
+      "Record the cause evidence before clearing it."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Clearing destroys sticky evidence; record documented flags first.",
+      "After recording, documented clearing permits later boots to distinguish new causes.",
+      "Clearing destroys the evidence distinguishing watchdog, software, power and other reset causes. Record the documented flags first, then clear them using the specified operation."
+    ]
+  },
+  {
+    "id": "study-11-2",
+    "lesson": 11,
+    "topic": "fundamentals-11",
+    "topicTitle": "Fundamentals",
+    "question": "Why can “check work, then sleep” race?",
+    "options": [
+      "An event can arrive between checking work and entering sleep.",
+      "A pending interrupt can never wake sleeping code.",
+      "The work check automatically disables every future interrupt."
+    ],
+    "correct": 0,
+    "explanations": [
+      "An event can arrive between the work check and the sleep instruction. The sleep/wake protocol must make that transition safe and account for pending events.",
+      "The protocol must safely account for pending events and the transition race.",
+      "An event can arrive after the check and before sleep."
+    ]
+  },
+  {
+    "id": "study-12-0",
+    "lesson": 12,
+    "topic": "fundamentals-12",
+    "topicTitle": "Fundamentals",
+    "question": "Why can moving a sprite leave a trail?",
+    "options": [
+      "I2C checksums recreate the old background.",
+      "The old pixels were not erased or redrawn; dirty both regions.",
+      "Moving automatically erases pixels in the previous framebuffer location."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Checksums do not redraw the background; rendering must handle erasure.",
+      "The old pixels remain unless cleared or the old region is redrawn. Mark both old and new regions dirty, then transmit the changed bytes.",
+      "Old bytes persist unless cleared/redrawn; dirty both affected regions."
+    ]
+  },
+  {
+    "id": "study-12-1",
+    "lesson": 12,
+    "topic": "fundamentals-12",
+    "topicTitle": "Fundamentals",
+    "question": "Why snapshot input events rather than just repeatedly read a held button?",
+    "options": [
+      "A held level is identical to one press event.",
+      "Preserve transitions/counts instead of repeating held levels.",
+      "Repeated level reads always preserve every short edge."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A held button remains active across updates; a press is a transition/count.",
+      "Events represent transitions or counted actions. A held level can trigger an action every update, while an unpreserved short edge can disappear between updates.",
+      "A short transition can vanish between reads unless events are captured/preserved."
+    ]
+  },
+  {
+    "id": "study-12-2",
+    "lesson": 12,
+    "topic": "fundamentals-12",
+    "topicTitle": "Fundamentals",
+    "question": "What belongs in a host test of game logic?",
+    "options": [
+      "Measure target electrical current through host drawing hooks.",
+      "Treat successful host rendering as proof of target bus deadlines.",
+      "Repeatable rules, collision, boundary and state-transition checks."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Host game tests check deterministic logic, not physical electrical behavior.",
+      "Target timing, electrical behavior and CPU budgets still need target evidence.",
+      "Deterministic rules, collisions, boundaries and state transitions with repeatable inputs. Host success does not establish target bus timing, electrical behavior or measured CPU budgets."
+    ]
+  },
+  {
+    "id": "workflow-7-22-0",
+    "lesson": 7,
+    "topic": "note-7-22",
+    "topicTitle": "How the Measurements Were Made",
+    "question": "How should trap and unaligned-load results be compared across silicon and an emulator?",
+    "options": [
+      "Observe both outcomes and label model disagreement.",
+      "Use one ELF from any build to decode both environments.",
+      "Assume both environments fault and omit the observed result."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Silicon is expected to fault for both; emulator behavior must be recorded separately. Preserve the matching ELF and inspect stacked pc/lr to locate each event.\n\nSource workflow: compare a deliberate trap with an unaligned word load in the target environment.\n\nRecord whether each faults, preserve the matching ELF and use stacked pc/lr to locate it.\n\nExpected silicon behavior is a fault for both. emulator disagreement must be labeled.",
+      "Source addresses depend on the build; fault locations require the matching ELF.",
+      "An emulator may accept an unaligned load, so an expected silicon result cannot replace observation."
+    ]
+  },
+  {
+    "id": "workflow-8-9-0",
+    "lesson": 8,
+    "topic": "note-8-9",
+    "topicTitle": "Two Tasks, One Serial Port",
+    "question": "Why might removing the whole-line print mutex look harmless in an emulator?",
+    "options": [
+      "A hardware UART automatically locks complete printf lines.",
+      "An emulator makes newlib formatting intrinsically reentrant.",
+      "Instant transmit may hide the concurrency race window."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The hardware transmits bytes; software must serialize complete messages and formatter calls.",
+      "The emulator does not change the formatter’s shared-state contract; its timing may simply fail to expose overlap.",
+      "A real 115200-baud UART leaves time for two printing tasks to overlap. Removing the whole-call mutex can expose interleaved lines, invalid checksums and shared formatter-state corruption; instant emulator transmission may hide these failures.\n\nSource workflow: reason about two printing tasks on a real 115200-baud UART, then remove the whole-line mutex in an isolated experiment.\n\nLook for interleaved lines/checksum errors and explain why instantaneous emulator transmission may hide the race."
+    ]
+  },
+  {
+    "id": "workflow-9-6-0",
+    "lesson": 9,
+    "topic": "note-9-6",
+    "topicTitle": "3.3 V Is a Guess — Measure It",
+    "question": "Before converting a PA4 ADC reading into voltage, how should VDDA be established?",
+    "options": [
+      "Always use 3300 mV because the board is called a 3.3 V board.",
+      "Use a zero calibration word as a valid zero-volt reference.",
+      "Validate factory/current VREF readings, then calculate VDDA."
+    ],
+    "correct": 2,
+    "explanations": [
+      "Actual supply variation changes scaling; nominal voltage is not a measurement.",
+      "A missing or zero calibration value is unusable evidence and can also create division hazards.",
+      "Read the factory calibration word and current channel 10 code, reject unusable or zero readings, then calculate VDDA before converting PA4. Compare model and board readbacks rather than assuming every model supplies the factory word.\n\nSource workflow: read the factory VREF calibration word and current channel 10 result, reject unusable values and calculate VDDA before converting PA4.\n\nCompare Renode and Wokwi/board readbacks instead of assuming the factory word exists in every model."
+    ]
+  },
+  {
+    "id": "workflow-10-1-0",
+    "lesson": 10,
+    "topic": "note-10-1",
+    "topicTitle": "The Arena",
+    "question": "What makes a predicted float-versus-integer multiply ratio a useful comparison?",
+    "options": [
+      "Run identical inputs and compare checksums and emitted helpers.",
+      "Publish the predicted ratio as measured before running anything.",
+      "Compare different inputs chosen to make each format fastest."
+    ],
+    "correct": 0,
+    "explanations": [
+      "The prediction is a hypothesis. Execute equivalent inputs, preserve observable checksums and explain measured or modeled differences using the emitted software helpers. A guessed ratio is not a measured cost.\n\nSource workflow: predict the float-versus-integer multiply ratio before examining results.\n\nUse identical inputs and checksums, then explain differences using the emitted helpers rather than treating your guess as measurement.",
+      "A prediction does not establish runtime cost; actual execution and the stated timing model supply evidence.",
+      "Different inputs or work invalidate the comparison; the format must be the changed variable."
+    ]
+  },
+  {
+    "id": "workflow-10-9-0",
+    "lesson": 10,
+    "topic": "note-10-9",
+    "topicTitle": "Overflow — Saturate, Don't Wrap",
+    "question": "Why compare wrapping and saturating Q15 helpers before using their output as motor demand?",
+    "options": [
+      "Wrap can reverse sign where saturation clamps the demand.",
+      "Wrap and saturation produce the same result at range boundaries.",
+      "Saturation recovers the exact out-of-range mathematical result."
+    ],
+    "correct": 0,
+    "explanations": [
+      "For 0.75+0.5, deliberate narrowing wrap gives -0.75 while saturation gives approximately +0.99997. The -1*-1 result is +1 and also needs positive saturation. Explain these boundary effects before sending results to an actuator.\n\nSource workflow: contrast the deliberately wrapping Q15 addition with the saturating helper for 0.75+0.5 and -1×-1.\n\nExplain the resulting sign reversal before using either result as an actuator demand.",
+      "They differ precisely when the exact value exceeds the representable range.",
+      "Saturation loses magnitude accuracy by clamping; its advantage here is preserving a bounded direction."
+    ]
+  },
+  {
+    "id": "workflow-10-13-0",
+    "lesson": 10,
+    "topic": "note-10-13",
+    "topicTitle": "Measuring Cycles — SysTick as a Stopwatch",
+    "question": "When target raw/net cycle counts disagree with the instruction model, what should be examined?",
+    "options": [
+      "Multiplier, memory wait states and timer/overhead assumptions.",
+      "Treat modeled counts as guaranteed physical timing.",
+      "Change only the source line count until the numbers agree."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Run the target arena and record both raw and net cycles. Compare with the instruction model under explicit multiplier, memory wait-state and timer assumptions; differences can arise from those conditions rather than arithmetic correctness.\n\nSource workflow: run the target arena, record raw and net cycles and compare with the instruction model.\n\nState multiplier, memory wait-state and timer assumptions when interpreting disagreements.",
+      "The model assumes a multiplier and memory behavior; physical flash waits and timer operation must be measured.",
+      "Source length does not determine instruction timing or timer overhead."
+    ]
+  },
+  {
+    "id": "workflow-10-25-0",
+    "lesson": 10,
+    "topic": "note-10-25",
+    "topicTitle": "The ADC Side — Scan, Continuous, DMA",
+    "question": "Before comparing polled ADC reads with DMA-buffer loads, what must be confirmed?",
+    "options": [
+      "The DMA enable bit alone proves all three samples arrived.",
+      "Actual buffer writes and ascending IN0/IN1/IN4 order.",
+      "Compare loads from an unchanged zero buffer to real ADC reads."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Configuration does not prove transfers occurred; unchanged sentinel slots expose a missing data path.",
+      "On supported hardware, time three polled channel reads and three RAM loads from an active DMA scan. Verify all sentinel slots changed and that buffer slots correspond to IN0, IN1 and IN4 before comparing CPU cost.\n\nSource workflow: time three polled (CPU repeatedly checks hardware status) channel reads and three RAM loads from a running DMA scan on supported hardware.\n\nConfirm all recognizable initial marker (sentinel) slots change and buffer order is IN0/IN1/IN4 before comparing CPU cost.",
+      "Zero can be legal or unchanged RAM, so this could compare unrelated work without proving acquisition."
+    ]
+  },
+  {
+    "id": "workflow-10-27-0",
+    "lesson": 10,
+    "topic": "note-10-27",
+    "topicTitle": "Memory to Memory — and a Surprise in `memcpy`",
+    "question": "How should a 1 KB DMA copy be compared with linked memcpy on a Nucleo?",
+    "options": [
+      "Infer Wokwi DMA performance from its configured transfer count.",
+      "Check every destination word and separate CPU availability from elapsed time.",
+      "Compare only return times and ignore destination contents."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Transfer count is setup intent; an unsupported model may never move data.",
+      "Use the actual linked memcpy and a word-width DMA copy, verify every destination word, then report elapsed transfer time separately from how much CPU can work meanwhile. Unsupported Wokwi should report failure/fallback instead of invented DMA timing.\n\nSource workflow: on a Nucleo, race the 1 KB word DMA copy against the linked memcpy, check every destination word and report CPU availability separately from elapsed transfer time.\n\nIn unsupported Wokwi, report fallback/failure rather than inventing DMA timing.",
+      "A fast operation that failed to copy the data is not a valid speed result."
+    ]
+  },
+  {
+    "id": "workflow-11-9-0",
+    "lesson": 11,
+    "topic": "note-11-9",
+    "topicTitle": "Fault 1 — Unaligned",
+    "question": "What establishes the result of an unaligned-access experiment in a particular environment?",
+    "options": [
+      "Call a continued execution result proof that the access is portable.",
+      "Copy the ARMv6-M expected verdict without running the experiment.",
+      "Record fault or continued execution, then decode saved evidence."
+    ],
+    "correct": 2,
+    "explanations": [
+      "An emulator accepting the access does not remove silicon alignment constraints.",
+      "Architecture expectations and model observations are distinct evidence.",
+      "Run the deliberate access and record whether the environment faults or explicitly reports continued execution. Decode preserved instruction and effective address. Do not assume simulator behavior matches ARMv6-M silicon.\n\nSource workflow: deliberately run the unaligned access and record whether the environment faults or prints that execution continued.\n\nDecode the preserved instruction and address. Do not assume simulator behavior matches ARMv6-M silicon."
+    ]
+  },
+  {
+    "id": "workflow-11-10-0",
+    "lesson": 11,
+    "topic": "note-11-10",
+    "topicTitle": "Faults 2 and 3 — Nothing There, or Read-Only",
+    "question": "If an ordinary flash store returns instead of faulting, what evidence should be recorded?",
+    "options": [
+      "Assume a returned store successfully programmed flash.",
+      "Assume every unmapped read and flash store has an identical cause.",
+      "The readback and FLASH->SR status, with outcome left observational."
+    ],
+    "correct": 2,
+    "explanations": [
+      "An ordinary store is not the required programming sequence; controller refusal can return with status evidence.",
+      "Unmapped access and flash programming refusal/permissions are different paths that require different evidence.",
+      "Distinguish the unmapped read from the normal flash store. If the store returns, record readback and FLASH->SR. If it faults, reconstruct its address and permission verdict from saved evidence. The notes do not predetermine this runtime outcome.\n\nSource workflow: distinguish the unmapped read from the normal flash store.\n\nIf the store returns, record readback and FLASH->SR. If it faults, reconstruct its address and permission verdict.\n\nThe notes deliberately leave this runtime outcome open."
+    ]
+  },
+  {
+    "id": "workflow-11-12-0",
+    "lesson": 11,
+    "topic": "note-11-12",
+    "topicTitle": "Faults 6 and 7 — and Two Things That Do Not Fault",
+    "question": "Why record actual NULL-read and variable divide-zero results even when execution returns?",
+    "options": [
+      "The divide helper result must be identical in every linked build.",
+      "Any operation that returns without HardFault is valid C behavior.",
+      "A silent return can still reveal an invalid software operation."
+    ],
+    "correct": 2,
+    "explanations": [
+      "The helper implementation and policy can differ; inspect the actual build and observation.",
+      "The absence of a core exception does not make NULL dereference or divide-zero a valid program operation.",
+      "Compare observed results with address-zero vector aliasing and the linked __aeabi_idiv0 behavior. A mapped NULL read or a divide-zero helper returning a value can hide a bug rather than making the software valid.\n\nSource workflow: test the NULL read and variable divide-zero, record their actual results and compare with vector alias and __aeabi_idiv0 analysis.\n\nExplain why a silent return still represents a bug."
+    ]
+  },
+  {
+    "id": "workflow-11-18-0",
+    "lesson": 11,
+    "topic": "note-11-18",
+    "topicTitle": "The WWDG — a Window, and a Shorter Reach",
+    "question": "Before choosing WWDG feed timing for a nontrivial window, what must be calculated?",
+    "options": [
+      "Only maximum expiration time; early feeding is always safe.",
+      "Tick period and the allowed counter interval.",
+      "Only the application loop count, regardless of the watchdog clock."
+    ],
+    "correct": 1,
+    "explanations": [
+      "A window watchdog also resets if fed before the counter reaches the allowed window.",
+      "Calculate watchdog tick period and the permitted counter interval before selecting a refresh schedule. A feed above the allowed window can reset too early; allowing the counter to expire can reset too late. Both sides of the feeding window matter.\n\nSource workflow: configure a nontrivial WWDG feeding window and explain both an early feed and late expiration.\n\nCalculate tick period and allowed counter interval before selecting feed timing.",
+      "Counter progression is determined by its hardware clock and prescaler, not just loop iterations."
+    ]
+  },
+  {
+    "id": "workflow-11-21-0",
+    "lesson": 11,
+    "topic": "note-11-21",
+    "topicTitle": "Measured — Who Feeds, Against What Failure",
+    "question": "Which experiment fairly compares hb, loop and isr watchdog feeding policies?",
+    "options": [
+      "Test one ordinary hang and assume it represents all failure classes.",
+      "Inject hang, IRQ-disabled hang and starvation separately for each policy.",
+      "Keep ISR feeding enabled during every policy comparison."
+    ],
+    "correct": 1,
+    "explanations": [
+      "IRQ-disabled hangs stop a soft tick; starvation can leave loops or ISRs active. These distinguish policy coverage.",
+      "Select wdmode hb, loop and isr, then trigger an ordinary hang, an interrupt-disabled hang and starvation separately. Compare resets under the soft dog and supported hardware watchdog against the policy matrix, holding the workload/failure conditions consistent.\n\nSource workflow: select wdmode hb, loop and isr and trigger hang, interrupt-disabled hang and starve separately.\n\nCompare which failures reset under the software watchdog (soft dog) and under a supported hardware dog with the policy matrix.",
+      "That changes the refresh owner and can conceal failure, defeating comparison of the selected policies."
+    ]
+  },
+  {
+    "id": "workflow-11-22-0",
+    "lesson": 11,
+    "topic": "note-11-22",
+    "topicTitle": "How Tight Can the Timeout Be?",
+    "question": "What does five minutes of healthy operation near a reduced watchdog timeout establish?",
+    "options": [
+      "A timeout based only on the fastest loop iteration.",
+      "A tested workload budget with measured gap and margin, not a universal bound.",
+      "A proof that every possible future path fits the timeout."
+    ],
+    "correct": 1,
+    "explanations": [
+      "The longest healthy feed gap determines the required budget, including blocking work and margin.",
+      "Use stats worst-gap reporting while lowering wdt and include the blocking report in five-minute healthy trials. Record the exercised workload and chosen margin. The result covers those tested paths; rare unvisited paths can still exceed it.\n\nSource workflow: use stats worst-gap reporting while lowering wdt until healthy use can survive five minutes, including the blocking report.\n\nRecord tested workload and margin. The result is a measured budget for those paths.",
+      "Finite trials establish observed evidence, not exhaustive worst-case timing for all paths."
+    ]
+  },
+  {
+    "id": "workflow-12-13-0",
+    "lesson": 12,
+    "topic": "note-12-13",
+    "topicTitle": "Measured on the Host — What Dirty Pages Save",
+    "question": "How should DIRTY and FULL display modes be compared using PERF output?",
+    "options": [
+      "Compare fps alone and treat it as the simulation update rate.",
+      "Assume DIRTY always changes one page regardless of the game.",
+      "Compare traffic, flush duration, picture rate and update rate under the same workload."
+    ],
+    "correct": 2,
+    "explanations": [
+      "fps measures pictures, while ups measures simulation steps; slow rendering can leave update cadence intact.",
+      "Tall moving pipes can dirty almost all pages; savings depend on the changed image geometry.",
+      "Use stick press to switch DIRTY/FULL and capture PERF bytes/frame, flush_us, fps and ups. FLAP changes nearly every page, so dirty transfer savings are limited. Bus-model durations depend on assumed rates and differ from observed target timing.\n\nSource workflow: use stick press to switch DIRTY/FULL, capture PERF and compare bytes/frame, flush_us, fps and ups.\n\nExplain why FLAP still changes almost every page and why bus-model time differs from target measurements."
+    ]
+  },
+  {
+    "id": "workflow-12-19-0",
+    "lesson": 12,
+    "topic": "note-12-19",
+    "topicTitle": "Sprites — and Why `const` Is Enough on ARM",
+    "question": "How should an ASCII sprite column be encoded for this OLED format?",
+    "options": [
+      "Bit 0 is at the top; 0x25 lights positions 0, 2 and 5.",
+      "Each ASCII row is a separate full-byte brightness value.",
+      "Bit 7 is at the top; 0x25 lights positions 2, 5 and 7."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Convert each vertical ASCII artwork column into bits with bit 0 at the top and cross-check using host/sprite.py. In 0x25, bits 0,2,5 are set. Store the resulting immutable column bytes in a const table.\n\nSource workflow: draw a small ASCII sprite, convert each vertical column to bits with bit 0 at top, and use host/sprite.py to cross-check.\n\nDecode 0x25 as lit positions 0,2,5 before inserting it into the const table.",
+      "The monochrome sprite packs vertical pixel presence into bits, not per-row brightness bytes.",
+      "That reverses the top-to-bottom mapping; the format uses least-significant bit at the top."
+    ]
+  },
+  {
+    "id": "workflow-12-28-0",
+    "lesson": 12,
+    "topic": "note-12-28",
+    "topicTitle": "`$SCORE` — a Class Leaderboard With a Checksum",
+    "question": "Why can a fabricated score still pass the classroom SCORE leaderboard checksum?",
+    "options": [
+      "The sender can recompute the unkeyed XOR for the invented body.",
+      "A corrupted digit always remains valid without changing the checksum.",
+      "A checksum is a secret held only by the real game."
+    ],
+    "correct": 0,
+    "explanations": [
+      "Collect one captured SCORE file per honest player and run the leaderboard. Altering a digit without updating XOR is rejected; recomputing XOR for an invented score makes it pass. This detects some copying mistakes but does not authenticate honesty.\n\nSource workflow: collect one text file of SCORE lines per honest player and run the leaderboard.\n\nCorrupt a digit and confirm rejection. Then explain why recomputing XOR would make an invented score pass.",
+      "The demonstrated digit alteration changes XOR and is rejected; fabrication passes only with an appropriate checksum.",
+      "XOR uses public message bytes and no secret, so anyone can calculate it."
+    ]
+  },
+  {
+    "id": "workflow-12-30-0",
+    "lesson": 12,
+    "topic": "note-12-30",
+    "topicTitle": "Flash and RAM",
+    "question": "What evidence should accompany a fourth game added through the existing hooks?",
+    "options": [
+      "Only source file sizes; those equal final linked RAM and flash use.",
+      "New memory totals, deterministic host behavior and the 20 ms update budget.",
+      "Only a screenshot; timing and linked memory remain unchanged automatically."
+    ],
+    "correct": 1,
+    "explanations": [
+      "Linked sections, shared helpers and runtime allocations determine memory budgets, not source text length.",
+      "Use the existing input/update/draw/sound/score hooks. Budget RAM and flash, keep twenty-millisecond updates, and compare the new link-map totals and deterministic host behavior. Functional output alone does not establish memory fit or timing.\n\nSource workflow: add a fourth game through the existing input/update/draw/sound/score hooks.\n\nBudget its RAM/flash, keep twenty-millisecond updates and compare new link-map totals plus deterministic host behavior.",
+      "New game code/state can change RAM, flash and update cost; they need fresh evidence."
+    ]
+  }
+]

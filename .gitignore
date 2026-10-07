@@ -1,0 +1,33 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Local agent state and audit artifacts
+.codex/
+.planning/
+deleteme/
+
+# Browser test output
+playwright-report/
+playwright/.cache/
+test-results/
+blob-report/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

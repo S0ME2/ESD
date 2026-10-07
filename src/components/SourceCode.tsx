@@ -1,0 +1,3 @@
+export function SourceCode({code,label='Simplified teaching example',onSelect,activeLine}:{code:string;label?:string;onSelect?:(line:number)=>void;activeLine?:number}) {
+ return <div className="source-code"><div className="code-label">{label}</div><pre tabIndex={0} role="region" aria-label={label+' · scrollable code'}><code>{code.split('\n').map((line,i)=>onSelect ? <button key={i} aria-label={`Select source line ${i+1}`} className={`code-line ${activeLine===i?'highlighted':''}`} onClick={()=>onSelect(i)}><span className="line-number">{i+1}</span>{line || ' '}</button> : <span key={i} className={`code-line ${activeLine===i?'highlighted':''}`}><span className="line-number">{i+1}</span>{line || ' '}</span>)}</code></pre></div>;
+}

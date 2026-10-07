@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="466" viewBox="0 0 466 206" role="img" aria-label="TIM3&#x27;s two dividers: 16 bits each, each holding N-1; PSC, 16 bits; ARR, 16 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="233" y="16" text-anchor="middle" class="lbl">TIM3&#x27;s two dividers: 16 bits each, each holding N-1</text>
+<text x="16" y="59" class="mono">PSC</text>
+<text x="16" y="74" class="lbl">divide by 48</text>
+<text x="16" y="89" class="mono lbl">= 0x002F</text>
+<text x="131.0" y="44" text-anchor="start" class="mono lbl">15</text>
+<text x="449.0" y="44" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="130.0" y="52" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M430.0 52 V56 M430.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M410.0 52 V56 M410.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M390.0 52 V56 M390.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M370.0 52 V56 M370.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M350.0 52 V56 M350.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M330.0 52 V56 M330.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M310.0 52 V56 M310.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M290.0 52 V56 M290.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M270.0 52 V56 M270.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M250.0 52 V56 M250.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M230.0 52 V56 M230.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M210.0 52 V56 M210.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M190.0 52 V56 M190.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M170.0 52 V56 M170.0 74 V78"/>
+<path class="reg" stroke-width="0.6" d="M150.0 52 V56 M150.0 74 V78"/>
+<text x="440.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="420.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="400.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="380.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="360.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="340.0" y="65" text-anchor="middle" class="mono">1</text>
+<text x="320.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="300.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="280.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="260.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="240.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="220.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="200.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="180.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="160.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="140.0" y="65" text-anchor="middle" class="mono lbl">0</text>
+<text x="290.0" y="91" text-anchor="middle" class="mono halo">PSC</text>
+<text x="16" y="145" class="mono">ARR</text>
+<text x="16" y="160" class="lbl">20000 counts</text>
+<text x="16" y="175" class="mono lbl">= 0x4E1F</text>
+<text x="131.0" y="130" text-anchor="start" class="mono lbl">15</text>
+<text x="449.0" y="130" text-anchor="end" class="mono lbl">0</text>
+<rect class="hifill" x="130.0" y="138" width="320.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M430.0 138 V142 M430.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M410.0 138 V142 M410.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M390.0 138 V142 M390.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M370.0 138 V142 M370.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M350.0 138 V142 M350.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M330.0 138 V142 M330.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M310.0 138 V142 M310.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M290.0 138 V142 M290.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M270.0 138 V142 M270.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M250.0 138 V142 M250.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M230.0 138 V142 M230.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M210.0 138 V142 M210.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M190.0 138 V142 M190.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M170.0 138 V142 M170.0 160 V164"/>
+<path class="reg" stroke-width="0.6" d="M150.0 138 V142 M150.0 160 V164"/>
+<text x="440.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="420.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="400.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="380.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="360.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="340.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="320.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="300.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="280.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="260.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="240.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="220.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="200.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="180.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="160.0" y="151" text-anchor="middle" class="mono">1</text>
+<text x="140.0" y="151" text-anchor="middle" class="mono lbl">0</text>
+<text x="290.0" y="177" text-anchor="middle" class="mono halo">ARR</text>
+</svg>

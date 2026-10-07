@@ -1,0 +1,367 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="791" viewBox="0 0 791 430" role="img" aria-label="MODER, 32 bits; ~(3u &lt;&lt; 10), 32 bits; MODER &amp; mask, 32 bits; 1u &lt;&lt; 10, 32 bits; MODER, 32 bits"><style>
+svg{color:#172640}text{fill:currentColor;font:13px sans-serif;dominant-baseline:middle}
+.mono{font-family:monospace}.lbl{fill:#52627a;font-size:11px}
+.box{fill:#f0f4fb;stroke:currentColor;stroke-width:1.5}
+.reg{fill:none;stroke:currentColor;stroke-width:1.2}
+.hi{fill:none;stroke:#2854d9;stroke-width:2}
+.hifill{fill:#2854d9;fill-opacity:.14;stroke:#2854d9;stroke-width:1.5}
+.wire{fill:none;stroke:currentColor;stroke-width:1.5}
+.halo{paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}
+.dash{fill:none;stroke:#52627a;stroke-width:1.2;stroke-dasharray:4 3}
+</style>
+<text x="16" y="35" class="mono">MODER</text>
+<text x="16" y="50" class="lbl">read (reset)</text>
+<text x="16" y="65" class="mono lbl">= 0xEBFFFFFF</text>
+<text x="135.8" y="20" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="20" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="134.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M154.8 28 V32 M154.8 50 V54"/>
+<rect class="reg" x="174.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.8 28 V32 M194.8 50 V54"/>
+<rect class="reg" x="214.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M234.8 28 V32 M234.8 50 V54"/>
+<rect class="reg" x="254.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.8 28 V32 M274.8 50 V54"/>
+<rect class="reg" x="294.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M314.8 28 V32 M314.8 50 V54"/>
+<rect class="reg" x="334.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M354.8 28 V32 M354.8 50 V54"/>
+<rect class="reg" x="374.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.8 28 V32 M394.8 50 V54"/>
+<rect class="reg" x="414.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.8 28 V32 M434.8 50 V54"/>
+<rect class="reg" x="454.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.8 28 V32 M474.8 50 V54"/>
+<rect class="reg" x="494.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M514.8 28 V32 M514.8 50 V54"/>
+<rect class="hifill" x="534.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.8 28 V32 M554.8 50 V54"/>
+<text x="535.8" y="20" text-anchor="start" class="mono lbl">11</text>
+<text x="573.8" y="20" text-anchor="end" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.8 28 V32 M594.8 50 V54"/>
+<rect class="reg" x="614.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.8 28 V32 M634.8 50 V54"/>
+<rect class="reg" x="654.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.8 28 V32 M674.8 50 V54"/>
+<rect class="reg" x="694.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.8 28 V32 M714.8 50 V54"/>
+<rect class="reg" x="734.8" y="28" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.8 28 V32 M754.8 50 V54"/>
+<text x="764.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="744.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="724.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="704.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="684.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="664.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="644.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="624.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="604.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="584.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="564.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="544.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="524.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="504.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="484.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="464.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="444.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="424.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="404.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="384.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="364.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="344.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="324.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="304.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="284.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="264.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="244.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="204.8" y="41" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="164.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="144.8" y="41" text-anchor="middle" class="mono">1</text>
+<text x="16" y="119" class="mono">~(3u &lt;&lt; 10)</text>
+<text x="16" y="134" class="lbl">mask</text>
+<text x="16" y="149" class="mono lbl">= 0xFFFFF3FF</text>
+<text x="135.8" y="104" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="104" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="134.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M154.8 112 V116 M154.8 134 V138"/>
+<rect class="reg" x="174.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.8 112 V116 M194.8 134 V138"/>
+<rect class="reg" x="214.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M234.8 112 V116 M234.8 134 V138"/>
+<rect class="reg" x="254.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.8 112 V116 M274.8 134 V138"/>
+<rect class="reg" x="294.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M314.8 112 V116 M314.8 134 V138"/>
+<rect class="reg" x="334.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M354.8 112 V116 M354.8 134 V138"/>
+<rect class="reg" x="374.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.8 112 V116 M394.8 134 V138"/>
+<rect class="reg" x="414.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.8 112 V116 M434.8 134 V138"/>
+<rect class="reg" x="454.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.8 112 V116 M474.8 134 V138"/>
+<rect class="reg" x="494.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M514.8 112 V116 M514.8 134 V138"/>
+<rect class="hifill" x="534.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.8 112 V116 M554.8 134 V138"/>
+<text x="535.8" y="104" text-anchor="start" class="mono lbl">11</text>
+<text x="573.8" y="104" text-anchor="end" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.8 112 V116 M594.8 134 V138"/>
+<rect class="reg" x="614.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.8 112 V116 M634.8 134 V138"/>
+<rect class="reg" x="654.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.8 112 V116 M674.8 134 V138"/>
+<rect class="reg" x="694.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.8 112 V116 M714.8 134 V138"/>
+<rect class="reg" x="734.8" y="112" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.8 112 V116 M754.8 134 V138"/>
+<text x="764.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="744.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="724.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="704.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="684.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="664.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="644.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="624.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="604.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="584.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="564.8" y="125" text-anchor="middle" class="mono lbl">0</text>
+<text x="544.8" y="125" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="504.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="484.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="464.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="444.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="424.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="404.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="384.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="364.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="344.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="324.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="304.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="284.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="264.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="244.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="224.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="204.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="184.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="164.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="144.8" y="125" text-anchor="middle" class="mono">1</text>
+<text x="16" y="203" class="mono">MODER &amp; mask</text>
+<text x="16" y="218" class="lbl">erased</text>
+<text x="16" y="233" class="mono lbl">= 0xEBFFF3FF</text>
+<text x="135.8" y="188" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="188" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="134.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M154.8 196 V200 M154.8 218 V222"/>
+<rect class="reg" x="174.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.8 196 V200 M194.8 218 V222"/>
+<rect class="reg" x="214.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M234.8 196 V200 M234.8 218 V222"/>
+<rect class="reg" x="254.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.8 196 V200 M274.8 218 V222"/>
+<rect class="reg" x="294.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M314.8 196 V200 M314.8 218 V222"/>
+<rect class="reg" x="334.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M354.8 196 V200 M354.8 218 V222"/>
+<rect class="reg" x="374.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.8 196 V200 M394.8 218 V222"/>
+<rect class="reg" x="414.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.8 196 V200 M434.8 218 V222"/>
+<rect class="reg" x="454.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.8 196 V200 M474.8 218 V222"/>
+<rect class="reg" x="494.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M514.8 196 V200 M514.8 218 V222"/>
+<rect class="hifill" x="534.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.8 196 V200 M554.8 218 V222"/>
+<text x="535.8" y="188" text-anchor="start" class="mono lbl">11</text>
+<text x="573.8" y="188" text-anchor="end" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.8 196 V200 M594.8 218 V222"/>
+<rect class="reg" x="614.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.8 196 V200 M634.8 218 V222"/>
+<rect class="reg" x="654.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.8 196 V200 M674.8 218 V222"/>
+<rect class="reg" x="694.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.8 196 V200 M714.8 218 V222"/>
+<rect class="reg" x="734.8" y="196" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.8 196 V200 M754.8 218 V222"/>
+<text x="764.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="744.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="724.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="704.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="684.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="664.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="644.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="624.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="604.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="584.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="564.8" y="209" text-anchor="middle" class="mono lbl">0</text>
+<text x="544.8" y="209" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="504.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="484.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="464.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="444.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="424.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="404.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="384.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="364.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="344.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="324.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="304.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="284.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="264.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="244.8" y="209" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="204.8" y="209" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="164.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="144.8" y="209" text-anchor="middle" class="mono">1</text>
+<text x="16" y="287" class="mono">1u &lt;&lt; 10</text>
+<text x="16" y="302" class="lbl">new mode</text>
+<text x="16" y="317" class="mono lbl">= 0x00000400</text>
+<text x="135.8" y="272" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="272" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="134.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M154.8 280 V284 M154.8 302 V306"/>
+<rect class="reg" x="174.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.8 280 V284 M194.8 302 V306"/>
+<rect class="reg" x="214.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M234.8 280 V284 M234.8 302 V306"/>
+<rect class="reg" x="254.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.8 280 V284 M274.8 302 V306"/>
+<rect class="reg" x="294.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M314.8 280 V284 M314.8 302 V306"/>
+<rect class="reg" x="334.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M354.8 280 V284 M354.8 302 V306"/>
+<rect class="reg" x="374.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.8 280 V284 M394.8 302 V306"/>
+<rect class="reg" x="414.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.8 280 V284 M434.8 302 V306"/>
+<rect class="reg" x="454.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.8 280 V284 M474.8 302 V306"/>
+<rect class="reg" x="494.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M514.8 280 V284 M514.8 302 V306"/>
+<rect class="hifill" x="534.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.8 280 V284 M554.8 302 V306"/>
+<text x="535.8" y="272" text-anchor="start" class="mono lbl">11</text>
+<text x="573.8" y="272" text-anchor="end" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.8 280 V284 M594.8 302 V306"/>
+<rect class="reg" x="614.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.8 280 V284 M634.8 302 V306"/>
+<rect class="reg" x="654.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.8 280 V284 M674.8 302 V306"/>
+<rect class="reg" x="694.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.8 280 V284 M714.8 302 V306"/>
+<rect class="reg" x="734.8" y="280" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.8 280 V284 M754.8 302 V306"/>
+<text x="764.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="744.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="724.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="704.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="684.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="664.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="644.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="624.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="604.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="584.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="564.8" y="293" text-anchor="middle" class="mono">1</text>
+<text x="544.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="504.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="484.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="464.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="444.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="424.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="404.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="384.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="364.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="344.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="324.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="304.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="284.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="264.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="244.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="204.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="164.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="144.8" y="293" text-anchor="middle" class="mono lbl">0</text>
+<text x="16" y="371" class="mono">MODER</text>
+<text x="16" y="386" class="lbl">written back</text>
+<text x="16" y="401" class="mono lbl">= 0xEBFFF7FF</text>
+<text x="135.8" y="356" text-anchor="start" class="mono lbl">31</text>
+<text x="773.8" y="356" text-anchor="end" class="mono lbl">0</text>
+<rect class="reg" x="134.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M154.8 364 V368 M154.8 386 V390"/>
+<rect class="reg" x="174.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M194.8 364 V368 M194.8 386 V390"/>
+<rect class="reg" x="214.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M234.8 364 V368 M234.8 386 V390"/>
+<rect class="reg" x="254.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M274.8 364 V368 M274.8 386 V390"/>
+<rect class="reg" x="294.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M314.8 364 V368 M314.8 386 V390"/>
+<rect class="reg" x="334.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M354.8 364 V368 M354.8 386 V390"/>
+<rect class="reg" x="374.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M394.8 364 V368 M394.8 386 V390"/>
+<rect class="reg" x="414.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M434.8 364 V368 M434.8 386 V390"/>
+<rect class="reg" x="454.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M474.8 364 V368 M474.8 386 V390"/>
+<rect class="reg" x="494.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M514.8 364 V368 M514.8 386 V390"/>
+<rect class="hifill" x="534.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M554.8 364 V368 M554.8 386 V390"/>
+<text x="535.8" y="356" text-anchor="start" class="mono lbl">11</text>
+<text x="573.8" y="356" text-anchor="end" class="mono lbl">10</text>
+<rect class="reg" x="574.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M594.8 364 V368 M594.8 386 V390"/>
+<rect class="reg" x="614.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M634.8 364 V368 M634.8 386 V390"/>
+<rect class="reg" x="654.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M674.8 364 V368 M674.8 386 V390"/>
+<rect class="reg" x="694.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M714.8 364 V368 M714.8 386 V390"/>
+<rect class="reg" x="734.8" y="364" width="40.0" height="26"/>
+<path class="reg" stroke-width="0.6" d="M754.8 364 V368 M754.8 386 V390"/>
+<text x="764.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="744.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="724.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="704.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="684.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="664.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="644.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="624.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="604.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="584.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="564.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="544.8" y="377" text-anchor="middle" class="mono lbl">0</text>
+<text x="524.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="504.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="484.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="464.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="444.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="424.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="404.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="384.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="364.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="344.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="324.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="304.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="284.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="264.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="244.8" y="377" text-anchor="middle" class="mono lbl">0</text>
+<text x="224.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="204.8" y="377" text-anchor="middle" class="mono lbl">0</text>
+<text x="184.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="164.8" y="377" text-anchor="middle" class="mono">1</text>
+<text x="144.8" y="377" text-anchor="middle" class="mono">1</text>
+</svg>
